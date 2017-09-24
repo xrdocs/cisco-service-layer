@@ -1,2 +1,1 @@
-# cisco-service-layer
-Cisco IOS-XR Service Layer
+Base-Template Repository for xrdocs sub-websites
