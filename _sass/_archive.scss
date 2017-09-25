@@ -159,6 +159,20 @@
   }
 }
 
+/*
+  Stretched archive
+  ========================================================================== */
+
+.stretch__archive {
+  @include clearfix();
+  width: 80%;
+  margin-bottom: 2em;
+  border-bottom: 1px solid $border-color;
+  margin: 0  auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
 
 /*
    Features
@@ -166,15 +180,17 @@
 
 .feature__wrapper {
   @include clearfix();
+  width: 80%;
   margin-bottom: 2em;
   border-bottom: 1px solid $border-color;
+  margin: 2em auto;
 }
 
 .feature__item {
   margin-bottom: 2em;
   padding-left: .5em;
   padding-right: .5em;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   text-align: center;
 
   @include breakpoint($small) {
@@ -194,7 +210,7 @@
 
   &--left {
     @include full();
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 
     .archive__item-teaser {
       margin-bottom: 2em;
@@ -215,7 +231,7 @@
 
   &--right {
     @include full();
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 
     .archive__item-teaser {
       margin-bottom: 2em;
@@ -238,7 +254,7 @@
 
   &--center {
     @include full();
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 
     .archive__item-teaser {
       margin-bottom: 2em;

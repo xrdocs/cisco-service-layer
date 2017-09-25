@@ -6,6 +6,7 @@ html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
+  overflow-x:hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   font-family: $global-font-family;
   font-weight: 100;
   line-height: 1.5;
+  overflow-x:hidden;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -43,7 +45,7 @@ h3 {
 }
 
 h4 {
-  font-size: $type-size-4;
+  font-size: $type-size-3_75;
 }
 
 h5 {
@@ -306,6 +308,139 @@ nav {
   li ol {
     margin-top: 0;
   }
+}
+
+
+.floating__feed {
+    float: right;
+    vertical-align:top;
+    font-size:1em;
+    width: 22%;
+    height: 600px;
+    margin-right: 1em;
+}
+
+.rssfeed {
+    overflow: hidden;
+    position: relative;
+    top: auto;
+    right: 0px;
+    width: 100%; 
+    border-radius: 20px;
+  -webkit-box-shadow: 0 2px 2px #888888;
+  -moz-box-shadow: 0 2px 2px #888888;
+  box-shadow: 0 2px 2px #888888;
+}
+
+
+.container__marketing {
+    float: left;
+    vertical-align:top;
+    width: 70%;
+    font-size: 1em;
+}
+
+
+
+
+#mobile-indicator {
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    #mobile-indicator {
+        display: block;
+    }
+
+    .floating__feed {
+        position: relative;
+        float: none; 
+        clear: both;
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 5em;
+    }
+
+
+    .container__marketing {
+        clear: both;
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+}
+
+.large-screen {
+  display: block;
+}
+
+.medium-screen {
+  display: none;
+} 
+
+.medium-small-screen {
+  display: none;
+}
+ 
+.small-screen {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px){           
+    .large-screen {
+     display: none;
+   }
+
+    .medium-screen {
+     display: block;
+   } 
+
+    .medium-small-screen {
+     display: none;
+   }
+
+   .small-screen {
+     display: none;
+   }
+}
+
+@media only screen and (max-width: 700px){
+    .large-screen {
+     display: none;
+   }
+
+    .medium-screen {
+     display: none;
+   }
+
+    .medium-small-screen {
+     display: block;
+   } 
+
+   .small-screen {
+     display: none;
+   }
+}
+
+@media only screen and (max-width: 500px){
+    .large-screen {
+     display: none;
+   }
+
+    .medium-screen {
+     display: none;
+   }
+
+    .medium-small-screen {
+     display: none;
+   }
+
+   .small-screen {
+     display: block;
+   }
 }
 
 /*
