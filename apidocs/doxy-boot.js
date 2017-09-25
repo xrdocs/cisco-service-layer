@@ -29,13 +29,11 @@ $( document ).ready(function() {
     $("table.params").addClass("table");
     $("div.ingroups").wrapInner("<span class='text-nowrap'></span>");
     $("div.levels").css("margin", "0.5em");
-    $("div.levels > span").addClass("btn btn-default btn--x-large");
+    $("div.levels > span").addClass("btn btn-default btn--xx-large");
     $("div.levels > span").css('margin-right', '0.25em');
-    $("div.levels > span").css('font-size', '0.95em');
 
     $("table.directory").addClass("table table-striped");
-    $("div.summary > a").addClass("btn btn--x-large");
-    $("div.summary > a").css('font-size', '0.95em');
+    $("div.summary > a").addClass("btn btn-default btn--xx-large");
     $("table.fieldtable").addClass("table");
     $(".fragment").addClass("well");
     $(".memitem").addClass("panel panel-default");
@@ -46,9 +44,7 @@ $( document ).ready(function() {
     $("table.memberdecls").addClass("table");
     $("[class^=memitem]").addClass("active");
 
-    $("div.ah").addClass("btn btn--x-large");
-    $("div.ah").css('font-size', '0.95em');
-
+    $("div.ah").addClass("btn btn-default--xx-large");
     $("span.mlabels").addClass("pull-right");
     $("table.mlabels").css("width", "100%")
     $("td.mlabels-right").addClass("pull-right");
