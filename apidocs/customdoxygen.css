@@ -1501,6 +1501,7 @@ tr.heading h2 {
 
 
   .directory td.entry {
+    white-space: pre-wrap;
     word-wrap: break-word;
     width: 150px;
     display: block;
