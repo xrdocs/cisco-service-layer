@@ -816,7 +816,7 @@ div.directory {
 }
 
 table {
-    font: 0.9em CiscoSans,Arial,Helvetica,"Helvetica Neue","HelveticaNeue","Lucida Grande",sans-serif;
+    font: 0.9em CiscoSans,Arial,Helvetica,"Helvetica Neue","HelveticaNeue","Lucida Grande",sans-serif !important;
 }
 
 table.directory {
