@@ -540,6 +540,7 @@ table.memberdecls {
 .memname {
         font-weight: bold;
         margin-left: 6px;
+        word-break: break-word;
 }
 
 .memname td {
@@ -817,6 +818,7 @@ div.directory {
 
 table {
     font: 0.85em CiscoSans,Arial,Helvetica,"Helvetica Neue","HelveticaNeue","Lucida Grande",sans-serif !important;
+    width:100%;
 }
 
 table.directory {
@@ -825,6 +827,7 @@ table.directory {
 
 table.table {
     font: 400 14px CiscoSans,Arial,Helvetica,"Helvetica Neue","HelveticaNeue","Lucida Grande",sans-serif;
+    word-break: break-word;
 }
 
 /* @end */
