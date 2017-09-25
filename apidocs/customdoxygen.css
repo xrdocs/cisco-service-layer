@@ -1498,6 +1498,19 @@ tr.heading h2 {
     border-right: 0 !important;
     word-wrap: break-word;
   }
+
+
+  .directory td.entry {
+    word-wrap: break-word;
+    width: 150px;
+    display: block;
+    padding-right: 3px;
+    padding-top: 3px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
 }
 
 @media only screen and (min-width : 320px) {
