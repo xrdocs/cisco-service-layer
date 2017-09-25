@@ -149,6 +149,9 @@ kramdown:
 
 # Collections
 collections:
+  techdocs:
+    output: false
+    permalink: /:collection/:path/
   blogs:
     output: true
     permalink: /:collection/:path/
