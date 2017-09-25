@@ -33,7 +33,7 @@ $( document ).ready(function() {
     $("div.levels > span").css('margin-right', '0.25em');
 
     $("table.directory").addClass("table table-striped");
-    $("div.summary > a").addClass("btn btn-default btn--xx-large");
+    $("div.summary > a").addClass("btn btn--xx-large");
     $("table.fieldtable").addClass("table");
     $(".fragment").addClass("well");
     $(".memitem").addClass("panel panel-default");
@@ -44,7 +44,7 @@ $( document ).ready(function() {
     $("table.memberdecls").addClass("table");
     $("[class^=memitem]").addClass("active");
 
-    $("div.ah").addClass("btn btn-default--xx-large");
+    $("div.ah").addClass("btn btn--xx-large");
     $("span.mlabels").addClass("pull-right");
     $("table.mlabels").css("width", "100%")
     $("td.mlabels-right").addClass("pull-right");
