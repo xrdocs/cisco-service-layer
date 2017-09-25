@@ -674,7 +674,7 @@ span.mlabel {
 	margin-right: 4px;
 	padding: 2px 3px;
 	border-radius: 3px;
-	font-size: 7pt;
+	font-size: 0.7em;
 	white-space: nowrap;
 	vertical-align: middle;
 }
@@ -995,14 +995,14 @@ table.fieldtable {
         background-repeat:no-repeat;
         background-position:right;
         color:#364D7C;
-        font-size: 8pt;
+        font-size: 0.75em;
 }
 
 
 div.summary
 {
 	float: right;
-	font-size: 8pt;
+	font-size: 0.75em;
 	padding-right: 5px;
 	width: 50%;
 	text-align: right;
@@ -1027,7 +1027,7 @@ table.classindex
 
 div.ingroups
 {
-	font-size: 8pt;
+	font-size: 0.7em;
 	width: 50%;
 	text-align: left;
 }
