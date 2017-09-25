@@ -29,11 +29,11 @@ $( document ).ready(function() {
     $("table.params").addClass("table");
     $("div.ingroups").wrapInner("<span class='text-nowrap'></span>");
     $("div.levels").css("margin", "0.5em");
-    $("div.levels > span").addClass("btn btn-default btn--e-large");
+    $("div.levels > span").addClass("btn btn-default btn--x-large");
     $("div.levels > span").css('margin-right', '0.25em');
 
     $("table.directory").addClass("table table-striped");
-    $("div.summary > a").addClass("btn btn--e-large");
+    $("div.summary > a").addClass("btn btn--x-large");
     $("table.fieldtable").addClass("table");
     $(".fragment").addClass("well");
     $(".memitem").addClass("panel panel-default");
@@ -44,7 +44,7 @@ $( document ).ready(function() {
     $("table.memberdecls").addClass("table");
     $("[class^=memitem]").addClass("active");
 
-    $("div.ah").addClass("btn btn--e-large");
+    $("div.ah").addClass("btn btn--x-large");
     $("span.mlabels").addClass("pull-right");
     $("table.mlabels").css("width", "100%")
     $("td.mlabels-right").addClass("pull-right");
