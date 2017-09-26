@@ -541,6 +541,8 @@ table.memberdecls {
 .memname {
         font-weight: bold;
         word-wrap: break-word;
+        display: block;
+        border: 0;
 }
 
 .memname td {
@@ -1511,6 +1513,9 @@ tr.heading h2 {
     border-bottom: 0;
   }
 
+  .memname {
+    width: 300px;
+  }
 }
 
 @media only screen and (min-width : 320px) {
