@@ -46,10 +46,10 @@ To get more details on the APIs, check out the API-Docs section:
 
 In this tutorial we set up a GRPC/python environment that may be used to build your own python client to interact with the SL APIs. 
 
-A go client binary is also included as part of the "lindt-objmodel" code itself at the following link: 
+A go client binary is also included as part of the "service-layer-objmodel" code itself at the following link: 
 (You will also find a quick-start go client code located there) 
 
-><https://github.com/{{ github_org }}/lindt-objmodel/tree/master/grpc/go/src/tutorial>
+><https://github.com/{{ github_org }}/service-layer-objmodel/tree/master/grpc/go/src/tutorial>
 {: .notice--info}
 
 
@@ -316,16 +316,16 @@ sudo pip install six grpcio=='0.13.1' py2-ipaddress=='3.4'
 {: .notice--success}  
  
  
-## Clone the lindt Code into Devbox  
+## Clone the Object Model Code into Devbox  
 
 By now, you should have your devbox up and running with the dependencies installed.  
-Clone the lindt code:  
+Clone the Object Model code:  
 
 **The following command must be run inside the devbox**
 {: .notice--info}
 
 ```
-git clone https://github.com/{{ github_org }}/lindt-objmodel.git ~/lindt-objmodel
+git clone https://github.com/{{ github_org }}/service-layer-objmodel.git ~/service-layer-objmodel
 ```  
 
 ## Bring up the Router  
@@ -446,7 +446,7 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 Now, run the python unit-tests to verify that everything is fine:  
  
 ```
-cd ~/lindt-objmodel/grpc/python/src/
+cd ~/service-layer-objmodel/grpc/python/src/
 python -m unittest -v tests.test_lindt  
 
 ```
