@@ -90,11 +90,11 @@ The Vagrantfile located under `vagrant-examples/iosxr-grpc-setup/` is shown in i
 
 {% capture "info-txt" %}
 
-*  **Notice the port forwarding enabled for the rtr node (IOS-XR) which corresponds to the grpc
+1.  **Notice the port forwarding enabled for the rtr node (IOS-XR) which corresponds to the grpc
 server port (57344) configured as part of the bootstrap script. This makes the port accessible 
    on the management port (nat network for Vagrant).**  
    
-*  **Further, eth1 of the devbox is connected to GigabitEthernet0/0/0/0 of the IOS-XR vagrant node,making the grpc server available on this path as well.**  
+2.  **Further, eth1 of the devbox is connected to GigabitEthernet0/0/0/0 of the IOS-XR vagrant node,making the grpc server available on this path as well.**  
 
 {% endcapture %}
 
