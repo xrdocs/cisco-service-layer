@@ -220,3 +220,10 @@ Cisco Service Layer Team:
   bio         : "A Team of coders and network engineers determined to build the best network operating system for Web-Scale Service Providers."
   avatar      : "cisco-service-layer-team.png"
   twitter     : "xrdocs"
+
+Reda Haddad:
+  name        : "Reda Haddad"
+  github      : "rnhaddad"
+  email       : "rehaddad@cisco.com"
+  bio         : "Principal Engineer, Cisco"
+  avatar      : "rehaddad.jpg"
