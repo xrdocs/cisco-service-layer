@@ -50,7 +50,7 @@ The basic steps are as follows:
 
 * The vagrant topology consists of four nodes as shown in the figure below:
 
-![vagrant-topology](images/openbmp_controller_vagrant.png)
+![vagrant-topology](https://github.com/akshshar/openbmp-controller/raw/master/images/openbmp_controller_vagrant.png)
 
 *  Clone the git repository:
 
