@@ -1534,6 +1534,11 @@ tr.heading h2 {
   .memname {
     width: 240px;
   }
+
+ .apititle span {
+  font-size: 80%;
+ }
+
 }
 
 @media only screen and (min-width : 320px) {
@@ -1543,6 +1548,8 @@ tr.heading h2 {
     font-size:0.75em;
     margin-top:0.5em;
  }
+
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -1553,6 +1560,11 @@ tr.heading h2 {
     font-size:0.75em;
     margin-top:0.5em;
   }
+
+ .apititle span {
+  font-size: 100%;
+ }
+
 }
 
 /* Small Devices, Tablets */
@@ -1563,6 +1575,10 @@ tr.heading h2 {
     font-size:0.75em;
     margin-top:1em;
   }
+
+ .apititle span {
+  font-size: 120%;
+ }
 }
 
 /* Medium Devices, Desktops */
