@@ -63,8 +63,8 @@ git clone https://github.com/akshshar/openbmp-controller.git
 
 ```
 cisco@host:~/$ cd openbmp-controller/vagrant
-cisco@host:~/openbmp-controller/vagrant$ git clone https://github.com/xrdocs-private/lindt-objmodel
-Cloning into 'lindt-objmodel'...
+cisco@host:~/openbmp-controller/vagrant$ git clone https://github.com/cisco-service-layer/service-layer-objmodel
+Cloning into 'service-layer-objmodel'...
 Username for 'https://github.com': akshshar
 Password for 'https://akshshar@github.com': 
 remote: Counting objects: 229, done.
