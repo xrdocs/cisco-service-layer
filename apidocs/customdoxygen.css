@@ -741,6 +741,7 @@ div.directory {
         width: 100%;
         text-align: right;
         font-size: 0.9em;
+        padding-right: 2em;
 }
 
 .directory .levels span {
@@ -1488,6 +1489,23 @@ tr.heading h2 {
   padding-right: 5em;
   font-size:0.75em;
   margin-top:2em;
+}
+
+#content_tabs {
+  font-size: 0.85em;
+  border-bottom:5px solid #eee; 
+}
+
+#apititle_div {
+  text-align:center;
+  margin-bottom: 40px;
+}
+
+.apititle span {
+  font-weight: 400;
+  font-size: 150%;
+  border-bottom:5px solid #eee;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width : 480px) {
