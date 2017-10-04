@@ -101,7 +101,7 @@ published: true
 
           <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
 
-            <a href="{{ base_path }}/tutorials/2017-09-26-use-case-openbmp-controller-using-service-layer-apis/"><img src="http://localhost:4000/images/openbmp-controller.png" alt="" /></a>
+            <a href="{{ base_path }}/tutorials/2017-09-26-use-case-openbmp-controller-using-service-layer-apis/"><img src="{{ base_path  }}/images/openbmp-controller.png" alt="" /></a>
 
           </div>
 
