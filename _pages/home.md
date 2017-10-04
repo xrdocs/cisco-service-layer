@@ -1,38 +1,97 @@
 ---
-layout: archive
+layout: homepage
 permalink: /
-author_profile: true
-author: "Cisco Service Layer Team"
+sitemap: true
+date: null
+excerpt: The application steers its packets through an ordered list of instructions and realizes end-to-end policy without creating any per-flow state in the network.
 
-feature_row1:
-  - image_path: techdoc.jpg
-    alt: "fully responsive"
-    title: "Technical Documentation"
-    excerpt: 'Detailed Technical Documentation on the Application Hosting Infrastructure of IOS-XR'
-    url: "/techdocs"
-    btn_label: "Check out the docs!"
-    btn_class: "btn--inverse"
-feature_row2:
-  - image_path: blog.png
-    alt: "fully responsive"
-    title: "Blogs"
-    excerpt: 'Periodic Blogs to keep you updated on the latest tools, applications, events and architectural changes'
-    url: "/blogs"
-    btn_label: "Check out the Blogs!"
-    btn_class: "btn--inverse"
-feature_row3:
-  - image_path: tutorial-board.jpg
-    alt: "fully responsive"
-    title: "Tutorials"
-    excerpt: 'Step by Step Tutorials to catch the gotchas!'
-    url: "/tutorials"
-    btn_label: "Check out the tutorials!"
-    btn_class: "btn--inverse"
+feature_row_benefits:
+  - title: Performance 
+    image_path: performance.png
+    excerpt: >-
+      Batch updates straight to RIB, Lable Switch Database (and more in the future) over gRPC without going through a Network state database results in much higher performance than equivalent Management APIs.
 
+  - title: API for the “Do-it-yourself" system
+    image_path: building_block.png  
+    excerpt: >-
+      Bring your own Protocol or Controller – Use the same APIs that the IOS-XR protocol stacks use internally, but over GRPC/thrift.
+
+  - title: Offload Low-level tasks to IOS-XR
+    image_path: offload.png
+    excerpt: >-
+      Users can focus on higher layer protocols and Controller logic while the IOS-XR infrastructure layer handles conflict resolution, transactional notifications, scalability and data plane abstraction.
+
+feature_row_docs:
+  - image_path: apidocs.png
+    title: Documentation auto-generated from Code 
+    excerpt: >-
+       Doxygen Based API Documentation auto-generated from the protobuf IDLs. Documentation always remains up to date with the API!
+    url: https://xrdocs.github.io/cisco-service-layer/apidocs
+    btn_label: Check out the APIdocs
+
+published: true
 ---
+{% include base_path %} 
 
-{% include base_path %}
+{% include feature_row id="feature_row_benefits" %}
+{% include feature_row id="feature_row_docs" type="right" %}
 
-{% include feature_row id="feature_row3" type="left" %}
+<div class="feature__wrapper">    
+<div class="feature__item--left">
+      <div class="archive__item" style="margin-left: 2em;">
 
-{% include feature_row id="feature_row2" type="left" %}
+          <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
+
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/yiN8fAxlfwg" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+
+        <div class="archive__item-body">
+
+            <h2 class="archive__item-title"><a href="https://www.youtube.com/watch?v=yiN8fAxlfwg"></a>Techfield Day 15 @Cisco Systems</h2>
+
+
+
+            <div class="archive__item-excerpt" style="font-size: 0.65em;">
+            <p>Akshat Sharma gives a lowdown on the latest advancements in Cisco IOS-XR programmability as Cisco enables end-users to take advantange of a high performance channel to directly program the IOS-XR infrastructure layer, called the Service Layer, over gRPC. The talk focuses on the architectural tenets of Service Layer APIs and ends with a demo of an OpenBMP controller implemented using the Service Layer APIs.</p>
+            </div>
+
+
+
+          <p><a href="https://www.youtube.com/watch?v=yiN8fAxlfwg" class="btn btn--large">Watch on Youtube</a></p>
+
+        </div>
+      </div>
+</div>
+</div>
+
+<div class="feature__wrapper">
+    <div class="feature__item--right">
+      <div class="archive__item">
+
+          <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
+
+            <a href="{{ base_path }}/tutorials/2017-09-26-use-case-openbmp-controller-using-service-layer-apis/"><img src="http://localhost:4000/images/openbmp-controller.png" alt="" /></a>
+
+          </div>
+
+
+        <div class="archive__item-body">
+
+            <h2 class="archive__item-title"><a href="{{ base_path }}/tutorials/2017-09-26-use-case-openbmp-controller-using-service-layer-apis/">OpenBMP Controller using Service Layer APIs</a></h2>
+
+
+
+            <div class="archive__item-excerpt" style="font-size: 0.65em;">
+              <p>Selective Route download for BGP is a use case that most CDN network operators have taken a stab at. Being able to manipulate the RIB directly with custom route policies to optimize TCAM usage at a CDN PoP router is made much simpler through a high performance Model-Driven API directly into the XR RIB as part of the Cisco Service Layer. <b>Akshat Sharma</b> explains.</p>
+            </div>
+
+
+
+          <p><a href="{{ base_path }}/tutorials/2017-09-26-use-case-openbmp-controller-using-service-layer-apis/" class="btn ">Take a Look</a></p>
+
+        </div>
+      </div>
+    </div>
+
+</div>

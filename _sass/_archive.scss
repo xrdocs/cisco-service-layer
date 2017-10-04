@@ -180,7 +180,7 @@
 
 .feature__wrapper {
   @include clearfix();
-  width: 80%;
+  width: 100%;
   margin-bottom: 2em;
   border-bottom: 1px solid $border-color;
   margin: 2em auto;
@@ -204,14 +204,14 @@
   }
 
   .archive__item-teaser img {
-      max-height: 110px;
+      max-height: 150px;
       width: auto;
   }
 
   &--left {
     @include full();
     font-size: 1.2rem;
-
+    
     .archive__item-teaser {
       margin-bottom: 2em;
     }
@@ -227,6 +227,7 @@
         @include suffix(1 of 12);
       }
     }
+    width: 90%;
   }
 
   &--right {
@@ -250,6 +251,7 @@
         @include suffix(1 of 12);
       }
     }
+    width: 90%;
   }
 
   &--center {
