@@ -3,7 +3,7 @@ layout: homepage
 permalink: /
 sitemap: true
 date: null
-excerpt: The application steers its packets through an ordered list of instructions and realizes end-to-end policy without creating any per-flow state in the network.
+excerpt: High performance access to the IOS-XR infrastructure Layer including RIB, Label Switched Database and more. Bring your own protocol or controller and operate your network your way!
 
 feature_row_benefits:
   - title: Performance 
