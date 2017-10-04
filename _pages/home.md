@@ -22,7 +22,7 @@ feature_row_benefits:
       Users can focus on higher layer protocols and Controller logic while the IOS-XR infrastructure layer handles conflict resolution, transactional notifications, scalability and data plane abstraction.
 
 feature_row_docs:
-  - image_path: apidocs.png
+  - image_path: apidocs.jpg
     title: Documentation auto-generated from Code 
     excerpt: >-
        Doxygen Based API Documentation auto-generated from the protobuf IDLs. Documentation always remains up to date with the API!
