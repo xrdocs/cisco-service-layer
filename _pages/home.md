@@ -21,20 +21,50 @@ feature_row_benefits:
     excerpt: >-
       Users can focus on higher layer protocols and Controller logic while the IOS-XR infrastructure layer handles conflict resolution, transactional notifications, scalability and data plane abstraction.
 
-feature_row_docs:
-  - image_path: apidocs.jpg
-    title: Documentation auto-generated from Code 
-    excerpt: >-
-       Doxygen Based API Documentation auto-generated from the protobuf IDLs. Documentation always remains up to date with the API!
-    url: https://xrdocs.github.io/cisco-service-layer/apidocs
-    btn_label: Check out the APIdocs
-
 published: true
 ---
 {% include base_path %} 
 
 {% include feature_row id="feature_row_benefits" %}
-{% include feature_row id="feature_row_docs" type="right" %}
+
+<div class="feature__wrapper">
+
+
+
+
+
+    <div class="feature__item--right">
+      <div class="archive__item">
+
+          <div class="archive__item-teaser center" style="max-height: 300px; max-width: 300px;display: block; margin-left: auto; margin-right: auto;">
+
+            <a href="{{ base_path }}/apidocs"><img src="{{ base_path }}/images/apidocs.png" alt="" /></a>
+
+          </div>
+
+
+        <div class="archive__item-body">
+
+            <h2 class="archive__item-title"><a href="{{ base_path }}/apidocs">Documentation auto-generated from Code</a></h2>
+
+
+
+            <div class="archive__item-excerpt" style="font-size: 0.65em;">
+              <p>Doxygen Based API Documentation auto-generated from the protobuf IDLs. Documentation always remains up to date with the API!</p>
+
+            </div>
+
+
+
+          <p><a href="{{ base_path }}/apidocs" class="btn ">Check out the APIdocs</a></p>
+
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
 
 <div class="feature__wrapper">    
 <div class="feature__item--left">
