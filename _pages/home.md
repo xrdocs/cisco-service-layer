@@ -14,7 +14,7 @@ feature_row_benefits:
   - title: API for the “Do-it-yourself" system
     image_path: building_block.png  
     excerpt: >-
-      Bring your own Protocol or Controller – Use the same APIs that the IOS-XR protocol stacks use internally, but over GRPC/thrift.
+      Bring your own Protocol or Controller – Use the same APIs that the IOS-XR protocol stacks use internally, but over GRPC.
 
   - title: Offload Low-level tasks to IOS-XR
     image_path: offload.png
