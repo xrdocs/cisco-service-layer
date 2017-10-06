@@ -3,7 +3,7 @@ layout: homepage
 permalink: /
 sitemap: true
 date: null
-excerpt: High performance access to the IOS-XR infrastructure Layer including RIB, Label Switched Database and more. Bring your own protocol or controller and operate your network your way!
+excerpt: High performance access to the IOS-XR infrastructure Layer including RIB, Label Switch Database and more. Bring your own protocol or controller and operate your network your way!
 
 feature_row_benefits:
   - title: Performance 
