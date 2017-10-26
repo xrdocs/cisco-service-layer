@@ -21,7 +21,7 @@ If you've haven't played around with the vagrant IOS-XR box yet, now might be a 
 
 * [Generate API Key]({{ site.url }}/getting-started/steps-download-iosxr-vagrant): Generate an API Key using your CCO (cisco.com) ID to download the Vagrant box for IOS-XR with SL-API support.
 
-* [Vagrant IOS-XR Quick Start]({{ site.url }}/application-hosting/tutorials/vagrant-iosxr-quick-start/): Use the downloaded box and learn how to boot it on your laptop and play with a couple of sample topologies. 
+* [Vagrant IOS-XR Quick Start]({{ site.url }}/application-hosting/tutorials/iosxr-vagrant-quickstart): Use the downloaded box and learn how to boot it on your laptop and play with a couple of sample topologies. 
 
 * [Bootstrap XR Configuration with Vagrant]({{ site.url }}/application-hosting/tutorials/bootstrap-xr-configuration-with-vagrant/) **(optional)**: Learn how a simple shell provisioner can be used to apply a configuration on boot with a Vagrant IOS-XR box.
 
