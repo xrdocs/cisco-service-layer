@@ -23,7 +23,7 @@ If you've haven't played around with the vagrant IOS-XR box yet, now might be a 
 
 * [Vagrant IOS-XR Quick Start]({{ site.url }}/application-hosting/tutorials/iosxr-vagrant-quickstart): Use the downloaded box and learn how to boot it on your laptop and play with a couple of sample topologies. 
 
-* [Bootstrap XR Configuration with Vagrant]({{ site.url }}/application-hosting/tutorials/bootstrap-xr-configuration-with-vagrant/) **(optional)**: Learn how a simple shell provisioner can be used to apply a configuration on boot with a Vagrant IOS-XR box.
+* [Bootstrap XR Configuration with Vagrant]({{ site.url }}/application-hosting/tutorials/iosxr-vagrant-bootstrap-config) **(optional)**: Learn how a simple shell provisioner can be used to apply a configuration on boot with a Vagrant IOS-XR box.
 
 Once you have everything set up, you should be able to see the IOS-XRv vagrant box in the `vagrant box list` command:  
 
