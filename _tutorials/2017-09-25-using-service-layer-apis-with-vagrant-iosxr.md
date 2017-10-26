@@ -19,11 +19,11 @@ tags:
   
 If you've haven't played around with the vagrant IOS-XR box yet, now might be a good time to take a look at the following tutorials and get your environment set up:
 
-* [Generate API Key]({{ base_path }}/tutorials/generate-api-key-to-access-ios-xr-vagrant-box/): Generate an API Key using your CCO (cisco.com) ID to download the Vagrant box for IOS-XR with SL-API support.
+* [Generate API Key]({{ site.url }}/application-hosting/tutorials/generate-api-key-to-access-ios-xr-vagrant-box/): Generate an API Key using your CCO (cisco.com) ID to download the Vagrant box for IOS-XR with SL-API support.
 
-* [Vagrant IOS-XR Quick Start]({{ base_path }}/tutorials/vagrant-iosxr-quick-start/): Use the downloaded box and learn how to boot it on your laptop and play with a couple of sample topologies. 
+* [Vagrant IOS-XR Quick Start]({{ site.url }}/application-hosting/tutorials/vagrant-iosxr-quick-start/): Use the downloaded box and learn how to boot it on your laptop and play with a couple of sample topologies. 
 
-* [Bootstrap XR Configuration with Vagrant]({{ base_path }}/tutorials/bootstrap-xr-configuration-with-vagrant/) **(optional)**: Learn how a simple shell provisioner can be used to apply a configuration on boot with a Vagrant IOS-XR box.
+* [Bootstrap XR Configuration with Vagrant]({{ site.url }}/application-hosting/tutorials/bootstrap-xr-configuration-with-vagrant/) **(optional)**: Learn how a simple shell provisioner can be used to apply a configuration on boot with a Vagrant IOS-XR box.
 
 Once you have everything set up, you should be able to see the IOS-XRv vagrant box in the `vagrant box list` command:  
 
