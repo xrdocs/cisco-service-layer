@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "IOS XR Documentation @xrdocs"
+title                    : "Cisco Service Layer IOS XR Documentation @xrdocs"
 title_short              : "Cisco Service Layer"
 title_separator          : "|"
 name                     : &name "Cisco Systems Inc"
