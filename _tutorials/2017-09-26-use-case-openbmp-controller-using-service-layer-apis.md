@@ -40,8 +40,8 @@ The basic steps are as follows:
 **Vagrant:**  
 
 *  Have Vagrant and Virtualbox installed
-    <div class="notice--warning">
-    <blockquote>
+   
+    <blockquote class="notice--warning >
     <p>
       To be able to work with Ubuntu 16.04 box (used for the Quagga instance) in the Vagrantfile,       the recommended versions for Vagrant and Virtualbox are:
     </p>    
@@ -60,7 +60,7 @@ The basic steps are as follows:
     <br/>
     <p>The issue is described here:  &lt;https://github.com/hashicorp/vagrant/issues/7155&gt;</p>
     </blockquote>
-    </div>
+    
 
 *  Make sure you have access to an SL-API enabled IOS-XR vagrant box. If you don't have it get access to the IOS-XR vagrant box 
    (version = 6.1.2+) by following this tutorial:  [IOS-XR Vagrant Quickstart](https://xrdocs.github.io/application-hosting/tutorials/iosxr-vagrant-quickstart)
