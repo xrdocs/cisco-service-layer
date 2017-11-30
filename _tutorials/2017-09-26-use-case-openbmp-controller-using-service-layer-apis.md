@@ -59,7 +59,7 @@ The basic steps are as follows:
     <br/>
     <br/>
     <p>The issue is described here:  &lt;https://github.com/hashicorp/vagrant/issues/7155&gt;</p>
-    </blockquote>
+    </blockquote>  
     
 
 *  Make sure you have access to an SL-API enabled IOS-XR vagrant box. If you don't have it get access to the IOS-XR vagrant box 
