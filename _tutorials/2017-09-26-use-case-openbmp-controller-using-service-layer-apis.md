@@ -40,6 +40,20 @@ The basic steps are as follows:
 **Vagrant:**  
 
 *  Have Vagrant and Virtualbox installed
+    >To be able to work with Ubuntu 16.04 box (used for the Quagga instance) in the Vagrantfile, the recommended versions for Vagrant and Virtualbox are:
+    >    
+    ```
+    cisco@host:~$ VBoxManage -v
+    5.1.22r115126
+    cisco@host:~$ vagrant -v
+    Vagrant 1.9.7
+    cisco@host:~$ 
+    ```
+    >      
+    >    
+    >The issue is described here:  https://github.com/hashicorp/vagrant/issues/7155 
+
+
 *  Make sure you have access to an SL-API enabled IOS-XR vagrant box. If you don't have it get access to the IOS-XR vagrant box 
    (version = 6.1.2+) by following this tutorial:  [IOS-XR Vagrant Quickstart](https://xrdocs.github.io/application-hosting/tutorials/iosxr-vagrant-quickstart)
 
@@ -370,6 +384,3 @@ RP/0/RP0/CPU0:rtr1#
 
 
 With this setup running, play around by changing routes being injected by rtr2 to see how the application routes follow the events. Further, try to vary routepolicy.py and pathselection.py files to see how easily the incoming routes can be manipulated based on BGP path attributes.
-
-
- 
