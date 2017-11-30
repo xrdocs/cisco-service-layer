@@ -41,7 +41,7 @@ The basic steps are as follows:
 
 *  Have Vagrant and Virtualbox installed
    
-    <blockquote class="notice--warning">
+    <blockquote class="notice--warning" style="font-size: 0.9em !important;">
     <p>
       To be able to work with Ubuntu 16.04 box (used for the Quagga instance) in the Vagrantfile,       the recommended versions for Vagrant and Virtualbox are:
     </p>    
