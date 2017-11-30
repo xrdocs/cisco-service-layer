@@ -58,7 +58,7 @@ The basic steps are as follows:
     </div>
     <br/>
     <br/>
-    <p>The issue is described here:  &lt;https://github.com/hashicorp/vagrant/issues/7155&gt;</p>
+    <p>The issue is described here:  <a href=" ">https://github.com/hashicorp/vagrant/issues/7155</a></p>
     </blockquote>  
     
 
