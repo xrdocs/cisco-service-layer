@@ -276,10 +276,12 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 Now that we understand how Open/R operates, let's codify the requirements for it run on a platform running Linux:  
 
   *  **API to get and set Routes**: On Linux, this API is Netlink, but it can be replaced with any 
-     viable API that the networking stack on the platform offers.
+     viable API that the networking stack on the platform offers.  
+     
        In September 2017, we introduced Service Layer APIs - a highly performant and model driven 
        API into the network infrastructure layer (RIB, label switch database, interface and BFD 
        events) over gRPC.
+       {: notice--info}
   
   *  **Ability to host applications**: The Network OS must have the capability to host Linux 
      applications either natively or as a container (docker/lxc).
