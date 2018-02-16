@@ -31,15 +31,15 @@ excerpt: >-
 ## IOS-XR's Journey to the West (Web)
 
 
-
-
 As part of this blog series, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since the latter half of 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
   
 <img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">   
 
 The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called "Journey to the west" - a 16th Century Chinese novel by Wu Cheng-en.  
 
-It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. I am oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism and continues to be primary 
+It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. I am oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
+
+I liken the changes that have happened to IOS-XR over the last few years to a similar creative reinterpretation of the core concepts of traditional networking with operations focused
 
 
 
