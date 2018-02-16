@@ -275,13 +275,16 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 Now that we understand how Open/R operates, let's note down the basic requirements for it to work on a platform running Linux:  
 
-  *  **API to Program and Get Routes**:
+  *  **API to get and set Routes**:
   
-  *  **Dynamically learnt IPv6 Neighbors in the Kernel**
+  *  **Ability to host applications**
   
   *  **Ability to exchange Hellos and Peering Messages**
   
-  *  **Enough resources (Memory, Disk, CPU) to host 
+  *  **Dynamically learn and update IPv6 Neighbors in the Kernel**
+  
+
+
 
 
 
