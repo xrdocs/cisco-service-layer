@@ -33,7 +33,7 @@ excerpt: >-
 
 As part of this blog series, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
   
-<img href="/cisco-service-layer/images/journey_to_the_west.png" src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">   
+<a href="/cisco-service-layer/images/journey_to_the_west.png"><img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300"></a> 
 
 The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
 
@@ -41,7 +41,7 @@ It chronicles the story of Xuanzang in the 6th Century AD and his original journ
 
 
 
-<img href="/cisco-service-layer/images/xr-journey-to-the-web.png" src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300">    
+<a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300"></a>
 
 I liken the changes that have happened to IOS-XR over the last few years to a similar creative reinterpretation of the core concepts of traditional networking. As the "Web" players (Google, Facebook, Apple, Amazon etc.) began to showcase how better efficiencies may be achieved in network operations through **automation at every stage of deployment*, and through the ability to **"run with scissors"** - it became clear that the traditional core of network stacks would have to evolve to meet the operational demands of the new age networks.  
 
