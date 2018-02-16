@@ -483,7 +483,7 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 secondss ago        Up 24 seconds                             openr
 ```
 
-Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
+Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr_rtr1.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
 
 Once the docker instance is up, we do the same thing on rtr2:
 
@@ -495,6 +495,8 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 684ad446ccef        11.11.11.2:5000/openr   "bash -l"           8 minutes ago       Up 8 minutes                            openr
 [rtr2:~]$ 
 ```
+
+On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages 1'increment_ipv4_prefix.py`
 
 
 
