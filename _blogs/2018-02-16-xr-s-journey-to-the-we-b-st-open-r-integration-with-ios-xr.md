@@ -466,6 +466,25 @@ REPOSITORY              TAG                 IMAGE ID            CREATED         
 [rtr1:~]$ 
 ```
 
+Now, simply spin up the docker image using the parameters shown below:
+
+```
+
+RP/0/RP0/CPU0:rtr1#
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 22:46:52.944 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker run -itd  --name openr --cap-add=SYS_ADMIN --cap-add=NET_ADMIN  -v /var/run/netns:/var/run/netns -v /misc/app_host:/root -v /misc/app_host/hosts_{{ inventory_hostname }}:/etc/hosts --hostname {{ inventory_hostname }} 11.11.11.2:5000/openr bash
+684ad446ccef5b0f3d04bfa4705cab2117fc60f266cf0536476eb9506eb3050a
+[rtr1:~]$ 
+[rtr1:~]$ 
+[rtr1:~]$ docker ps
+CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
+b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 hours ago        Up 24 hours                             openr
+
+```
+
+
 
 
 
