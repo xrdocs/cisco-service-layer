@@ -114,7 +114,7 @@ If you'd like to try a back-to-back setup with two linux instances on your lapto
 ><https://github.com/akshshar/openr-vagrant>
 
 We will do a performance comparison between IOS-XR as a platform for Open/R (using service layer APIs) vs linux (using Netlink) later on.
-{: notice--info}
+{: .notice--info}
 
 The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rtr2 and will setup the required "run" script for openr at `/usr/sbin/run_openr.sh` one each node.
 
