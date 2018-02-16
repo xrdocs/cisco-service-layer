@@ -480,10 +480,10 @@ Fri Feb 16 22:46:52.944 UTC
 [rtr1:~]$ 
 [rtr1:~]$ docker ps
 CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
-b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 hours ago        Up 24 hours                             openr
-
+b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 secondss ago        Up 24 seconds                             openr
 ```
 
+Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
 
 
 
