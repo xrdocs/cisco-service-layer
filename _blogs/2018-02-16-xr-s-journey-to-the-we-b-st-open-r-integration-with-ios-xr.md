@@ -152,7 +152,8 @@ The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect t
 
 Once the devices are up, issue a `vagrant ssh rtr1` and `vagrant ssh rtr2` in separate terminals and start open/R (The run scripts added to each node will automatically detect the interfaces) and start discovering each other).  
 
-Further, for rtr2, I've added a scaling python script that allows you to add up to 8000 routes by manipulating the `batch_size` and `batch_num` values in `<git repo directory>/scripts/increment_ipv4_prefix.py`
+Further, for rtr2, I've added a scaling python script that allows you to add up to 8000 routes by manipulating the `batch_size` and `batch_num` values in `<git repo directory>/scripts/increment_ipv4_prefix.py` before running /usr/sbin/run_openr.sh 
+{: .notice--info}
 
 ```
 
