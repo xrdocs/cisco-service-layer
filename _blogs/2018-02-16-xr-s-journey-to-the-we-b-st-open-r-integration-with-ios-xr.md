@@ -117,6 +117,31 @@ The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rt
 
 The switch in the middle is a nice-to-have. It allows you to capture packets as the two nodes rtr1 and rtr2 exchange hellos and peering messages.
 
+Clone the above git repo and issue a `vagrant up` inside the directory:
+
+If you're behind a proxy, just populate the `<git repo directory>/scripts/http_proxy` `<git repo directory>/scripts/https_proxy` files before issuing a `vagrant up`.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@host:~$ <mark> git clone https://github.com/akshshar/openr-vagrant </mark>
+Cloning into 'openr-vagrant'...
+remote: Counting objects: 31, done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 31 (delta 14), reused 26 (delta 12), pack-reused 0
+Unpacking objects: 100% (31/31), done.
+Checking connectivity... done.
+cisco@host:~$ <mark>cd openr-vagrant/</mark>
+cisco@host:~$ <mark>vagrant up</mark>
+Bringing machine 'rtr1' up with 'virtualbox' provider...
+Bringing machine 'switch' up with 'virtualbox' provider...
+Bringing machine 'rtr2' up with 'virtualbox' provider...
+
+
+
+</code>
+</pre>
+</div>
 
 ### Capturing Open/R Hellos and Peering messages
 
