@@ -32,7 +32,7 @@ excerpt: >-
 
 As part of a series of blogs showcasing the
 
-![Chines folklore - Journey to the west]({{site.baseurl}}/images/journey_to_the_west.png)
+![Chinese folklore - Journey to the west]({{site.baseurl}}/images/journey_to_the_west.png)
 {: .align-right}
 
 
