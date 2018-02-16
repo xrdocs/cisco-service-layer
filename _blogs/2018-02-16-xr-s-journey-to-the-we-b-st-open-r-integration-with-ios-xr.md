@@ -404,6 +404,8 @@ The touch points are described below:
     `docker build --squash -it opern .`
     This is required to prevent the size of the docker image from spiraling out of control.
     {: .notice--warning}
+    
+    
   
 
 
