@@ -33,7 +33,7 @@ excerpt: >-
 
 
 
-As part of this blog series, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since the latter half of 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve.    
+As part of this blog series, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since the latter half of 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
   
 <img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">   
 
