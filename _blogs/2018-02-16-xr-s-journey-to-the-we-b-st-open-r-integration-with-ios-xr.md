@@ -300,7 +300,7 @@ Now that we understand how Open/R operates, let's codify the requirements for it
      
        Packet/IO capabilities have existed in IOS-XR since 6.0.0+, allowing applications to bind 
        to XR interfaces in the kernel, open up the TCP/UDP ports, transmit/receive TCP/UDP traffic 
-       along with exception traffic such as ping, IPv6 multicast etc.
+       along with exception traffic such as icmp, icmpv6, IPv6 multicast etc.
        {: .notice--info}
   
 
