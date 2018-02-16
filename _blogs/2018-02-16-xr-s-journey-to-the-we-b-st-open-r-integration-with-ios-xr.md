@@ -36,6 +36,13 @@ Much of the documentation for open/R can be found in the docs directory in the g
 
 ><https://github.com/facebook/openr/tree/master/openr/docs>
 
+It is laid out rather well and describes all the components of the code individually - their purpose, their internal interaction, et al.
+
+At a higher level, the components look something like this:
+
+![openr_high_level]({{site.baseurl}}/images/openr_high_level.png)
+
+
 
 
 
