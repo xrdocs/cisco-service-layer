@@ -201,12 +201,26 @@ Open up the pcap file in wireshark and you should see the following messages sho
   
   ![Openr/R hello messages]({{site.baseurl}}/images/openr_hellos.png)
 
-  *  **Adjacency Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages are sent out to create an adjacency with the neighbor on an interface. One such message is shown below:
+  *  **Peering Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages are sent out to create an adjacency with the neighbor on an interface. One such message is shown below:
   
   ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
 
 
+### Open/R breeze CLI
 
+Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
+
+```
+vagrant@rtr1:~$ breeze kvstore adj
+
+> rtr1's adjacencies, version: 12, Node Label: 42122, Overloaded?: False
+Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
+vagrant     enp0s9             enp0s9                     7         1        50004  0.0.0.0       fe80::a00:27ff:fed1:ba15  0m2s
+vagrant     enp0s8             enp0s8                     8         1        50003  0.0.0.0       fe80::a00:27ff:fe94:3015  0m4s
+vagrant     enp0s10            enp0s10                    7         1        50005  0.0.0.0       fe80::a00:27ff:fe36:aec9  0m6s
+
+
+```
 
 
 
