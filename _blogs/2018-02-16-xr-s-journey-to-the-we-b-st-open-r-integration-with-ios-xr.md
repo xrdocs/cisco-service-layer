@@ -37,7 +37,7 @@ As part of this blog series, I intend to candidly present the journey that we ha
 
 The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
 
-It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Indian Buddhism to a primarily Confucian China. I may be oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
+It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. I may be oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
 
 
 
