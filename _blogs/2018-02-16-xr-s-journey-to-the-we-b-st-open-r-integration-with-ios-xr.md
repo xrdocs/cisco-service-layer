@@ -123,6 +123,7 @@ The switch in the middle is a nice-to-have. It allows you to capture packets as 
 Clone the above git repo and issue a `vagrant up` inside the directory:
 
 If you're behind a proxy, just populate the `<git repo directory>/scripts/http_proxy` `<git repo directory>/scripts/https_proxy` files before issuing a `vagrant up`.
+{: .notice--warning} 
 
 <div class="highlighter-rouge">
 <pre class="highlight">
