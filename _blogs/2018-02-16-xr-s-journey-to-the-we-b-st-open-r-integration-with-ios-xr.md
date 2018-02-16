@@ -271,7 +271,7 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 ## Integrating Open/R with IOS-XR
 
-### Requirements
+### Matching Requirements to XR capabilities:
 
 Now that we understand how Open/R operates, let's codify the requirements for it work on a platform running Linux:  
 
@@ -324,6 +324,12 @@ However, since XR itself has no issues in handling the IPv6 neighbors, we utiliz
      kept dynamic and in sync with network events like link flap or disabling IPv6 on interface.
 
   
+  
+  
+### Current Solution
+
+The current solution is showcased below:
+![Open/R integration with IOS-XR- current design]({{site.baseurl}}/images/openr_xr_integration_current.png)
 
 
 
