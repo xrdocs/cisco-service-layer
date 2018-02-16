@@ -201,14 +201,14 @@ Open up the pcap file in wireshark and you should see the following messages sho
      used to discover neighbors and learn their link local IPv6 addresses.  
      
      ![Openr/R hello messages]({{site.baseurl}}/images/openr_hellos.png)
-     {: .notice}
+     {: .notice--info}
 
   *  **Peering Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages 
      are sent out to create an adjacency with the neighbor on an interface. One such message is 
      shown below:  
      
      ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
-     {: .notice}
+     {: .notice--info}
 
 ### Open/R breeze CLI
 
@@ -270,6 +270,21 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 
 ## Integrating Open/R with IOS-XR
+
+### Requirements
+
+Now that we understand how Open/R operates, let's note down the basic requirements for it to work on a platform running Linux:  
+
+  *  **API to Program and Get Routes**:
+  
+  *  **Dynamically learnt IPv6 Neighbors in the Kernel**
+  
+  *  **Ability to exchange Hellos and Peering Messages**
+  
+  *  **Enough resources (Memory, Disk, CPU) to host 
+
+
+
 
 
 
