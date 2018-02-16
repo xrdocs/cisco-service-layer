@@ -354,11 +354,46 @@ The touch points are described below:
       It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and the netlink hooks for IPv6 neighbors with IOS-XR Telemetry data for IPv6 neighbors. The goal will be to remove dependencies on libnl and determine if any efficiencies are gained as a result. For now, there is no immediate need to replace the NetlinkSystemHandler functionality.
       {: .notice--info}
   
-  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl): The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling, making it easy to implement the IosxrslFibHandler.cpp code explained above.
+  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl): The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling for IOS-XR RIB (Routing information Base), making it easy to implement the IosxrslFibHandler.cpp code explained above.
   
   4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp): Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
   
+  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
+  
+  ```
+  FROM ubuntu:16.04 
 
+
+RUN apt-get update && apt-get install -y autoconf automake libtool curl make g++ unzip git python-pip python-dev && git clone https://github.com/google/protobuf.git ~/protobuf && \
+            cd ~/protobuf && \
+            git checkout 2761122b810fe8861004ae785cc3ab39f384d342 && \
+            ./autogen.sh && \
+            ./configure && \
+            make && \
+            make install &&\
+            ldconfig && make clean && cd ~/ && rm -r ~/protobuf 
+
+RUN git clone https://github.com/grpc/grpc.git ~/grpc && cd ~/grpc && \
+            git checkout 80893242c1ee929d19e6bec5dc19a1515cd8dd81 && \
+            git submodule update --init && \
+            make && \
+            make install && make clean && cd ~/ && rm -r ~/grpc
+
+RUN apt-get install -y pkg-config && git clone https://wwwin-github.cisco.com/akshshar/service-layer-objmodel ~/service-layer-objmodel && \
+           cd ~/service-layer-objmodel/grpc/cpp && \
+           ./build_libiosxrsl.sh &&  \
+           cd ~/ && rm -r ~/service-layer-objmodel
+
+RUN git clone https://github.com/akshshar/openr.git /root/openr && cd /root/openr/ && git checkout openr20171212 && cd /root/openr/build && ./build_openr_dependencies.sh
+
+RUN cd /root/openr/build && ./build_openr.sh && ./remake_glog.sh && cd /root/ && rm -r /root/openr
+
+COPY run_openr.sh /usr/sbin/run_openr.sh
+
+CMD /usr/sbin/run_openr.sh >/var/log/openr.log 2>&1
+  
+  
+  ```
 
 
 
