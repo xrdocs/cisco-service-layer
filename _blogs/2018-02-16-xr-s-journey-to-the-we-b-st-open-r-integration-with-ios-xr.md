@@ -147,7 +147,7 @@ Bringing machine 'rtr2' up with 'virtualbox' provider...
 </pre>
 </div>
 
-The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect this bringup to take a long time. You could parallelize the effort by setting auto_provision to false in the Vagrantfile and then running `vagrant provision rtr1` and `vagrant provision rtr2` in two separate terminals simultaneously.
+The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect this bringup to take a long time. You could parallelize the effort by setting auto_provision to false in the Vagrantfile for rtr1 and rtr2 and then running `vagrant provision rtr1` and `vagrant provision rtr2` in two separate terminals simultaneously.
 {: .notice--warning}  
 
 Once the devices are up, issue a `vagrant ssh rtr1` and `vagrant ssh rtr2` in separate terminals and start open/R (The run scripts added to each node will automatically detect the interfaces) and start discovering each other).  
