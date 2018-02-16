@@ -89,7 +89,18 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-  
+### Where do it start?
+
+The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
+
+This netlink platform integration enables Open/R to run as a routing stack on top of a Linux kernel as the network stack. You can check out the relevant pieces of code here:  
+
+>The "Platform" module code that runs a thrift Server and receives route batches from the Fib module running a thrift client
+><https://github.com/facebook/openr/tree/master/openr/platform>
+
+This consists of two important abstractions:
+  *  **NetlinkFibhandler**:  implements the FibService interface described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle the incoming route batches from the Fib module
+  *  **NetlinkSystemHandler**: implements the SystemService interface again described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to detect interfaces and IPv6 neighbors in the kernel that may be used to send hellos and peering messages to neighbors.
 
 
 
