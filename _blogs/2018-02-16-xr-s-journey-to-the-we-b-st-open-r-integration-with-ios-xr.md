@@ -411,7 +411,33 @@ The touch points are described below:
 IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique described below:
 
 In the demo, I will utilize two NCS5501s connected to each other over a HundredGig interface.
-Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>
+The basic configuration on the router is shown below:
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+
+interface HundredGigE0/0/1/0
+ ipv4 address 10.1.1.10 255.255.255.0
+ <mark>ipv6 nd unicast-ra</mark>
+ ipv6 enable
+!
+!
+!
+grpc
+ <mark>port 57777</mark>
+ service-layer
+!
+
+
+</code>
+</pre>
+</div>
+
+Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
+
+Once the docker image is pulled in, you
 
 
 
