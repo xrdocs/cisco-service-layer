@@ -32,7 +32,8 @@ excerpt: >-
 
 As part of a series of blogs showcasing the
 
-![IOS-XR journey to the web]({{site.baseurl}}/images/ios-xr-journey-to-the-web.png){: .align-right}
+![Chines folklore - Journey to the west]({{site.baseurl}}/images/journey_to_the_west.png)
+{: .align-right}
 
 
 
