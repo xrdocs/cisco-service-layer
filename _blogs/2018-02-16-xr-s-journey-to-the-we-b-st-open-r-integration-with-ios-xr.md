@@ -351,7 +351,8 @@ The original open/R code had to be extended in the following ways:
       <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle
       incoming route batches from the Fib module.
   
-  
+      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and the netlink hooks for IPv6 neighbors with IOS-XR Telemetry data for IPv6 neighbors. The goal will be remove dependencies on libnl and determine if any efficiencies are gained in this regard.
+      {: .notice--info}
   
   
   
