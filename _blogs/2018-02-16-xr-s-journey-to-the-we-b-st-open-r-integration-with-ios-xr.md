@@ -61,7 +61,7 @@ This blog series will focus on how a combination of the above enhancements shoul
 
 ## Integrating Open/R with IOS-XR
 
-In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving the platform hooks with IOS-XR. 
+In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and [application hosting capabilities](https://xrdocs.github.io/application-hosting/) can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving the platform hooks with IOS-XR. 
 
 ### What is Open/R?
 
