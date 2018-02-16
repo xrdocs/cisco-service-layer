@@ -277,15 +277,18 @@ Now that we understand how Open/R operates, let's codify the requirements for it
 
   *  **API to get and set Routes**: On Linux, this API is Netlink, but it can be replaced with any 
      viable API that the networking stack on the platform offers.
+       In September 2017, we introduced Service Layer APIs - a highly performant and model driven 
+       API into the network infrastructure layer (RIB, label switch database, interface and BFD 
+       events) over gRPC.
   
   *  **Ability to host applications**: The Network OS must have the capability to host Linux 
      applications either natively or as a container (docker/lxc).
   
   *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unomodified 
      on a platform and send its UDP hellos to port 6666 and ff02::1 and send/receive TCP peering 
-     messages using link local IPv6 addresses.
+     messages using link local IPv6 addresses of neighbors.
   
-  *  **Dynamically learn and update IPv6 Neighbors in the Kernel**: Typically 
+
   
 
 
