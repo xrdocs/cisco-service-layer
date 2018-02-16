@@ -52,7 +52,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
   *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>)
 
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
-In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with a powerful and exhaustive API at the network infrastructure layer.
+In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs providing the platform integration with IOS-XR.
   
   
 ## IOS-XR's Journey to the West (Web)
