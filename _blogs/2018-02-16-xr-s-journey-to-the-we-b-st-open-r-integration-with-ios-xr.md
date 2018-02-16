@@ -459,9 +459,10 @@ Once the docker image is pulled successfully, you should see:
 RP/0/RP0/CPU0:rtr1#bash
 Fri Feb 16 22:46:52.944 UTC
 [rtr1:~]$ 
-[rtr1:~]$ docker ps
-CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
-b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 hours ago        Up 24 hours                             openr
+[rtr1:~]$ [rtr1:~]$ docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+11.11.11.2:5000/openr   latest              fdddb43d9600        33 hours ago        1.829 GB
+[rtr1:~]$ 
 [rtr1:~]$ 
 ```
 
