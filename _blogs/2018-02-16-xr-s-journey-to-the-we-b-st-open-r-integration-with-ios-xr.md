@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2018-02-16 10:46 +0530'
-title: 'XR''s journey to the we(b)st:  Open/R integration with IOS-XR'
+title: 'XR''s journey to the west:  Open/R integration with IOS-XR'
 author: Akshat Sharma
 tags:
   - iosxr
