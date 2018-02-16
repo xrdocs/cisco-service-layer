@@ -362,7 +362,7 @@ The touch points are described below:
   
   <div class="highlighter-rouge">
   <pre class="highlight">
-  <code>
+  <code style="white-space: pre;">
   FROM ubuntu:16.04 
 
 
