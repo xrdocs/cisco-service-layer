@@ -57,7 +57,7 @@ Consequently, integrations with existing stacks and platforms can cleanly occur 
 ## IOS-XR's Journey to the West (Web)
 
 
-While this particular blog is focused on the integration of Open/R with IOS-XR - as part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
+But first, a slight detour: This particular blog is focused on the integration of Open/R with IOS-XR, however as part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
   
 <a href="/cisco-service-layer/images/journey_to_the_west.png"><img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300"></a> 
 
