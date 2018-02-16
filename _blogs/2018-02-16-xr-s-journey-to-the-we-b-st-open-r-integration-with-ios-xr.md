@@ -37,7 +37,7 @@ As part of this blog series, I intend to candidly present the journey that we ha
   
 <img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">   
 
-    The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called "Journey to the west"
+The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called "Journey to the west"
 
 
 ## What is Open/R?
