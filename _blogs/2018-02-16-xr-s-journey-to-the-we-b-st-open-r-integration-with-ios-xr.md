@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2018-02-16 10:46 +0530'
-title: 'XR''s journey to the west:  Open/R integration with IOS-XR'
+title: 'XR''s journey to the west:  Open/R integration with XR'
 author: Akshat Sharma
 tags:
   - iosxr
@@ -25,6 +25,8 @@ excerpt: >-
   various integration points and expectations with Open/R and see how IOS-XR
   lives up to the task at hand, quite admirably.
 ---
-## A New Post
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+
+## Journey to the West
+
+
