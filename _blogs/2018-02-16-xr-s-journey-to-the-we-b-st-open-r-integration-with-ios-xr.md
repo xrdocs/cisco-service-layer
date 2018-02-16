@@ -103,7 +103,7 @@ This consists of two important abstractions:
   *  **NetlinkSystemHandler**: implements the SystemService interface again described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to detect interfaces and IPv6 neighbors in the kernel that may be used to send hellos and peering messages to neighbors.  
   
   
->The **"Netlink(nl)"** abstraction  handles actual interaction with the kernel through netlink using the libnl library. The Netlink platform handlers described above utilize this abstraction to program and fetch routes and get a list of neighbor or links or associated events from the kernel.
+>The **"Netlink(nl)"** abstraction  handles actual interaction with the kernel through netlink using the libnl library. The Netlink platform handlers described above utilize this abstraction to program and fetch routes and get a list of ipv6 neighbors or links or associated events from the kernel.
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
