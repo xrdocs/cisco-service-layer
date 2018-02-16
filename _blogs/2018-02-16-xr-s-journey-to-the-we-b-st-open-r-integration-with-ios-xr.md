@@ -485,7 +485,8 @@ b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 secondss ago 
 
 Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr_rtr1.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
 
-Note the capabilities: 
+Note the capabilities: `--cap-add=SYS_ADMIN` and `--cap-add=NET_ADMIN`. Both of these are necessary to ensure changing into a mounted network namespace(vrf) is possible inside the container.
+{: .notice--info}
 
 
 Once the docker instance is up on rtr1, we do the same thing on rtr2:
