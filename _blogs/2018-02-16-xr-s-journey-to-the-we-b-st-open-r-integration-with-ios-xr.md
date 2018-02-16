@@ -401,7 +401,7 @@ The touch points are described below:
   </div>
 
   **Tip:** When issuing the docker build command with this Dockerfile, make sure to use the --
-   squash flag: `docker build --squash -it opern .`
+   squash flag: `docker build --squash -it openr .`
    This is required to prevent the size of the docker image from spiraling out of control.
    {: .notice--warning}
     
