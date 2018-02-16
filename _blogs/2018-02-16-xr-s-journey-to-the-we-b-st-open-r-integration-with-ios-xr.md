@@ -33,7 +33,10 @@ excerpt: >-
 
 <img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">
 
-And now we’re going to shift things to the right align. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there — Hey guy! Way to rock that right side. I don’t care what the left aligned image says, you look great. Don’t let anyone else tell you differently.
+As part of this blog series, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since the latter half of 2014. In line with the ethos of xrdocs, expect this series to be zero-marketing and heavily focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve.    
+  
+<img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">  
+    The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called "Journey to the west"
 
 
 ## What is Open/R?
