@@ -40,7 +40,7 @@ As an allegorical reference let me present to you the famous Chinese folklore ca
 It chronicles the story of Xuanzang in the 6th Century AD and his journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. As Buddhism began to spread through the east, a new movement began in China that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
 
 
-<a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="![XR's journey to the web]({{site.baseurl}}/images/xr-journey-to-the-web.png)" class="align-left" width="500" height="300"></a>
+<a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300"></a>
 
 I liken the changes that have happened to IOS-XR over the last few years to a similar creative reinterpretation of the core concepts of traditional networking. As the "Web" players (Google, Facebook, Apple, Amazon etc.) began to showcase how better efficiencies may be achieved in network operations through **automation at every stage of deployment**, and through the ability to **"run with scissors"** - it became clear that the traditional core of network stacks would have to evolve to meet the operational demands of these highly automated networks.  
 
