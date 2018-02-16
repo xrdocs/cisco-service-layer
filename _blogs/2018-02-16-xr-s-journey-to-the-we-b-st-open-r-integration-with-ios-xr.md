@@ -32,7 +32,7 @@ excerpt: >-
 
 As part of a series of blogs showcasing the
 
-![Chinese folklore - Journey to the west]({{site.baseurl}}/images/journey_to_the_west.png){: .align-right}
+<img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">
 
 And now we’re going to shift things to the right align. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there — Hey guy! Way to rock that right side. I don’t care what the left aligned image says, you look great. Don’t let anyone else tell you differently.
 
