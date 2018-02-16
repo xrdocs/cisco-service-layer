@@ -27,6 +27,21 @@ excerpt: >-
 ---
 
 
-## Journey to the West
+## What is Open/R?
 
+In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
+As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
+
+Much of the documentation for open/R can be found in the docs directory in the git repo:
+
+><https://github.com/facebook/openr/tree/master/openr/docs>
+
+
+
+
+## IOS-XR's Journey to the We(b)st
+
+As part of a series of blogs showcasing the 
+
+![IOS-XR Journey to the we(b)st]({{site.baseurl}}/images/iosxr_journey_to_the_webst.png)
 
