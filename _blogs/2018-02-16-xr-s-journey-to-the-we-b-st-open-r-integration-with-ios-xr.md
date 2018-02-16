@@ -89,7 +89,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where do it start?
+### Where do I start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
@@ -107,7 +107,19 @@ This consists of two important abstractions:
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
-To 
+### Vagrant Setup for Open/R on Linux
+
+If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
+
+><https://github.com/akshshar/openr-vagrant>
+
+The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rtr2 and will setup the required "run" script for openr at `/usr/sbin/run_openr.sh` one each node.
+
+The switch in the middle is a nice-to-have. It allows you to capture packets as the two nodes rtr1 and rtr2 exchange hellos and peering messages.
+
+
+### Capturing Open/R Hellos and Peering messages
+
   
 
 
