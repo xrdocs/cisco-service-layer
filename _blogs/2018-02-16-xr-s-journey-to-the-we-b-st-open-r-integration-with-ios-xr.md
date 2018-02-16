@@ -339,14 +339,22 @@ The current solution is shown below:
 
 
 The code for this implementation can be found here:  
-
 ><https://github.com/akshshar/openr-xr>  
 
-There are three primary touch points in the code:
+The original open/R code had to be extended in the following ways:
 
->The **"Platform"** module is extended to integrate directly with IOS-XR Service Layer APIs over gRPC. The code changes are primarily here:
-<https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp>
-
+  1.  [**CMakelists.txt**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/CMakeLists.txt) was extended to include grpc, protobuf and iosxrsl 
+      (IOS-XR Service Layer APIs compiled into a library) as target link libraries.
+  
+  2.  [**Platform module**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/platform) was extended to include [**IosxrslFibHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp) 
+      that implements the FibService interface described in the thrift IDL here: 
+      <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle the 
+      incoming route batches from the Fib module.
+  
+  
+  
+  
+  
 To make this work, I had to:  
 
   1.  **Implement IosxrslFibHandler**:  
