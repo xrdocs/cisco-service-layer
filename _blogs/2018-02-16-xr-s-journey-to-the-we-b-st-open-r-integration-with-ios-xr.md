@@ -328,7 +328,7 @@ However, since XR itself has no issues in handling the IPv6 neighbors, we utiliz
   
 ### Current Solution
 
-The current solution is showcased below:
+The current solution is shown below:
 ![Open/R integration with IOS-XR- current design]({{site.baseurl}}/images/openr_xr_integration_current.png)
 
 
