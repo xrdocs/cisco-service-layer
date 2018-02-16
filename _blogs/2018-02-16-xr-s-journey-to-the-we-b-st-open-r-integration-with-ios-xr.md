@@ -485,7 +485,10 @@ b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 secondss ago 
 
 Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr_rtr1.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
 
-Once the docker instance is up, we do the same thing on rtr2:
+Note the capabilities: 
+
+
+Once the docker instance is up on rtr1, we do the same thing on rtr2:
 
 ```
 RP/0/RP0/CPU0:rtr2#bash
@@ -496,7 +499,7 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 [rtr2:~]$ 
 ```
 
-On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages 1'increment_ipv4_prefix.py`
+On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as
 
 
 
