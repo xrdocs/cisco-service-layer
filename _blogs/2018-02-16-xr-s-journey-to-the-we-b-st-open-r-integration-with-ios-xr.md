@@ -205,7 +205,8 @@ Open up the pcap file in wireshark and you should see the following messages sho
 
   *  **Peering Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages 
      are sent out to create an adjacency with the neighbor on an interface. One such message is 
-     shown below:
+     shown below:  
+     
      ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
      {: .notice}
 
