@@ -271,7 +271,7 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 ## Integrating Open/R with IOS-XR
 
-### Requirements:
+### XR meets Requirements:
 
 Now that we understand how Open/R operates, let's codify the requirements for it work on a platform running Linux:  
 
