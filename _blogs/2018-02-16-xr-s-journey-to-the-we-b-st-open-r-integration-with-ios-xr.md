@@ -360,7 +360,9 @@ The touch points are described below:
   
   5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
   
-  ```
+  <div class="highlighter-rouge">
+  <pre class="highlight">
+  <code>
   FROM ubuntu:16.04 
 
 
@@ -393,9 +395,10 @@ The touch points are described below:
 
   CMD /usr/sbin/run_openr.sh >/var/log/openr.log 2>&1
   
-  
-  ```
-
+    
+  </code>
+  </pre>
+  </div>
 
 
 
