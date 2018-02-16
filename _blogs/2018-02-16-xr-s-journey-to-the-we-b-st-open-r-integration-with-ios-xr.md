@@ -400,7 +400,10 @@ The touch points are described below:
   </pre>
   </div>
 
-
+  **Tip:** When issuing the docker build command with this Dockerfile, make sure to use the --squash flag:
+    `docker build --squash -it opern .`
+    This is required to prevent the size of the docker image from spiraling out of control.
+  
 
 
 
