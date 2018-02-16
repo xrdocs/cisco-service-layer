@@ -341,7 +341,7 @@ The current solution is shown below:
 The code for this implementation can be found here:  
 ><https://github.com/akshshar/openr-xr>  
 
-The original open/R code had to be extended in the following ways:
+The touch points are described below:
 
   1.  [**CMakelists.txt**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/CMakeLists.txt) was extended to include grpc, protobuf and iosxrsl 
       (IOS-XR Service Layer APIs compiled into a library) as target link libraries.
@@ -351,16 +351,14 @@ The original open/R code had to be extended in the following ways:
       <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle
       incoming route batches from the Fib module.
   
-      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and the netlink hooks for IPv6 neighbors with IOS-XR Telemetry data for IPv6 neighbors. The goal will be remove dependencies on libnl and determine if any efficiencies are gained in this regard.
+      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and the netlink hooks for IPv6 neighbors with IOS-XR Telemetry data for IPv6 neighbors. The goal will be to remove dependencies on libnl and determine if any efficiencies are gained as a result. For now, there is no immediate need to replace the NetlinkSystemHandler functionality.
       {: .notice--info}
   
+  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl): The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling, making it easy to implement the IosxrslFibHandler.cpp code explained above.
   
+  4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp): Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
   
-To make this work, I had to:  
 
-  1.  **Implement IosxrslFibHandler**:  
-  
-  2.  **Build a Docker image**: 
 
 
 
