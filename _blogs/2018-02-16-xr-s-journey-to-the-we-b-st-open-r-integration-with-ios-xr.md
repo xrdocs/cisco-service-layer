@@ -87,7 +87,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-## Where do I start?
+### Where do I start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
@@ -105,7 +105,7 @@ This consists of two important abstractions:
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
-## Vagrant Setup for Open/R on Linux
+### Vagrant Setup for Open/R on Linux
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
@@ -174,7 +174,7 @@ openr[10562]: Starting OpenR daemon.
 
 
 
-## Capturing Open/R Hellos and Peering messages
+### Capturing Open/R Hellos and Peering messages
 
 On the switch start up a tcpdump capture on one or more of the bridges on the switch in the middle:  
 
@@ -205,7 +205,7 @@ Open up the pcap file in wireshark and you should see the following messages sho
   ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
 
 
-## Open/R breeze CLI
+### Open/R breeze CLI
 
 Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
 
@@ -221,6 +221,47 @@ vagrant     enp0s10            enp0s10                    7         1        500
 
 ```
 
+
+Let's look at the fib state in Open/R using the breeze cli:
+
+```
+vagrant@rtr1:~$ breeze fib list
+
+== rtr1's FIB routes by client 786  ==
+
+> 100.1.1.0/24
+via 0.0.0.0@enp0s10
+via 0.0.0.0@enp0s8
+via 0.0.0.0@enp0s9
+
+> 100.1.10.0/24
+via 0.0.0.0@enp0s10
+via 0.0.0.0@enp0s8
+via 0.0.0.0@enp0s9
+
+> 100.1.100.0/24
+via 0.0.0.0@enp0s10
+
+......
+
+```
+
+If you used the default scaling script on rtr2, then rtr1 should now have about 1000 routes in its fib:  
+
+
+```
+vagrant@rtr1:~$ breeze fib counters
+
+== rtr1's Fib counters  ==
+
+fibagent.num_of_routes : 1004
+
+vagrant@rtr1:~$ 
+
+```
+
+Great! These outputs should give you a fair gist of how Open/R works as a link state routing protocol.
+{: .notice--success}
 
 
 ## Integrating Open/R with IOS-XR
