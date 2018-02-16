@@ -461,7 +461,7 @@ Fri Feb 16 22:46:52.944 UTC
 [rtr1:~]$ 
 [rtr1:~]$ [rtr1:~]$ docker images
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
-11.11.11.2:5000/openr   latest              fdddb43d9600        33 hours ago        1.829 GB
+11.11.11.2:5000/openr   latest              fdddb43d9600        33 seconds ago        1.829 GB
 [rtr1:~]$ 
 [rtr1:~]$ 
 ```
