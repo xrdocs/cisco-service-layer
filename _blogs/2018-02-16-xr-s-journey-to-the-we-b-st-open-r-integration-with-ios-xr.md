@@ -28,7 +28,7 @@ excerpt: >-
 
 {% include toc %}
 
-# IOS-XR's Journey to the West (Web)
+## IOS-XR's Journey to the West (Web)
 
 
 As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
@@ -59,11 +59,11 @@ The evolution was comprised of some very interesting developments:
 This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
 
 
-# Integrating Open/R with IOS-XR
+## Integrating Open/R with IOS-XR
 
 In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs providing the platform integration with IOS-XR. 
 
-## What is Open/R?
+### What is Open/R?
 
 In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
