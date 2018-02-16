@@ -501,7 +501,30 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 [rtr2:~]$ 
 ```
 
-On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as
+On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
+
+
+On rtr2, exec into the docker instance and start Open/R:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+RP/0/RP0/CPU0:rtr2#bash
+Fri Feb 16 23:12:53.828 UTC
+[rtr2:~]$ 
+[rtr2:~]$ docker exec -it openr bash
+root@rtr2:/# /root/run_openr_rtr2.sh
+/root/run_openr_rtr2.sh: line 106: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[13]: Starting OpenR daemon.
+openr
+
+....
+
+</code>
+</pre>
+</div>
+
 
 
 
