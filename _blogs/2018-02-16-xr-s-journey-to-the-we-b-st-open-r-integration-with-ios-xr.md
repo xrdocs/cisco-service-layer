@@ -280,7 +280,7 @@ Now that we understand how Open/R operates, let's codify the requirements for it
      
        In September 2017, we introduced Service Layer APIs - a highly performant and model driven 
        API into the network infrastructure layer (RIB, label switch database, interface and BFD 
-       events) over gRPC.
+       events) over gRPC. This API is ideal for platform integration with Open/R and as we'll see        later achieves higher performance than Netlink due to batching capability.
        {: .notice--info}
   
   *  **Ability to host applications**: The Network OS must have the capability to host Linux 
