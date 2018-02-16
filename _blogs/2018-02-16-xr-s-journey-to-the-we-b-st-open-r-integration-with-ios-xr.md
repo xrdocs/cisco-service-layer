@@ -87,7 +87,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where do I start?
+### Where does one start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
@@ -311,7 +311,7 @@ Now that we understand how Open/R operates, let's codify the requirements for it
   
 **The Issue:**  
 
-While the primary requirements were met right away, we did find an issue with dynamic IPv6 neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code that connects the linux kernel with the XR networking stack on the box.
+While the primary requirements were met right away, I did find an issue with dynamic IPv6 neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code that connects the linux kernel with the XR networking stack on the box.
   
   
 **Workaround**:  
@@ -331,11 +331,27 @@ However, since XR itself has no issues in handling the IPv6 neighbors, we utiliz
   
   
   
-### Current Solution
+### Current Solution and implementation details
 
 The current solution is shown below:
 
 ![Open/R integration with IOS-XR- current design]({{site.baseurl}}/images/openr_xr_integration_current.png)
+
+
+The code for this implementation can be found here:  
+
+><https://github.com/akshshar/openr-xr>  
+
+There are three primary touch points in the code:
+
+>The **"Platform"** module is extended to integrate directly with IOS-XR Service Layer APIs over gRPC. The code changes are primarily here:
+<https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp>
+
+To make this work, I had to:  
+
+  1.  **Implement IosxrslFibHandler**:  
+  
+  2.  **Build a Docker image**: 
 
 
 
