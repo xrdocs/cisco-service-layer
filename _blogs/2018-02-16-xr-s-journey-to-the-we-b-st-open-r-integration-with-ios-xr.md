@@ -26,6 +26,7 @@ excerpt: >-
   lives up to the task at hand, quite admirably.
 ---
 
+{% include toc %}
 
 ## What is Open/R?
 
