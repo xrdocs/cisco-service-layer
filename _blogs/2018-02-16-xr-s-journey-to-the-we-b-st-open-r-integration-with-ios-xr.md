@@ -348,7 +348,7 @@ The original open/R code had to be extended in the following ways:
   
   2.  [**Platform module**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/platform) was extended to include [**IosxrslFibHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp) 
       that implements the FibService interface described in the thrift IDL here: 
-      <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle the 
+      <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle
       incoming route batches from the Fib module.
   
   
