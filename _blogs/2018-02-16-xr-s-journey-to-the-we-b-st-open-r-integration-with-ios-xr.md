@@ -449,9 +449,21 @@ end
 
 As explained above, `ipv6 nd unicast-ra` is required to keep neighbors alive in XR while Open/R initiates traffic in the linux kernel. The `grpc` configuration starts the gRPC server on XR and can be used to subscribe to Telemetry data (subscription IPv6 as shown above) and service-layer configuration allows Service-Layer clients to connect over the same gRPC port.
 
-Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
 
-Once the docker image is pulled in, you
+
+Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
+
+Once the docker image is pulled successfully, you should see:
+
+```
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 22:46:52.944 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker ps
+CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
+b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 hours ago        Up 24 hours                             openr
+[rtr1:~]$ 
+```
 
 
 
