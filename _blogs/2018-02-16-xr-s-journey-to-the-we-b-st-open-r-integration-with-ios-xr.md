@@ -155,14 +155,55 @@ Further, for rtr2, I've added a scaling python script that allows you to add up 
 {: .notice--info}
 
 ```
+vagrant@rtr1:~$ /usr/sbin/run_openr.sh 
+/usr/sbin/run_openr.sh: line 98: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[10562]: Starting OpenR daemon.
+
+......
 
 
+vagrant@rtr2:~$ /usr/sbin/run_openr.sh 
+/usr/sbin/run_openr.sh: line 98: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[10562]: Starting OpenR daemon.
+
+......
 
 ```
 
+
+
+
 ### Capturing Open/R Hellos and Peering messages
 
+On the switch start up a tcpdump capture on one or more of the bridges on the switch in the middle:  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+AKSHSHAR-M-K0DS:openr-two-nodes akshshar$<mark> vagrant ssh switch </mark>
+
+#######################  snip #############################
+
+Last login: Thu Feb 15 11:04:25 2018 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$<mark> sudo tcpdump -i br0 -w /vagrant/openr.pcap </mark>
+tcpdump: listening on br0, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+
+</code>
+</pre>
+</div>
+
+Open up the pcap file in wireshark and you should see the following messages show up:
+
+  *  **Hello Messages**: The hello messages are sent to UDP port 6666 to the All nodes IPv6 Multicast address ff02::1 and source IP = Link local IPv6 address of node. These messages are used to discover neighbors and learn their link local IPv6 addresses.
   
+  ![Openr/R hello messages]({{site.baseurl}}/images/openr_hellos.png)
+
+  *  **Adjacency Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages are sent out to create an adjacency with the neighbor on an interface. One such message is shown below:
+  
+  ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
 
 
 
