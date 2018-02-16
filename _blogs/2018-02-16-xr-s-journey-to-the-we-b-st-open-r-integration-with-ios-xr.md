@@ -28,14 +28,40 @@ excerpt: >-
 
 {% include toc %}
 
-## IOS-XR's Journey to the West (Web)
-
-As part of a series of blogs showcasing the
-
-![IOS-XR journey to the web]({{site.baseurl}}/images/ios-xr-journey-to-the-web.png)
+# IOS-XR's Journey to the West (Web)
 
 
+As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
+  
+<a href="/cisco-service-layer/images/journey_to_the_west.png"><img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300"></a> 
 
+The allegorical reference that I like to allude to as we embark on this journey is a famous Chinese folklore called **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
+
+It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. I may be oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
+
+
+
+<a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300"></a>
+
+I liken the changes that have happened to IOS-XR over the last few years to a similar creative reinterpretation of the core concepts of traditional networking. As the "Web" players (Google, Facebook, Apple, Amazon etc.) began to showcase how better efficiencies may be achieved in network operations through **automation at every stage of deployment**, and through the ability to **"run with scissors"** - it became clear that the traditional core of network stacks would have to evolve to meet the operational demands of these highly automated networks.  
+
+The evolution was comprised of some very interesting developments:
+
+  *  **Linux-ization of the Stack**: IOS-XR moved from 32-bit QNX to 64-bit Linux to enable an 
+     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/) and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
+     
+  *  **Streaming Telemetry**: [**Real-time push-based Streaming Telemetry**](https://xrdocs.github.io/telemetry/) for monitoring, alerts and 
+     remediation triggers/events, outperforming SNMP in every department - scale, ease-of-use, 
+     cadence etc.  
+     
+  *  **Model Driven APIs at every layer of the stack**: This includes [**Yang Models at the Manageability layer**](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr) and [**tools to generate bindings in various languages**](http://ydk.io). Further,in September 2017, we took it a step further - we introduced model driven APIs over gRPC called the [**Service Layer APIs**](https://xrdocs.github.io/cisco-service-layer/) that provide programmatic access to the IOS-XR RIB, label switch database and notifications for interface and BFD events.
+
+This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
+
+
+# Integrating Open/R with IOS-XR
+
+In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs providing the platform integration with IOS-XR. 
 
 ## What is Open/R?
 
@@ -56,11 +82,18 @@ At the outset, the architecture is reminiscent of traditional link state routing
 
 So is it really just an alternative to traditional IGPs ? Not quite. There are some design decisions taken to enable the architecture to be pluggable from the get-go:   
 
-  *  **KV-Store**:  A Key value store that serves as a common database for the entire stack. Peering Messages to other routers are sent out over 0MQ channels. The internal  communication with other components such as the Prefix Manager, Decision module or the link monitor module are handled by sending and receiving thrift objects on sockets through an abstracted KvStoreClient.
+  *  **KV-Store**:  A Key-Value store that serves as a common database for the entire stack. Peering Messages to other routers are sent out over 0MQ channels. The internal  communication with other components such as the Prefix Manager, Decision module or the link monitor module are handled by sending and receiving thrift objects on sockets through an abstracted KvStoreClient.
 
   *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>)
 
-Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.
+Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
+
+  
+  
+
+
+
+
 
 
 
