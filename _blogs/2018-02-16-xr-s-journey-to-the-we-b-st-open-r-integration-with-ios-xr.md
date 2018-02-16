@@ -45,6 +45,17 @@ It chronicles the story of Xuanzang in the 6th Century AD and his original journ
 
 I liken the changes that have happened to IOS-XR over the last few years to a similar creative reinterpretation of the core concepts of traditional networking. As the "Web" players (Google, Facebook, Apple, Amazon etc.) began to showcase how better efficiencies may be achieved in network operations through **automation at every stage of deployment**, and through the ability to **"run with scissors"** - it became clear that the traditional core of network stacks would have to evolve to meet the operational demands of these highly automated networks.  
 
+The evolution was comprised of some very interesting developments:
+
+  *  **Linux-ization of the Stack**: IOS-XR moved from 32-bit QNX to 64-bit Linux to enable an 
+     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/) and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
+     
+  *  **Streaming Telemetry**: [Real-time push-based Streaming Telemetry](https://xrdocs.github.io/telemetry/) for monitoring, alerts and 
+     remediation triggers/events, outperforming SNMP in every department - scale, ease-of-use, 
+     cadence etc.  
+     
+  *  **Model Driven APIs at every layer of the stack**: This includes [Yang Models at the Manageability layer](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr) and tools to generate bindings in various languages(http://ydk.io). Further,in September 2017, we took it a step further - we introduced model driven APIs over gRPC called the [**Service Layer APIs**](https://xrdocs.github.io/cisco-service-layer/) that provide programmatic access to the IOS-XR RIB, label switch database and notifications for interface and BFD events.
+
 
 
 
