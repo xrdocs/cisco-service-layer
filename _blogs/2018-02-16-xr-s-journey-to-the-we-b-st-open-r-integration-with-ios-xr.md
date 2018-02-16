@@ -321,9 +321,10 @@ However, since XR itself has no issues in handling the IPv6 neighbors, we utiliz
   1. Enable **"ipv6 nd ra-unicast"** under the XR interfaces using XR CLI or Yang model. This 
      enables neighbors to be reachable without explicit traffic being originated in XR.
 
-  2. Set up a client (currently separate from the Open/R binary) that receives **IPv6 
-     neighbor table from XR periodically using Streaming Telemetry over gRPC and programs the 
-     kernel using Netlink**. Open/R then works with the programmed neighbors without any issues. 
+  2. Set up a client (currently separate from the Open/R binary, running as a parallel process) 
+     that receives **IPv6 neighbor table from XR periodically using Streaming Telemetry over gRPC 
+     and programs the kernel using Netlink**. Open/R then works with the programmed neighbors 
+     without any issues. 
      By reacting to Streaming Telemetry data for IPv6 neighbors, the entries in the kernel are 
      kept dynamic and in sync with network events like link flap or disabling IPv6 on interface.
 
