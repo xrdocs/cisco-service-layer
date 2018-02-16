@@ -280,15 +280,28 @@ Now that we understand how Open/R operates, let's codify the requirements for it
      
        In September 2017, we introduced Service Layer APIs - a highly performant and model driven 
        API into the network infrastructure layer (RIB, label switch database, interface and BFD 
-       events) over gRPC. This API is ideal for platform integration with Open/R and as we'll see        later achieves higher performance than Netlink due to batching capability.
+       events) over gRPC. This API is ideal for platform integration with Open/R and as we'll see        later,achieves higher performance than Netlink due to its route batching capability. This 
+       API is available on IOS-XR releases post 6.1.2.
        {: .notice--info}
   
   *  **Ability to host applications**: The Network OS must have the capability to host Linux 
      applications either natively or as a container (docker/lxc).
+       
+       With IOS-XR 6.1.2+, the capability to host linux applications on the box with docker was 
+       introduced. In addition, applications can be hosted within LXC containers or even natively 
+       (if compiled for WRL7). Further, use of network namespaces mapped to IOS-XR vrfs was 
+       introduced in release 6.2.2+, allowing isolation of traffic in the kernel based on vrf 
+       configuration.
+       {: .notice--info}
   
   *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unomodified 
      on a platform and send its UDP hellos to port 6666 and ff02::1 and send/receive TCP peering 
      messages using link local IPv6 addresses of neighbors.
+     
+       Packet/IO capabilities have existed in IOS-XR since 6.0.0+, allowing applications to bind 
+       to XR interfaces in the kernel, open up the TCP/UDP ports, transmit/receive TCP/UDP traffic 
+       along with exception traffic such as ping, IPv6 multicast etc.
+       {: .notice--info}
   
 
   
