@@ -41,7 +41,7 @@ It is laid out rather well and describes all the components of the code individu
 
 At a higher level, the components look something like this:
 
-![openr_high_level](/images/openr_high_level.png)
+![openr_high_level]({{ site.baseurl }}/images/openr_high_level.png)
 
 At the outset, the architecture is reminiscent of traditional link state routing protocols like ISIS - what with the initial Hellos used to identify neighbors (similar to IS-IS Hello Packets), establishment of adjacencies using 0MQ messages (similar to Link State PDUs (LSPs) in IS-IS) and the use of Djikstra's algorithm for SPF computations. It also borrows ideas from other protocols like BGP (the concept of originatorIDs for loop prevention, à la AS-PATH handling) and spanning tree for flood optimization of messages.
 
@@ -60,4 +60,4 @@ Consequently, integrations with existing stacks and platforms can cleanly occur 
 
 As part of a series of blogs showcasing the
 
-![IOS-XR Journey to the we(b)st](/images/iosxr_journey_to_the_webst.png)
+![IOS-XR Journey to the we(b)st]({{ site.baseurl }}/images/iosxr_journey_to_the_webst.png)
