@@ -58,7 +58,12 @@ The evolution was comprised of some very interesting developments:
 
 This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
 
-## What is Open/R?
+
+## Integrating Open/R with IOS-XR
+
+In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs providing the platform integration with IOS-XR. 
+
+### What is Open/R?
 
 In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
@@ -82,7 +87,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
   *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>)
 
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
-In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs providing the platform integration with IOS-XR.
+
   
   
 
