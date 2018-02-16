@@ -30,7 +30,6 @@ excerpt: >-
 
 ## IOS-XR's Journey to the West (Web)
 
-As part of a series of blogs showcasing the
 
 <img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300">
 
