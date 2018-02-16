@@ -32,7 +32,7 @@ excerpt: >-
 
 As part of a series of blogs showcasing the
 
-![IOS-XR journey to the web]({{site.baseurl}}/images/ios-xr-journey-to-the-web.png)
+![IOS-XR journey to the web]({{site.baseurl}}/images/ios-xr-journey-to-the-web.png){: .align-right}
 
 
 
