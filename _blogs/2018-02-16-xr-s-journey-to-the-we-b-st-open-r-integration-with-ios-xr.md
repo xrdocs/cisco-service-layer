@@ -273,15 +273,19 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 ### Requirements
 
-Now that we understand how Open/R operates, let's note down the basic requirements for it to work on a platform running Linux:  
+Now that we understand how Open/R operates, let's codify the requirements for it run on a platform running Linux:  
 
-  *  **API to get and set Routes**:
+  *  **API to get and set Routes**: On Linux, this API is Netlink, but it can be replaced with any 
+     viable API that the networking stack on the platform offers.
   
-  *  **Ability to host applications**
+  *  **Ability to host applications**: The Network OS must have the capability to host Linux 
+     applications either natively or as a container (docker/lxc).
   
-  *  **Ability to exchange Hellos and Peering Messages**
+  *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unomodified 
+     on a platform and send its UDP hellos to port 6666 and ff02::1 and send/receive TCP peering 
+     messages using link local IPv6 addresses.
   
-  *  **Dynamically learn and update IPv6 Neighbors in the Kernel**
+  *  **Dynamically learn and update IPv6 Neighbors in the Kernel**: Typically 
   
 
 
