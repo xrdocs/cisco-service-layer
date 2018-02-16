@@ -58,11 +58,10 @@ The evolution was comprised of some very interesting developments:
 This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
 
 
-## Integrating Open/R with IOS-XR
 
 In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and [application hosting capabilities](https://xrdocs.github.io/application-hosting/) can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving as the platform hooks with IOS-XR. 
 
-### What is Open/R?
+## What is Open/R?
 
 In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
@@ -88,7 +87,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where do I start?
+## Where do I start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
@@ -106,7 +105,7 @@ This consists of two important abstractions:
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
-### Vagrant Setup for Open/R on Linux
+## Vagrant Setup for Open/R on Linux
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
@@ -175,7 +174,7 @@ openr[10562]: Starting OpenR daemon.
 
 
 
-### Capturing Open/R Hellos and Peering messages
+## Capturing Open/R Hellos and Peering messages
 
 On the switch start up a tcpdump capture on one or more of the bridges on the switch in the middle:  
 
@@ -206,7 +205,7 @@ Open up the pcap file in wireshark and you should see the following messages sho
   ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
 
 
-### Open/R breeze CLI
+## Open/R breeze CLI
 
 Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
 
@@ -223,6 +222,8 @@ vagrant     enp0s10            enp0s10                    7         1        500
 ```
 
 
+
+## Integrating Open/R with IOS-XR
 
 
 
