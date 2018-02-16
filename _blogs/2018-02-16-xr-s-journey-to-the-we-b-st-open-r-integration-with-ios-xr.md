@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2018-02-16 10:46 +0530'
-title: 'XR''s journey to the west:  Open/R integration with XR'
+title: 'XR''s journey to the web:  Open/R integration with XR'
 author: Akshat Sharma
 tags:
   - iosxr
@@ -19,14 +19,22 @@ tags:
 position: hidden
 excerpt: >-
   This blog series chronicles IOS-XR's Journey to the web through a series of
-  integrations with community tools. Open/R, open sourced by Facebook in 2017
-  is a great example of open source innovation driving the evolution of vendor
+  integrations with community tools. Open/R, open sourced by Facebook in 2017 is
+  a great example of open source innovation driving the evolution of vendor
   network stacks to be more open and pluggable. In this blog, we understand the
   various integration points and expectations with Open/R and see how IOS-XR
   lives up to the task at hand, quite admirably.
 ---
 
 {% include toc %}
+
+## IOS-XR's Journey to the West (Web)
+
+As part of a series of blogs showcasing the
+
+![IOS-XR journey to the web]({{site.baseurl}}/images/ios-xr-journey-to-the-web.png)
+
+
 
 ## What is Open/R?
 
@@ -51,13 +59,8 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 
   *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>)
 
-Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can leverage the KVstore to store data locally and share information with other routers easily.
+Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.
 
 
 
 
-## IOS-XR's Journey to the We(b)st
-
-As part of a series of blogs showcasing the
-
-![IOS-XR Journey to the we(b)st]({{ site.baseurl }}/images/iosxr_journey_to_the_webst.png)
