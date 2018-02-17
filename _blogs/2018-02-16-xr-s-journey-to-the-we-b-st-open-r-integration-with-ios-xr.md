@@ -105,7 +105,7 @@ This consists of two important abstractions:
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
-### Open/R on Linux: Vagrant
+### Open/R on Linux:Vagrant
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
