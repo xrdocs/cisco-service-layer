@@ -28,6 +28,11 @@ excerpt: >-
 
 {% include toc %}
 
+## Prelude
+
+This Blog is primarily focused on the recent Open/R integration with IOS-XR that was accomplished in December 2017, following the open-source announcement by FaceBook in November 2017. So within a month of the open source announcement, we had an integration running thanks to the exhaustive and model driven Service Layer API. The code is out on Github and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.
+
+
 ## IOS-XR's Journey to the West (Web)
 
 
