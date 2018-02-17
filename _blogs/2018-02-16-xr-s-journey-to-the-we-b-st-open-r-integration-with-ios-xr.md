@@ -504,6 +504,7 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
 
 
+### Testing OPENR_FIB_ROUTES_PROGRAMMED
 On rtr2, exec into the docker instance and start Open/R:
 
 <div class="highlighter-rouge">
@@ -594,20 +595,29 @@ VrfName: "default"
 I0216 23:49:00.944550    95 ServiceLayerRoute.cpp:779] ###########################
 I0216 23:49:00.945046    95 ServiceLayerRoute.cpp:793] RPC call was successful, checking response...
 I0216 23:49:00.945063    95 ServiceLayerRoute.cpp:799] IPv6 Route Operation:2 Successful
-I0216 23:49:00.946413   134 Fib.cpp:534] OpenR convergence performance. Duration=-81945
-I0216 23:49:00.946427   134 Fib.cpp:537]   node: rtr2, event: PREFIX_DB_UPDATED, duration: 0ms, unix-timestamp: 1518825022891
-I0216 23:49:00.946434   134 Fib.cpp:537]   node: rtr1, event: DECISION_RECEIVED, duration: -85856ms, unix-timestamp: 1518824937035
-I0216 23:49:00.946437   134 Fib.cpp:537]   node: rtr1, event: DECISION_DEBOUNCE, duration: 9ms, unix-timestamp: 1518824937044
-I0216 23:49:00.946441   134 Fib.cpp:537]   node: rtr1, event: DECISION_SPF, duration: 24ms, unix-timestamp: 1518824937068
-I0216 23:49:00.946445   134 Fib.cpp:537]   node: rtr1, event: FIB_ROUTE_DB_RECVD, duration: 12ms, unix-timestamp: 1518824937080
-I0216 23:49:00.946450   134 Fib.cpp:537]   node: rtr1, event: FIB_DEBOUNCE, duration: 3803ms, unix-timestamp: 1518824940883
-I0216 23:49:00.946455   134 Fib.cpp:537]   <mark>node: rtr1, event: OPENR_FIB_ROUTES_PROGRAMMED, duration: 63ms, unix-timestamp: 1518824940946</mark>
+I0216 23:27:01.021437    52 Fib.cpp:534] OpenR convergence performance. Duration=3816
+I0216 23:27:01.021456    52 Fib.cpp:537]   node: rtr1, event: ADJ_DB_UPDATED, duration: 0ms, unix-timestamp: 1518823617205
+I0216 23:27:01.021464    52 Fib.cpp:537]   node: rtr1, event: DECISION_RECEIVED, duration: 1ms, unix-timestamp: 1518823617206
+I0216 23:27:01.021471    52 Fib.cpp:537]   node: rtr1, event: DECISION_DEBOUNCE, duration: 9ms, unix-timestamp: 1518823617215
+I0216 23:27:01.021476    52 Fib.cpp:537]   node: rtr1, event: DECISION_SPF, duration: 22ms, unix-timestamp: 1518823617237
+I0216 23:27:01.021479    52 Fib.cpp:537]   node: rtr1, event: FIB_ROUTE_DB_RECVD, duration: 12ms, unix-timestamp: 1518823617249
+I0216 23:27:01.021484    52 Fib.cpp:537]   node: rtr1, event: FIB_DEBOUNCE, duration: 3709ms, unix-timestamp: 1518823620958
+I0216 23:27:01.021488    52 Fib.cpp:537]   node: rtr1, event: <mark>OPENR_FIB_ROUTES_PROGRAMMED, duration: 63ms, unix-timestamp: 1518823621021</mark>
+
 
 </code>
 </pre>
 </div>
 
-As seen in the marked timings, the total time taken to program 1002 route entries was about 63ms, giving us a route programming rate of about 16000 route.second
+As seen in the highlighted outputs, the total time taken to program 1002 route entries was about 63ms, giving us a route programming rate of about 16000 routes/second!
+{: .notice--info}
+
+
+
+
+
+
+
 
 
 
