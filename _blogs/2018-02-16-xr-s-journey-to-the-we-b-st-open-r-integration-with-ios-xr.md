@@ -34,8 +34,7 @@ This Blog is primarily focused on the recent Open/R integration with IOS-XR that
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
-<iframe width="300" height="200" src="https://www.youtube.com/embed/HMvl9CzDIpQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HMvl9CzDIpQ?start=463" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   
 This blog will dive deeper into the demo as well as the integration points in code, so hopefully it is useful for folks starting off with open/R.
 
