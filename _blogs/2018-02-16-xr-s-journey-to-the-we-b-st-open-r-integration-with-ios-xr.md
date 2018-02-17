@@ -73,7 +73,7 @@ In this blog in particular, we shall explore how [IOS-XR's service layer APIs](h
 
 ## What is Open/R?
 
-In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
+In November 2017, Facebook open sourced [Open/R](https://github.com/facebook/openr).  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
 
 Much of the documentation for open/R can be found in the docs directory in the git repo:
@@ -122,7 +122,7 @@ If you'd like to try a back-to-back setup with two linux instances on your lapto
 ><https://github.com/akshshar/openr-vagrant>
 
 
-The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rtr2 and will setup the required "run" script for openr at `/usr/sbin/run_openr.sh` one each node.
+The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rtr2 and will setup the required "run" script for openr at `/usr/sbin/run_openr.sh` on each node.
 
 The switch in the middle is a nice-to-have. It allows you to capture packets as the two nodes rtr1 and rtr2 exchange hellos and peering messages.
 
