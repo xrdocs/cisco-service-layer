@@ -302,7 +302,7 @@ Now that we understand how Open/R operates, let's codify the requirements for it
        configuration.
        {: .notice--info}
   
-  *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unomodified 
+  *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unmodified 
      on a platform and send its UDP hellos to port 6666 and ff02::1 and send/receive TCP peering 
      messages using link local IPv6 addresses of neighbors.
      
