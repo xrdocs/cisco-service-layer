@@ -119,7 +119,7 @@ Well, this is good to know. But the question still lingers -
 
 > How can one power through the all the concepts and get Open/R running?
 
-The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with.
+The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with, right away.
 
 ### Open/R on Linux:Vagrant
 
