@@ -649,7 +649,9 @@ root@rtr1:/#
 
 **rtr2 breeze adj**:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
 
 RP/0/RP0/CPU0:rtr2#
 RP/0/RP0/CPU0:rtr2#bash
@@ -737,7 +739,7 @@ There you go! There are 1002 service layer routes in the RIB, all thanks to Open
 
 
 
-
+## What more can we do?
 
 
 
