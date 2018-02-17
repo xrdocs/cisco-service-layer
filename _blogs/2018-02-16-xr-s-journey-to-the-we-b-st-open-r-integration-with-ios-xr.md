@@ -651,12 +651,27 @@ root@rtr1:/#
 
 ```
 
+RP/0/RP0/CPU0:rtr2#
+RP/0/RP0/CPU0:rtr2#bash
+Sat Feb 17 00:24:11.960 UTC
+[rtr2:~]$ 
+[rtr2:~]$ docker exec -it openr bash
+root@rtr2:/# 
+root@rtr2:/# ip netns exec global-vrf bash
+root@rtr2:/# breeze kvstore adj
 
-```
+&gt; rtr2's adjacencies, version: 3, Node Label: 1, Overloaded?: False
+Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
+<mark>rtr1        Hg0_0_1_0          Hg0_0_1_0                  9         1        50066  10.1.1.10     fe80::28a:96ff:fed3:18c0  1m38s</mark>
+
+
+</code>
+</pre>
+</div>
 
 ### Check IOS-XR RIB State
 
-Well, this is the moment of truth. Open/R  were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a management port.
+Well, this is the moment of truth. Open/R  were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a HundredGig port.
 
 
 
