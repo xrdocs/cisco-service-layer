@@ -48,7 +48,7 @@ As part of this blog series titled **"XR's journey to the Web"**, I intend to ca
 
 As an allegory, I often refer back to the famous Chinese folklore: **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
 
-It chronicles the story of Xuanzang in the 6th Century AD and his journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. As Buddhism began to spread through the east, a new movement began in China that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
+Through an extended account, it chronicles the story of Xuanzang in the 6th Century AD and his journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. As Buddhism began to spread through the east, a new movement began in China that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
 
 
 <a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300"></a>
