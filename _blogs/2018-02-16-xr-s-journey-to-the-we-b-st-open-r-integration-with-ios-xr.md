@@ -30,7 +30,7 @@ excerpt: >-
 
 ## Prelude
 
-In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/) of Open/R, we had an integration running with IOS-XR, thanks to the exhaustive model-driven Service Layer API and  application hosting capabilities that have progressively become more powerful over the years. The code for this integration is out on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
+In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/) of Open/R, we released an integration running with IOS-XR. Thanks primarily to the exhaustive model-driven Service Layer APIs and application hosting capabilities, IOS-XR provided a pretty easy ride. The code for this integration is on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
