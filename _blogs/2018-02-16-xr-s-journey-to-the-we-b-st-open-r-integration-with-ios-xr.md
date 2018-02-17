@@ -30,7 +30,7 @@ excerpt: >-
 
 ## Prelude
 
-This Blog is primarily focused on the recent Open/R integration with IOS-XR that was accomplished in December 2017, following the open-source announcement by Facebook in November 2017. Within a month of the announcement, we had an integration running with IOS-XR, thanks to the exhaustive and model driven Service Layer API and to IOS-XR's application hosting capabilities that have progressively become more powerful over the years. The code for the integration is out on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
+This Blog is primarily focused on the recent Open/R integration with IOS-XR that was accomplished in December 2017, following the open-source announcement by Facebook in November 2017. Within a month of the announcement, we had an integration running with IOS-XR, thanks to the exhaustive model driven Service Layer API and to IOS-XR's application hosting capabilities that have progressively become more powerful over the years. The code for the integration is out on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
@@ -86,7 +86,7 @@ At a higher level, the components look something like this:
 
 ![openr_high_level]({{ site.baseurl }}/images/openr_high_level.png)
 
-At the outset, the architecture is reminiscent of traditional link state routing protocols like ISIS - what with the initial Hellos used to identify neighbors (similar to IS-IS Hello Packets), establishment of adjacencies using 0MQ messages (similar to Link State PDUs (LSPs) in IS-IS) and the use of Djikstra's algorithm for SPF computations. It also borrows ideas from other protocols like BGP (the concept of originatorIDs for loop prevention, à la AS-PATH handling) and spanning tree for flood optimization of messages.
+At the outset, the architecture is reminiscent of traditional link state routing protocols like IS-IS - what with the initial Hellos used to identify neighbors (similar to IS-IS Hello Packets), establishment of adjacencies using 0MQ messages (similar to Link State PDUs (LSPs) in IS-IS) and the use of Djikstra's algorithm for SPF computations. It also borrows ideas from other protocols like BGP (the concept of originatorIDs for loop prevention, à la AS-PATH handling) and spanning tree for flood optimization of messages.
 
 So is it really just an alternative to traditional IGPs ? Not quite. There are some design decisions taken to enable the architecture to be pluggable from the get-go:   
 
@@ -758,13 +758,3 @@ This may be leveraged to provide label handling (MPLS) capabilities to Open/R.
 Further, Open/R currently hooks into interface events and IPv6 neighbor events. With the Service Layer API it is also possible to get a stream of BFD notifications, allowing faster response to link-down event of the neighbor, if the neighbor is connected through a LAN/switch.
 
 As Service Layer APIs evolve further and get SR-TE (label stack) capabilities and L2 capabilities, there is a stream of new possibilities for Open/R in the near future.
-
-
-
-
-
-
-
-
-
-
