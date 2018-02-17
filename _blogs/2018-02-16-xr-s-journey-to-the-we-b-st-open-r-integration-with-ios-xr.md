@@ -734,14 +734,15 @@ RP/0/RP0/CPU0:rtr1#
 
 ```
 
-There you go! There are 1002 service layer routes in the RIB, all thanks to Open/R acting as an IGP, learning routes from its neighbor and programming the IOS-XR on the local box over gRPC.
+There you go! There are 1002 service layer routes in the RIB, all thanks to Open/R acting as an IGP, learning routes from its neighbor and programming the IOS-XR RIB on the local box over gRPC.
 {: .notice--success}
 
 
 
-## What more can we do?
+## What else can we do?
 
-
+Integration of Open/R with IOS-XR Service Layer APIs opens up a whole host of possibilities.
+This particular integration was centered around 
 
 
 
