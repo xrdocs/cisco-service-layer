@@ -87,7 +87,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where does one start?
+### How does one start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
@@ -613,6 +613,50 @@ I0216 23:27:01.021488    52 Fib.cpp:537]   node: rtr1, event: <mark>OPENR_FIB_RO
 As seen in the highlighted outputs, the total time taken to program 1002 route entries was about 63ms, giving us a route programming rate of about 16000 routes/second!
 {: .notice--info}
 
+Having said that, the FIB_DEBOUNCE rate is something to be looked at as I work through the code a bit more.
+
+It goes without saying that the adjacencies were correctly established, but for the sake of this blog, here are breeze outputs on rtr1 and rtr2:
+
+**rtr1 breeze adj**:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+
+RP/0/RP0/CPU0:rtr1#bash
+Sat Feb 17 00:18:07.974 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker exec -it openr bash
+root@rtr1:/# 
+root@rtr1:/# ip netns exec global-vrf bash
+root@rtr1:/# 
+root@rtr1:/# 
+root@rtr1:/# breeze kvstore adj
+
+> rtr1's adjacencies, version: 2, Node Label: 36247, Overloaded?: False
+Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
+<mark>rtr2        Hg0_0_1_0          Hg0_0_1_0                 10         1        50066  10.1.1.20     fe80::28a:96ff:fec0:bcc0  29m36s</mark>
+
+
+root@rtr1:/# 
+
+</code>
+</pre>
+</div>
+
+
+
+
+**rtr2 breeze adj**:
+
+```
+
+
+```
+
+### Check IOS-XR RIB State
+
+Well, this is the moment of truth. Open/R  were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a management port.
 
 
 
