@@ -633,7 +633,7 @@ root@rtr1:/#
 root@rtr1:/# 
 root@rtr1:/# breeze kvstore adj
 
-> rtr1's adjacencies, version: 2, Node Label: 36247, Overloaded?: False
+&gt; rtr1's adjacencies, version: 2, Node Label: 36247, Overloaded?: False
 Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
 <mark>rtr2        Hg0_0_1_0          Hg0_0_1_0                 10         1        50066  10.1.1.20     fe80::28a:96ff:fec0:bcc0  29m36s</mark>
 
