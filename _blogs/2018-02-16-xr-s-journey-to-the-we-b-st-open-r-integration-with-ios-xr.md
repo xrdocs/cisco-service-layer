@@ -671,7 +671,69 @@ Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Lab
 
 ### Check IOS-XR RIB State
 
-Well, this is the moment of truth. Open/R  were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a HundredGig port.
+Well, this is the moment of truth. Open/R  instances were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a HundredGig port. Now, let's see what happened to rtr1's RIB since we injected 1000 routes into the open/R instance:
+
+```
+
+RP/0/RP0/CPU0:rtr1#show route
+Sat Feb 17 00:28:36.838 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is 10.1.1.20 to network 0.0.0.0
+
+S*   0.0.0.0/0 [1/0] via 10.1.1.20, 1d02h
+               [1/0] via 11.11.11.2, 1d02h
+C    10.1.1.0/24 is directly connected, 3w0d, HundredGigE0/0/1/0
+L    10.1.1.10/32 is directly connected, 3w0d, HundredGigE0/0/1/0
+L    10.10.10.10/32 is directly connected, 3w0d, Loopback1
+C    11.11.11.0/24 is directly connected, 1d02h, MgmtEth0/RP0/CPU0/0
+L    11.11.11.23/32 is directly connected, 1d02h, MgmtEth0/RP0/CPU0/0
+L    50.1.1.1/32 is directly connected, 3w0d, Loopback0
+a    60.1.1.1/32 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.1.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.2.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.3.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.4.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.5.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.6.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.7.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.8.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.9.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.10.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.11.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.12.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.13.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+a    100.1.14.0/24 [99/0] via 10.1.1.20, 00:03:14, HundredGigE0/0/1/0
+
+....
+
+
+RP/0/RP0/CPU0:rtr1#show route summary
+Sat Feb 17 00:29:47.961 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+local                            4          0          0           960          
+connected                        2          2          0           960          
+dagr                             0          0          0           0            
+static                           1          0          0           352          
+bgp 65000                        0          0          0           0            
+application Service-layer        1002       0          0           240480       
+Total                            1009       2          0           242752       
+
+RP/0/RP0/CPU0:rtr1#
+
+```
+
+There you go! There are 1002 service layer routes in the RIB, all thanks to Open/R acting as an IGP, learning routes from its neighbor and programming the IOS-XR on the local box over gRPC.
+{: .notice--success}
 
 
 
