@@ -31,14 +31,13 @@ excerpt: >-
 ## IOS-XR's Journey to the West (Web)
 
 
-As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily **focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve**.    
+As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel, where does it falter, and what needs to be done to help it improve.    
   
 <a href="/cisco-service-layer/images/journey_to_the_west.png"><img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300"></a> 
 
-The allegorical reference that I'd like to use as we embark on this journey is a famous Chinese folklore called **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
+As an allegorical reference let me present to you the famous Chinese folklore called **"Journey to the west"** - a 16th Century Chinese novel by Wu Cheng-en.  
 
-It chronicles the story of Xuanzang in the 6th Century AD and his original journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. I may be oversimplifying the events, however, as Buddhism began to spread through the east, a new movement began that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
-
+It chronicles the story of Xuanzang in the 6th Century AD and his journey to India (the "west") to seek out and bring back the teachings of Buddhism to a primarily Confucian China. As Buddhism began to spread through the east, a new movement began in China that sought to marry the practical Confucian core with the new intellectual and spiritual expectations arising out of Buddhism. This movement came to be known as neo-confucianism.  
 
 
 <a href="/cisco-service-layer/images/xr-journey-to-the-web.png"><img src="/cisco-service-layer/images/xr-journey-to-the-web.png" alt="XR's journey to the web" class="align-left" width="500" height="300"></a>
@@ -59,11 +58,10 @@ The evolution was comprised of some very interesting developments:
 This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
 
 
-## Integrating Open/R with IOS-XR
 
-In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and application hosting capabilities can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving the platform hooks with IOS-XR. 
+In this blog, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and [application hosting capabilities](https://xrdocs.github.io/application-hosting/) can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving as the platform hooks with IOS-XR. 
 
-### What is Open/R?
+## What is Open/R?
 
 In November 2017, Facebook finally open sourced [Open/R](https://github.com/facebook/openr).  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
@@ -89,13 +87,13 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where do I start?
+### Where does one start?
 
 The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
 This netlink platform integration enables Open/R to run as a routing stack on top of a Linux kernel as the network stack. You can check out the relevant pieces of code here:  
 
->The **"Platform"** module code that runs a thrift Server and receives route batches from the Fib module running a thrift client
+>The **"Platform"** module code runs a thrift Server and receives route batches from the Fib module that runs a thrift client
 ><https://github.com/facebook/openr/tree/master/openr/platform>
 
 This consists of two important abstractions:
@@ -103,11 +101,11 @@ This consists of two important abstractions:
   *  **NetlinkSystemHandler**: implements the SystemService interface again described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to detect interfaces and IPv6 neighbors in the kernel that may be used to send hellos and peering messages to neighbors.  
   
   
->The **"Netlink(nl)"** abstraction that handles actual interaction with the kernel through netlink using the libnl3 library
+>The **"Netlink(nl)"** abstraction  handles actual interaction with the kernel through netlink using the libnl library. The Netlink platform handlers described above utilize this abstraction to program and fetch routes and get a list of ipv6 neighbors or links or associated events from the kernel.
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
 
-### Vagrant Setup for Open/R on Linux
+### Open/R on Linux: Vagrant
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
@@ -147,10 +145,477 @@ Bringing machine 'rtr2' up with 'virtualbox' provider...
 </pre>
 </div>
 
+The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect this bringup to take a long time. You could parallelize the effort by commenting out the provisioners for rtr1 and rtr2  in the Vagrantfile, bring up the nodes, uncomment the provisioners and then run `vagrant provision rtr1` and `vagrant provision rtr2` in two separate terminals simultaneously.
+{: .notice--warning}  
+
+Once the devices are up, issue a `vagrant ssh rtr1` and `vagrant ssh rtr2` in separate terminals and start open/R (The run scripts added to each node will automatically detect the interfaces) and start discovering each other).  
+
+Further, for rtr2, I've added a scaling python script that allows you to add up to 8000 routes by manipulating the `batch_size` and `batch_num` values in `<git repo directory>/scripts/increment_ipv4_prefix.py` before running /usr/sbin/run_openr.sh 
+{: .notice--info}
+
+```
+vagrant@rtr1:~$ /usr/sbin/run_openr.sh 
+/usr/sbin/run_openr.sh: line 98: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[10562]: Starting OpenR daemon.
+
+......
+
+
+vagrant@rtr2:~$ /usr/sbin/run_openr.sh 
+/usr/sbin/run_openr.sh: line 98: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[10562]: Starting OpenR daemon.
+
+......
+
+```
+
+
+
 
 ### Capturing Open/R Hellos and Peering messages
 
+On the switch start up a tcpdump capture on one or more of the bridges on the switch in the middle:  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+AKSHSHAR-M-K0DS:openr-two-nodes akshshar$<mark> vagrant ssh switch </mark>
+
+#######################  snip #############################
+
+Last login: Thu Feb 15 11:04:25 2018 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$<mark> sudo tcpdump -i br0 -w /vagrant/openr.pcap </mark>
+tcpdump: listening on br0, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+
+</code>
+</pre>
+</div>
+
+Open up the pcap file in wireshark and you should see the following messages show up:
+
+  *  **Hello Messages**: The hello messages are sent to UDP port 6666 to the All nodes IPv6 
+     Multicast address ff02::1 and source IP = Link local IPv6 address of node. These messages are 
+     used to discover neighbors and learn their link local IPv6 addresses.  
+     
+     ![Openr/R hello messages]({{site.baseurl}}/images/openr_hellos.png)
+     {: .notice--info}
+
+  *  **Peering Messages**: Once the link local IPv6 address of neighbor is known, 0MQ TCP messages 
+     are sent out to create an adjacency with the neighbor on an interface. One such message is 
+     shown below:  
+     
+     ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
+     {: .notice--info}
+
+### Open/R breeze CLI
+
+Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
+
+```
+vagrant@rtr1:~$ breeze kvstore adj
+
+> rtr1's adjacencies, version: 12, Node Label: 42122, Overloaded?: False
+Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
+vagrant     enp0s9             enp0s9                     7         1        50004  0.0.0.0       fe80::a00:27ff:fed1:ba15  0m2s
+vagrant     enp0s8             enp0s8                     8         1        50003  0.0.0.0       fe80::a00:27ff:fe94:3015  0m4s
+vagrant     enp0s10            enp0s10                    7         1        50005  0.0.0.0       fe80::a00:27ff:fe36:aec9  0m6s
+
+
+```
+
+
+Let's look at the fib state in Open/R using the breeze cli:
+
+```
+vagrant@rtr1:~$ breeze fib list
+
+== rtr1's FIB routes by client 786  ==
+
+> 100.1.1.0/24
+via 0.0.0.0@enp0s10
+via 0.0.0.0@enp0s8
+via 0.0.0.0@enp0s9
+
+> 100.1.10.0/24
+via 0.0.0.0@enp0s10
+via 0.0.0.0@enp0s8
+via 0.0.0.0@enp0s9
+
+> 100.1.100.0/24
+via 0.0.0.0@enp0s10
+
+......
+
+```
+
+If you used the default scaling script on rtr2, then rtr1 should now have about 1000 routes in its fib:  
+
+
+```
+vagrant@rtr1:~$ breeze fib counters
+
+== rtr1's Fib counters  ==
+
+fibagent.num_of_routes : 1004
+
+vagrant@rtr1:~$ 
+
+```
+
+Great! These outputs should give you a fair gist of how Open/R works as a link state routing protocol.
+{: .notice--success}
+
+
+## Integrating Open/R with IOS-XR
+
+### XR meets Requirements:
+
+Now that we understand how Open/R operates, let's codify the requirements for it work on a platform running Linux:  
+
+  *  **API to get and set Routes**: On Linux, this API is Netlink, but it can be replaced with any 
+     viable API that the networking stack on the platform offers.  
+     
+       In September 2017, we introduced Service Layer APIs - a highly performant and model driven 
+       API into the network infrastructure layer (RIB, label switch database, interface and BFD 
+       events) over gRPC. This API is ideal for platform integration with Open/R and as we'll see        later,achieves great performance due to its route batching capability. This 
+       API is available on IOS-XR releases post 6.1.2.
+       {: .notice--info}
   
+  *  **Ability to host applications**: The Network OS must have the capability to host Linux 
+     applications either natively or as a container (docker/lxc).
+       
+       With IOS-XR 6.1.2+, the capability to host linux applications on the box with docker was 
+       introduced. In addition, applications can be hosted within LXC containers or even natively 
+       (if compiled for WRL7). Further, use of network namespaces mapped to IOS-XR vrfs was 
+       introduced in release 6.2.2+, allowing isolation of traffic in the kernel based on vrf 
+       configuration.
+       {: .notice--info}
+  
+  *  **Ability to exchange Hellos and Peering Messages**: Open/R should be able to run unomodified 
+     on a platform and send its UDP hellos to port 6666 and ff02::1 and send/receive TCP peering 
+     messages using link local IPv6 addresses of neighbors.
+     
+       Packet/IO capabilities have existed in IOS-XR since 6.0.0+, allowing applications to bind 
+       to XR interfaces in the kernel, open up the TCP/UDP ports, transmit/receive TCP/UDP traffic 
+       along with exception traffic such as icmp, icmpv6, IPv6 multicast etc.
+       {: .notice--info}
+  
+
+
+
+### Gaps and workaround
+  
+  
+**The Issue:**  
+
+While the primary requirements were met right away, I did find an issue with dynamic IPv6 neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code that connects the linux kernel with the XR networking stack on the box.
+  
+  
+**Workaround**:  
+
+However, since XR itself has no issues in handling the IPv6 neighbors, we utilize two capabilities in XR as a workaround:
+
+  1. Enable **"ipv6 nd ra-unicast"** under the XR interfaces using XR CLI or Yang model. This 
+     enables neighbors to be reachable without explicit traffic being originated in XR.
+
+  2. Set up a client (currently separate from the Open/R binary, running as a parallel process) 
+     that receives **IPv6 neighbor table from XR periodically using Streaming Telemetry over gRPC 
+     and programs the kernel using Netlink**. Open/R then works with the programmed neighbors 
+     without any issues. 
+     By reacting to Streaming Telemetry data for IPv6 neighbors, the entries in the kernel are 
+     kept dynamic and in sync with network events like link flap or disabling IPv6 on interface.
+
+  
+  
+  
+### Current Solution and implementation details
+
+The current solution is shown below:
+
+![Open/R integration with IOS-XR- current design]({{site.baseurl}}/images/openr_xr_integration_current.png)
+
+
+The code for this implementation can be found here:  
+><https://github.com/akshshar/openr-xr>  
+
+The touch points are described below:
+
+  1.  [**CMakelists.txt**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/CMakeLists.txt) was extended to include grpc, protobuf and iosxrsl 
+      (IOS-XR Service Layer APIs compiled into a library) as target link libraries.
+  
+  2.  [**Platform module**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/platform) was extended to include [**IosxrslFibHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp) 
+      that implements the FibService interface described in the thrift IDL here: 
+      <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle
+      incoming route batches from the Fib module.
+  
+      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and the netlink hooks for IPv6 neighbors with IOS-XR Telemetry data for IPv6 neighbors. The goal will be to remove dependencies on libnl and determine if any efficiencies are gained as a result. For now, there is no immediate need to replace the NetlinkSystemHandler functionality.
+      {: .notice--info}
+  
+  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl): The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling for IOS-XR RIB (Routing information Base), making it easy to implement the IosxrslFibHandler.cpp code explained above. Eventually, the IOS-XR Service Layer Interface API abstraction will also go here.
+  
+  4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp): Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
+  
+  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
+  
+  <div class="highlighter-rouge">
+  <pre class="highlight">
+  <code style="white-space: pre;">
+  FROM ubuntu:16.04 
+
+
+  RUN apt-get update && apt-get install -y autoconf automake libtool curl make g++ unzip git  python-pip python-dev && git clone https://github.com/google/protobuf.git ~/protobuf && \
+            cd ~/protobuf && \
+            git checkout 2761122b810fe8861004ae785cc3ab39f384d342 && \
+            ./autogen.sh && \
+            ./configure && \
+            make && \
+            make install &&\
+            ldconfig && make clean && cd ~/ && rm -r ~/protobuf 
+
+
+  RUN git clone https://github.com/grpc/grpc.git ~/grpc && cd ~/grpc && \
+            git checkout 80893242c1ee929d19e6bec5dc19a1515cd8dd81 && \
+            git submodule update --init && \
+            make && \
+            make install && make clean && cd ~/ && rm -r ~/grpc
+
+  RUN apt-get install -y pkg-config && git clone https://wwwin-github.cisco.com/akshshar/service-layer-objmodel ~/service-layer-objmodel && \
+           cd ~/service-layer-objmodel/grpc/cpp && \
+           ./build_libiosxrsl.sh &&  \
+           cd ~/ && rm -r ~/service-layer-objmodel
+
+  RUN git clone https://github.com/akshshar/openr.git /root/openr && cd /root/openr/ && git   checkout openr20171212 && cd /root/openr/build && ./build_openr_dependencies.sh
+
+  RUN cd /root/openr/build && ./build_openr.sh && ./remake_glog.sh && cd /root/ && rm -r /root/openr
+
+  COPY run_openr.sh /usr/sbin/run_openr.sh
+
+  CMD /usr/sbin/run_openr.sh >/var/log/openr.log 2>&1
+  
+    
+  </code>
+  </pre>
+  </div>
+
+  **Tip:** When issuing the docker build command with this Dockerfile, make sure to use the --squash flag: `docker build --squash -it openr .`
+   This is required to prevent the size of the docker image from spiraling out of control.
+   {: .notice--warning}
+    
+    
+  
+### Deploying Open/R Docker image on NCS5500
+
+IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique described below:
+
+In the demo, I will utilize two NCS5501s connected to each other over a HundredGig interface.
+The basic configuration on the router is shown below:
+
+
+**XR Configuration:**
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+
+interface HundredGigE0/0/1/0
+ ipv4 address 10.1.1.10 255.255.255.0
+ <mark>ipv6 nd unicast-ra</mark>
+ ipv6 enable
+!
+!
+!
+grpc
+ <mark>port 57777</mark>
+ service-layer
+!
+!
+telemetry model-driven
+ sensor-group IPV6Neighbor
+  sensor-path Cisco-IOS-XR-ipv6-nd-oper:ipv6-node-discovery/nodes/node/neighbor-interfaces/neighbor-interface/host-addresses/host-address
+ !
+ subscription IPV6
+  sensor-group-id IPV6Neighbor sample-interval 15000
+ !
+!
+end
+
+
+</code>
+</pre>
+</div>
+
+As explained above, `ipv6 nd unicast-ra` is required to keep neighbors alive in XR while Open/R initiates traffic in the linux kernel. The `grpc` configuration starts the gRPC server on XR and can be used to subscribe to Telemetry data (subscription IPv6 as shown above) and service-layer configuration allows Service-Layer clients to connect over the same gRPC port.
+
+
+
+Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
+
+Once the docker image is pulled successfully, you should see:
+
+```
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 22:46:52.944 UTC
+[rtr1:~]$ 
+[rtr1:~]$ [rtr1:~]$ docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+11.11.11.2:5000/openr   latest              fdddb43d9600        33 seconds ago        1.829 GB
+[rtr1:~]$ 
+[rtr1:~]$ 
+```
+
+Now, simply spin up the docker image using the parameters shown below:
+
+```
+
+RP/0/RP0/CPU0:rtr1#
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 22:46:52.944 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker run -itd  --name openr --cap-add=SYS_ADMIN --cap-add=NET_ADMIN  -v /var/run/netns:/var/run/netns -v /misc/app_host:/root -v /misc/app_host/hosts_{{ inventory_hostname }}:/etc/hosts --hostname {{ inventory_hostname }} 11.11.11.2:5000/openr bash
+684ad446ccef5b0f3d04bfa4705cab2117fc60f266cf0536476eb9506eb3050a
+[rtr1:~]$ 
+[rtr1:~]$ 
+[rtr1:~]$ docker ps
+CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
+b71b65238fe2        11.11.11.2:5000/openr   "bash -l"           24 secondss ago        Up 24 seconds                             openr
+```
+
+Instead of `bash` as the entrypoint command for the docker instance, one can directly start openr using `/root/run_openr_rtr1.sh > /root/openr_logs 2>&1`. I'm using `bash` here for demonstration purposes.
+{: .notice--info}
+
+Note the capabilities: `--cap-add=SYS_ADMIN` and `--cap-add=NET_ADMIN`. Both of these are necessary to ensure changing into a mounted network namespace(vrf) is possible inside the container.
+{: .notice--info}
+
+
+Once the docker instance is up on rtr1, we do the same thing on rtr2:
+
+```
+RP/0/RP0/CPU0:rtr2#bash
+Fri Feb 16 23:12:53.828 UTC
+[rtr2:~]$ docker ps
+CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS               NAMES
+684ad446ccef        11.11.11.2:5000/openr   "bash -l"           8 minutes ago       Up 8 minutes                            openr
+[rtr2:~]$ 
+```
+
+On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
+
+
+### Testing OPENR_FIB_ROUTES_PROGRAMMED Rate
+
+On rtr2, exec into the docker instance and start Open/R:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+RP/0/RP0/CPU0:rtr2#bash
+Fri Feb 16 23:12:53.828 UTC
+[rtr2:~]$ 
+[rtr2:~]$ docker exec -it openr bash
+root@rtr2:/# /root/run_openr_rtr2.sh
+/root/run_openr_rtr2.sh: line 106: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[13]: Starting OpenR daemon.
+openr
+
+....
+
+</code>
+</pre>
+</div>
+
+Now, hop over to rtr1 and do the same:
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 23:12:53.828 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker exec -it openr bash
+root@rtr2:/# /root/run_openr_rtr1.sh
+/root/run_openr_rtr1.sh: line 106: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[13]: Starting OpenR daemon.
+openr
+
+I0216 23:50:28.058964   134 Fib.cpp:144] Fib: publication received ...
+I0216 23:50:28.063819   134 Fib.cpp:218] <mark>Processing route database ... 1002 entries</mark>
+I0216 23:50:28.065533   134 Fib.cpp:371] Syncing latest routeDb with fib-agent ... 
+I0216 23:50:28.081434   126 IosxrslFibHandler.cpp:185] Syncing FIB with provided routes. Client: OPENR
+I0216 23:50:28.105329    95 ServiceLayerRoute.cpp:197] ###########################
+I0216 23:50:28.105350    95 ServiceLayerRoute.cpp:198] Transmitted message: IOSXR-SL Routev4 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+Routes {
+  Prefix: 1006698753
+  PrefixLen: 32
+  RouteCommon {
+    AdminDistance: 99
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 167837972
+    }
+    NexthopInterface {
+      Name: "HundredGigE0/0/1/0"
+    }
+  }
+}
+Routes {
+
+
+
+.....
+
+
+
+
+Routes {
+  Prefix: 1677976064
+  PrefixLen: 24
+  RouteCommon {
+    AdminDistance: 99
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 167837972
+    }
+    NexthopInterface {
+      Name: "HundredGigE0/0
+I0216 23:49:00.923399    95 ServiceLayerRoute.cpp:199] ###########################
+I0216 23:49:00.943408    95 ServiceLayerRoute.cpp:211] RPC call was successful, checking response...
+I0216 23:49:00.943434    95 ServiceLayerRoute.cpp:217] IPv4 Route Operation:2 Successful
+I0216 23:49:00.944533    95 ServiceLayerRoute.cpp:777] ###########################
+I0216 23:49:00.944545    95 ServiceLayerRoute.cpp:778] Transmitted message: IOSXR-SL RouteV6 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+I0216 23:49:00.944550    95 ServiceLayerRoute.cpp:779] ###########################
+I0216 23:49:00.945046    95 ServiceLayerRoute.cpp:793] RPC call was successful, checking response...
+I0216 23:49:00.945063    95 ServiceLayerRoute.cpp:799] IPv6 Route Operation:2 Successful
+I0216 23:27:01.021437    52 Fib.cpp:534] OpenR convergence performance. Duration=3816
+I0216 23:27:01.021456    52 Fib.cpp:537]   node: rtr1, event: ADJ_DB_UPDATED, duration: 0ms, unix-timestamp: 1518823617205
+I0216 23:27:01.021464    52 Fib.cpp:537]   node: rtr1, event: DECISION_RECEIVED, duration: 1ms, unix-timestamp: 1518823617206
+I0216 23:27:01.021471    52 Fib.cpp:537]   node: rtr1, event: DECISION_DEBOUNCE, duration: 9ms, unix-timestamp: 1518823617215
+I0216 23:27:01.021476    52 Fib.cpp:537]   node: rtr1, event: DECISION_SPF, duration: 22ms, unix-timestamp: 1518823617237
+I0216 23:27:01.021479    52 Fib.cpp:537]   node: rtr1, event: FIB_ROUTE_DB_RECVD, duration: 12ms, unix-timestamp: 1518823617249
+I0216 23:27:01.021484    52 Fib.cpp:537]   node: rtr1, event: FIB_DEBOUNCE, duration: 3709ms, unix-timestamp: 1518823620958
+I0216 23:27:01.021488    52 Fib.cpp:537]   node: rtr1, event: <mark>OPENR_FIB_ROUTES_PROGRAMMED, duration: 63ms, unix-timestamp: 1518823621021</mark>
+
+
+</code>
+</pre>
+</div>
+
+As seen in the highlighted outputs, the total time taken to program 1002 route entries was about 63ms, giving us a route programming rate of about 16000 routes/second!
+{: .notice--info}
+
+
+
+
 
 
 
