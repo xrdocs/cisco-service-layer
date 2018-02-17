@@ -528,6 +528,88 @@ openr
 Now, hop over to rtr1 and do the same:
 
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code style="white-space: pre;">
+
+RP/0/RP0/CPU0:rtr1#bash
+Fri Feb 16 23:12:53.828 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker exec -it openr bash
+root@rtr2:/# /root/run_openr_rtr1.sh
+/root/run_openr_rtr1.sh: line 106: /etc/sysconfig/openr: No such file or directory
+Configuration not found at /etc/sysconfig/openr. Using default configuration
+openr[13]: Starting OpenR daemon.
+openr
+
+I0216 23:50:28.058964   134 Fib.cpp:144] Fib: publication received ...
+I0216 23:50:28.063819   134 Fib.cpp:218] <mark>Processing route database ... 1002 entries</mark>
+I0216 23:50:28.065533   134 Fib.cpp:371] Syncing latest routeDb with fib-agent ... 
+I0216 23:50:28.081434   126 IosxrslFibHandler.cpp:185] Syncing FIB with provided routes. Client: OPENR
+I0216 23:50:28.105329    95 ServiceLayerRoute.cpp:197] ###########################
+I0216 23:50:28.105350    95 ServiceLayerRoute.cpp:198] Transmitted message: IOSXR-SL Routev4 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+Routes {
+  Prefix: 1006698753
+  PrefixLen: 32
+  RouteCommon {
+    AdminDistance: 99
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 167837972
+    }
+    NexthopInterface {
+      Name: "HundredGigE0/0/1/0"
+    }
+  }
+}
+Routes {
+
+
+
+.....
+
+
+
+
+Routes {
+  Prefix: 1677976064
+  PrefixLen: 24
+  RouteCommon {
+    AdminDistance: 99
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 167837972
+    }
+    NexthopInterface {
+      Name: "HundredGigE0/0
+I0216 23:49:00.923399    95 ServiceLayerRoute.cpp:199] ###########################
+I0216 23:49:00.943408    95 ServiceLayerRoute.cpp:211] RPC call was successful, checking response...
+I0216 23:49:00.943434    95 ServiceLayerRoute.cpp:217] IPv4 Route Operation:2 Successful
+I0216 23:49:00.944533    95 ServiceLayerRoute.cpp:777] ###########################
+I0216 23:49:00.944545    95 ServiceLayerRoute.cpp:778] Transmitted message: IOSXR-SL RouteV6 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+I0216 23:49:00.944550    95 ServiceLayerRoute.cpp:779] ###########################
+I0216 23:49:00.945046    95 ServiceLayerRoute.cpp:793] RPC call was successful, checking response...
+I0216 23:49:00.945063    95 ServiceLayerRoute.cpp:799] IPv6 Route Operation:2 Successful
+I0216 23:49:00.946413   134 Fib.cpp:534] OpenR convergence performance. Duration=-81945
+I0216 23:49:00.946427   134 Fib.cpp:537]   node: rtr2, event: PREFIX_DB_UPDATED, duration: 0ms, unix-timestamp: 1518825022891
+I0216 23:49:00.946434   134 Fib.cpp:537]   node: rtr1, event: DECISION_RECEIVED, duration: -85856ms, unix-timestamp: 1518824937035
+I0216 23:49:00.946437   134 Fib.cpp:537]   node: rtr1, event: DECISION_DEBOUNCE, duration: 9ms, unix-timestamp: 1518824937044
+I0216 23:49:00.946441   134 Fib.cpp:537]   node: rtr1, event: DECISION_SPF, duration: 24ms, unix-timestamp: 1518824937068
+I0216 23:49:00.946445   134 Fib.cpp:537]   node: rtr1, event: FIB_ROUTE_DB_RECVD, duration: 12ms, unix-timestamp: 1518824937080
+I0216 23:49:00.946450   134 Fib.cpp:537]   node: rtr1, event: FIB_DEBOUNCE, duration: 3803ms, unix-timestamp: 1518824940883
+I0216 23:49:00.946455   134 Fib.cpp:537]   <mark>node: rtr1, event: OPENR_FIB_ROUTES_PROGRAMMED, duration: 63ms, unix-timestamp: 1518824940946</mark>
+
+</code>
+</pre>
+</div>
+
+As seen in the marked timings, the total time taken to program 1002 route entries was about 63ms, giving us a route programming rate of about 16000 route.second
+
+
 
 
 
