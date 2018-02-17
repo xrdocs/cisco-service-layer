@@ -758,9 +758,9 @@ This particular integration was centered around Route handling and hence the RIB
 The Service Layer API however offers access to the Label Switch Database on IOS-XR so that a client may program label blocks and label-prefix mappings based on some application logic.
 This may be leveraged to provide label handling (MPLS) capabilities to Open/R.
 
-Further, Open/R currently hooks into interface events and IPv6 neighbor events. With the Service Layer API it is also possible to get stream of BFD notifications, allowing faster response to link down event of the neighbor, if the neighbor is connected through a LAN/switch.
+Further, Open/R currently hooks into interface events and IPv6 neighbor events. With the Service Layer API it is also possible to get stream of BFD notifications, allowing faster response to link-down event of the neighbor, if the neighbor is connected through a LAN/switch.
 
-As Service Layer APIs evolve further and get SR-TE (label stack) capabilities and/or L2 capabilities, there is a stream of new possibilities for Open/R in the near future.
+As Service Layer APIs evolve further and get SR-TE (label stack) capabilities and L2 capabilities, there is a stream of new possibilities for Open/R in the near future.
 
 
 
