@@ -204,7 +204,7 @@ tcpdump: listening on br0, link-type EN10MB (Ethernet), capture size 262144 byte
 
 Open up the pcap file in wireshark and you should see the following messages show up:
 
-  *  **Hello Messages**: The hello messages are sent to UDP port 6666 to the All nodes IPv6 
+  *  **Hello Messages**: The hello messages are sent to UDP port 6666 to the All-Nodes IPv6 
      Multicast address ff02::1 and source IP = Link local IPv6 address of node. These messages are 
      used to discover neighbors and learn their link local IPv6 addresses.  
      
