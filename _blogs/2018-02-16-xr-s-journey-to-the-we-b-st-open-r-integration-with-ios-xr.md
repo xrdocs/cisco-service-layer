@@ -99,7 +99,7 @@ Consequently, integrations with existing stacks and platforms can cleanly occur 
   
 ### Where does one start?
 
-The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
+I believe the best place to start is of course the documentation on Github I refer to above. However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The original developers at Facebook were gracious enough to release a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
 This netlink platform integration enables Open/R to run as a routing stack on top of a Linux kernel as the network stack. You can check out the relevant pieces of code here:  
 
