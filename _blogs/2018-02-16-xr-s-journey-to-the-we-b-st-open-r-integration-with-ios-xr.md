@@ -114,6 +114,11 @@ This consists of two important abstractions:
 >The **"Netlink(nl)"** abstraction  handles actual interaction with the kernel through netlink using the libnl library. The Netlink platform handlers described above utilize this abstraction to program and fetch routes and get a list of ipv6 neighbors or links or associated events from the kernel.
 ><https://github.com/facebook/openr/tree/master/openr/nl>
 
+Well, this is good to know. But the question still lingers -
+
+> How can one power through the all the concepts and get Open/R running?
+
+The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with.
 
 ### Open/R on Linux:Vagrant
 
