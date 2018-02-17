@@ -462,7 +462,7 @@ As explained above, `ipv6 nd unicast-ra` is required to keep neighbors alive in 
 
 
 
-Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in Docker on XR tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
+Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
 
 Once the docker image is pulled successfully, you should see:
 
