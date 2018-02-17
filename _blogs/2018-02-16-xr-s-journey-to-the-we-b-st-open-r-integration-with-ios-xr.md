@@ -30,7 +30,7 @@ excerpt: >-
 
 ## Prelude
 
-This Blog is primarily focused on the recent Open/R integration with IOS-XR that was accomplished in December 2017, following the open-source announcement by Facebook in November 2017. Within a month of the announcement, we had an integration running thanks to the exhaustive and model driven Service Layer API and thanks to IOS-XR's application hosting capabilities that have progressively become more powerful over the years. The code for the integration is out on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
+This Blog is primarily focused on the recent Open/R integration with IOS-XR that was accomplished in December 2017, following the open-source announcement by Facebook in November 2017. Within a month of the announcement, we had an integration running with IOS-XR, thanks to the exhaustive and model driven Service Layer API and to IOS-XR's application hosting capabilities that have progressively become more powerful over the years. The code for the integration is out on Github (<https://github.com/akshshar/openr-xr>) and is going through iterations and review before a pull request is sent out to the core code at <https://github.com/facebook/openr/>.  
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
