@@ -284,7 +284,7 @@ Great! These outputs should give you a fair gist of how Open/R works as a link s
 
 ### XR meets Requirements:
 
-Now that we understand how Open/R operates, let's codify the requirements for it work on a platform running Linux:  
+Now that we understand how Open/R operates, let's codify the requirements for it to work on a platform running Linux:  
 
   *  **API to get and set Routes**: On Linux, this API is Netlink, but it can be replaced with any 
      viable API that the networking stack on the platform offers.  
