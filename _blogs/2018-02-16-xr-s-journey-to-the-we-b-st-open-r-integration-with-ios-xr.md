@@ -31,7 +31,7 @@ excerpt: >-
 
 ## Prelude
 
-In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/){:target="_blank"} of Open/R, we released an integration of Open/R with IOS-XR. With the model-driven Service Layer APIs and application hosting capabilities, IOS-XR provided a pretty easy ride. The code for this integration is on [Github](<https://github.com/akshshar/openr-xr>){:target="_blank"} and is going through iterations and reviews before a pull request is sent out to the core code at <https://github.com/facebook/openr/>{:target="_blank"}.  
+In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/){:target="_blank"} of Open/R, we released an integration of Open/R with IOS-XR. With the model-driven Service Layer APIs and application hosting capabilities, IOS-XR provided a pretty easy ride. The code for this integration is on Github (<https://github.com/akshshar/openr-xr>){:target="_blank"} and is going through iterations and reviews before a pull request is sent out to the core code at <https://github.com/facebook/openr/>{:target="_blank"}.  
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
@@ -58,28 +58,28 @@ I liken the changes that have happened to IOS-XR over the last few years to a si
 The evolution was comprised of some very interesting developments:
 
   *  **Linux-ization of the Stack**: IOS-XR moved from 32-bit QNX to 64-bit Linux to enable an 
-     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/) and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
+     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/){:target="_blank"} and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
      
-  *  **Streaming Telemetry**: [**Real-time push-based Streaming Telemetry**](https://xrdocs.github.io/telemetry/) for monitoring, alerts and 
+  *  **Streaming Telemetry**: [**Real-time push-based Streaming Telemetry**](https://xrdocs.github.io/telemetry/){:target="_blank"} for monitoring, alerts and 
      remediation triggers/events, outperforming SNMP in every department - scale, ease-of-use, 
      cadence etc.  
      
-  *  **Model Driven APIs at every layer of the stack**: This includes [**Yang Models at the Manageability layer**](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr) and [**tools to generate bindings in various languages**](http://ydk.io). Further,in September 2017, we took it a step further - we introduced model driven APIs over gRPC called the [**Service Layer APIs**](https://xrdocs.github.io/cisco-service-layer/) that provide programmatic access to the IOS-XR RIB, label switch database and notifications for interface and BFD events.
+  *  **Model Driven APIs at every layer of the stack**: This includes [**Yang Models at the Manageability layer**](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr){:target="_blank"} and [**tools to generate bindings in various languages**](http://ydk.io){:target="_blank"}. Further,in September 2017, we took it a step further - we introduced model driven APIs over gRPC called the [**Service Layer APIs**](https://xrdocs.github.io/cisco-service-layer/){:target="_blank"} that provide programmatic access to the IOS-XR RIB, label switch database and notifications for interface and BFD events.
 
 This blog series will focus on how a combination of the above enhancements should allow us to integrate with a wide variety of tools and software stacks in the networking community and let our users run with scissors when needed.
 
 
 
-In this blog in particular, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/) and [application hosting capabilities](https://xrdocs.github.io/application-hosting/) can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving as the platform hooks to IOS-XR. 
+In this blog in particular, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/){:target="_blank"} and [application hosting capabilities](https://xrdocs.github.io/application-hosting/){:target="_blank"} can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving as the platform hooks to IOS-XR. 
 
 ## What is Open/R?
 
-In November 2017, Facebook open sourced [Open/R](https://github.com/facebook/openr).  
+In November 2017, Facebook open sourced [Open/R](https://github.com/facebook/openr){:target="_blank"}.  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
 
 Much of the documentation for open/R can be found in the docs directory in the git repo:
 
-><https://github.com/facebook/openr/tree/master/openr/docs>
+><https://github.com/facebook/openr/tree/master/openr/docs>{:target="_blank"}
 
 It is laid out rather well and describes all the components of the code individually - their purpose, internal interactions, et al.
 
