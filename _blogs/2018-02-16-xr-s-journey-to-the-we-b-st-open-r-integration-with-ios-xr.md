@@ -768,10 +768,36 @@ RP/0/RP0/CPU0:rtr1#
 
 ```
 
-There you go! There are 1002 service layer routes in the RIB, all thanks to Open/R acting as an IGP, learning routes from its neighbor and programming the IOS-XR RIB on the local box over gRPC.
+
+Again, if we dump the fib counters in open/R inside the docker container, we see the counters match up to the summary above:  
+
+
+```
+RP/0/RP0/CPU0:rtr1#bash
+Mon Feb 19 23:12:51.407 UTC
+[rtr1:~]$ 
+[rtr1:~]$ docker exec -it openr bash
+root@rtr1:/# ip netns exec global-vrf bash
+root@rtr1:/# 
+root@rtr1:/# breeze fib  counters
+
+== rtr1's Fib counters  ==
+
+fibagent.num_of_routes : 1002
+
+root@rtr1:/# 
+
+
+```
+
+So, there you go! There are 1002 service layer routes in the RIB, all thanks to Open/R acting as an IGP, learning routes from its neighbor and programming the IOS-XR RIB on the local box over gRPC.
 {: .notice--success}
 
 
+## Coexistence with Other Protocols on IOS-XR 
+
+**The two outputs in the previous section showcase an interesting juxtaposition**: Open/R internally is designed to program a "FIB" on a given platform (such as the Linux Kernel using Netlink), but in the integration with IOS-XR described above, the integration point is shifted up to the "RIB".   
+    At this level, notionally, Open/R is no longer the only network protocol stack on the system. It can instead co-exist with other stacks. (This precisely what I demonstrated in the demo at [NFD17](https://www.youtube.com/embed/HMvl9CzDIpQ?start=463) where iBGP is configured using Loopback addresses that are advertised through Open/R running as IGP. In this case, Open/R and XR-BGP coexist and the conflict resolution is handled using Administrative Distance. By default, I have selected **99** as the Admin Distance for Open/R (in line with protocol ID used for Netlink integration by Facebook).
 
 ## What else can we do?
 
