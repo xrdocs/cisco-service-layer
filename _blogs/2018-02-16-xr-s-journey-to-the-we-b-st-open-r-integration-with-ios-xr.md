@@ -350,9 +350,9 @@ Now that we understand how Open/R operates, let's codify the requirements for it
 2.  **Resolved Issue: Patch Ready**:  
 
     As part of the initial design of the packet/IO architecture, the presence of a default route 
-    through an interface called "fwdintf" and consequently, an fe80::/64 route through fwdintf 
-    alone, solved most use cases where an application needed to send traffic through data ports 
-    over the internal fabric.   
+    through an interface (that connects the kernel to the XR networking stack) called "fwdintf" 
+    and consequently, an fe80::/64 route through fwdintf alone, solved most use cases where an 
+    application needed to send traffic through data ports over the internal fabric.   
     
        However, as soon as we realized that Open/R utilizes TCP messages with link local IPv6 
     addresses of neighbors as the destination to establish adjacencies, it became obvious that we 
