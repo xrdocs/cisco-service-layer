@@ -39,7 +39,7 @@ To see the demo of Open/R on XR in action, take a look at the following NFD17 pr
   
   
   
-If you'd like to see this demo live and have a chat, then **catch us at the Beer'n'Gear Cisco Booth at Nanog72 in Atlanta on Tuesday, 20th Feb, 2018 from 6pm to 8pm**.
+If you'd like to see this demo live and have a chat, then **catch us at the Cisco Booth at Beer'n'Gear at Nanog72 in Atlanta on Tuesday, 20th Feb, 2018 from 6pm to 8pm**.
 
 This blog will dive deeper into the demo as well as the integration points in code, so hopefully it is useful for folks starting off with open/R.
 
