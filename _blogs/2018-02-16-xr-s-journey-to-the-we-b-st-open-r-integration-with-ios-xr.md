@@ -629,7 +629,7 @@ As seen in the highlighted outputs, the total time taken to program 1002 route e
 
 Having said that, the FIB_DEBOUNCE rate is something to be looked at as I work through the code a bit more.
 
-It goes without saying that the adjacencies were correctly established, but for the sake of this blog, here are breeze outputs on rtr1 and rtr2:
+It goes without saying that the adjacencies were correctly established, but for the sake of public record, here are breeze outputs on rtr1 and rtr2:
 
 **rtr1 breeze adj**:
 
