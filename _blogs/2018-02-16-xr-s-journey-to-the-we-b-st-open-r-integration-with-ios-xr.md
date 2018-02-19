@@ -354,8 +354,8 @@ Now that we understand how Open/R operates, let's codify the requirements for it
        However, as soon as we realized that Open/R utilizes TCP messages with link local IPv6 
     addresses of neighbors as the destination to establish adjacencies, it became obvious that we 
     needed to allow fe80::/64 routes through all the exposed interfaces (Gig, TenGig, HundredGig 
-    etc.) in the kernel. This was a simple fix and an internal bug was filed,resolved and the 
-    patch is utilized in the integration that you see below. This patch will be released for 
+    etc.) in the kernel. **This was a simple fix and an internal bug was filed,resolved and the 
+    patch is utilized in the integration that you see below.** This patch will be released for 
     public consumption as a SMU on top of IOS-XR release 6.2.25 and will be integrated into 6.3.2.
   
   
