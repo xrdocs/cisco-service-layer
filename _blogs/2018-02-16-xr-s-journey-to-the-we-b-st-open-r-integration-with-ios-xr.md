@@ -323,29 +323,43 @@ Now that we understand how Open/R operates, let's codify the requirements for it
 ### Gaps and workaround
   
   
-**Pending Issue:**  
+1. **Pending Issue:**  
 
-While the primary requirements were met right away, I did find an issue with dynamic IPv6 neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code that connects the linux kernel with the XR networking stack on the box.
+    While the primary requirements were met right away, I did find an issue with dynamic IPv6 
+    neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were 
+    unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code 
+    that connects the linux kernel with the XR networking stack on the box.
   
   
-**Workaround**:  
+   **Workaround**:  
 
-However, since XR itself has no issues in handling the IPv6 neighbors, we utilize two capabilities in XR as a workaround:
+   However, since XR itself has no issues in handling the IPv6 neighbors, we utilize two 
+   capabilities in XR as a workaround:
 
-  1. Enable **"ipv6 nd ra-unicast"** under the XR interfaces using XR CLI or Yang model. This 
-     enables neighbors to be reachable without explicit traffic being originated in XR.
+     1. Enable **"ipv6 nd ra-unicast"** under the XR interfaces using XR CLI or Yang model. This 
+        enables neighbors to be reachable without explicit traffic being originated in XR.
 
-  2. Set up a client (currently separate from the Open/R binary, running as a parallel process) 
-     that receives **IPv6 neighbor table from XR periodically using Streaming Telemetry over gRPC 
-     and programs the kernel using Netlink**. Open/R then works with the programmed neighbors in 
-     the kernel without any issues. 
-     By reacting to Streaming Telemetry data for IPv6 neighbors, the entries in the kernel are 
-     kept dynamic and in sync with network events like link flap or disabling IPv6 on interface.
+     2. Set up a client (currently separate from the Open/R binary, running as a parallel 
+        process) that receives **IPv6 neighbor table from XR periodically using Streaming 
+        Telemetry over gRPC and programs the kernel using Netlink**. Open/R then works with the 
+        programmed neighbors in the kernel without any issues. By reacting to Streaming Telemetry 
+        data for IPv6 neighbors, the entries in the kernel are kept dynamic and in sync with 
+        network events like link flap or disabling IPv6 on interface.
 
-**Resolved Issue: Patch Ready**:  
 
-As part of the initial design of the packet/IO architecture, the presence of a default route through an interface called "fwdintf" and consequently, an fe80::/64 route through fwdintf alone, solved most use cases where an application needed to send traffic through data ports over the internal fabric.   
-    However, as soon as we realized that Open/R utilizes TCP messages with link local IPv6 addresses of neighbors as the destination to establish adjacencies, it became obvious that we needed to allow fe80::/64 routes through all the exposed interfaces (Gig, TenGig, HundredGig etc.) in the kernel. This was a simple fix and an internal bug was filed,resolved and the patch is utilized in the integration that you see below. This patch will be released for public consumption as a SMU on top of IOS-XR release 6.2.25 and will be integrated into 6.3.2.
+2.  **Resolved Issue: Patch Ready**:  
+
+    As part of the initial design of the packet/IO architecture, the presence of a default route 
+    through an interface called "fwdintf" and consequently, an fe80::/64 route through fwdintf 
+    alone, solved most use cases where an application needed to send traffic through data ports 
+    over the internal fabric.   
+    
+       However, as soon as we realized that Open/R utilizes TCP messages with link local IPv6 
+    addresses of neighbors as the destination to establish adjacencies, it became obvious that we 
+    needed to allow fe80::/64 routes through all the exposed interfaces (Gig, TenGig, HundredGig 
+    etc.) in the kernel. This was a simple fix and an internal bug was filed,resolved and the 
+    patch is utilized in the integration that you see below. This patch will be released for 
+    public consumption as a SMU on top of IOS-XR release 6.2.25 and will be integrated into 6.3.2.
   
   
 ### Current Solution and implementation details
