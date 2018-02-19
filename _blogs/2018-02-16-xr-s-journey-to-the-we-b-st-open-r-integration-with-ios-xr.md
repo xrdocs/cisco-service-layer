@@ -42,7 +42,7 @@ This blog will dive deeper into the demo as well as the integration points in co
 ## IOS-XR's Journey to the West (Web)
 
 
-As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have so earnestly taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel? where can it get better? and what needs to be done to help it get better?   
+As part of this blog series titled **"XR's journey to the Web"**, I intend to candidly present the journey that we have taken with the IOS-XR software stack since 2014. In line with the ethos of xrdocs, expect this series to be highly technical and heavily focused on showcasing how IOS-XR integrates with community tools and open-source software innovations - where does it excel? where can it get better? and what needs to be done to help it get better?   
   
 <a href="/cisco-service-layer/images/journey_to_the_west.png"><img src="/cisco-service-layer/images/journey_to_the_west.png" alt="Chinese folklore - Journey to the west" class="align-right" width="300" height="300"></a> 
 
