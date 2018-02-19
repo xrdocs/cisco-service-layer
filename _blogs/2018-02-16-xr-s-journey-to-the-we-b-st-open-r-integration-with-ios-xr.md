@@ -93,7 +93,7 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 
   *  **KV-Store**:  A Key-Value store that serves as a common database for the entire stack. Peering Messages to other routers are sent out over 0MQ channels. The internal  communication with other components such as the Prefix Manager, Decision module or the link monitor module are handled by sending and receiving thrift objects on sockets through an abstracted KvStoreClient.
 
-  *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>){:target="_blank"}
+  *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>{:target="_blank"})
 
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend an existing or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
