@@ -31,7 +31,7 @@ excerpt: >-
 
 ## Prelude
 
-In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/){:target="_blank"} of Open/R, we released an integration of Open/R with IOS-XR. With the model-driven Service Layer APIs and application hosting capabilities, IOS-XR provided a pretty easy ride. The code for this integration is on Github (<https://github.com/akshshar/openr-xr>){:target="_blank"} and is going through iterations and reviews before a pull request is sent out to the core code at <https://github.com/facebook/openr/>{:target="_blank"}.  
+In December 2017, within a month of Facebook's open-source [announcement](https://code.facebook.com/posts/291641674683314/open-r-open-routing-for-modern-networks/){:target="_blank"} of Open/R, we released an integration of Open/R with IOS-XR. With the model-driven Service Layer APIs and application hosting capabilities, IOS-XR provided a pretty easy ride. The code for this integration is on Github (<https://github.com/akshshar/openr-xr>{:target="_blank"}) and is going through iterations and reviews before a pull request is sent out to the core code at <https://github.com/facebook/openr/>{:target="_blank"}.  
 
 To see the demo of Open/R on XR in action, take a look at the following NFD17 presentation focused on IOS-XR's interplay with community tools:     
 
@@ -58,9 +58,9 @@ I liken the changes that have happened to IOS-XR over the last few years to a si
 The evolution was comprised of some very interesting developments:
 
   *  **Linux-ization of the Stack**: IOS-XR moved from 32-bit QNX to 64-bit Linux to enable an 
-     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/){:target="_blank"} and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
+     environment for scripting, [**hosting applications**](https://xrdocs.github.io/application-hosting/tutorials){:target="_blank"} and integration with tools in the DevOps space such as Ansible, Puppet, Docker, etc.  
      
-  *  **Streaming Telemetry**: [**Real-time push-based Streaming Telemetry**](https://xrdocs.github.io/telemetry/){:target="_blank"} for monitoring, alerts and 
+  *  **Streaming Telemetry**: [**Real-time push-based Streaming Telemetry**](https://xrdocs.github.io/telemetry/tutorials/){:target="_blank"} for monitoring, alerts and 
      remediation triggers/events, outperforming SNMP in every department - scale, ease-of-use, 
      cadence etc.  
      
@@ -93,19 +93,19 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 
   *  **KV-Store**:  A Key-Value store that serves as a common database for the entire stack. Peering Messages to other routers are sent out over 0MQ channels. The internal  communication with other components such as the Prefix Manager, Decision module or the link monitor module are handled by sending and receiving thrift objects on sockets through an abstracted KvStoreClient.
 
-  *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>)
+  *  **Thrift based modeled APIs** between all the modules: for example, the FIB module implements a thrift client and the platform module implements a thrift server to receive route batches from the FIB before programming the underlying platform. These interaction RPCs and the data structures such as the route updates are modeled in thrift IDL files (See <https://github.com/facebook/openr/tree/master/openr/if>){:target="_blank"}
 
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend an existing or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
 ### Where does one start?
 
-I believe the best place to start is of course the documentation on Github I refer to [above](https://github.com/facebook/openr/tree/master/openr/docs). However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The developers at Facebook graciously released a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
+I believe the best place to start is of course the documentation on Github I refer to [above](https://github.com/facebook/openr/tree/master/openr/docs){:target="_blank"}. However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The developers at Facebook graciously released a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
 This netlink platform integration enables Open/R to run as a routing stack on top of a Linux kernel as the network stack. You can check out the relevant pieces of code here:  
 
 >The **"Platform"** module code runs a thrift Server and receives route batches from the Fib module that runs a thrift client
-><https://github.com/facebook/openr/tree/master/openr/platform>
+><https://github.com/facebook/openr/tree/master/openr/platform>{:target="_blank"}
 
 This consists of two important abstractions:
   *  **NetlinkFibhandler**:  implements the FibService interface described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle the incoming route batches from the Fib module
