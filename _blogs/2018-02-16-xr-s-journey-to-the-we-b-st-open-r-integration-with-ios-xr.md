@@ -164,7 +164,7 @@ The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect t
 
 Once the devices are up, issue a `vagrant ssh rtr1` and `vagrant ssh rtr2` in separate terminals and start open/R (The run scripts added to each node will automatically detect the interfaces) and start discovering each other).  
 
-Further, for rtr2, I've added a scaling python script that allows you to add up to 8000 routes by manipulating the `batch_size` and `batch_num` values in `<git repo directory>/scripts/increment_ipv4_prefix.py` before running /usr/sbin/run_openr.sh 
+Further, for rtr2, I've added a simple route-scaling python script that allows you to add up to 8000 routes by manipulating the `batch_size` and `batch_num` values in `<git repo directory>/scripts/increment_ipv4_prefix.py` before running /usr/sbin/run_openr.sh 
 {: .notice--info}
 
 ```
@@ -265,7 +265,7 @@ via 0.0.0.0@enp0s10
 
 ```
 
-If you used the default scaling script on rtr2, then rtr1 should now have about 1000 routes in its fib:  
+If you used the default route-scaling script on rtr2, then rtr1 should now have about 1000 routes in its fib:  
 
 
 ```
@@ -515,7 +515,7 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 [rtr2:~]$ 
 ```
 
-On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
+On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a route-scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
 
 
 ### Testing FIB Programming Rate
