@@ -324,17 +324,14 @@ Now that we understand how Open/R operates, let's codify the requirements for it
   
   
 1. **Pending Issue:**  
-
     While the primary requirements were met right away, I did find an issue with dynamic IPv6 
     neighbor discovery in the kernel. Neighbor Solicitation messages generated in the kernel were 
     unable to exit the box. This issue is being looked at as part of the packet/IO plumbing code 
     that connects the linux kernel with the XR networking stack on the box.
   
-  
    **Workaround**:  
-
-   However, since XR itself has no issues in handling the IPv6 neighbors, we utilize two 
-   capabilities in XR as a workaround:
+    However, since XR itself has no issues in handling the IPv6 neighbors, we utilize two 
+    capabilities in XR as a workaround:
 
      1. Enable **"ipv6 nd ra-unicast"** under the XR interfaces using XR CLI or Yang model. This 
         enables neighbors to be reachable without explicit traffic being originated in XR.
