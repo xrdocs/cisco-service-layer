@@ -442,7 +442,7 @@ The touch points are described below:
   
 ### Deploying Open/R Docker image on NCS5500
 
-IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique described below:
+IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that **all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique for Open/R as described below**:
 
 In the demo, I will utilize two NCS5501s connected to each other over a HundredGig interface.
 The basic configuration on the router is shown below:
