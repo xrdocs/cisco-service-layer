@@ -461,7 +461,7 @@ end
 </pre>
 </div>
 
-As explained in an [earlier section](https://xrdocs.github.io/cisco-service-layer/blogs/2018-02-16-xr-s-journey-to-the-we-b-st-open-r-integration-with-ios-xr/#gaps-and-workaround), `ipv6 nd unicast-ra` is required to keep neighbors alive in XR while Open/R initiates traffic in the linux kernel. The `grpc` configuration starts the gRPC server on XR and can be used to subscribe to Telemetry data (subscription IPv6 as shown above) and service-layer configuration allows Service-Layer clients to connect over the same gRPC port.
+As explained in an [earlier section](https://xrdocs.github.io/cisco-service-layer/blogs/2018-02-16-xr-s-journey-to-the-we-b-st-open-r-integration-with-ios-xr/#gaps-and-workaround), `ipv6 nd unicast-ra` is required to keep neighbors alive in XR while Open/R initiates traffic in the linux kernel. The `grpc` configuration starts the gRPC server on XR and can be used to subscribe to Telemetry data (subscription IPv6 as shown in the configuration above) and service-layer configuration allows Service-Layer clients to connect over the same gRPC port.
 
 
 
