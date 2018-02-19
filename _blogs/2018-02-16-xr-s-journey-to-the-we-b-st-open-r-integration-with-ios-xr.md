@@ -108,24 +108,24 @@ This netlink platform integration enables Open/R to run as a routing stack on to
 ><https://github.com/facebook/openr/tree/master/openr/platform>{:target="_blank"}
 
 This consists of two important abstractions:
-  *  **NetlinkFibhandler**:  implements the FibService interface described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle the incoming route batches from the Fib module
-  *  **NetlinkSystemHandler**: implements the SystemService interface again described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to detect interfaces and IPv6 neighbors in the kernel that may be used to send hellos and peering messages to neighbors.  
+  *  **NetlinkFibhandler**:  implements the FibService interface described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift>{:target="_blank"} to handle the incoming route batches from the Fib module
+  *  **NetlinkSystemHandler**: implements the SystemService interface again described in the thrift IDL here: <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift>{:target="_blank"} to detect interfaces and IPv6 neighbors in the kernel that may be used to send hellos and peering messages to neighbors.  
   
   
 >The **"Netlink(nl)"** abstraction  handles actual interaction with the kernel through netlink using the libnl library. The Netlink platform handlers described above utilize this abstraction to program and fetch routes and get a list of ipv6 neighbors or links or associated events from the kernel.
-><https://github.com/facebook/openr/tree/master/openr/nl>
+><https://github.com/facebook/openr/tree/master/openr/nl>{:target="_blank"}
 
 Well, this is good to know. But the question still lingers -
 
 > How can one power through the all the concepts and get Open/R running?
 
-The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with, right away.
+The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>{:target="_blank"}). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with, right away.
 
 ### Open/R on Linux:Vagrant
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
-><https://github.com/akshshar/openr-vagrant>
+><https://github.com/akshshar/openr-vagrant>{:target="_blank"}
 
 
 The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rtr2 and will setup the required "run" script for openr at `/usr/sbin/run_openr.sh` on each node.
@@ -353,26 +353,28 @@ The current solution is shown below:
 
 
 The code for this implementation can be found here:  
-><https://github.com/akshshar/openr-xr>  
+><https://github.com/akshshar/openr-xr>{:target="_blank"}  
 
 The touch points are described below:
 
-  1.  [**CMakelists.txt**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/CMakeLists.txt) was extended to include grpc, protobuf and iosxrsl 
-      (IOS-XR Service Layer APIs compiled into a library) as target link libraries.
+  1.  [**CMakelists.txt**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/CMakeLists.txt){:target="_blank"} was extended to include grpc,
+      protobuf and iosxrsl (IOS-XR Service Layer APIs compiled into a library) as target link
+      libraries.
   
-  2.  [**Platform module**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/platform) was extended to include [**IosxrslFibHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp) 
+  2.  [**Platform module**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/platform){:target="_blank"} was extended to include 
+      [**IosxrslFibHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/IosxrslFibHandler.cpp){:target="_blank"} 
       that implements the FibService interface described in the thrift IDL here: 
       <https://github.com/facebook/openr/blob/master/openr/if/Platform.thrift> to handle
       incoming route batches from the Fib module.
   
-      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp) code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and by replacing the netlink hooks for IPv6 neighbor information with IOS-XR Telemetry stream for IPv6 neighbors. The goal will be to remove dependencies on libnl and determine if any efficiencies are gained as a result. For now, there is no immediate need to replace the NetlinkSystemHandler functionality.
+      It may be noted that the [**NetlinkSystemHandler**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/platform/NetlinkSystemHandler.cpp){:target="_blank"} code remains untouched and continues to register and react to link and neighbor information from the kernel in IOS-XR for now. In the future, as the above figure indicates, I will experiment by replacing the netlink hooks for link information with the IOS-XR Service Layer RPC for Interface events and by replacing the netlink hooks for IPv6 neighbor information with IOS-XR Telemetry stream for IPv6 neighbors. The goal will be to remove dependencies on libnl and determine if any efficiencies are gained as a result. For now, there is no immediate need to replace the NetlinkSystemHandler functionality.
       {: .notice--info}
   
-  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl): The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling for IOS-XR RIB (Routing information Base), making it easy to implement the IosxrslFibHandler.cpp code explained above. Eventually, the IOS-XR Service Layer Interface API abstraction will also go here.
+  3. [**IOS-XR Service Layer (iosxrsl) abstraction**](https://github.com/akshshar/openr-xr/tree/openr20171212/openr/iosxrsl){:target="_blank"}: The iosxrsl directory in the git repo implements all the necessary initialization techniques to connect to IOS-XR Service-layer over gRPC, handles async thread for the init channel used by service layer and creates the necessary abstractions for Route batch handling for IOS-XR RIB (Routing information Base), making it easy to implement the IosxrslFibHandler.cpp code explained above. Eventually, the IOS-XR Service Layer Interface API abstraction will also go here.
   
-  4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp): Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
+  4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp){:target="_blank"}: Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
   
-  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown in the figure above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
+  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker){:target="_blank"}: As shown in the figure above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile){:target="_blank"} is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
   
   <div class="highlighter-rouge">
   <pre class="highlight">
@@ -465,7 +467,7 @@ As explained in an [earlier section](https://xrdocs.github.io/cisco-service-laye
 
 
 
-Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>  
+Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>{:target="_blank"} 
 
 Once the docker image is pulled successfully, you should see:
 
