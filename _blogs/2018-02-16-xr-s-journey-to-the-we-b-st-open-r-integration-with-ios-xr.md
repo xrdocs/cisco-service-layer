@@ -16,7 +16,7 @@ tags:
   - open/r
   - open-r
   - rib
-position: hidden
+position: top
 excerpt: >-
   This blog series chronicles IOS-XR's Journey to the web through a series of
   integrations with community tools. Open/R, open sourced by Facebook in 2017 is
