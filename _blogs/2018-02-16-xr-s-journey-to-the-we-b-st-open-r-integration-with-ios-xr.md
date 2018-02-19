@@ -100,7 +100,7 @@ Consequently, integrations with existing stacks and platforms can cleanly occur 
   
 ### Where does one start?
 
-I believe the best place to start is of course the documentation on Github I refer to above. However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The developers at Facebook graciously released a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
+I believe the best place to start is of course the documentation on Github I refer to [above](https://github.com/facebook/openr/tree/master/openr/docs). However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The developers at Facebook graciously released a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
 This netlink platform integration enables Open/R to run as a routing stack on top of a Linux kernel as the network stack. You can check out the relevant pieces of code here:  
 
@@ -372,7 +372,7 @@ The touch points are described below:
   
   4. [**Main.cpp**](https://github.com/akshshar/openr-xr/blob/openr20171212/openr/Main.cpp): Extended to accept new parameters for IOS-XR Service Layer IP address and port (reachable IP address in IOS-XR and configured gRPC port for service-layer). Further, it starts a Fibthrift thread that intializes the gRPC connection to IOS-XR and registers against a set of VRFs (**New**) for IPv4 and IPv6 operations.
   
-  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
+  5. [**Docker Build**](https://github.com/akshshar/openr-xr/tree/openr20171212/docker): As shown in the figure above, Open/R is spun up on IOS-XR as an application running inside a docker container. The [**Dockerfile**](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) is used to build Open/R with all its dependencies, along with the grpc, protobuf, and IOS-XR Service-Layer library inside an ubuntu 16.04 rootfs. The Dockerfile used is also shown below:
   
   <div class="highlighter-rouge">
   <pre class="highlight">
