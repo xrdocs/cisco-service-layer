@@ -18,12 +18,11 @@ tags:
   - rib
 position: top
 excerpt: >-
-  This blog series chronicles IOS-XR's Journey to the web through a series of
-  integrations with community tools. Open/R, open sourced by Facebook in 2017 is
-  a great example of open source innovation driving the evolution of vendor
-  network stacks to be more open and pluggable. In this blog, we understand the
-  various integration points and expectations with Open/R and see how IOS-XR
-  lives up to the task at hand, quite admirably.
+  Open/R, open sourced by Facebook in 2017 is a great example of open source
+  innovation driving the evolution of vendor network stacks to be more open and
+  pluggable. In this blog, we understand the various integration points and
+  expectations with Open/R and see how IOS-XR lives up to the task at hand,
+  quite admirably.
 ---
 
 {% include toc %}
