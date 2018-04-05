@@ -236,6 +236,10 @@ Open up the pcap file in wireshark and you should see the following messages sho
 
 Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
 
+
+**Note**: Keep the `run_openr_rtrx.sh` scripts running and open up a new terminal to ssh into rtr1 before invoking the breeze cli.  
+{: .notice--warning}  
+
 ```
 vagrant@rtr1:~$ breeze kvstore adj
 
