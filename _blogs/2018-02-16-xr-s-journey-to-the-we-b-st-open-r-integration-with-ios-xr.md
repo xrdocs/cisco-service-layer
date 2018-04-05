@@ -239,6 +239,7 @@ Open up the pcap file in wireshark and you should see the following messages sho
      {: .notice--info}
 
 ### Open/R breeze CLI  
+<hr/>   
 
 
 Once the peering messages go through, adjacencies should get established with the neighbors on all connected interfaces. These adjacencies can be verified using the "breeze" cli:  
