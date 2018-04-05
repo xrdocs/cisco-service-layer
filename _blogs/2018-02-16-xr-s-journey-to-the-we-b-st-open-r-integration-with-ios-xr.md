@@ -882,7 +882,9 @@ So, there you go! There are 1002 service layer routes in the RIB, all thanks to 
 {: .notice--success}
 
 
-## Coexistence with Other Protocols on IOS-XR 
+## Coexistence with Other Protocols on IOS-XR  
+<hr/>   
+
 
 **The two outputs in the previous section showcase an interesting juxtaposition**: Open/R internally is designed to program a "FIB" on a given platform (such as the Linux Kernel using Netlink), but in the integration with IOS-XR described above, the integration point is shifted up to the "RIB".     
 
