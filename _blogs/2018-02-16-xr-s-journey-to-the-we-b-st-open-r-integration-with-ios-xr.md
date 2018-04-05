@@ -792,6 +792,7 @@ Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Lab
 </div>
 
 ### Check IOS-XR RIB State  
+<hr/>   
 
 
 Well, this is the moment of truth. Open/R  instances were able to run inside docker containers on two back-to-back NCS5501 devices, connected over a HundredGig port. Now, let's see what happened to rtr1's RIB since we injected 1000 routes into this open/R instance:
