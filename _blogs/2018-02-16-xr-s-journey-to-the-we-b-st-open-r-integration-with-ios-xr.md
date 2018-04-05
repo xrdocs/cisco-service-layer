@@ -579,7 +579,7 @@ As explained in an [earlier section](https://xrdocs.github.io/cisco-service-laye
 Once the Docker image is ready:  
 
   * Either built from scratch using this [Dockerfile](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile)   
-  * or pulled from [Dockerhub: akshshar/openr-slapi-xr](https://hub.docker.com/r/akshshar/openr-slapi-xr/)),   
+  * or pulled from [Dockerhub: akshshar/openr-slapi-xr](https://hub.docker.com/r/akshshar/openr-slapi-xr/),   
 
 set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry.   
     
