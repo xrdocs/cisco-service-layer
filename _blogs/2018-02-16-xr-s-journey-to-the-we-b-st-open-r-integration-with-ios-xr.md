@@ -499,7 +499,19 @@ The touch points are described below:
    {: .notice--warning}
     
     
-  
+### Pre-Built Open/R Docker image
+
+The Dockerfile as described in the previous section is published in the `openr-xr` git repo here:  
+><https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile>  
+
+To speed up the process, I have published a pre-built docker image using the current hash: `a14e09abc0fcbe5835b45f549d48c09935d17f87` of <https://github.com/akshshar/openr-xr> as of April 5, 2018 to dockerhub here:  
+
+
+><https://hub.docker.com/r/akshshar/openr-slapi-xr/>  
+
+
+
+
 ### Deploying Open/R Docker image on NCS5500
 
 IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that **all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique for Open/R as described below**:
@@ -545,7 +557,7 @@ As explained in an [earlier section](https://xrdocs.github.io/cisco-service-laye
 
 
 
-Once the Docker image is ready, set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>{:target="_blank"} 
+Once the Docker image is ready (either built from scratch using this [Dockerfile](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) or pulled from [Dockerhub: akshshar/openr-slapi-xr](https://hub.docker.com/r/akshshar/openr-slapi-xr/)) , set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry. Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>{:target="_blank"} 
 
 Once the docker image is pulled successfully, you should see:
 
