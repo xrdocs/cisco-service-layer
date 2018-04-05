@@ -135,6 +135,13 @@ The vagrant provisioners will install open/R on "vagrant up" on both rtr1 and rt
 
 The switch in the middle is a nice-to-have. It allows you to capture packets as the two nodes rtr1 and rtr2 exchange hellos and peering messages.
 
+The relevant `Vagrantfiles` in the repository are divided into two buckets:  
+  
+  *  **Pre-Built**: A pre-built ubuntu-16.04 vagrant box with open/R already built and installed has been published on vagrantcloud [here](https://app.vagrantup.com/ciscoxr/boxes/openr-xr_ubuntu/versions/1.0.0). The box is built using the hash: a14e09abc0fcbe5835b45f549d48c09935d17f87 of https://github.com/akshshar/openr-xr as of April 5, 2018. This box is referenced in the `Vagrantfile` at the root of the git repo.
+  
+  *  **Latest Build**: If you'd like to build the boxes from scratch, drop into the `vagrant_build_latest/` folder before issuing a `vagrant up`.  
+  
+  
 Clone the above git repo and issue a `vagrant up` inside the directory:
 
 If you're behind a proxy, just populate the `<git repo directory>/scripts/http_proxy` `<git repo directory>/scripts/https_proxy` files before issuing a `vagrant up`.
@@ -162,8 +169,8 @@ Bringing machine 'rtr2' up with 'virtualbox' provider...
 </pre>
 </div>
 
-The provisioning scripts build open/R from scratch on rtr1 and rtr2, so expect this bringup to take a long time. You could parallelize the effort by commenting out the provisioners for rtr1 and rtr2  in the Vagrantfile, bring up the nodes, uncomment the provisioners and then run `vagrant provision rtr1` and `vagrant provision rtr2` in two separate terminals simultaneously.
-{: .notice--warning}  
+The provisioning scripts set up the ip addresses on the connecing ports of rtr1 and rtr2. The Vagrantfile uses a pre-built Vagrant box located [here](https://app.vagrantup.com/ciscoxr/boxes/openr-xr_ubuntu/versions/1.0.0)
+{: .notice--info}  
 
 Once the devices are up, issue a `vagrant ssh rtr1` and `vagrant ssh rtr2` in separate terminals and start open/R (The run scripts added to each node will automatically detect the interfaces and start discovering each other).  
 
@@ -234,11 +241,10 @@ Once the peering messages go through, adjacencies should get established with th
 ```
 vagrant@rtr1:~$ breeze kvstore adj
 
-> rtr1's adjacencies, version: 12, Node Label: 42122, Overloaded?: False
+> rtr1's adjacencies, version: 26, Node Label: 13277, Overloaded?: False
 Neighbor    Local Interface    Remote Interface      Metric    Weight    Adj Label  NextHop-v4    NextHop-v6                Uptime
-vagrant     enp0s9             enp0s9                     7         1        50004  0.0.0.0       fe80::a00:27ff:fed1:ba15  0m2s
-vagrant     enp0s8             enp0s8                     8         1        50003  0.0.0.0       fe80::a00:27ff:fe94:3015  0m4s
-vagrant     enp0s10            enp0s10                    7         1        50005  0.0.0.0       fe80::a00:27ff:fe36:aec9  0m6s
+rtr2        eth1               eth1                       6         1        50003  10.1.1.20     fe80::a00:27ff:fe7e:496   8m52s
+rtr2        eth2               eth2                       4         1        50004  11.1.1.20     fe80::a00:27ff:fe93:99dd  8m52s
 
 
 ```
