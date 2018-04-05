@@ -500,7 +500,7 @@ The touch points are described below:
     
     
 ### Pre-Built Open/R Docker image  
-  
+<hr/>  
  
 
 The Dockerfile as described in the previous section is published in the `openr-xr` git repo here:  
@@ -516,6 +516,7 @@ To speed up the process, I have published a pre-built docker image using the cur
 
 
 ### Deploying Open/R Docker image on NCS5500
+<hr/>   
 
 IOS-XR utilizes a consistent approach towards the application hosting infrastructure across all XR platforms. This implies that **all hardware platforms: 1RU, 2RU, Modular or even Virtual platforms would follow the same deployment technique for Open/R as described below**:
 
