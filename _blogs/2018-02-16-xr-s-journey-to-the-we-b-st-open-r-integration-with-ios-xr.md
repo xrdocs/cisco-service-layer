@@ -258,17 +258,36 @@ vagrant@rtr1:~$ breeze fib list
 == rtr1's FIB routes by client 786  ==
 
 > 100.1.1.0/24
-via 0.0.0.0@enp0s10
-via 0.0.0.0@enp0s8
-via 0.0.0.0@enp0s9
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
 
 > 100.1.10.0/24
-via 0.0.0.0@enp0s10
-via 0.0.0.0@enp0s8
-via 0.0.0.0@enp0s9
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
 
 > 100.1.100.0/24
-via 0.0.0.0@enp0s10
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
+
+> 100.1.101.0/24
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
+
+> 100.1.102.0/24
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
+
+> 100.1.103.0/24
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
+
+> 100.1.104.0/24
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
+
+> 100.1.105.0/24
+via 11.1.1.20@eth2
+via 10.1.1.20@eth1
 
 ......
 
@@ -287,6 +306,35 @@ fibagent.num_of_routes : 1004
 vagrant@rtr1:~$ 
 
 ```
+
+In this case Open/R is launched using the **NetlinkFibHandler** (Open up /usr/sbin/run_openr.sh on either rtr1 and take a look at ENABLE_NETLINK_FIB_HANDLER=true directive). As a result, the FIB on rtr1 gets downloaded to the Linux kernel and we can view the routes using `ip route`:  
+
+```
+vagrant@rtr1:~$ ip route
+default via 10.0.2.2 dev eth0 
+10.0.2.0/24 dev eth0  proto kernel  scope link  src 10.0.2.15 
+10.1.1.0/24 dev eth1  proto kernel  scope link  src 10.1.1.10 
+11.1.1.0/24 dev eth2  proto kernel  scope link  src 11.1.1.10 
+60.1.1.1  proto 99 
+	nexthop via 10.1.1.20  dev eth1 weight 1
+	nexthop via 11.1.1.20  dev eth2 weight 1
+100.1.1.0/24  proto 99 
+	nexthop via 10.1.1.20  dev eth1 weight 1
+	nexthop via 11.1.1.20  dev eth2 weight 1
+100.1.2.0/24  proto 99 
+	nexthop via 10.1.1.20  dev eth1 weight 1
+	nexthop via 11.1.1.20  dev eth2 weight 1
+100.1.3.0/24  proto 99 
+	nexthop via 10.1.1.20  dev eth1 weight 1
+	nexthop via 11.1.1.20  dev eth2 weight 1
+100.1.4.0/24  proto 99 
+	nexthop via 10.1.1.20  dev eth1 weight 1
+	nexthop via 11.1.1.20  dev eth2 weight 1
+
+.....
+
+```
+
 
 Great! These outputs should give you a fair gist of how Open/R works as a link state routing protocol.
 {: .notice--success}
