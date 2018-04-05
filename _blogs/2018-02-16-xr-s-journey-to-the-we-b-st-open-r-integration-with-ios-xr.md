@@ -124,7 +124,9 @@ Well, this is good to know. But the question still lingers -
 
 The Open/R Github repo gives a nod to an emulator that might become available soon (<https://github.com/facebook/openr/blob/master/openr/docs/Emulator.md>{:target="_blank"}). However, that doesn't prevent us from using standard techniques such as Vagrant to bring up an environment to play with, right away.
 
-### Open/R on Linux:Vagrant
+### Open/R on Linux:Vagrant  
+<hr/>   
+
 
 If you'd like to try a back-to-back setup with two linux instances on your laptop, I've published a vagrant setup with two ubuntu 16.04 instances (rtr1 and rtr2) connected through an ubuntu switch:  
 
