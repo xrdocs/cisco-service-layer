@@ -890,7 +890,9 @@ So, there you go! There are 1002 service layer routes in the RIB, all thanks to 
 
   At this level, notionally, Open/R is no longer the only network protocol stack on the system. It can instead co-exist with other stacks (This is precisely what I demonstrated in the demo at [NFD17](https://www.youtube.com/embed/HMvl9CzDIpQ?start=463) where iBGP is configured using Loopback addresses that are advertised through Open/R running as an IGP). In this case, Open/R and XR-BGP coexist and the conflict resolution is handled at the RIB level using, you guessed it, Administrative Distance. By default, I have selected **99** as the Admin Distance for Open/R (in line with protocol ID used for Netlink integration by Facebook).
 
-## What else can we do?
+## What else can we do?  
+<hr/>   
+
 
 Integration of Open/R with IOS-XR Service Layer APIs opens up a whole host of possibilities.
 This particular integration was centered around Route handling and hence the RIB API was sufficient.
