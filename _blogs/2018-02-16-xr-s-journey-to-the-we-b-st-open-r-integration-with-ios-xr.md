@@ -335,6 +335,8 @@ default via 10.0.2.2 dev eth0
 
 ```
 
+**Note**: The route updates are exchanged by the routers frequently over the established adjacencies. So subsequent updates may modify the next hop entries (10.1.1.20 or 11.1.1.20 seen in the outputs above) based on the content of the latest update. The outputs above were captured when the latest route updates were received for both the discovered next hop interfaces.  
+{: .notice--warning}
 
 Great! These outputs should give you a fair gist of how Open/R works as a link state routing protocol.
 {: .notice--success}
