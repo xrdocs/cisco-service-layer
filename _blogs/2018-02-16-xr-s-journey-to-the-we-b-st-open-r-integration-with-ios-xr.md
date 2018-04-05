@@ -622,7 +622,9 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 On rtr2, the file `/root/run_openr_rtr2.sh` is slightly different. It leverages `increment_ipv4_prefix.py` as a route-scaling script to increase the number of routes advertized by rtr2 to rtr1. Here I'll push a 1000 routes from rtr2 to rtr1 to test the amount of time Open/R on rtr1 takes to program XR RIB.
 
 
-### Testing FIB Programming Rate
+### Testing FIB Programming Rate  
+<hr/>   
+
 
 On rtr2, exec into the docker instance and start Open/R:
 
