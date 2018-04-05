@@ -384,7 +384,9 @@ Now that we understand how Open/R operates, let's codify the requirements for it
 
 
 
-### Gaps and workaround
+### Gaps and workaround  
+<hr/>   
+
   
   
 1. **Pending Issue:**  
