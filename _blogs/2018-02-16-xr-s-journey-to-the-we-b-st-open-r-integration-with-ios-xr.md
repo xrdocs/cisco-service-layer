@@ -75,7 +75,7 @@ This blog series will focus on how a combination of the above enhancements shoul
 
 In this blog in particular, we shall explore how [IOS-XR's service layer APIs](https://xrdocs.github.io/cisco-service-layer/){:target="_blank"} and [application hosting capabilities](https://xrdocs.github.io/application-hosting/){:target="_blank"} can be leveraged to host and integrate Open/R as an IGP on IOS-XR. We will also touch upon further enhancements to Open/R that may be possible with Service Layer APIs serving as the platform hooks to IOS-XR. 
 
-## What is Open/R?
+## What is Open/R?  
 
 In November 2017, Facebook open sourced [Open/R](https://github.com/facebook/openr){:target="_blank"}.  
 As the Github description suggests, it is, and I quote, a "Distributed platform for building autonomic network functions". Pretty heavy description, so let's distill it a bit.
