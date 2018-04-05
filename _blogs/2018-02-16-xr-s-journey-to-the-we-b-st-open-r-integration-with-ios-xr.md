@@ -511,7 +511,6 @@ To speed up the process, I have published a pre-built docker image using the cur
 
 
 &nbsp;  
-&nbsp;  
 
 
 ### Deploying Open/R Docker image on NCS5500
