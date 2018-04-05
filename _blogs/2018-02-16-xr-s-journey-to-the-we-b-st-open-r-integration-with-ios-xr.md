@@ -197,6 +197,7 @@ openr[10562]: Starting OpenR daemon.
 
 
 ### Capturing Open/R Hellos and Peering messages  
+<hr/>   
 
 
 Start a tcpdump capture on one or more of the bridges on the switch in the middle:  
