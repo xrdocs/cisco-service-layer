@@ -101,7 +101,9 @@ So is it really just an alternative to traditional IGPs ? Not quite. There are s
 Consequently, integrations with existing stacks and platforms can cleanly occur at the lower platform layer abstracted through the modeled thrift interface. Newer functionalities that leverage the underlying platform's capabilities (like MPLS, BFD, SR etc.) can extend an existing or implement a new thrift model and leverage the KVstore to store data locally and share information with other routers easily.  
 
   
-### Where does one start?
+### Where does one start?  
+<hr/>   
+
 
 I believe the best place to start is of course the documentation on Github I refer to [above](https://github.com/facebook/openr/tree/master/openr/docs){:target="_blank"}. However, not enough importance can be placed on the need to read through the structure of the code to understand the important touch points in each module. The developers at Facebook graciously released a netlink platform integration for Open/R to enable the community to take a look at how things tie in internally.
 
