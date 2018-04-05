@@ -238,6 +238,7 @@ Open up the pcap file in wireshark and you should see the following messages sho
      ![0MQ messages openr]({{site.baseurl}}/images/0mq_openr.png)
      {: .notice--info}
 
+  
 ### Open/R breeze CLI  
 <hr/>   
 
