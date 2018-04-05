@@ -499,7 +499,9 @@ The touch points are described below:
    {: .notice--warning}
     
     
-### Pre-Built Open/R Docker image
+### Pre-Built Open/R Docker image  
+  
+ 
 
 The Dockerfile as described in the previous section is published in the `openr-xr` git repo here:  
 ><https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile>  
