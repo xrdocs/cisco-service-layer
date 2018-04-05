@@ -423,7 +423,9 @@ Now that we understand how Open/R operates, let's codify the requirements for it
     public consumption as a SMU on top of IOS-XR release 6.2.25 and will be integrated into 6.3.2.
   
   
-### Current Solution and implementation details
+### Current Solution and implementation details  
+<hr/>   
+
 
 The current solution is shown below:
 
