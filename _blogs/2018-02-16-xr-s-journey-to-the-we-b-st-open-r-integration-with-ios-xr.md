@@ -559,6 +559,7 @@ As explained in an [earlier section](https://xrdocs.github.io/cisco-service-laye
 
 Once the Docker image is ready (either built from scratch using this [Dockerfile](https://github.com/akshshar/openr-xr/blob/openr20171212/docker/Dockerfile) or pulled from [Dockerhub: akshshar/openr-slapi-xr](https://hub.docker.com/r/akshshar/openr-slapi-xr/)) , set up a private docker registry that is reachable from the NCS5500 router in question and push the docker image to that registry.   
     
+    
 Setting up a private docker registry and pulling a docker image onto NCS5500 is explained in detail in the "Docker on XR" tutorial here:  <https://xrdocs.github.io/application-hosting/tutorials/2017-02-26-running-docker-containers-on-ios-xr-6-1-2/#private-insecure-registry>{:target="_blank"} 
 
 Once the docker image is pulled successfully, you should see:
