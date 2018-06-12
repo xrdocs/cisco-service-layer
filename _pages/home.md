@@ -31,7 +31,7 @@ published: true
     <div class="feature__item--right">
       <div class="archive__item">
           <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
-            <a href="{{ base_path }}/images/openr-integration-xr.png"><img src="{{ base_path }}/images/openr-integration-xr.png" alt="" /></a>
+            <a href="https://xrdocs.io/images/openr-integration-xr.png"><img src="https://xrdocs.io/images/openr-integration-xr.png alt="" /></a>
           </div>
         <div class="archive__item-body">
             <h2 class="archive__item-title"><a href="https://xrdocs.github.io/cisco-service-layer/blogs/2018-02-16-xr-s-journey-to-the-we-b-st-open-r-integration-with-ios-xr/">Open/R integration with IOS XR</a></h2>
