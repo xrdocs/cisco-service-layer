@@ -628,6 +628,9 @@ root@host:~#
 ```
 
 
+## Running a c++ onbox client
+
+
 ### Build the c++ tutorials
 
 
@@ -878,7 +881,7 @@ RP/0/RP0/CPU0:ios#
 ### Run c++ rshuttle tutorial
 
 Rshuttle is a sample application that is used to push (shuttle) large number of routes in batches into the XR RIB using a c++ gRPC client for the Service-Layer API.f
-By default, it is set to push 100000 routes in 100 batches of 1000 routes each and calculates the effective rate of programming all the routes:
+By default, it is set to push 100352 routes in 98 batches of 1024 routes each (max routes allowed per batch is 1024) and calculates the effective rate of programming of all the routes:
 
 
 ```
@@ -901,7 +904,125 @@ I0717 10:19:13.986927  6001 ServiceLayerMain.cpp:185] Press control-c to quit
 Great! You can see that running an onbox c++ gRPC client achieves the highest possible rate of route programming using the Service-Layer API - a whopping 47535.2 routes/sec!
 {: .notice--success}
 
-Again to see
+Again, to see the effect of this client, check out the routing table from a separate ssh session into the XR vagrant box:
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+
+RP/0/RP0/CPU0:ios#show  route summary 
+Tue Jul 17 10:23:41.202 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+connected                        2          0          0           480          
+local                            2          0          0           480          
+static                           1          0          0           240          
+dagr                             0          0          0           0            
+<mark>application Service-layer        100352     0          0           24084480</mark> 
+Total                            100357     0          0           24085680     
+
+RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:ios#
+
+
+</code>
+</pre>
+</div>
+
+
+
+
+
+## Running a golang onbox client
+
+### Build the golang tutorial
+
+The methodology is similar to the c++ client except we use golang specific commands to build the tutorial.
+
+cd into the `~/service-layer-objmodel/grpc/go/` directory and set the `GOPATH` variable:
+
+
+```
+root@host:~# cd ~/service-layer-objmodel/grpc/go
+root@host:~/service-layer-objmodel/grpc/go# export GOPATH=/root/service-layer-objmodel/grpc/go
+root@host:~/service-layer-objmodel/grpc/go# 
+
+```
+
+
+Fetch the protoc-gen-go binary to build the proto files:
+
+```
+root@host:~/service-layer-objmodel/grpc/go# go get -u github.com/golang/protobuf/protoc-gen-go
+root@host:~/service-layer-objmodel/grpc/go# 
+root@host:~/service-layer-objmodel/grpc/go# ./gen-bindings.sh 
+Generating GO bindings...Done
+root@host:~/service-layer-objmodel/grpc/go# 
+```
+
+Drop into the `src/tutorial` directory to build the tutorial called `quickstart.go`:
+
+
+```
+
+root@host:~/service-layer-objmodel/grpc/go#  cd src/tutorial/
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# ls
+README.md  quickstart.go  tutorial
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+
+```
+
+First fetch all the dependencies (grpc-go etc.) by running the `go get` command
+
+
+```
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# go get
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+```
+
+Finally, build the binary out of `quickstart.go`:
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# <mark> go build -o quickstart quickstart.go </mark>
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# <mark> export SERVER_IP=127.0.0.1</mark>
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial#<mark> export SERVER_PORT=57344</mark>
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# <mark>./quickstart </mark>
+Using SERVER IP PORT: 127.0.0.1:57344
+Server Returned SL_INIT_STATE_READY, Version: 0.0.0
+Client INIT Server response:  SL_SUCCESS
+Max VRF Name Len     :  33
+Max Iface Name Len   :  64
+Max Paths per Entry  :  128
+Max Prim per Entry   :  64
+Max Bckup per Entry  :  64
+Max Labels per Entry :  3
+Min Prim Path-id     :  1
+Max Prim Path-id     :  64
+Min Bckup Path-id    :  65
+Max Bckup Path-id    :  128
+Max Remote Bckup Addr:  2
+VRF SL_REGOP_REGISTER status: SL_SUCCESS
+VRF SL_REGOP_EOF status: SL_SUCCESS
+SL_OBJOP_ADD Total Batches: 100, Routes: 100000, ElapsedTime: 2.440451665s
+<mark>Rate: 40976.021543</mark>
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial# 
+root@host:~/service-layer-objmodel/grpc/go/src/tutorial#
+
+</code>
+</pre>
+</div>
+
+
+Excellent! This golang tutorial programs 100000 in 100 batches of 1000 routes each with rate of 40976 routes/sec!
+{: .notice--success}
+
 
 
 
