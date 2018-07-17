@@ -875,3 +875,34 @@ RP/0/RP0/CPU0:ios#
 
 
 
+### Run c++ rshuttle tutorial
+
+Rshuttle is a sample application that is used to push (shuttle) large number of routes in batches into the XR RIB using a c++ gRPC client for the Service-Layer API.f
+By default, it is set to push 100000 routes in 100 batches of 1000 routes each and calculates the effective rate of programming all the routes:
+
+
+```
+
+root@host:~/service-layer-objmodel/grpc/cpp/src/tutorial/rshuttle# ./servicelayermain 
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0717 10:19:11.854602  6001 ServiceLayerMain.cpp:139] Connecting IOS-XR to gRPC server at 127.0.0.1:57344
+I0717 10:19:11.875661  6001 ServiceLayerMain.cpp:89] Starting Route batch
+I0717 10:19:13.986866  6001 ServiceLayerMain.cpp:110] 
+Time taken to program 100352 routes
+ 2.11111
+Route programming rate
+47535.2 routes/sec
+I0717 10:19:13.986927  6001 ServiceLayerMain.cpp:185] Press control-c to quit
+
+
+
+```
+
+Great! You can see that running an onbox c++ gRPC client achieves the highest possible rate of route programming using the Service-Layer API - a whopping 47535.2 routes/sec!
+{: .notice--success}
+
+Again to see
+
+
+
+
