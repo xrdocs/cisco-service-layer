@@ -129,7 +129,7 @@ Vagrant.configure(2) do |config|
 
  
     config.vm.define "devbox" do |node|
-      node.vm.box =  "ciscoxr/grpc-ubuntu-14.04"
+      node.vm.box =  "ciscoxr/grpc-ubuntu-16.04"
 
       # eth1 connected to link1
       # auto_config is supported for an ubuntu instance
@@ -178,12 +178,12 @@ If you notice in the above Vagrantfile, we specify a name for a special Vagrant 
 ```ruby
 
  config.vm.define "devbox" do |node|
-      node.vm.box =  "ciscoxr/grpc-ubuntu-14.04"
+      node.vm.box =  "ciscoxr/grpc-ubuntu-16.04"
 
       # eth1 connected to link1
 ```
 
-[ciscoxr/grpc-ubuntu-14.04](https://atlas.hashicorp.com/ciscoxr/boxes/grpc-ubuntu-14.04) is up on Atlas for your convenience and you can include it in your Vagrantfiles as shown above.  
+[ciscoxr/grpc-ubuntu-16.04](https://app.vagrantup.com/ciscoxr/boxes/grpc-ubuntu-16.04) is up on Atlas for your convenience and you can include it in your Vagrantfiles as shown above.  
 
 
 To bring up the devbox, simply issue a "vagrant up devbox" inside the cloned directory:  
@@ -198,7 +198,7 @@ AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
 Vagrantfile	configs		scripts
 AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
 Bringing machine 'devbox' up with 'virtualbox' provider...
-==> devbox: Importing base box 'ciscoxr/grpc-ubuntu-14.04'...
+==> devbox: Importing base box 'ciscoxr/grpc-ubuntu-16.04'...
 
 ----------------------- snip output --------------------------
 
@@ -260,7 +260,7 @@ AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
 Vagrantfile	configs		scripts
 AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
 Bringing machine 'devbox' up with 'virtualbox' provider...
-==> devbox: Importing base box 'ciscoxr/grpc-ubuntu-14.04'...
+==> devbox: Importing base box 'ciscoxr/grpc-ubuntu-16.04'...
 
 ----------------------- snip output --------------------------
 
