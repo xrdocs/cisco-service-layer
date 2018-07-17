@@ -513,7 +513,9 @@ To understand how to build your own python-grpc client to interact with Service 
 
 ## Onbox SL-API Clients
 
-Service Layer APIs are designed with an RPC mechanism (gRPC) so that clients can be hosted either onbox or offbox without any changes to the code.
+![slapi_client_flexibility.png]({{site.baseurl}}/images/slapi_client_flexibility.png)
+
+Service Layer API in IOS-XR is designed with an RPC mechanism (gRPC) so that clients can be hosted either onbox or offbox without any changes to the code.
 
 To demonstrate this, let's pull in a pre-built docker image on the running vagrant IOS-XRv instance before running the tutorials from the objmodel git repo locally on the router inside the docker instance.
 
