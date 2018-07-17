@@ -508,3 +508,370 @@ You now have a development environment up and running on your laptop.
 To understand how to build your own python-grpc client to interact with Service Layer APIs, head over to API-Docs section where you can find more in-depth information on the available Services, Messsages and Error codes:  
 
 > <{{ base_path }}/apidocs/index.html>
+
+
+
+## Onbox SL-API Clients
+
+Service Layer APIs are designed with an RPC mechanism (gRPC) so that clients can be hosted either onbox or offbox without any changes to the code.
+
+To demonstrate this, let's pull in a pre-built docker image on the running vagrant IOS-XRv instance before running the tutorials from the objmodel git repo locally on the router inside the docker instance.
+
+
+### Configure Default route through management port
+
+Set up the configuration to use the management port as the default route on the vagrant XR instance. The changes needed are shown below. You will notice that the `ip route` output now points to fwd_ew interface enabling packets to exit the management port directly for downloading the docker image.
+
+
+```
+RP/0/RP0/CPU0:ios#show  configuration commit changes last 1
+Tue Jul 17 09:40:24.452 UTC
+Building configuration...
+!! IOS XR Configuration version = 6.2.2.25I
+tpa
+ vrf default
+  address-family ipv4
+   default-route east-west
+  !
+ !
+!
+end
+
+RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:ios#bash
+Tue Jul 17 09:41:55.477 UTC
+[host:~]$ 
+[host:~]$ ip route
+default dev fwd_ew  scope link  src 10.0.2.15 
+10.0.2.0/24 dev Mg0_RP0_CPU0_0  proto kernel  scope link  src 10.0.2.15 
+[host:~]$ 
+[host:~]$ 
+[host:~]$ 
+
+
+```
+
+Further, set up the domain name server. This could be your corporate DNS or a more general purpose DNS like 8.8.8.8:
+
+```
+[host:~]$ cat /etc/resolv.conf
+nameserver 8.8.8.8
+[host:~]$ 
+
+```
+
+
+### Pull Docker image with gRPC client dependencies
+
+Now pull the required docker image:
+
+
+```
+[host:~]$ docker pull akshshar/grpc-gopycpp
+Using default tag: latest
+latest: Pulling from akshshar/grpc-gopycpp
+297061f60c36: Pull complete 
+e9ccef17b516: Pull complete 
+dbc33716854d: Pull complete 
+8fe36b178d25: Pull complete 
+686596545a94: Pull complete 
+c6a0dd213130: Pull complete 
+83b91b2d9b70: Pull complete 
+367064675a13: Pull complete 
+726e11d920f9: Pull complete 
+Digest: sha256:b04db96e6f12a9940af45bd504d809d0d7c7e5df7458a2dcf2d9e7e49a3fe90e
+Status: Downloaded newer image for akshshar/grpc-gopycpp:latest
+
+```
+
+
+### Launch the docker instance
+
+To keep things simple, we launch the docker instance using `--net=host` to inherit the `global-vrf` (or default vrf) network namespace as the default namespace of the docker container instance:
+
+
+```
+[host:~]$ docker run -itd --name grpc-client --net=host  akshshar/grpc-gopycpp bash
+f4d76b0166f4d70c7c36801429b9c7443d0ad3f472b9b3762aa979c369e2e526
+
+```
+
+You can exec into the docker instance using `docker exec` from the XR bash shell:
+
+```
+[host:~]$ docker exec -it grpc-client bash
+root@host:/# 
+root@host:/# 
+```
+
+
+
+### Clone the service-layer-objmodel code
+
+Clone the service-layer-objmodel git repo inside the running docker instance (post docker exec):
+
+```
+root@host:~# 
+root@host:~# 
+root@host:~#git clone  https://github.com/{{ github_org }}/service-layer-objmodel.git ~/service-layer-objmodel
+
+Cloning into 'service-layer-objmodel'...
+remote: Counting objects: 320, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 320 (delta 0), reused 0 (delta 0), pack-reused 315
+Receiving objects: 100% (320/320), 7.58 MiB | 1.63 MiB/s, done.
+Resolving deltas: 100% (160/160), done.
+Checking connectivity... done.
+root@host:~#
+
+```
+
+
+### Build the c++ tutorials
+
+
+cd into the `~/service-layer-objmodel/grpc/cpp/` directory and run the `./build_tutorials.sh` script which will build the c++ tutorials (quickstart and rshuttle):
+
+
+```
+root@host:~# cd ~/service-layer-objmodel/grpc/cpp/
+root@host:~/service-layer-objmodel/grpc/cpp# ls
+build_libiosxrsl.sh  build_tutorials.sh  clean.sh  gen-bindings.sh  src
+root@host:~/service-layer-objmodel/grpc/cpp# ./build_tutorials.sh 
++++ dirname ./build_tutorials.sh
+++ cd .
++++ pwd
+++ echo /root/service-layer-objmodel/grpc/cpp
++ SCRIPT_DIR=/root/service-layer-objmodel/grpc/cpp
++ ./build_libiosxrsl.sh
+++ pkg-config --exists protobuf
+++ pkg-config --modversion protobuf
++ PROTOBUF_INSTALLED_VERSION=3.5.0
+++ pkg-config --exists grpc
+
+
+............
+
+
+g++ -g -std=c++11 -I/usr/local/include -pthread -c -o quickstart.o quickstart.cc
+g++ quickstart.o -L/usr/local/lib  -I/usr/local/include -lgrpc++_unsecure -lgrpc -lprotobuf -lpthread -ldl -liosxrsl -o quickstart
++ cd /root/service-layer-objmodel/grpc/cpp/src/tutorial/rshuttle
++ make
+g++  -g -std=c++11 -I/usr/local/include -pthread  -c -o ServiceLayerMain.o ServiceLayerMain.cpp
+g++  -g -std=c++11 -I/usr/local/include -pthread  -c -o ServiceLayerRoute.o ServiceLayerRoute.cpp
+g++  -g -std=c++11 -I/usr/local/include -pthread  -c -o ServiceLayerAsyncInit.o ServiceLayerAsyncInit.cpp
+g++ ServiceLayerMain.o ServiceLayerRoute.o ServiceLayerAsyncInit.o -L/usr/local/lib -I/usr/local/include -lgrpc++_unsecure -lgrpc -lprotobuf -lpthread -ldl -liosxrsl -lglog  -o servicelayermain
+root@host:~/service-layer-objmodel/grpc/cpp# 
+
+
+
+```
+
+
+### Run c++ quickstart tutorial
+
+Now export SERVER_IP and SERVER_PORT environment variables to indicate the connection parameters for the gRPC server running inside the XR stack.
+Since we'll be running the clients locally on the router inside the docker instance (with the shared global-vrf network namespace) we simply need to connect to localhost (127.0.0.1) on the gRPC port configured in the XR config (57344 in this case):
+
+
+```
+root@host:~/service-layer-objmodel/grpc/cpp# cd src/tutorial/
+root@host:~/service-layer-objmodel/grpc/cpp/src/tutorial# export SERVER_IP=127.0.0.1
+root@host:~/service-layer-objmodel/grpc/cpp/src/tutorial# export SERVER_PORT=57344
+root@host:~/service-layer-objmodel/grpc/cpp/src/tutorial# ./quickstart 
+
+
+Connecting to grpc server at 127.0.0.1:57344
+
+
+###########################
+Transmitted message: IOSXR-SL INIT SubVer: 1
+###########################
+
+
+Server returned 
+Successfully Initialized, connection Established!
+
+
+###########################
+Transmitted message: IOSXR-SL VRF Oper: SL_REGOP_REGISTER
+VrfRegMsgs {
+  VrfName: "default"
+  AdminDistance: 10
+  VrfPurgeIntervalSeconds: 500
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv4 Vrf Operation:1 Successful
+
+
+###########################
+Transmitted message: IOSXR-SL VRF Oper: SL_REGOP_EOF
+VrfRegMsgs {
+  VrfName: "default"
+  AdminDistance: 10
+  VrfPurgeIntervalSeconds: 500
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv4 Vrf Operation:3 Successful
+
+
+###########################
+Transmitted message: IOSXR-SL VRF Oper: SL_REGOP_REGISTER
+VrfRegMsgs {
+  VrfName: "default"
+  AdminDistance: 10
+  VrfPurgeIntervalSeconds: 500
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv6 Vrf Operation: 1 successful
+
+
+###########################
+Transmitted message: IOSXR-SL VRF Oper: SL_REGOP_EOF
+VrfRegMsgs {
+  VrfName: "default"
+  AdminDistance: 10
+  VrfPurgeIntervalSeconds: 500
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv6 Vrf Operation: 3 successful
+
+
+###########################
+Transmitted message: IOSXR-SL RouteV4 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+Routes {
+  Prefix: 335544576
+  PrefixLen: 24
+  RouteCommon {
+    AdminDistance: 120
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 234946826
+    }
+    NexthopInterface {
+      Name: "GigabitEthernet0/0/0/0"
+    }
+  }
+}
+Routes {
+  Prefix: 385876224
+  PrefixLen: 24
+  RouteCommon {
+    AdminDistance: 120
+  }
+  PathList {
+    NexthopAddress {
+      V4Address: 234946826
+    }
+    NexthopInterface {
+      Name: "GigabitEthernet0/0/0/0"
+    }
+  }
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv4 Route Operation:2 Successful
+
+
+###########################
+Transmitted message: IOSXR-SL RouteV6 Oper: SL_OBJOP_UPDATE
+VrfName: "default"
+Routes {
+  Prefix: " \002\000\252\000\000\000\000\000\000\000\000\000\000\000\000"
+  PrefixLen: 64
+  RouteCommon {
+    AdminDistance: 120
+  }
+  PathList {
+    NexthopAddress {
+      V6Address: " \002\000\256\000\000\000\000\000\000\000\000\000\000\000\003"
+    }
+    NexthopInterface {
+      Name: "GigabitEthernet0/0/0/0"
+    }
+  }
+}
+###########################
+
+
+RPC call was successful, checking response...
+IPv6 Route Operation:2 Successful
+Press control-c to quit
+
+Received Heartbeat
+
+
+```
+
+Open another ssh session into the XR vagrant box and view the effect on the route table while this client is running:
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+
+RP/0/RP0/CPU0:ios#show route
+Tue Jul 17 10:11:54.628 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is 10.0.2.2 to network 0.0.0.0
+
+S*   0.0.0.0/0 [1/0] via 10.0.2.2, 04:37:28, MgmtEth0/RP0/CPU0/0
+C    10.0.2.0/24 is directly connected, 04:37:28, MgmtEth0/RP0/CPU0/0
+L    10.0.2.15/32 is directly connected, 04:37:28, MgmtEth0/RP0/CPU0/0
+C    11.1.1.0/24 is directly connected, 04:37:06, GigabitEthernet0/0/0/0
+L    11.1.1.10/32 is directly connected, 04:37:06, GigabitEthernet0/0/0/0
+<mark>a    20.0.1.0/24 [120/0] via 14.1.1.10, 00:00:18, GigabitEthernet0/0/0/0
+a    23.0.1.0/24 [120/0] via 14.1.1.10, 00:00:18, GigabitEthernet0/0/0/0</mark>
+RP/0/RP0/CPU0:ios#   show route ipv6
+Tue Jul 17 10:12:02.168 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+<mark>a    2002:aa::/64 
+      [120/0] via 2002:ae::3, 00:00:26, GigabitEthernet0/0/0/0</mark>
+RP/0/RP0/CPU0:ios#
+
+
+</code>
+</pre>
+</div>
+
+
+
