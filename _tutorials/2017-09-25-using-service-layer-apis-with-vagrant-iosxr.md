@@ -36,7 +36,7 @@ Once you have everything set up, you should be able to see the IOS-XRv vagrant b
 
 This tutorial is meant to get you up and running with an environment to play with the Service Layer APIs on IOS-XR. An introduction to these APIs can be found here:  
 
-><{{ base_path }}/tutorials/service-layer-intro/>
+><{{ base_path }}/blogs/2017-09-25-service-layer-intro/>
 {: .notice--info}
 
 To get more details on the APIs, check out the API-Docs section:  
@@ -1024,8 +1024,3 @@ root@host:~/service-layer-objmodel/grpc/go/src/tutorial#
 
 Excellent! This golang tutorial programs 100000 in 100 batches of 1000 routes each with rate of 40976 routes/sec!
 {: .notice--success}
-
-
-
-
-
