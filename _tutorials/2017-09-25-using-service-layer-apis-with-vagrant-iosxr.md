@@ -46,6 +46,19 @@ To get more details on the APIs, check out the API-Docs section:
 
 In this tutorial we set up a GRPC/python environment that may be used to build your own python client to interact with the SL APIs. 
 
+A couple c++ clients can be found here:  
+><https://github.com/{{ github_org }}/service-layer-objmodel/tree/master/grpc/cpp>
+
+Run the `build_tutorials.sh` script in a suitable environment (Ubuntu 16.04 for example) to install dependencies, build the library and subsequently build the tutorials.
+One tutorial is the quickstart client located here:  
+><https://github.com/Cisco-Service-Layer/service-layer-objmodel/tree/master/grpc/cpp/src/tutorial>
+
+that pushes a few routes into the IOS-XR RIB using service-layer APIs. A similar more exhaustive client can be found here: 
+><https://github.com/Cisco-Service-Layer/service-layer-objmodel/tree/master/grpc/cpp/src/tutorial/rshuttle>
+
+that pushes a 100000 routes into the IOS-XR RIB by default and calculates the programming rate.
+
+
 A go client binary is also included as part of the "service-layer-objmodel" code itself at the following link: 
 (You will also find a quick-start go client code located there) 
 
