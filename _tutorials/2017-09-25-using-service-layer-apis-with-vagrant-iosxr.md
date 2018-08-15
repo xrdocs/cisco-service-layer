@@ -185,7 +185,7 @@ end
 ## GRPC/Python environment (devbox) 
 
 ### Use our Vagrant box
-You'll need a few dependencies installed to construct your own grpc python client. To make things easier we've already created an ubuntu-14.04 vagrant box with everything installed.
+You'll need a few dependencies installed to construct your own grpc python client. To make things easier we've already created an ubuntu-16.04 vagrant box with everything installed.
 If you notice in the above Vagrantfile, we specify a name for a special Vagrant box:  
 
 ```ruby
@@ -273,7 +273,7 @@ AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
 Vagrantfile	configs		scripts
 AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
 Bringing machine 'devbox' up with 'virtualbox' provider...
-==> devbox: Importing base box 'ciscoxr/grpc-ubuntu-16.04'...
+==> devbox: Importing base box 'ubuntu/trusty64'...
 
 ----------------------- snip output --------------------------
 
