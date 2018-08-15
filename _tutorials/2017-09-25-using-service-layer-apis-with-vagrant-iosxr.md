@@ -231,16 +231,16 @@ All dependencies should be installed already:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-vagrant@vagrant-ubuntu-trusty-64:~$<mark> protoc --version</mark>
+vagrant@vagrant:~$<mark> protoc --version</mark>
 <mark>libprotoc 3.0.0</mark>
-vagrant@vagrant-ubuntu-trusty-64:~$ 
-vagrant@vagrant-ubuntu-trusty-64:~$<mark> pip show grpcio </mark>
+vagrant@vagrant:~$ 
+vagrant@vagrant:~$<mark> pip show grpcio </mark>
 ---
 <mark>Name: grpcio
 Version: 0.13.1 </mark>
 Location: /usr/local/lib/python2.7/dist-packages
 Requires: six, enum34, futures, protobuf
-vagrant@vagrant-ubuntu-trusty-64:~$ 
+vagrant@vagrant:~$ 
 </code>
 </pre>
 </div>
@@ -248,13 +248,13 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 
 ### Build your own? 
 
-If you'd much rather build your own devbox environment, then let's use a pristine Ubuntu 14.04
+If you'd much rather build your own devbox environment, then let's use a pristine Ubuntu 16.04
 box. Make the following change in the Vagrantfile:  
 
 ```ruby
 
  config.vm.define "devbox" do |node|
-      node.vm.box =  "ubuntu/trusty64"
+      node.vm.box =  "bento/ubuntu-16.04"
 
       # eth1 connected to link1
 ```
@@ -273,7 +273,7 @@ AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
 Vagrantfile	configs		scripts
 AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
 Bringing machine 'devbox' up with 'virtualbox' provider...
-==> devbox: Importing base box 'ubuntu/trusty64'...
+==> devbox: Importing base box 'bento/ubuntu-16.04'...
 
 ----------------------- snip output --------------------------
 
@@ -393,7 +393,7 @@ vagrant ssh devbox
 *  You're able to ping the directly connected interface of the router (Gig0/0/0/0 at 11.1.1.10):  
   
    ```
-   vagrant@vagrant-ubuntu-trusty-64:~$ ping 11.1.1.10
+   vagrant@vagrant:~$ ping 11.1.1.10
    PING 11.1.1.10 (11.1.1.10) 56(84) bytes of data.
    64 bytes from 11.1.1.10: icmp_seq=1 ttl=255 time=1.48 ms
    64 bytes from 11.1.1.10: icmp_seq=2 ttl=255 time=2.12 ms
@@ -406,7 +406,7 @@ vagrant ssh devbox
    * **Via Gig0/0/0/0**
 
    ```
-   vagrant@vagrant-ubuntu-trusty-64:~$ telnet 11.1.1.10 57344
+   vagrant@vagrant:~$ telnet 11.1.1.10 57344
    Trying 11.1.1.10...
    Connected to 11.1.1.10.
    Escape character is '^]'.
@@ -418,7 +418,7 @@ vagrant ssh devbox
    
    ```
    
-   vagrant@vagrant-ubuntu-trusty-64:~$ telnet 10.0.2.2 57344
+   vagrant@vagrant:~$ telnet 10.0.2.2 57344
    Trying 10.0.2.2...
    Connected to 10.0.2.2.
    Escape character is '^]'.
@@ -450,10 +450,10 @@ You have two options:
 For example, if we use the Management Network:  
  
 ```
-vagrant@vagrant-ubuntu-trusty-64:~$ 
-vagrant@vagrant-ubuntu-trusty-64:~$ export SERVER_IP=10.0.2.2
-vagrant@vagrant-ubuntu-trusty-64:~$ export SERVER_PORT=57344
-vagrant@vagrant-ubuntu-trusty-64:~$ 
+vagrant@vagrant:~$ 
+vagrant@vagrant:~$ export SERVER_IP=10.0.2.2
+vagrant@vagrant:~$ export SERVER_PORT=57344
+vagrant@vagrant:~$ 
 ```  
 
 Now, run the python unit-tests to verify that everything is fine:  
