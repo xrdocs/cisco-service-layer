@@ -263,64 +263,64 @@ You will need the following steps:
 
 *  Bring up the devbox first:  
 
-<div class="highlighter-rouge">
-<pre class="highlight">
-<code>
-AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ pwd
-/Users/akshshar/vagrant-examples/iosxr-grpc-setup
-AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ 
-AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
-Vagrantfile	configs		scripts
-AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
-Bringing machine 'devbox' up with 'virtualbox' provider...
-==> devbox: Importing base box 'bento/ubuntu-16.04'...
+   <div class="highlighter-rouge">
+   <pre class="highlight">
+   <code>
+   AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ pwd
+   /Users/akshshar/vagrant-examples/iosxr-grpc-setup
+   AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ 
+   AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$ ls
+   Vagrantfile	configs		scripts
+   AKSHSHAR-M-K0DS:iosxr-grpc-setup akshshar$<mark> vagrant up devbox </mark>
+   Bringing machine 'devbox' up with 'virtualbox' provider...
+   ==> devbox: Importing base box 'bento/ubuntu-16.04'...
 
------------------------ snip output --------------------------
-
-
-</code>
-</pre>
-</div>
-
-* Hop into the devbox
-
-```
-vagrant ssh devbox
-```
-
-* Build the c++ dependencies (using build_libiosxrsl.sh from the service-layer-objmodel git repo):
+   ----------------------- snip output --------------------------
 
 
-<div class="highlighter-rouge">
-<pre class="highlight">
-<code>
-vagrant@vagrant:~$ <mark>git clone https://github.com/Cisco-Service-Layer/service-layer-objmodel.git</mark>
-Cloning into 'service-layer-objmodel'...
-remote: Counting objects: 332, done.
-remote: Compressing objects: 100% (17/17), done.
-remote: Total 332 (delta 5), reused 0 (delta 0), pack-reused 315
-Receiving objects: 100% (332/332), 7.58 MiB | 3.20 MiB/s, done.
-Resolving deltas: 100% (165/165), done.
-Checking connectivity... done.
-vagrant@vagrant:~$ 
-vagrant@vagrant:~$ 
-vagrant@vagrant:~$ 
-vagrant@vagrant:~$ <mark>cd service-layer-objmodel/</mark>
-vagrant@vagrant:~/service-layer-objmodel$ cd grpc/cpp/
-vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
-vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
-vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ <mark>sudo ./build_libiosxrsl.sh </mark>
-+ apt-get update
-Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
-Ign:2 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages
-Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:4 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [472 kB]                   
-Ign:5 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en                           
-Get:6 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]                                      
-Ign:7 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages   
-</code>
-</pre>
-</div>
+   </code>
+   </pre>
+   </div>
+
+*  Hop into the devbox
+
+   ```
+   vagrant ssh devbox
+   ```
+
+*  Build the c++ dependencies (using build_libiosxrsl.sh from the service-layer-objmodel git repo):
+
+
+   <div class="highlighter-rouge">
+   <pre class="highlight">
+   <code>
+   vagrant@vagrant:~$ <mark>git clone https://github.com/Cisco-Service-Layer/service-layer-objmodel.git</mark>
+   Cloning into 'service-layer-objmodel'...
+   remote: Counting objects: 332, done.
+   remote: Compressing objects: 100% (17/17), done.
+   remote: Total 332 (delta 5), reused 0 (delta 0), pack-reused 315
+   Receiving objects: 100% (332/332), 7.58 MiB | 3.20 MiB/s, done.
+   Resolving deltas: 100% (165/165), done.
+   Checking connectivity... done.
+   vagrant@vagrant:~$ 
+   vagrant@vagrant:~$ 
+   vagrant@vagrant:~$ 
+   vagrant@vagrant:~$ <mark>cd service-layer-objmodel/</mark>
+   vagrant@vagrant:~/service-layer-objmodel$ cd grpc/cpp/
+   vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
+   vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
+   vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ <mark>sudo ./build_libiosxrsl.sh </mark>
+   + apt-get update
+   Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+   Ign:2 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages
+   Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
+   Get:4 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [472 kB]                   
+   Ign:5 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en                           
+   Get:6 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]                                      
+   Ign:7 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages   
+   </code>
+   </pre>
+   </div>
 
 
 *  Install basic dependencies for the required python packages:
