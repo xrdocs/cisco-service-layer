@@ -288,34 +288,37 @@ Bringing machine 'devbox' up with 'virtualbox' provider...
 vagrant ssh devbox
 ```
 
-*  Install basic dependencies:  
+* Build the c++ dependencies (using build_libiosxrsl.sh from the service-layer-objmodel git repo):
+
 
 ```
-sudo apt-get update
-sudo apt-get -y install autoconf automake libtool curl make g++ unzip git python-pip python-dev 
-```  
-
-*  Clone and build google protobuf:
-
+vagrant@vagrant:~$ git clone https://github.com/Cisco-Service-Layer/service-layer-objmodel.git
+Cloning into 'service-layer-objmodel'...
+remote: Counting objects: 332, done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 332 (delta 5), reused 0 (delta 0), pack-reused 315
+Receiving objects: 100% (332/332), 7.58 MiB | 3.20 MiB/s, done.
+Resolving deltas: 100% (165/165), done.
+Checking connectivity... done.
+vagrant@vagrant:~$ 
+vagrant@vagrant:~$ 
+vagrant@vagrant:~$ 
+vagrant@vagrant:~$ cd service-layer-objmodel/
+vagrant@vagrant:~/service-layer-objmodel$ cd grpc/cpp/
+vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
+vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
+vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ sudo ./build_libiosxrsl.sh 
++ apt-get update
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Ign:2 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages
+Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [472 kB]                   
+Ign:5 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en                           
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]                                      
+Ign:7 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages   
 ```
-git clone https://github.com/google/protobuf.git ~/protobuf
-cd ~/protobuf/
-./autogen.sh
-./configure
-make
-sudo make install
-sudo ldconfig
-```
 
-*  Clone and build grpc
 
-```
-git clone https://github.com/grpc/grpc.git ~/grpc
-cd ~/grpc/
-git submodule update --init
-make
-sudo make install
-```
 
 * Install the python grpc package and other dependencies
 
@@ -323,6 +326,7 @@ sudo make install
 sudo pip install six grpcio=='0.13.1' py2-ipaddress=='3.4'
 
 ```
+
 
 
 **That's it! You're now ready to launch the router and test things out.**
