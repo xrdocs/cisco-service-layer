@@ -328,7 +328,6 @@ sudo pip install six grpcio=='0.13.1' py2-ipaddress=='3.4'
 ```
 
 
-
 **That's it! You're now ready to launch the router and test things out.**
 {: .notice--success}  
  
