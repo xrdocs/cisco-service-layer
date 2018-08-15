@@ -323,12 +323,21 @@ Ign:7 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages
 </div>
 
 
-* Install the python grpc package and other dependencies
+*  Install basic dependencies for the required python packages:
 
-```
-sudo pip install six grpcio=='0.13.1' py2-ipaddress=='3.4'
+   ```
+   sudo apt-get update
+   sudo apt-get -y install python-pip
+   
+   ```
 
-```
+   Now install the python grpc and py2-ipaddress packages:
+
+
+   ```
+   sudo pip install six grpcio=='0.13.1' py2-ipaddress=='3.4'
+
+   ```
 
 
 **That's it! You're now ready to launch the router and test things out.**
