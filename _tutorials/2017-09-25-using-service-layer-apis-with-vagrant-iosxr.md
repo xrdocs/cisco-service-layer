@@ -291,8 +291,10 @@ vagrant ssh devbox
 * Build the c++ dependencies (using build_libiosxrsl.sh from the service-layer-objmodel git repo):
 
 
-```
-vagrant@vagrant:~$ git clone https://github.com/Cisco-Service-Layer/service-layer-objmodel.git
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+vagrant@vagrant:~$ <mark>git clone https://github.com/Cisco-Service-Layer/service-layer-objmodel.git</mark>
 Cloning into 'service-layer-objmodel'...
 remote: Counting objects: 332, done.
 remote: Compressing objects: 100% (17/17), done.
@@ -303,11 +305,11 @@ Checking connectivity... done.
 vagrant@vagrant:~$ 
 vagrant@vagrant:~$ 
 vagrant@vagrant:~$ 
-vagrant@vagrant:~$ cd service-layer-objmodel/
+vagrant@vagrant:~$ <mark>cd service-layer-objmodel/</mark>
 vagrant@vagrant:~/service-layer-objmodel$ cd grpc/cpp/
 vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
 vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ 
-vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ sudo ./build_libiosxrsl.sh 
+vagrant@vagrant:~/service-layer-objmodel/grpc/cpp$ <mark>sudo ./build_libiosxrsl.sh </mark>
 + apt-get update
 Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
 Ign:2 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages
@@ -316,8 +318,9 @@ Get:4 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [472 
 Ign:5 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en                           
 Get:6 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]                                      
 Ign:7 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages   
-```
-
+</code>
+</pre>
+</div>
 
 
 * Install the python grpc package and other dependencies
