@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsCos" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsCos</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsCos_1a50b6bdcea7d3bc6b1e49ed5a4853bb54" prot="public" static="no" mutable="no">
+        <type>oneof</type>
+        <definition>oneof SLMplsCos::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <initializer>{
+        
+        uint32 Exp = 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="376" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsCos_1ac8c0a34ed6590b3b631e142bac0afa62" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLMplsCos::DefaultElspPath</definition>
+        <argsstring></argsstring>
+        <name>DefaultElspPath</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Flag to indicate that this is also an E-LSP entry and all paths will be using this default path. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="382" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsCos_1ad84805151f196d00ef2b71eb92b14ca5" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsCos::ForwardingClass</definition>
+        <argsstring></argsstring>
+        <name>ForwardingClass</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>forwarding class with valid range &lt;0-7&gt; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="384" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS ILM entry&apos;s CoS value This message contains either EXP bits or a forwarding class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="375" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="375" bodyend="386"/>
+    <listofallmembers>
+      <member refid="structSLMplsCos_1ac8c0a34ed6590b3b631e142bac0afa62" prot="public" virt="non-virtual"><scope>SLMplsCos</scope><name>DefaultElspPath</name></member>
+      <member refid="structSLMplsCos_1ad84805151f196d00ef2b71eb92b14ca5" prot="public" virt="non-virtual"><scope>SLMplsCos</scope><name>ForwardingClass</name></member>
+      <member refid="structSLMplsCos_1a50b6bdcea7d3bc6b1e49ed5a4853bb54" prot="public" virt="non-virtual"><scope>SLMplsCos</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRouteNotifMarker" kind="struct" language="C++" prot="public">
+    <compoundname>SLRouteNotifMarker</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRouteNotifMarker_1a663fa35afbdb4028180851bf9d55f2e2" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRouteNotifMarker::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Vrf that this notification message applies to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="204" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Common Marker Notification message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_route_common.proto" line="202" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="202" bodyend="205"/>
+    <listofallmembers>
+      <member refid="structSLRouteNotifMarker_1a663fa35afbdb4028180851bf9d55f2e2" prot="public" virt="non-virtual"><scope>SLRouteNotifMarker</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

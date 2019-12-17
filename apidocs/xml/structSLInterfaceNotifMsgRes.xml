@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLInterfaceNotifMsgRes" kind="struct" language="C++" prot="public">
+    <compoundname>SLInterfaceNotifMsgRes</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLInterfaceNotifMsgRes_1a4f3fbb467f6cd30ceb768e14c73d4e81" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLInterfaceNotifMsgRes::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="177" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInterfaceNotifMsgRes_1a672628ba99b399d7b9d6ca9450ef4695" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLInterface" kindref="compound">SLInterface</ref></type>
+        <definition>SLInterface SLInterfaceNotifMsgRes::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Interface key attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="179" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface Notification message result. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="177">
+        <label>SLInterfaceNotifMsgRes</label>
+        <link refid="structSLInterfaceNotifMsgRes"/>
+        <childnode refid="178" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="179" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="178">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="179">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_interface.proto" line="175" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="175" bodyend="180"/>
+    <listofallmembers>
+      <member refid="structSLInterfaceNotifMsgRes_1a4f3fbb467f6cd30ceb768e14c73d4e81" prot="public" virt="non-virtual"><scope>SLInterfaceNotifMsgRes</scope><name>ErrStatus</name></member>
+      <member refid="structSLInterfaceNotifMsgRes_1a672628ba99b399d7b9d6ca9450ef4695" prot="public" virt="non-virtual"><scope>SLInterfaceNotifMsgRes</scope><name>Key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Python Quick Tutorial</title>
+    <detaileddescription>
+<para><heading level="2">Table of Contents</heading>
+</para><para><itemizedlist>
+<listitem><para><ulink url="#server">Server Setup</ulink></para></listitem><listitem><para><ulink url="#quick">Running the tutorial</ulink></para></listitem><listitem><para><ulink url="#gen">Generate gRPC Code</ulink></para></listitem><listitem><para><ulink url="#init">Initialize the client server connection</ulink></para></listitem><listitem><para><ulink url="#vrf">Register the VRF</ulink></para></listitem><listitem><para><ulink url="#route">Add a Batch of Routes</ulink></para></listitem></itemizedlist>
+</para><para><heading level="4"><anchor id="_1server"/>Server Setup</heading>
+</para><para>On the server side, we need to configure GRPC and enable the service layer through the following CLI configuration: <verbatim>! Configure GRPC
+configure
+grpc port 57344
+grpc address-family ipv4
+commit
+end
+
+! Configure Service layer
+configure
+grpc service-layer
+commit
+end
+</verbatim></para><para>We also need to configure a server IP address. To configure an IP address on the management interface, one can use dhcp as follows: <verbatim>! Configure the Mgmt Interface
+configure
+interface MgmtEth 0/RP0/CPU0/0
+ipv4 address dhcp
+no shut
+commit
+end
+</verbatim></para><para>To check the IP address assigned: <verbatim>show ip interface brief
+</verbatim></para><para>On the client side, the very first thing we need to do is set the server IP address and gRPC port. You can check your port number by running the following CLI command on the IOS-XR server box (should be the same as the one configured): <verbatim># show run grpc
+</verbatim></para><para>Set the server address and port number as environment variables with the following example command (this is assuming you are in bash shell): <verbatim>$ export SERVER_IP=192.168.122.192
+$ export SERVER_PORT=57344
+</verbatim></para><para>The above assumes that the IP address of the node is 192.168.122.192.</para><para>This completes all the setup needed to start writing some code! Hop into your python interpreter and try out some of the commands to get familiar with the API.</para><para><heading level="2"><anchor id="_1quick"/>Running the tutorial</heading>
+</para><para>The following basic tutorial will walk you through getting started with the Service Layer API, in particular on how to add a route. This may require some initial python and GRPC setup, which will be explained below. For now, if you already have passed this setup step, run the example: <verbatim>cd grpc/python/src
+python3 tutorial/quickstart.py
+</verbatim></para><para>The following sections explain the details of the above example tutorial.</para><para><heading level="4"><anchor id="_1gen"/>Generate gRPC Code (optional in this example)</heading>
+</para><para>If you are not familiar with gRPC, we recommend you refer to gRPC&apos;s documentation before beginning with our tutorial: <ulink url="http://www.grpc.io/docs/">gRPC Docs</ulink></para><para>You should have received all of the Protobuf files required to run the Cisco Service Laye API. In order to generate the gRPC client side code stubs in python, run the following command (you may have to adjust the path to the proto files and the output according to your requirements):</para><para><bold>For convenience, these files are also committed in this repo under grpc/python/src/genpy/ (so you can skip this step).</bold> <verbatim>$ protoc -I ../../protos --python_out=. --grpc_out=./genpy/ --plugin=protoc-gen-grpc=`which grpc_python_plugin` ../../protos/*.proto
+</verbatim></para><para>This generates the code stubs that we will now utilize to create a client. The files are recognizable from the &quot;_pb2&quot; and &quot;_pb2_grpc&quot; that is appended to the name of the proto files they were generated from (example: sl_route_ipv4_pb2.py).</para><para><heading level="4"><anchor id="_1init"/>Initialize the client server connection</heading>
+</para><para>In order to follow this quick tutorial, it is best to open the files in <computeroutput>grpc/python/src/tutorial/</computeroutput> <verbatim>quickstart.py  : The full tutorial example
+client_init.py : Used to setup the client-server connection
+vrf.py         : Used to setup the Route vertical
+</verbatim></para><para>As shown in quickstart.py, the first thing to do is to setup the GRPC channel: <verbatim>server_ip, server_port = util.get_server_ip_port()
+channel = grpc.insecure_channel(server_ip, server_port)
+</verbatim></para><para>Once connected, we need to handshake the API version number with the server. The same RPC call also sets up an asynchronous stream of notifications from the server. The first notification would be the response to our version number message i.e. <ref refid="structSLInitMsg" kindref="compound">SLInitMsg</ref>, as a <ref refid="structSLGlobalNotif" kindref="compound">SLGlobalNotif</ref> event with type SL_GLOBAL_EVENT_TYPE_VERSION. This can be done by calling: <verbatim>SLGlobalInitNotif(init_msg, Timeout)
+</verbatim></para><para>The above function takes the client major, minor and sub version numbers and sends them to the Service Layer service to get a handshake on the API version number. More on this below.</para><para>The following code snippets are copied from file client_init.py <verbatim>def client_init(stub, event):
+    #
+    # Create SLInitMsg to handshake the version number with the server.
+    # The Server will allow/deny access based on the version number.
+    # The same RPC is used to setup a notification channel for global
+    # events coming from the server.
+    #
+    # # Set the client version number based on the current proto files&apos; version
+    init_msg = sl_global_pb2.SLInitMsg()
+    init_msg.MajorVer = sl_version_pb2.SL_MAJOR_VERSION
+    init_msg.MinorVer = sl_version_pb2.SL_MINOR_VERSION
+    init_msg.SubVer = sl_version_pb2.SL_SUB_VERSION
+
+    # Set a very large timeout, as we will &quot;for ever&quot; loop listening on
+    # notifications from the server
+    Timeout = 365*24*60*60 # Seconds
+
+    # This for loop will never end unless the server closes the session
+    for response in stub.SLGlobalInitNotif(init_msg, Timeout):
+        if response.EventType == sl_global_pb2.SL_GLOBAL_EVENT_TYPE_VERSION:
+            if (sl_common_types_pb2.SLErrorStatus.SL_SUCCESS ==
+                    response.ErrStatus.Status):
+</verbatim></para><para>The above python definition also handles other events such as errors and heartbeats. Notice that the client_init definition above takes a GRPC stub as an argument. This is typically created through: <verbatim># Create the gRPC stub.
+stub = sl_global_pb2_grpc.SLGlobalStub(channel)
+</verbatim></para><para>Since the above client_init function would never return, it is best to spawn it as a thread, and run it in the background. In python, we do so by calling a threading event: <verbatim>#
+# Spawn a thread for global events
+#
+def global_init(channel):
+    # Create the gRPC stub.
+    stub = sl_global_pb2_grpc.SLGlobalStub(channel)
+
+    # Create a thread sync event. This will be used to order thread execution
+    event = threading.Event()
+
+    # The main reason we spawn a thread here, is that we dedicate a GRPC
+    # channel to listen on Global asynchronous events/notifications.
+    # This thread will be handling these event notifications.
+    t = threading.Thread(target = global_thread, args=(stub, event))
+    t.start()
+</verbatim></para><para><heading level="4"><anchor id="_1vrf"/>Register the VRF</heading>
+</para><para>In general, before we can use a vertical function like the route APIs, we have to register on that vertical. The route API allows the user to register based on a per VRF basis. So, before any additions or modification of routes can be made we need to register with the proper VRF, which requires sending a VRF registration message and then an EOF message to clean up any stale routes that may be there from an older configuration (this will become handy on restart or recovery scenarios).</para><para>The following snippets are copied from file vrf.py</para><para>Next up, create the stub instance using the channel. This stub will have the exact same methods that are available on the server. To do this, we need to import the stub code generated from our ProtoBuf files. Depending on what calls you want to make, different stubs will be used. We are going to be making changes to our IPv4 routes, so we use the SLRoutev4OperStub. <verbatim>from genpy import sl_route_ipv4_pb2_grpc
+stub = sl_route_ipv4_pb2_grpc.SLRoutev4OperStub(channel)
+</verbatim></para><para>Time to fill in some variables!</para><para>Create the <computeroutput><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref></computeroutput> object. Generating a <computeroutput><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref></computeroutput> object allows us to use dot notation to access and set it&apos;s variables. <verbatim>from genpy import sl_route_common_pb2
+vrfMsg = sl_route_common_pb2.SLVrfRegMsg()
+</verbatim></para><para>The VRF registration message contains a set of VRF registration objects.</para><para>Create an <computeroutput><ref refid="structSLVrfReg" kindref="compound">SLVrfReg</ref></computeroutput> object. <verbatim>vrfObj = sl_route_common_pb2.SLVrfReg()
+</verbatim></para><para>Set the VRF registration object attributes:</para><para>VRF name. The default VRF in IOS-XR is called &quot;default&quot;: <verbatim>vrfObj.VrfName = &apos;default&apos;
+</verbatim></para><para>Administrative distance. The admin distance is used by RIB to make best path decisions. <verbatim>vrfObj.AdminDistance = 2
+</verbatim></para><para>VRF purge interval. This is useful on restart scenarios. <verbatim>vrfObj.VrfPurgeIntervalSeconds = 500
+</verbatim></para><para>Add the registration message to the list. In the case of a bulk object, we can append other VRF objects to the list. <verbatim>vrfList.append(vrfObj)
+</verbatim></para><para>Now that the list is completed, assign <computeroutput>vrf_list</computeroutput> to the <computeroutput><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref></computeroutput>. <verbatim>vrfMsg.VrfRegMsgs.extend(vrfList)
+</verbatim></para><para>Make the RPC call.</para><para>We are ready to make our call to the API. We&apos;ll send the <computeroutput><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref> vrfMsg</computeroutput> and a timeout interval (in seconds) for the gRPC server. <verbatim>Timeout = 10 # Seconds
+response = stub.SLRoutev4VrfRegOp(vrfMsg, Timeout)
+</verbatim></para><para>Note that the vrfMsg has an Oper field that determines the operation type: <verbatim>SL_REGOP_REGISTER  : used for registrations
+SL_REGOP_EOF       : used for EOF signaling. Useful for restart scenarios
+SL_REGOP_UNREGISTER: used to unregister, which would clean all previous roues added in that VRF.
+</verbatim></para><para>Finally, we can print our response from the server. Notice that, since we can add a batch of VRF registrations, we want to print a result code for each individual response. To do this, we check if the response is an error, and if it is we print the name of the vrf that caused the error as well as the hexadecimal error code. <verbatim>if (response.StatusSummary.Status ==
+        sl_common_types_pb2.SLErrorStatus.SL_SUCCESS):
+    print &quot;VRF %s Success!&quot; %(
+        sl_common_types_pb2.SLRegOp.keys()[oper])
+else:
+    print &quot;Error code for VRF %s is 0x%x! Response:&quot; % (
+        sl_common_types_pb2.SLRegOp.keys()[oper],
+        response.StatusSummary.Status
+    )
+    print response
+    # If we have partial failures within the batch, let&apos;s print them
+    if (response.StatusSummary.Status == 
+        sl_common_types_pb2.SLErrorStatus.SL_SOME_ERR):
+        for result in response.Results:
+            print &quot;Error code for %s is 0x%x&quot; %(result.VrfName,
+                result.ErrStatus.Status
+            )
+</verbatim></para><para><heading level="4"><anchor id="_1route"/>Add a Batch of Routes</heading>
+</para><para>Now that we have registered the VRF, we can start adding routes. We will show adding a batch of 10 routes to the RIB.</para><para>Create an empty list of routes. <verbatim>routeList = []
+</verbatim></para><para>Create a <computeroutput><ref refid="structSLRoutev4Msg" kindref="compound">SLRoutev4Msg</ref></computeroutput> message. <verbatim>rtMsg = sl_route_ipv4_pb2.SLRoutev4Msg()
+</verbatim></para><para>Fill in the route attributes.</para><para>VRF Name <verbatim>rtMsg.VrfName = &apos;default&apos;
+</verbatim></para><para>Add a loop that will add 10 incrementing routes to the RIB table. <verbatim>for i in range(10):
+</verbatim></para><para>Create a <computeroutput><ref refid="structSLRoutev4" kindref="compound">SLRoutev4</ref></computeroutput> object. <verbatim>    route = sl_route_ipv4_pb2.SLRoutev4()
+</verbatim></para><para>IP address import ipaddress route.Prefix = ( int(ipaddress.ip_address(&apos;20.0.&apos;+ str(i) + &apos;.0&apos;)) )</para><para>Prefix Length <verbatim>    route.PrefixLen = 24
+</verbatim></para><para>Administrative distance (this can override the VRF registration admin distance) <verbatim>    route.RouteCommon.AdminDistance = 2
+</verbatim></para><para>Set the route&apos;s paths.</para><para>A route may have one or many paths. Create an empty list of paths as a placeholder for these paths. <verbatim>    paths = []
+</verbatim></para><para>Create an <computeroutput><ref refid="structSLRoutePath" kindref="compound">SLRoutePath</ref></computeroutput> object. <verbatim>    path = sl_route_common_pb2.SLRoutePath()
+</verbatim></para><para>Fill in the path attributes. Note: if you are deleting a route, paths are not required to be added, so it is better not to fill in this part for a delete.</para><para>Path next hop address <verbatim>    path.NexthopAddress.V4Address = (
+        int(ipaddress.ip_address(&apos;10.10.10.1&apos;))
+    )
+</verbatim></para><para>Next hop interface name <verbatim>    path.NexthopInterface.Name = &apos;GigabitEthernet0/0/0/0&apos;
+</verbatim></para><para>Add the path to the list <verbatim>    paths.append(path)
+</verbatim></para><para>Let&apos;s create another path as equal cost multi-path (ECMP) <verbatim>    path = sl_route_common_pb2.SLRoutePath()
+    path.NexthopAddress.V4Address = (
+        int(ipaddress.ip_address(&apos;10.10.10.2&apos;))
+    )
+    path.NexthopInterface.Name = &apos;GigabitEthernet0/0/0/0&apos;
+    paths.append(path)
+</verbatim></para><para>Add the paths to the route object. In the example quickstart.py tutorial, we add a line checking that the operation is not a delete operation, as we would not need to add paths for a delete. <verbatim>    if oper != sl_common_types_pb2.SL_OBJOP_DELETE:
+        route.PathList.extend(paths)
+</verbatim></para><para>Add the route to <computeroutput>route_list</computeroutput> (bulk routes) <verbatim>    routeList.append(route)
+</verbatim></para><para>Assign the <computeroutput>routeList</computeroutput> to the <computeroutput>rtMsg</computeroutput>. <verbatim>rtMsg.Routes.extend(routeList)
+</verbatim></para><para>Make the RPC call. <verbatim>Timeout = 10 # Seconds
+rtMsg.Oper = oper # Desired ADD, UPDATE, DELETE operation
+response = stub.SLRoutev4Op(rtMsg, Timeout)
+</verbatim></para><para>Again, in the quickstart.py tutorial we have examples of other route calls beyond just adding bulk routes. <verbatim># RPC route operations
+#    for add: sl_common_types_pb2.SL_OBJOP_ADD
+#    for update: sl_common_types_pb2.SL_OBJOP_UPDATE
+#    for delete: sl_common_types_pb2.SL_OBJOP_DELETE
+route_operation(channel, sl_common_types_pb2.SL_OBJOP_ADD)
+</verbatim></para><para>These calls show examples of bulk additions, updates, and deletes</para><para>Check the server&apos;s response. Here again we can check each individual route that was added for an error message. <verbatim>if (sl_common_types_pb2.SLErrorStatus.SL_SUCCESS == 
+        response.StatusSummary.Status):
+    print &quot;Route %s Success!&quot; %(
+        sl_common_types_pb2.SLObjectOp.keys()[oper])
+else:
+    print &quot;Error code for route %s is 0x%x&quot; % (
+        sl_common_types_pb2.SLObjectOp.keys()[oper],
+        response.StatusSummary.Status
+    )
+    # If we have partial failures within the batch, let&apos;s print them
+    if (response.StatusSummary.Status == 
+        sl_common_types_pb2.SLErrorStatus.SL_SOME_ERR):
+        for result in response.Results:
+            print &quot;Error code for %s/%d is 0x%x&quot; %(
+                str(ipaddress.ip_address(result.Prefix)),
+                result.PrefixLen,
+                result.ErrStatus.Status
+            )
+</verbatim></para><para>That&apos;s all for now! Remember some key takeaways:</para><para><orderedlist>
+<listitem><para>The VRF must be registered before adding, updating, or removing routes from the RIB.</para></listitem><listitem><para>All API operations are CRUD based (Create, Read, Update, Delete), and the initial setup of all calls to the same object will be (about) the same. </para></listitem></orderedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

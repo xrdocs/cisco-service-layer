@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRouteNotifStatus" kind="struct" language="C++" prot="public">
+    <compoundname>SLRouteNotifStatus</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRouteNotifStatus_1a9abb250bebaa6aef65d493cbaf48f095" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLRouteNotifStatus::Correlator</definition>
+        <argsstring></argsstring>
+        <name>Correlator</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Correlator in the request. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="192" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRouteNotifStatus_1ac8bdbc9b4aa50ba15b962981918f3b99" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRouteNotifStatus::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Vrf in the request. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="194" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRouteNotifStatus_1a3d688171fc787df8f3ae20f4100430b7" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLRouteNotifStatus::NotifStatus</definition>
+        <argsstring></argsstring>
+        <name>NotifStatus</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>The NotifStatus implies one of 2 things: SL_SUCCESS: signifies that the notification request was successful SL_XXX: signifies an error in setting up a notification for the Vrf. </para>        </briefdescription>
+        <detaileddescription>
+<para>Implies that notifications for this VRF will not be sent. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="199" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Common Route Notification Status message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="386">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="385">
+        <label>SLRouteNotifStatus</label>
+        <link refid="structSLRouteNotifStatus"/>
+        <childnode refid="386" relation="usage">
+          <edgelabel>NotifStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_common.proto" line="190" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="190" bodyend="200"/>
+    <listofallmembers>
+      <member refid="structSLRouteNotifStatus_1a9abb250bebaa6aef65d493cbaf48f095" prot="public" virt="non-virtual"><scope>SLRouteNotifStatus</scope><name>Correlator</name></member>
+      <member refid="structSLRouteNotifStatus_1a3d688171fc787df8f3ae20f4100430b7" prot="public" virt="non-virtual"><scope>SLRouteNotifStatus</scope><name>NotifStatus</name></member>
+      <member refid="structSLRouteNotifStatus_1ac8bdbc9b4aa50ba15b962981918f3b99" prot="public" virt="non-virtual"><scope>SLRouteNotifStatus</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

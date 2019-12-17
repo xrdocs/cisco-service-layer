@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__SLMpls" kind="group">
+    <compoundname>SLMpls</compoundname>
+    <title>SLMpls</title>
+    <innerclass refid="structSLMplsLabelBlockKey" prot="public">SLMplsLabelBlockKey</innerclass>
+    <innerclass refid="structSLMplsLabelBlockMsg" prot="public">SLMplsLabelBlockMsg</innerclass>
+    <innerclass refid="structSLMplsLabelBlockMsgRes" prot="public">SLMplsLabelBlockMsgRes</innerclass>
+    <innerclass refid="structSLMplsLabelBlockMsgRsp" prot="public">SLMplsLabelBlockMsgRsp</innerclass>
+    <innerclass refid="structSLMplsLabelBlockGetMsg" prot="public">SLMplsLabelBlockGetMsg</innerclass>
+    <innerclass refid="structSLMplsLabelBlockGetMsgRsp" prot="public">SLMplsLabelBlockGetMsgRsp</innerclass>
+    <innerclass refid="structSlMplsReg" prot="public">SlMplsReg</innerclass>
+    <innerclass refid="structSLMplsRegMsg" prot="public">SLMplsRegMsg</innerclass>
+    <innerclass refid="structSLMplsRegMsgRsp" prot="public">SLMplsRegMsgRsp</innerclass>
+    <innerclass refid="structSLMplsGetMsg" prot="public">SLMplsGetMsg</innerclass>
+    <innerclass refid="structSLMplsGetMsgRsp" prot="public">SLMplsGetMsgRsp</innerclass>
+    <innerclass refid="structSLMplsGetStatsMsgRsp" prot="public">SLMplsGetStatsMsgRsp</innerclass>
+    <innerclass refid="structSLMplsPath" prot="public">SLMplsPath</innerclass>
+    <innerclass refid="structSLMplsIlmKey" prot="public">SLMplsIlmKey</innerclass>
+    <innerclass refid="structSLMplsCos" prot="public">SLMplsCos</innerclass>
+    <innerclass refid="structSLMplsIlmEntry" prot="public">SLMplsIlmEntry</innerclass>
+    <innerclass refid="structSLMplsIlmMsg" prot="public">SLMplsIlmMsg</innerclass>
+    <innerclass refid="structSLMplsIlmRes" prot="public">SLMplsIlmRes</innerclass>
+    <innerclass refid="structSLMplsIlmMsgRsp" prot="public">SLMplsIlmMsgRsp</innerclass>
+    <innerclass refid="structSLMplsIlmGetMsg" prot="public">SLMplsIlmGetMsg</innerclass>
+    <innerclass refid="structSLMplsIlmGetMsgRsp" prot="public">SLMplsIlmGetMsgRsp</innerclass>
+    <innernamespace refid="namespaceSLMplsOper">SLMplsOper</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__SLMpls_1gab3280b80569f43dc1008464bbbbdd343" prot="public" static="no">
+        <name>SlLabelAction</name>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343a89ad9d73480c84999a8d592ed62efd22" prot="public">
+          <name>SL_LABEL_ACTION_RESERVED</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>Reserved. 0x0. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343acecbbe68b0c529e2318db1a6e18f254a" prot="public">
+          <name>SL_LABEL_ACTION_SWAP</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Swap. </para>          </briefdescription>
+          <detaileddescription>
+<para>0x1 Swap outer label and forward. Used at tunnel midpoint for swapping labels. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343ac7d249972bd073b0ee538bc5b46571ec" prot="public">
+          <name>SL_LABEL_ACTION_POP_AND_FORWARD</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Pop and forward. </para>          </briefdescription>
+          <detaileddescription>
+<para>0x2 Pop outer label and forward. Used for per CE and per prefix label disposition at egress PE. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343ad6a68f37daca0b8464687f3afdbda849" prot="public">
+          <name>SL_LABEL_ACTION_POP_AND_LOOKUP_IPV4</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+<para>Pop and lookup IPv4. </para>          </briefdescription>
+          <detaileddescription>
+<para>0x3 Pop and lookup the IPv4 next header in the specified Vrf. Used for per vrf labels at egress PE. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12" prot="public">
+          <name>SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+<para>Pop and lookup IPv6. </para>          </briefdescription>
+          <detaileddescription>
+<para>0x4 Pop and lookup the IPv6 next header in the specified Vrf. Used for per vrf labels at egress PE. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1ggab3280b80569f43dc1008464bbbbdd343a20369cd6ad464209624900f14d6606c4" prot="public">
+          <name>SL_LABEL_ACTION_POP_AND_LOOKUP</name>
+          <initializer>= 0x5</initializer>
+          <briefdescription>
+<para>Pop and lookup. </para>          </briefdescription>
+          <detaileddescription>
+<para>0x5 Pop and lookup the next header in the packet (MPLS, IPv4, IPv6) in the specified Vrf. Used for per vrf labels at egress PE. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>MPLS label actions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="252" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="252" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__SLMpls_1ga82d8e1fede2512fbc7c9b5d27d911d21" prot="public" static="no">
+        <name>SLMplsLabelBlockType</name>
+        <enumvalue id="group__SLMpls_1gga82d8e1fede2512fbc7c9b5d27d911d21a395d899add8b3d107cc6137abac0b272" prot="public">
+          <name>SL_MPLS_LABEL_BLOCK_TYPE_RESERVED</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>Reserved. 0x0. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1gga82d8e1fede2512fbc7c9b5d27d911d21aac55155845c4b1511ccf075b706d0337" prot="public">
+          <name>SL_MPLS_LABEL_BLOCK_TYPE_SRGB</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Segment Routing Global Block (SRGB) Block Type. 0x1. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLMpls_1gga82d8e1fede2512fbc7c9b5d27d911d21a71cef0db925042881ba1a8ce050595fd" prot="public">
+          <name>SL_MPLS_LABEL_BLOCK_TYPE_CBF</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Class Based Forwarding (CBF) Block Type. 0x2. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Label Block Types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="277" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="277" bodyend="284"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__SLMpls_1ga78e6c73baac90df7abfa6ca091e2ad80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsRegOp</definition>
+        <argsstring>(SLMplsRegMsg) returns(SLMplsRegMsgRsp)</argsstring>
+        <name>SLMplsRegOp</name>
+        <param>
+          <type><ref refid="structSLMplsRegMsg" kindref="compound">SLMplsRegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>MPLS Registration operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLMplsRegMsg_1a7a974104327161f60db364a7d20b4192" kindref="member">SLMplsRegMsg.Oper</ref> = SL_REGOP_REGISTER. Global MPLS registration. A client Must Register BEFORE MPLS objects can be added/modified.</para><para><ref refid="structSLMplsRegMsg_1a7a974104327161f60db364a7d20b4192" kindref="member">SLMplsRegMsg.Oper</ref> = SL_REGOP_UNREGISTER. Global MPLS un-registration. This call is used to end all MPLS notifications and unregister any interest in MPLS object configuration. This call cleans up all MPLS objects previously requested.</para><para><ref refid="structSLMplsRegMsg_1a7a974104327161f60db364a7d20b4192" kindref="member">SLMplsRegMsg.Oper</ref> = SL_REGOP_EOF. MPLS End Of File. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their MPLS objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga79d738c9ee98522626a4751fd6249119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsGet</definition>
+        <argsstring>(SLMplsGetMsg) returns(SLMplsGetMsgRsp)</argsstring>
+        <name>SLMplsGet</name>
+        <param>
+          <type><ref refid="structSLMplsGetMsg" kindref="compound">SLMplsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve global MPLS info from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga539b1756cbf1a85ff88b3d509ff011f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsGetStats</definition>
+        <argsstring>(SLMplsGetMsg) returns(SLMplsGetStatsMsgRsp)</argsstring>
+        <name>SLMplsGetStats</name>
+        <param>
+          <type><ref refid="structSLMplsGetMsg" kindref="compound">SLMplsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve global MPLS Stats from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga4ea9b112f1cdc5f1216cf9e42e0f460d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsLabelBlockOp</definition>
+        <argsstring>(SLMplsLabelBlockMsg) returns(SLMplsLabelBlockMsgRsp)</argsstring>
+        <name>SLMplsLabelBlockOp</name>
+        <param>
+          <type><ref refid="structSLMplsLabelBlockMsg" kindref="compound">SLMplsLabelBlockMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>MPLS Label Block operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLMplsLabelBlockMsg_1a59fccdf8f928b3f6392f697ef3f37ba9" kindref="member">SLMplsLabelBlockMsg.Oper</ref> = SL_OBJOP_ADD. Add a contiguous label block. Add request may fail if the full block cannot be allocated.</para><para><ref refid="structSLMplsLabelBlockMsg_1a59fccdf8f928b3f6392f697ef3f37ba9" kindref="member">SLMplsLabelBlockMsg.Oper</ref> = SL_OBJOP_DELETE. Delete a contiguous label block. Delete request may fail if the block is in use or the keys don&apos;t match the keys used on add. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga2773c59e052b2774a9d1322c5a0d8443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsLabelBlockGet</definition>
+        <argsstring>(SLMplsLabelBlockGetMsg) returns(SLMplsLabelBlockGetMsgRsp)</argsstring>
+        <name>SLMplsLabelBlockGet</name>
+        <param>
+          <type><ref refid="structSLMplsLabelBlockGetMsg" kindref="compound">SLMplsLabelBlockGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve Label Block attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga75707c319101bd10c2845990f517c72b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsIlmOp</definition>
+        <argsstring>(SLMplsIlmMsg) returns(SLMplsIlmMsgRsp)</argsstring>
+        <name>SLMplsIlmOp</name>
+        <param>
+          <type><ref refid="structSLMplsIlmMsg" kindref="compound">SLMplsIlmMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>MPLS ILM operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_ADD: Add incoming label map entry.</para><para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_UPDATE: Update incoming label map entry.</para><para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_DELETE: Delete incoming label map entry. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga9cf7a198a52975996dbea3be6bc13d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsIlmGet</definition>
+        <argsstring>(SLMplsIlmGetMsg) returns(SLMplsIlmGetMsgRsp)</argsstring>
+        <name>SLMplsIlmGet</name>
+        <param>
+          <type><ref refid="structSLMplsIlmGetMsg" kindref="compound">SLMplsIlmGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve MPLS ILM entry attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1ga7af2f93b2d534cb94b1ddee0a0c50ece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsIlmOpStream</definition>
+        <argsstring>(stream SLMplsIlmMsg) returns(stream SLMplsIlmMsgRsp)</argsstring>
+        <name>SLMplsIlmOpStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLMplsIlmMsg</declname>
+        </param>
+        <briefdescription>
+<para>MPLS ILM stream operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_ADD: Add incoming label map entry.</para><para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_UPDATE: Update incoming label map entry.</para><para><ref refid="structSLMplsIlmMsg_1ad162bed906ab791c55e571e7d9fa0424" kindref="member">SLMplsIlmMsg.Oper</ref> = SL_OBJOP_DELETE: Delete incoming label map entry. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLMpls_1gaa1110bad417ff949f964df1f4bab6029" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLMplsOper::SLMplsIlmGetStream</definition>
+        <argsstring>(stream SLMplsIlmGetMsg) returns(stream SLMplsIlmGetMsgRsp)</argsstring>
+        <name>SLMplsIlmGetStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLMplsIlmGetMsg</declname>
+        </param>
+        <briefdescription>
+<para>Stream-Get of incoming label map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="104" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines RPCs for MPLS Registrations, label block reservations, and ILM entries manipulations. </para>    </briefdescription>
+    <detaileddescription>
+<para>Clients Must register for MPLS operations e.g. Incoming Label Map operations. Once registered, a client Must reserve an MPLS label (dynamic allocation) before using it as an incoming label map. Labels are reserved in blocks through the block reservation operations.</para><para>This file also defines RPC calls for adding, deleting, updating, and querying incoming label map entries (see RFC 3031)</para><para>Incoming Label Map (ILM): A mapping from incoming labels to corresponding NHLFEs. It is used when forwarding packets that arrive as labeled packets.</para><para>Next Hop Forwarding Entry (NHLE): An entry containing next-hop information and label manipulation instructions. This is also referred to as the ILM Path. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

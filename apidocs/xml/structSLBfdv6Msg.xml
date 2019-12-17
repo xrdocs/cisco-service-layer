@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv6Msg" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv6Msg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga30222267c636f5dadb01f28c40017b89" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1ga0b166605b901d6e5ad5f7706ac60baf1" kindref="member">SLObjectOp</ref></type>
+        <definition>SLObjectOp SLBfdv6Msg::Oper</definition>
+        <argsstring></argsstring>
+        <name>Oper</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD Object Operations. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="97" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1gad75ac32974d39bdb6f9bc49bde47fb51" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLBfdv6SessionCfg" kindref="compound">SLBfdv6SessionCfg</ref></type>
+        <definition>repeated SLBfdv6SessionCfg SLBfdv6Msg::Sessions</definition>
+        <argsstring></argsstring>
+        <name>Sessions</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>List of BFD session objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="99" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains a List of BFD session objects. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="92">
+        <label>SLBfdv6Key</label>
+        <link refid="structSLBfdv6Key"/>
+        <childnode refid="93" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="90">
+        <label>SLBfdv6SessionCfg</label>
+        <link refid="structSLBfdv6SessionCfg"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>Config</edgelabel>
+        </childnode>
+        <childnode refid="92" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>SLBfdConfigCommon</label>
+        <link refid="structSLBfdConfigCommon"/>
+      </node>
+      <node id="89">
+        <label>SLBfdv6Msg</label>
+        <link refid="structSLBfdv6Msg"/>
+        <childnode refid="90" relation="usage">
+          <edgelabel>Sessions</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="95" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="95" bodyend="100"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv6Oper_1ga30222267c636f5dadb01f28c40017b89" prot="public" virt="non-virtual"><scope>SLBfdv6Msg</scope><name>Oper</name></member>
+      <member refid="group__SLBfdIPv6Oper_1gad75ac32974d39bdb6f9bc49bde47fb51" prot="public" virt="non-virtual"><scope>SLBfdv6Msg</scope><name>Sessions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

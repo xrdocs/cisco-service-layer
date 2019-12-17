@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv4Msg" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv4Msg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga8cc9777530401d0665c00b1deae44e96" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1ga0b166605b901d6e5ad5f7706ac60baf1" kindref="member">SLObjectOp</ref></type>
+        <definition>SLObjectOp SLBfdv4Msg::Oper</definition>
+        <argsstring></argsstring>
+        <name>Oper</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD Object Operations. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="97" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga187ad4fedd0eb516d10c423c9f29c457" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLBfdv4SessionCfg" kindref="compound">SLBfdv4SessionCfg</ref></type>
+        <definition>repeated SLBfdv4SessionCfg SLBfdv4Msg::Sessions</definition>
+        <argsstring></argsstring>
+        <name>Sessions</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>List of BFD session objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="99" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains a List of BFD session objects. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="38">
+        <label>SLBfdv4Key</label>
+        <link refid="structSLBfdv4Key"/>
+        <childnode refid="39" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="39">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="35">
+        <label>SLBfdv4Msg</label>
+        <link refid="structSLBfdv4Msg"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>Sessions</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>SLBfdConfigCommon</label>
+        <link refid="structSLBfdConfigCommon"/>
+      </node>
+      <node id="36">
+        <label>SLBfdv4SessionCfg</label>
+        <link refid="structSLBfdv4SessionCfg"/>
+        <childnode refid="37" relation="usage">
+          <edgelabel>Config</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="95" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="95" bodyend="100"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv4Oper_1ga8cc9777530401d0665c00b1deae44e96" prot="public" virt="non-virtual"><scope>SLBfdv4Msg</scope><name>Oper</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga187ad4fedd0eb516d10c423c9f29c457" prot="public" virt="non-virtual"><scope>SLBfdv4Msg</scope><name>Sessions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLGlobalNotif" kind="struct" language="C++" prot="public">
+    <compoundname>SLGlobalNotif</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLGlobalNotif_1af6fe7b2282aaac058bf26750936589fd" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLGlobal_1ga1d1b4192ce3a6703d905d8babb38e3a6" kindref="member">SLGlobalNotifType</ref></type>
+        <definition>SLGlobalNotifType SLGlobalNotif::EventType</definition>
+        <argsstring></argsstring>
+        <name>EventType</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Event Type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="86" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalNotif_1a7407d792fdd4dc0253b79b1ee6599e32" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLGlobalNotif::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Status code, interpreted based on the Event Type. </para>        </briefdescription>
+        <detaileddescription>
+<para>case EventType == SL_GLOBAL_EVENT_TYPE_ERROR: case ErrStatus == SL_NOTIF_TERM: =&gt; Another client is attempting to take over the session. This session will be closed. case ErrStatus == (some error from <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) =&gt; Client must look into the specific error message returned.</para><para>case EventType == SL_GLOBAL_EVENT_TYPE_HEARTBEAT: case ErrStatus == SL_SUCCESS =&gt; Client can safely ignore this heartbeat message.</para><para>case EventType == SL_GLOBAL_EVENT_TYPE_VERSION: case ErrStatus == SL_SUCCESS =&gt; Client version accepted. case ErrStatus == SL_INIT_STATE_READY =&gt; Client version accepted. Any previous state was sucessfully recovered. case ErrStatus == SL_INIT_STATE_CLEAR =&gt; Client version accepted. Any previous state was lost. Client must replay all previous objects to server. case ErrStatus == SL_UNSUPPORTED_VER =&gt; Client and Server version mismatch. The client is not allowed to proceed, and the channel will be closed. case ErrStatus == (some error from <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) =&gt; Client must either try again, or look into the specific error message returned. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="115" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalNotif_1abb8a9bd75c0bdcaa72637d92b3a1cfec" prot="public" static="no" mutable="no">
+        <type>oneof</type>
+        <definition>oneof SLGlobalNotif::Event</definition>
+        <argsstring></argsstring>
+        <name>Event</name>
+        <initializer>{
+        
+        <ref refid="structSLInitMsgRsp" kindref="compound">SLInitMsgRsp</ref> InitRspMsg = 3</initializer>
+        <briefdescription>
+<para>Further info based on EventType. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="117" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Globals query message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="131">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="130">
+        <label>SLGlobalNotif</label>
+        <link refid="structSLGlobalNotif"/>
+        <childnode refid="131" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_global.proto" line="84" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="84" bodyend="122"/>
+    <listofallmembers>
+      <member refid="structSLGlobalNotif_1a7407d792fdd4dc0253b79b1ee6599e32" prot="public" virt="non-virtual"><scope>SLGlobalNotif</scope><name>ErrStatus</name></member>
+      <member refid="structSLGlobalNotif_1abb8a9bd75c0bdcaa72637d92b3a1cfec" prot="public" virt="non-virtual"><scope>SLGlobalNotif</scope><name>Event</name></member>
+      <member refid="structSLGlobalNotif_1af6fe7b2282aaac058bf26750936589fd" prot="public" virt="non-virtual"><scope>SLGlobalNotif</scope><name>EventType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsLabelBlockGetMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsLabelBlockGetMsg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsg_1a21faad3a58e343a0dff7478f0acd421b" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLMplsLabelBlockKey" kindref="compound">SLMplsLabelBlockKey</ref></type>
+        <definition>SLMplsLabelBlockKey SLMplsLabelBlockGetMsg::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>MPLS Label Block key. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the Key is not specified, then request up to the first &apos;EntriesCount&apos; entries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="166" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsg_1a85b6552bf0f6517103222381784696d2" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsLabelBlockGetMsg::EntriesCount</definition>
+        <argsstring></argsstring>
+        <name>EntriesCount</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Number of entries requested. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="168" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsg_1a5a8554fb14dccd6e661c5e6972697b04" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLMplsLabelBlockGetMsg::GetNext</definition>
+        <argsstring></argsstring>
+        <name>GetNext</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>if GetNext is FALSE: request up to &apos;EntriesCount&apos; entries starting from the key If GetNext is TRUE, or if the key exact match is not found: request up to &apos;EntriesCount&apos; entries starting from the key&apos;s next </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="173" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS Label Block Get Message This message is used to query previous label block reservations. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="337">
+        <label>SLMplsLabelBlockKey</label>
+        <link refid="structSLMplsLabelBlockKey"/>
+      </node>
+      <node id="336">
+        <label>SLMplsLabelBlockGetMsg</label>
+        <link refid="structSLMplsLabelBlockGetMsg"/>
+        <childnode refid="337" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="162" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="162" bodyend="174"/>
+    <listofallmembers>
+      <member refid="structSLMplsLabelBlockGetMsg_1a85b6552bf0f6517103222381784696d2" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsg</scope><name>EntriesCount</name></member>
+      <member refid="structSLMplsLabelBlockGetMsg_1a5a8554fb14dccd6e661c5e6972697b04" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsg</scope><name>GetNext</name></member>
+      <member refid="structSLMplsLabelBlockGetMsg_1a21faad3a58e343a0dff7478f0acd421b" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsg</scope><name>Key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="sl__route__common_8proto" kind="file" language="C++">
+    <compoundname>sl_route_common.proto</compoundname>
+    <innerclass refid="structSLRouteGlobalsGetMsg" prot="public">SLRouteGlobalsGetMsg</innerclass>
+    <innerclass refid="structSLRouteGlobalsGetMsgRsp" prot="public">SLRouteGlobalsGetMsgRsp</innerclass>
+    <innerclass refid="structSLRouteGlobalStatsGetMsg" prot="public">SLRouteGlobalStatsGetMsg</innerclass>
+    <innerclass refid="structSLRouteGlobalStatsGetMsgRsp" prot="public">SLRouteGlobalStatsGetMsgRsp</innerclass>
+    <innerclass refid="structSLVrfReg" prot="public">SLVrfReg</innerclass>
+    <innerclass refid="structSLVrfRegMsg" prot="public">SLVrfRegMsg</innerclass>
+    <innerclass refid="structSLVrfRegMsgRes" prot="public">SLVrfRegMsgRes</innerclass>
+    <innerclass refid="structSLVrfRegMsgRsp" prot="public">SLVrfRegMsgRsp</innerclass>
+    <innerclass refid="structSLVrfRegGetMsg" prot="public">SLVrfRegGetMsg</innerclass>
+    <innerclass refid="structSLVrfRegGetMsgRsp" prot="public">SLVrfRegGetMsgRsp</innerclass>
+    <innerclass refid="structSLVRFGetStatsMsgRes" prot="public">SLVRFGetStatsMsgRes</innerclass>
+    <innerclass refid="structSLVRFGetStatsMsgRsp" prot="public">SLVRFGetStatsMsgRsp</innerclass>
+    <innerclass refid="structSLRouteGetNotifMsg" prot="public">SLRouteGetNotifMsg</innerclass>
+    <innerclass refid="structSLRouteNotifStatus" prot="public">SLRouteNotifStatus</innerclass>
+    <innerclass refid="structSLRouteNotifMarker" prot="public">SLRouteNotifMarker</innerclass>
+    <innerclass refid="structSLVrfNotif" prot="public">SLVrfNotif</innerclass>
+    <innerclass refid="structSLRouteCommon" prot="public">SLRouteCommon</innerclass>
+    <innerclass refid="structSLRoutePath" prot="public">SLRoutePath</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__SLRouteCommon_1gad630c2e5490e88b889ccd79ace15005b" prot="public" static="no">
+        <name>SLNotifType</name>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba85f847f33cbe88582bad33bfbda9d74c" prot="public">
+          <name>SL_EVENT_TYPE_RESERVED</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>Reserved. 0x0. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005babd00f12cb863a0bec064c5485d81f5f1" prot="public">
+          <name>SL_EVENT_TYPE_ERROR</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Error - ErrStatus field elaborates on the error. </para>          </briefdescription>
+          <detaileddescription>
+<para>The client can decide to close the stream based on the error. 0x1 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba673dd0eec6264beeb074213be76ef52b" prot="public">
+          <name>SL_EVENT_TYPE_STATUS</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Status of GetNotifMsg per VRF. </para>          </briefdescription>
+          <detaileddescription>
+<para>NotifStatus field elaborates on the result. If there is an error, only the notification for the VRF in the status message is not setup. 0x2 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005baff76b281c46cfbfa2d39a3785b4552eb" prot="public">
+          <name>SL_EVENT_TYPE_ROUTE</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+<para>Route Notification. 0x3. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005bad4b5a72f1fda8b64f95368838bab7590" prot="public">
+          <name>SL_EVENT_TYPE_START_MARKER</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+<para>Start marker per VRF - sent before any ROUTE notification is sent. </para>          </briefdescription>
+          <detaileddescription>
+<para>This is an indication to stale any objects received until now. 0x4 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba0e045bfd4fb865c635243169855d7082" prot="public">
+          <name>SL_EVENT_TYPE_END_MARKER</name>
+          <initializer>= 0x5</initializer>
+          <briefdescription>
+<para>End marker per VRF - sent after all ROUTE notifications are sent. </para>          </briefdescription>
+          <detaileddescription>
+<para>This is an indication to sweep any stale objects, if present. 0x5 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba1d626cdcca66bf276da7d4a51cc4b718" prot="public">
+          <name>SL_EVENT_TYPE_VRF</name>
+          <initializer>= 0x6</initializer>
+          <briefdescription>
+<para>VRF Add/Update/Delete Notification. 0x6. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>L3 Event Notification types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="141" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="141" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sl__route__common_8proto_1adbedb258e13546cc707a6ebb073a3d8a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>syntax</definition>
+        <argsstring></argsstring>
+        <name>syntax</name>
+        <initializer>= &quot;proto3&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="15" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sl__route__common_8proto_1a293eb43ea51d8359911f89a0e4c6284e" prot="public" static="no" mutable="no">
+        <type>package</type>
+        <definition>package service_layer</definition>
+        <argsstring></argsstring>
+        <name>service_layer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="16" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Client RPC proto file for common route types. </para>    </briefdescription>
+    <detaileddescription>
+<para>This file defines common route features, including the Prefix, VRF information, path information, administrative distance, and default route status for a route object. <hruler/>
+ Copyright (c) 2016 by Cisco Systems, Inc. <heading level="2">All rights reserved. </heading>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>@file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@brief<sp/>Client<sp/>RPC<sp/>proto<sp/>file<sp/>for<sp/>common<sp/>route<sp/>types.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>defines<sp/>common<sp/>route<sp/>features,<sp/>including<sp/>the<sp/>Prefix,<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>information,<sp/>path<sp/>information,<sp/>administrative<sp/>distance,<sp/>and<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>default<sp/>route<sp/>status<sp/>for<sp/>a<sp/>route<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(c)<sp/>2016<sp/>by<sp/>Cisco<sp/>Systems,<sp/>Inc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//@defgroup<sp/>Route</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//@brief<sp/>Route<sp/>service<sp/>definitions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">syntax<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;proto3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">service_layer;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;sl_common_types.proto&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@defgroup<sp/>SLRouteCommon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ingroup<sp/>Route</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="structSLRouteGlobalsGetMsg" refkind="compound"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>IPv4,<sp/>IPv6<sp/>Route<sp/>messages.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>messages<sp/>are<sp/>used<sp/>in<sp/>both<sp/>IPv4<sp/>and<sp/>IPv6<sp/>Route<sp/>operations.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structSLRouteGlobalsGetMsgRsp" refkind="compound"><highlight class="normal"></highlight><highlight class="comment">//;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Route<sp/>Globals<sp/>Get<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">message<sp/><ref refid="structSLRouteGlobalsGetMsg" kindref="compound">SLRouteGlobalsGetMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Route<sp/>Globals<sp/>Get<sp/>Message<sp/>Response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">message<sp/><ref refid="structSLRouteGlobalsGetMsgRsp" kindref="compound">SLRouteGlobalsGetMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="structSLRouteGlobalStatsGetMsg" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Corresponding<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structSLRouteGlobalStatsGetMsgRsp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Max<sp/>VrfReg<sp/>objects<sp/>within<sp/>a<sp/>single<sp/>VrfRegMsg<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxVrfregPerVrfregmsg<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Max<sp/>Route<sp/>objects<sp/>within<sp/>a<sp/>single<sp/>RouteMsg<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxRoutePerRoutemsg<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Route<sp/>Global<sp/>Stats<sp/>Get<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">message<sp/><ref refid="structSLRouteGlobalStatsGetMsg" kindref="compound">SLRouteGlobalStatsGetMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="structSLVrfReg" refkind="compound"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Route<sp/>Global<sp/>Stats<sp/>Get<sp/>Message<sp/>Response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">message<sp/><ref refid="structSLRouteGlobalStatsGetMsgRsp" kindref="compound">SLRouteGlobalStatsGetMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Corresponding<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Num<sp/>VRFs<sp/>registered<sp/>through<sp/>the<sp/>service<sp/>layer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>VrfCount<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Num<sp/>Routes<sp/>added<sp/>through<sp/>the<sp/>service<sp/>layer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>RouteCount<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Registration<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structSLVrfRegMsg" refkind="compound"><highlight class="normal">message<sp/><ref refid="structSLVrfReg" kindref="compound">SLVrfReg</ref><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>Name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>Admin<sp/>distance<sp/>for<sp/>routes<sp/>programmed<sp/>by<sp/>this<sp/>application</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[0-255]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>default<sp/>value<sp/>is<sp/>used<sp/>if<sp/>route<sp/>objects&apos;<sp/>AdminDistance<sp/>is<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="structSLVrfRegMsgRes" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Refer<sp/>to<sp/>SLRouteCommon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>AdminDistance<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>case<sp/>the<sp/>Service<sp/>Layer<sp/>-&gt;<sp/>RIB<sp/>connection<sp/>is<sp/>lost,<sp/>this<sp/>specifies<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>timeout<sp/>period<sp/>after<sp/>which<sp/>RIB<sp/>will<sp/>automatically<sp/>purge<sp/>the<sp/>installed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>routes,<sp/>unless<sp/>the<sp/>service<sp/>layer:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>1.<sp/>Re-registers<sp/>(VRF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="structSLVrfRegMsgRsp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>2.<sp/>Replay<sp/>all<sp/>routes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>3.<sp/>And<sp/>send<sp/>EOF,<sp/>before<sp/>the<sp/>purge<sp/>timeout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>VrfPurgeIntervalSeconds<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Registration<sp/>messages.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">message<sp/><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Registration<sp/>Operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLCommonTypes_1gabcd5b7bdb1e75e62f586e079e924f896" kindref="member">SLRegOp</ref><sp/>Oper<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>List<sp/>of<sp/>VRF<sp/>registrations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/><ref refid="structSLVrfReg" kindref="compound">SLVrfReg</ref><sp/>VrfRegMsgs<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Registration<sp/>message<sp/>Result</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">message<sp/><ref refid="structSLVrfRegMsgRes" kindref="compound">SLVrfRegMsgRes</ref><sp/>{</highlight></codeline>
+<codeline lineno="95" refid="structSLVrfRegGetMsg" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Corresponding<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>Name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Registration<sp/>message<sp/>Response.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">message<sp/><ref refid="structSLVrfRegMsgRsp" kindref="compound">SLVrfRegMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Summary<sp/>result<sp/>of<sp/>the<sp/>bulk<sp/>operation<sp/>(refer<sp/>to<sp/>enum<sp/>SLErrorStatus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>general,<sp/>the<sp/>StatusSummary<sp/>implies<sp/>one<sp/>of<sp/>3<sp/>things:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>SL_SUCCESS:<sp/>signifies<sp/>that<sp/>the<sp/>entire<sp/>bulk<sp/>operation<sp/>was<sp/>successful.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>this<sp/>case,<sp/>the<sp/>Results<sp/>list<sp/>is<sp/>empty.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>SL_SOME_ERR:<sp/>signifies<sp/>that<sp/>the<sp/>operation<sp/>failed<sp/>for<sp/>one<sp/>or<sp/>more</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="structSLVrfRegGetMsgRsp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entries.<sp/>In<sp/>this<sp/>case,<sp/>Results<sp/>holds<sp/>the<sp/>result<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>each<sp/>individual<sp/>entry<sp/>in<sp/>the<sp/>bulk.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>SL_RPC_XXX:<sp/>signifies<sp/>that<sp/>the<sp/>entire<sp/>bulk<sp/>operation<sp/>failed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>this<sp/>case,<sp/>the<sp/>Results<sp/>list<sp/>is<sp/>empty.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>StatusSummary<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>case<sp/>of<sp/>errors,<sp/>this<sp/>field<sp/>indicates<sp/>which<sp/>entry<sp/>in<sp/>the<sp/>bulk<sp/>was</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>erroneous.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/><ref refid="structSLVrfRegMsgRes" kindref="compound">SLVrfRegMsgRes</ref><sp/>Results<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Get<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="structSLVRFGetStatsMsgRes" refkind="compound"><highlight class="normal">message<sp/><ref refid="structSLVrfRegGetMsg" kindref="compound">SLVrfRegGetMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>name<sp/>(key).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>Key<sp/>is<sp/>not<sp/>specified,<sp/>then<sp/>request<sp/>up<sp/>to<sp/>the<sp/>first<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;EntriesCount&apos;<sp/>entries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>entries<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>EntriesCount<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="129" refid="structSLVRFGetStatsMsgRsp" refkind="compound"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>GetNext<sp/>is<sp/>FALSE:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>request<sp/>up<sp/>to<sp/>&apos;EntriesCount&apos;<sp/>entries<sp/>starting<sp/>from<sp/>the<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>GetNext<sp/>is<sp/>TRUE,<sp/>or<sp/>if<sp/>the<sp/>key<sp/>exact<sp/>match<sp/>is<sp/>not<sp/>found:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>request<sp/>up<sp/>to<sp/>&apos;EntriesCount&apos;<sp/>entries<sp/>starting<sp/>from<sp/>the<sp/>key&apos;s<sp/>next</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetNext<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Get<sp/>Message<sp/>Response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">message<sp/><ref refid="structSLVrfRegGetMsgRsp" kindref="compound">SLVrfRegGetMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>Of<sp/>File.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>set<sp/>to<sp/>True,<sp/>it<sp/>indicates<sp/>that<sp/>the<sp/>server<sp/>has<sp/>returned<sp/>M,<sp/>where<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>M<sp/>&lt;<sp/>N,<sp/>of<sp/>the<sp/>original<sp/>N<sp/>requested<sp/>Entries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Eof<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>of<sp/>the<sp/>Get<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Returned<sp/>entries<sp/>as<sp/>requested<sp/>in<sp/>the<sp/>Get<sp/>operation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>ErrStatus<sp/>is<sp/>SL_SUCCESS,<sp/>Entries<sp/>contains<sp/>the<sp/>info<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/><ref refid="structSLVrfReg" kindref="compound">SLVrfReg</ref><sp/>Entries<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Get<sp/>Stats<sp/>Message<sp/>Response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">message<sp/><ref refid="structSLVRFGetStatsMsgRes" kindref="compound">SLVRFGetStatsMsgRes</ref><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>name<sp/>as<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Num<sp/>VRF<sp/>Routes<sp/>added<sp/>through<sp/>the<sp/>service<sp/>layer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>RouteCount<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VRF<sp/>Get<sp/>Stats<sp/>Message<sp/>Response</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">message<sp/><ref refid="structSLVRFGetStatsMsgRsp" kindref="compound">SLVRFGetStatsMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>Of<sp/>File.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="structSLRouteGetNotifMsg" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>set<sp/>to<sp/>True,<sp/>it<sp/>indicates<sp/>that<sp/>the<sp/>server<sp/>has<sp/>returned<sp/>M,<sp/>where<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>M<sp/>&lt;<sp/>N,<sp/>of<sp/>the<sp/>original<sp/>N<sp/>requested<sp/>Entries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Eof<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>of<sp/>the<sp/>Get<sp/>Stats<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Returned<sp/>entries<sp/>as<sp/>requested<sp/>in<sp/>the<sp/>Get<sp/>Stats<sp/>operation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>ErrStatus<sp/>is<sp/>SL_SUCCESS,<sp/>Entries<sp/>contains<sp/>the<sp/>info<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/><ref refid="structSLVRFGetStatsMsgRes" kindref="compound">SLVRFGetStatsMsgRes</ref><sp/>Entries<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">//<sp/>L3<sp/>Event<sp/>Notification<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__SLRouteCommon_1gad630c2e5490e88b889ccd79ace15005b" kindref="member">SLNotifType</ref><sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reserved.<sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba85f847f33cbe88582bad33bfbda9d74c" kindref="member">SL_EVENT_TYPE_RESERVED</ref><sp/>=<sp/>0x0;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>-<sp/>ErrStatus<sp/>field<sp/>elaborates<sp/>on<sp/>the<sp/>error.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>client<sp/>can<sp/>decide<sp/>to<sp/>close<sp/>the<sp/>stream<sp/>based<sp/>on<sp/>the<sp/>error.<sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005babd00f12cb863a0bec064c5485d81f5f1" kindref="member">SL_EVENT_TYPE_ERROR</ref><sp/>=<sp/>0x1;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>of<sp/>GetNotifMsg<sp/>per<sp/>VRF.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NotifStatus<sp/>field<sp/>elaborates<sp/>on<sp/>the<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>there<sp/>is<sp/>an<sp/>error,<sp/>only<sp/>the<sp/>notification<sp/>for<sp/>the<sp/>VRF<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>status<sp/>message<sp/>is<sp/>not<sp/>setup.<sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba673dd0eec6264beeb074213be76ef52b" kindref="member">SL_EVENT_TYPE_STATUS</ref><sp/>=<sp/>0x2;</highlight></codeline>
+<codeline lineno="190" refid="structSLRouteNotifStatus" refkind="compound"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Route<sp/>Notification.<sp/>0x3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005baff76b281c46cfbfa2d39a3785b4552eb" kindref="member">SL_EVENT_TYPE_ROUTE</ref><sp/>=<sp/>0x3;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>marker<sp/>per<sp/>VRF<sp/>-<sp/>sent<sp/>before<sp/>any<sp/>ROUTE<sp/>notification<sp/>is<sp/>sent.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>an<sp/>indication<sp/>to<sp/>stale<sp/>any<sp/>objects<sp/>received<sp/>until<sp/>now.<sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005bad4b5a72f1fda8b64f95368838bab7590" kindref="member">SL_EVENT_TYPE_START_MARKER</ref><sp/>=<sp/>0x4;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>marker<sp/>per<sp/>VRF<sp/>-<sp/>sent<sp/>after<sp/>all<sp/>ROUTE<sp/>notifications<sp/>are<sp/>sent.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>an<sp/>indication<sp/>to<sp/>sweep<sp/>any<sp/>stale<sp/>objects,<sp/>if<sp/>present.<sp/>0x5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba0e045bfd4fb865c635243169855d7082" kindref="member">SL_EVENT_TYPE_END_MARKER</ref><sp/>=<sp/>0x5;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="structSLRouteNotifMarker" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>Add/Update/Delete<sp/>Notification.<sp/>0x6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLRouteCommon_1ggad630c2e5490e88b889ccd79ace15005ba1d626cdcca66bf276da7d4a51cc4b718" kindref="member">SL_EVENT_TYPE_VRF</ref><sp/>=<sp/>0x6;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>Get<sp/>Notifications<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="structSLVrfNotif" refkind="compound"><highlight class="normal">message<sp/><ref refid="structSLRouteGetNotifMsg" kindref="compound">SLRouteGetNotifMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oper<sp/>=<sp/>SL_NOTIFOP_ENABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>This<sp/>is<sp/>to<sp/>enable<sp/>route<sp/>notifications<sp/>in<sp/>a<sp/>VRF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oper<sp/>=<sp/>SL_NOTIFOP_DISABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>This<sp/>is<sp/>to<sp/>disable<sp/>route<sp/>notifications<sp/>in<sp/>a<sp/>VRF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLCommonTypes_1gaa809068894b7bf3fab0314dff50bd02d" kindref="member">SLNotifOp</ref><sp/>Oper<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="structSLRouteCommon" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Correlator.<sp/>This<sp/>is<sp/>used<sp/>to<sp/>correlate<sp/>SLRouteGetNotifMsg<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SLRouteNotifStatus.<sp/>The<sp/>server<sp/>reflects<sp/>this<sp/>field<sp/>in<sp/>the<sp/>reply.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>client<sp/>can<sp/>send<sp/>a<sp/>SLRouteGetNotifMsg<sp/>with<sp/>the<sp/>Correlator<sp/>only.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Once<sp/>accepted<sp/>and<sp/>reply<sp/>is<sp/>sent,<sp/>VRF<sp/>notifications<sp/>are<sp/>sent.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>useful<sp/>if<sp/>a<sp/>client<sp/>wants<sp/>to<sp/>receive<sp/>VRF<sp/>notifications</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(SLVrfNotif)<sp/>only<sp/>and<sp/>is<sp/>not<sp/>interested<sp/>in<sp/>receiving<sp/>route</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>notifications<sp/>(SLRoutev4NotifRoute/SLRoutev6NotifRoute)<sp/>from<sp/>any<sp/>VRF.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/>Correlator<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vrf<sp/>that<sp/>the<sp/>client<sp/>is<sp/>interested<sp/>in.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>Protocol.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>routes<sp/>with<sp/>specified<sp/>source<sp/>protocol<sp/>and<sp/>protocol<sp/>tag<sp/>will<sp/>be</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>notified.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contact<sp/>Cisco<sp/>for<sp/>supported<sp/>protocol<sp/>string<sp/>names.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>SrcProto<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>Protocol<sp/>Tag.<sp/>This<sp/>can<sp/>be<sp/>empty<sp/>if<sp/>N/A.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contact<sp/>Cisco<sp/>for<sp/>supported<sp/>protocol<sp/>tags.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>SrcProtoTag<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>Route<sp/>Notification<sp/>Status<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">message<sp/><ref refid="structSLRouteNotifStatus" kindref="compound">SLRouteNotifStatus</ref><sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Correlator<sp/>in<sp/>the<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/>Correlator<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vrf<sp/>in<sp/>the<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>NotifStatus<sp/>implies<sp/>one<sp/>of<sp/>2<sp/>things:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SL_SUCCESS:<sp/>signifies<sp/>that<sp/>the<sp/>notification<sp/>request<sp/>was<sp/>successful</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SL_XXX:<sp/>signifies<sp/>an<sp/>error<sp/>in<sp/>setting<sp/>up<sp/>a<sp/>notification<sp/>for<sp/>the<sp/>Vrf.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>Implies<sp/>that<sp/>notifications<sp/>for<sp/>this<sp/>VRF<sp/>will<sp/>not<sp/>be<sp/>sent.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>NotifStatus<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>Marker<sp/>Notification<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="structSLRoutePath" refkind="compound"><highlight class="normal">message<sp/><ref refid="structSLRouteNotifMarker" kindref="compound">SLRouteNotifMarker</ref><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vrf<sp/>that<sp/>this<sp/>notification<sp/>message<sp/>applies<sp/>to.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>Vrf<sp/>Notification<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal">message<sp/><ref refid="structSLVrfNotif" kindref="compound">SLVrfNotif</ref><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Vrf<sp/>that<sp/>this<sp/>notification<sp/>message<sp/>applies<sp/>to.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>of<sp/>this<sp/>Vrf:<sp/>add/update/delete.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLCommonTypes_1ga0b166605b901d6e5ad5f7706ac60baf1" kindref="member">SLObjectOp</ref><sp/>Status<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>IPv4/IPv6<sp/>route<sp/>attributes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">message<sp/><ref refid="structSLRouteCommon" kindref="compound">SLRouteCommon</ref><sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adminstrative<sp/>distance<sp/>of<sp/>the<sp/>route.<sp/>[0-255].</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RIB<sp/>uses<sp/>this<sp/>field<sp/>to<sp/>break<sp/>the<sp/>tie<sp/>when<sp/>multiple</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sources<sp/>install<sp/>the<sp/>same<sp/>route.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Lower<sp/>distance<sp/>is<sp/>preferred<sp/>over<sp/>higher<sp/>distance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>per<sp/>route<sp/>object<sp/>admin<sp/>distance<sp/>overrides<sp/>the<sp/>default&apos;s<sp/>admin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>set<sp/>at<sp/>VRF<sp/>registration.<sp/>see<sp/>SLVrfReg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>AdminDistance<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Local<sp/>label<sp/>associated<sp/>with<sp/>this<sp/>route.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>an<sp/>optional<sp/>field<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>simulatenously<sp/>setup<sp/>an<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ILM<sp/>entry<sp/>(e.g.<sp/>head<sp/>end<sp/>of<sp/>an<sp/>MPLS<sp/>LSP)<sp/>for<sp/>the<sp/>same<sp/>route.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>especially<sp/>useful<sp/>when<sp/>setting<sp/>up<sp/>an<sp/>MPLS<sp/>LSP<sp/>(a<sp/>/32-route<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>towards<sp/>the<sp/>remote<sp/>LSP<sp/>peer<sp/>e.g.<sp/>2.2.2.2/32)<sp/>which<sp/>is<sp/>required<sp/>for<sp/>MPLS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VPN<sp/>labeled<sp/>routes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>MPLS<sp/>VPN<sp/>labeled<sp/>routes<sp/>can<sp/>resolve<sp/>only<sp/>on:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>-<sp/>/32-routes<sp/>with<sp/>valid<sp/>LocalLabel<sp/>and<sp/>a<sp/>valid<sp/>egress<sp/>MPLS<sp/>path<sp/>label</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>LocalLabel<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Route<sp/>Tag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Routes<sp/>are<sp/>usually<sp/>tagged<sp/>to<sp/>prevent<sp/>loops<sp/>during<sp/>redistribution<sp/>between</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>protocols.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>Tag<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>Protocol.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>redistributed<sp/>messages<sp/>via<sp/>notification<sp/>stream<sp/>only,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ignored<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contact<sp/>Cisco<sp/>for<sp/>supported<sp/>protocol<sp/>string<sp/>names.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>SrcProto<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Source<sp/>Protocol<sp/>Tag.<sp/>This<sp/>can<sp/>be<sp/>empty<sp/>if<sp/>N/A.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>redistributed<sp/>messages<sp/>via<sp/>notification<sp/>stream<sp/>only,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ignored<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contact<sp/>Cisco<sp/>for<sp/>supported<sp/>protocol<sp/>tags.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>SrcProtoTag<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Route<sp/>Path<sp/>attributes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FRR<sp/>Note:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Failover<sp/>from<sp/>primary<sp/>to<sp/>backup<sp/>is<sp/>based<sp/>on<sp/>the<sp/>trigger<sp/>used<sp/>(e.g.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment">//<sp/>link<sp/>down,<sp/>BFD,<sp/>etc.).<sp/>Revertion<sp/>is<sp/>mainly<sp/>timeout<sp/>based.<sp/>The<sp/>timeout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">//<sp/>value<sp/>is<sp/>platform<sp/>specific<sp/>and<sp/>is<sp/>not<sp/>configurable.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal">message<sp/><ref refid="structSLRoutePath" kindref="compound">SLRoutePath</ref><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>One<sp/>of<sp/>IPv4<sp/>or<sp/>IPv6<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>ENCAP_VXLAN,<sp/>this<sp/>will<sp/>specify<sp/>the<sp/>tunnel<sp/>end<sp/>point<sp/>IP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>address.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref><sp/>NexthopAddress<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Outgoing<sp/>interface<sp/>name<sp/>for<sp/>the<sp/>path.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLInterface" kindref="compound">SLInterface</ref><sp/>NexthopInterface<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>metric<sp/>for<sp/>this<sp/>path.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>for<sp/>equal/unequal<sp/>cost<sp/>load<sp/>balancing<sp/>of<sp/>traffic<sp/>distribution.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>LoadMetric<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>VRF<sp/>name.<sp/>This<sp/>field<sp/>is<sp/>used<sp/>ONLY<sp/>if<sp/>the<sp/>path<sp/>is<sp/>in<sp/>a<sp/>different</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VRF<sp/>than<sp/>the<sp/>route<sp/>(e.g.<sp/>VPN<sp/>cases)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>ENCAP_VXLAN,<sp/>this<sp/>field<sp/>can<sp/>be<sp/>used<sp/>to<sp/>specify<sp/>the<sp/>VRF<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>tunnel<sp/>end<sp/>point<sp/>IP<sp/>address<sp/>resides<sp/>(&quot;default&quot;<sp/>will<sp/>be<sp/>assumed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>not<sp/>specified).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>VrfName<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Route<sp/>Metric.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>metric<sp/>is<sp/>typically<sp/>based<sp/>on<sp/>information<sp/>like<sp/>load,<sp/>hop<sp/>count,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MTU,<sp/>reliability<sp/>of<sp/>the<sp/>path,<sp/>etc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>Metric<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>identifier.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path-id<sp/>is<sp/>used<sp/>to<sp/>uniquely<sp/>identify<sp/>a<sp/>path<sp/>when<sp/>it<sp/>comes<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>protection<sp/>(Fast<sp/>Re-Route<sp/>-<sp/>FRR).<sp/>It<sp/>is<sp/>not<sp/>used<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>general,<sp/>for<sp/>FRR,<sp/>There<sp/>are<sp/>3<sp/>main<sp/>path<sp/>attributes:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>1.<sp/>Primary.<sp/>The<sp/>path<sp/>is<sp/>the<sp/>main<sp/>path<sp/>to<sp/>carry<sp/>traffic.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>2.<sp/>Protected.<sp/>A<sp/>primary<sp/>path<sp/>with<sp/>a<sp/>configured<sp/>backup<sp/>path.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>3.<sp/>Backup.<sp/>The<sp/>path<sp/>is<sp/>protecting<sp/>a<sp/>primary<sp/>path.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE1:<sp/>a<sp/>primary<sp/>path<sp/>(A)<sp/>can<sp/>be<sp/>simultaneously<sp/>protected<sp/>(by<sp/>B),<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>acting<sp/>as<sp/>a<sp/>backup<sp/>for<sp/>another<sp/>path<sp/>(C).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>this<sp/>example,<sp/>the<sp/>primary<sp/>path<sp/>C<sp/>is<sp/>protected<sp/>by<sp/>A<sp/>(which<sp/>happens<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>be<sp/>primary).<sp/>So<sp/>the<sp/>primary<sp/>path<sp/>(A)<sp/>is<sp/>Primary,<sp/>Protected,<sp/>and<sp/>Backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>are<sp/>various<sp/>path<sp/>types<sp/>based<sp/>on<sp/>combinations<sp/>of<sp/>attributes:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>1.<sp/>Pure<sp/>Primary<sp/>i.e.<sp/>Not<sp/>Protected<sp/>and<sp/>is<sp/>not<sp/>a<sp/>Backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>PathId<sp/>is<sp/>optional.<sp/>ProtectedPathBitmap<sp/>=<sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>2.<sp/>Primary<sp/>and<sp/>Protected.<sp/>Path<sp/>is<sp/>not<sp/>a<sp/>Backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>PathId<sp/>is<sp/>mandatory.<sp/>ProtectedPathBitmap<sp/>=<sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>3.<sp/>Primary<sp/>and<sp/>Not<sp/>Protected.<sp/>Path<sp/>is<sp/>also<sp/>a<sp/>Backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>PathId<sp/>is<sp/>mandatory.<sp/>ProtectedPathBitmap<sp/>=<sp/>0xYYYY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>4.<sp/>Primary<sp/>and<sp/>Protected.<sp/>Path<sp/>is<sp/>also<sp/>a<sp/>Backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>PathId<sp/>is<sp/>mandatory.<sp/>ProtectedPathBitmap<sp/>=<sp/>0xYYYY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>5.<sp/>Pure<sp/>Backup.<sp/>Protection<sp/>is<sp/>not<sp/>allowed<sp/>for<sp/>backup<sp/>paths.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>PathId<sp/>is<sp/>mandatory.<sp/>ProtectedPathBitmap<sp/>=<sp/>0xYYYY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE2:<sp/>Pure<sp/>backup<sp/>path-id<sp/>uses<sp/>a<sp/>different<sp/>range<sp/>than<sp/>primary<sp/>path-ids.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>valid<sp/>range<sp/>of<sp/>primary<sp/>path<sp/>IDs,<sp/>and<sp/>pure<sp/>backup<sp/>path<sp/>IDS<sp/>are</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>platform<sp/>dependent<sp/>and<sp/>can<sp/>be<sp/>retrieved<sp/>through<sp/>the<sp/>client<sp/>init<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>PathId<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>protection<sp/>bitmap.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>bitmap<sp/>of<sp/>paths<sp/>this<sp/>Backup<sp/>path<sp/>is<sp/>protecting.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Example:<sp/>If<sp/>this<sp/>path<sp/>is<sp/>protecting<sp/>paths<sp/>with<sp/>IDs<sp/>4,<sp/>5<sp/>and<sp/>6,<sp/>then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>bitmap<sp/>to:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x38<sp/>==&gt;<sp/>0011<sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>|--<sp/>path<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||--<sp/>path<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|--<sp/>path<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(1<sp/>&lt;&lt;<sp/>(pathId_1<sp/>-<sp/>1))<sp/><sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>(pathId_2<sp/>-<sp/>1))<sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>(pathId_3<sp/>-<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/>uint64<sp/>ProtectedPathBitmap<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MPLS<sp/>label<sp/>stack<sp/>or<sp/>VxLAN<sp/>Virtual<sp/>Network<sp/>Identifier.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stack<sp/>of<sp/>labels<sp/>that<sp/>is<sp/>pushed<sp/>when<sp/>the<sp/>packet<sp/>is<sp/>switched<sp/>out.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Label<sp/>size<sp/>is<sp/>LSB<sp/>20<sp/>bits.<sp/>Forwarding<sp/>will<sp/>set<sp/>EXP,<sp/>TTL<sp/>and<sp/>BOS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>primary<sp/>path,<sp/>typically<sp/>only<sp/>1<sp/>label<sp/>is<sp/>used.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>backup<sp/>paths,<sp/>more<sp/>than<sp/>1<sp/>label<sp/>can<sp/>be<sp/>used.<sp/>If<sp/>more<sp/>than<sp/>one<sp/>label</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>used,<sp/>remote<sp/>backup<sp/>addresses<sp/>must<sp/>be<sp/>specified.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>maximum<sp/>number<sp/>of<sp/>labels<sp/>pushed<sp/>for<sp/>primary<sp/>and<sp/>backup<sp/>are</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>platform<sp/>dependent.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>ENCAP_VXLAN,<sp/>this<sp/>field<sp/>will<sp/>specify<sp/>the<sp/>Virtual<sp/>Network</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Identifier<sp/>(VNI)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/>uint32<sp/>LabelStack<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MPLS<sp/>Remote<sp/>router<sp/>backup<sp/>address.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>field<sp/>is<sp/>used<sp/>only<sp/>for<sp/>backup<sp/>MPLS<sp/>path<sp/>with<sp/>more<sp/>than<sp/>one<sp/>label</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>N+1<sp/>backup<sp/>labels,<sp/>N<sp/>remote<sp/>backup<sp/>addresses<sp/>must<sp/>be<sp/>specified.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/>repeated<sp/><ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref><sp/>RemoteAddress<sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Encapsulation<sp/>type<sp/>(VXLAN<sp/>or<sp/>MPLS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLCommonTypes_1gacf9698e39f1da873424b2a44dee2b741" kindref="member">SLEncapType</ref><sp/>EncapType<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VTEP<sp/>(VxLAN<sp/>tunnel<sp/>end<sp/>point)<sp/>router<sp/>MAC<sp/>address.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>unique<sp/>system<sp/>MAC<sp/>address<sp/>that<sp/>other<sp/>VTEPs<sp/>can<sp/>use<sp/>for<sp/>inter-VNI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>routing.<sp/>The<sp/>router<sp/>MAC<sp/>address<sp/>is<sp/>used<sp/>as<sp/>the<sp/>inner<sp/>destination<sp/>MAC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>address<sp/>for<sp/>routed<sp/>VXLAN<sp/>packet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>for<sp/>ENCAP_VXLAN<sp/>(mandatory)<sp/>only.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>bytes<sp/>VtepRouterMacAddress<sp/>=<sp/>11;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/slapi/grpc/protos/sl_route_common.proto"/>
+  </compounddef>
+</doxygen>

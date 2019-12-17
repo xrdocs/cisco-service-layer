@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsIlmEntry" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsIlmEntry</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsIlmEntry_1a4528354d4c4e10fda732337c29afd9b8" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLMplsIlmKey" kindref="compound">SLMplsIlmKey</ref></type>
+        <definition>SLMplsIlmKey SLMplsIlmEntry::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>ILM Key. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="391" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsIlmEntry_1af30c61db765eb93f2c578fb9d9399c55" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLMplsPath" kindref="compound">SLMplsPath</ref></type>
+        <definition>repeated SLMplsPath SLMplsIlmEntry::Paths</definition>
+        <argsstring></argsstring>
+        <name>Paths</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>List of path (NHLFE) information. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="393" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS ILM entry. </para>    </briefdescription>
+    <detaileddescription>
+<para>This messages defines an ILM entry. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="295">
+        <label>SLMplsPath</label>
+        <link refid="structSLMplsPath"/>
+        <childnode refid="296" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="297" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="294">
+        <label>SLMplsIlmEntry</label>
+        <link refid="structSLMplsIlmEntry"/>
+        <childnode refid="295" relation="usage">
+          <edgelabel>Paths</edgelabel>
+        </childnode>
+        <childnode refid="298" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="299">
+        <label>SLMplsCos</label>
+        <link refid="structSLMplsCos"/>
+      </node>
+      <node id="297">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="298">
+        <label>SLMplsIlmKey</label>
+        <link refid="structSLMplsIlmKey"/>
+        <childnode refid="299" relation="usage">
+          <edgelabel>SlMplsCosVal</edgelabel>
+        </childnode>
+      </node>
+      <node id="296">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="389" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="389" bodyend="394"/>
+    <listofallmembers>
+      <member refid="structSLMplsIlmEntry_1a4528354d4c4e10fda732337c29afd9b8" prot="public" virt="non-virtual"><scope>SLMplsIlmEntry</scope><name>Key</name></member>
+      <member refid="structSLMplsIlmEntry_1af30c61db765eb93f2c578fb9d9399c55" prot="public" virt="non-virtual"><scope>SLMplsIlmEntry</scope><name>Paths</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

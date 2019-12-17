@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsIlmRes" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsIlmRes</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsIlmRes_1a9e3eb56a622dc476b692a610bfcac697" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLMplsIlmRes::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="410" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsIlmRes_1a2bb122dd349bbd31d158716e715b79b8" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLMplsIlmKey" kindref="compound">SLMplsIlmKey</ref></type>
+        <definition>SLMplsIlmKey SLMplsIlmRes::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>ILM Key. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="412" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS ILM result. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message is used to convey the result of the ILM entry operation. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="331">
+        <label>SLMplsIlmRes</label>
+        <link refid="structSLMplsIlmRes"/>
+        <childnode refid="332" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="333" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="332">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="334">
+        <label>SLMplsCos</label>
+        <link refid="structSLMplsCos"/>
+      </node>
+      <node id="333">
+        <label>SLMplsIlmKey</label>
+        <link refid="structSLMplsIlmKey"/>
+        <childnode refid="334" relation="usage">
+          <edgelabel>SlMplsCosVal</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="408" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="408" bodyend="413"/>
+    <listofallmembers>
+      <member refid="structSLMplsIlmRes_1a9e3eb56a622dc476b692a610bfcac697" prot="public" virt="non-virtual"><scope>SLMplsIlmRes</scope><name>ErrStatus</name></member>
+      <member refid="structSLMplsIlmRes_1a2bb122dd349bbd31d158716e715b79b8" prot="public" virt="non-virtual"><scope>SLMplsIlmRes</scope><name>Key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

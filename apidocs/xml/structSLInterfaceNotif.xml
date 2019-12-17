@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLInterfaceNotif" kind="struct" language="C++" prot="public">
+    <compoundname>SLInterfaceNotif</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLInterfaceNotif_1ad01140f2e1e9b4bb4a6789db4a3b1476" prot="public" static="no" mutable="no">
+        <type><ref refid="group__Interfaces_1gad644c26cd72b1b17ebfe15b81d0981cb" kindref="member">SLInterfaceNotifType</ref></type>
+        <definition>SLInterfaceNotifType SLInterfaceNotif::EventType</definition>
+        <argsstring></argsstring>
+        <name>EventType</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Interface Event Notification type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="155" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInterfaceNotif_1a716aba1e0bfb8b56654ee096ea6a784b" prot="public" static="no" mutable="no">
+        <type>oneof</type>
+        <definition>oneof SLInterfaceNotif::Event</definition>
+        <argsstring></argsstring>
+        <name>Event</name>
+        <initializer>{
+        
+        <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref> ErrStatus = 2</initializer>
+        <briefdescription>
+<para>Further info based on EventType. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="157" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInterfaceNotif_1a83e1e05dce82c998148b6fd906ae0a78" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLInterfaceInfoMsg" kindref="compound">SLInterfaceInfoMsg</ref></type>
+        <definition>SLInterfaceInfoMsg SLInterfaceNotif::Info</definition>
+        <argsstring></argsstring>
+        <name>Info</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>case EventType == SL_INTERFACE_EVENT_TYPE_INTERFACE_INFO: =&gt; this field carries the session state info </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="164" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface Notification Event. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="171">
+        <label>SLInterfaceInfoMsg</label>
+        <link refid="structSLInterfaceInfoMsg"/>
+        <childnode refid="172" relation="usage">
+          <edgelabel>SLIfInfo</edgelabel>
+        </childnode>
+      </node>
+      <node id="170">
+        <label>SLInterfaceNotif</label>
+        <link refid="structSLInterfaceNotif"/>
+        <childnode refid="171" relation="usage">
+          <edgelabel>Info</edgelabel>
+        </childnode>
+      </node>
+      <node id="172">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_interface.proto" line="153" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="153" bodyend="166"/>
+    <listofallmembers>
+      <member refid="structSLInterfaceNotif_1a716aba1e0bfb8b56654ee096ea6a784b" prot="public" virt="non-virtual"><scope>SLInterfaceNotif</scope><name>Event</name></member>
+      <member refid="structSLInterfaceNotif_1ad01140f2e1e9b4bb4a6789db4a3b1476" prot="public" virt="non-virtual"><scope>SLInterfaceNotif</scope><name>EventType</name></member>
+      <member refid="structSLInterfaceNotif_1a83e1e05dce82c998148b6fd906ae0a78" prot="public" virt="non-virtual"><scope>SLInterfaceNotif</scope><name>Info</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

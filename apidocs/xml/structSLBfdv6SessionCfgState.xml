@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv6SessionCfgState" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv6SessionCfgState</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga44d8a824e6c278b15ee6d794a3fcdb75" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdv6Key" kindref="compound">SLBfdv6Key</ref></type>
+        <definition>SLBfdv6Key SLBfdv6SessionCfgState::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD unique key identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="144" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga6fb81843c6cbaa52a7b128c9dd565243" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdConfigCommon" kindref="compound">SLBfdConfigCommon</ref></type>
+        <definition>SLBfdConfigCommon SLBfdv6SessionCfgState::Config</definition>
+        <argsstring></argsstring>
+        <name>Config</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>BFD common features. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="146" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga83e644ddbc8646986e9362a08521f2c6" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdCommonState" kindref="compound">SLBfdCommonState</ref></type>
+        <definition>SLBfdCommonState SLBfdv6SessionCfgState::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>BFD session State. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="148" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD Session Config and State info. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="119">
+        <label>SLBfdCommonState</label>
+        <link refid="structSLBfdCommonState"/>
+      </node>
+      <node id="120">
+        <label>SLBfdv6Key</label>
+        <link refid="structSLBfdv6Key"/>
+        <childnode refid="121" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="117">
+        <label>SLBfdv6SessionCfgState</label>
+        <link refid="structSLBfdv6SessionCfgState"/>
+        <childnode refid="118" relation="usage">
+          <edgelabel>Config</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>State</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="118">
+        <label>SLBfdConfigCommon</label>
+        <link refid="structSLBfdConfigCommon"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="142" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="142" bodyend="149"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv6Oper_1ga6fb81843c6cbaa52a7b128c9dd565243" prot="public" virt="non-virtual"><scope>SLBfdv6SessionCfgState</scope><name>Config</name></member>
+      <member refid="group__SLBfdIPv6Oper_1ga44d8a824e6c278b15ee6d794a3fcdb75" prot="public" virt="non-virtual"><scope>SLBfdv6SessionCfgState</scope><name>Key</name></member>
+      <member refid="group__SLBfdIPv6Oper_1ga83e644ddbc8646986e9362a08521f2c6" prot="public" virt="non-virtual"><scope>SLBfdv6SessionCfgState</scope><name>State</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

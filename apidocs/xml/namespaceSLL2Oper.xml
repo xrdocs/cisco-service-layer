@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceSLL2Oper" kind="namespace" language="C++">
+    <compoundname>SLL2Oper</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__SLRouteL2Oper_1ga97b51908bde1f3344a89e56679fcf226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2GlobalsGet</definition>
+        <argsstring>(SLL2GlobalsGetMsg) returns(SLL2GlobalsGetMsgRsp)</argsstring>
+        <name>SLL2GlobalsGet</name>
+        <param>
+          <type><ref refid="structSLL2GlobalsGetMsg" kindref="compound">SLL2GlobalsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Global L2 route operations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to retrieve global L2 info from the server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteL2Oper_1ga08e1cc0ab6a154af34536077c28e8bd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2RegOp</definition>
+        <argsstring>(SLL2RegMsg) returns(SLL2RegMsgRsp)</argsstring>
+        <name>SLL2RegOp</name>
+        <param>
+          <type><ref refid="structSLL2RegMsg" kindref="compound">SLL2RegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>L2 Registration Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLL2RegMsg_1a2fff103acb65bd4089ed88094f53c0f9" kindref="member">SLL2RegMsg.Oper</ref> = SL_REGOP_REGISTER: Global L2 registration. A client Must Register BEFORE sending BD registration messages (to add/update/delete routes) or BEFORE requesting for L2 route notifications.</para><para><ref refid="structSLL2RegMsg_1a2fff103acb65bd4089ed88094f53c0f9" kindref="member">SLL2RegMsg.Oper</ref> = SL_REGOP_UNREGISTER: Global L2 un-registration. This call is used to convey that the client is no longer interested in programming L2 routes and in receiving L2 route notifications. All programmed L2 routes will be deleted on the server and the server will stop sending L2 route notifications.</para><para><ref refid="structSLL2RegMsg_1a2fff103acb65bd4089ed88094f53c0f9" kindref="member">SLL2RegMsg.Oper</ref> = SL_REGOP_EOF: Global L2 End Of File message. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects and to convey the end of requests for L2 route notifications. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their routes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteL2Oper_1gab016417c3ebddb141f4482bbcf6e18a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2BdRegOp</definition>
+        <argsstring>(SLL2BdRegMsg) returns(SLL2BdRegMsgRsp)</argsstring>
+        <name>SLL2BdRegOp</name>
+        <param>
+          <type><ref refid="structSLL2BdRegMsg" kindref="compound">SLL2BdRegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>L2 Bridge-Domain (BD) Registration Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLL2BdRegMsg_1a83210d5c2380b55f748ae0df1fb2add3" kindref="member">SLL2BdRegMsg.Oper</ref> = SL_REGOP_REGISTER: BD registration: Sends a list of BD registration messages and expects a list of registration responses. A client Must Register a BD BEFORE L2 Routes can be added/modified in that BD.</para><para><ref refid="structSLL2BdRegMsg_1a83210d5c2380b55f748ae0df1fb2add3" kindref="member">SLL2BdRegMsg.Oper</ref> = SL_REGOP_UNREGISTER: BD un-registration: Sends a list of BD un-registration messages and expects a list of un-registration responses. This can be used to convey that the client is no longer interested in programming routes in this BD. All installed L2 routes will be lost.</para><para><ref refid="structSLL2BdRegMsg_1a83210d5c2380b55f748ae0df1fb2add3" kindref="member">SLL2BdRegMsg.Oper</ref> = SL_REGOP_EOF: BD End Of File message. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects in that BD. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their routes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteL2Oper_1ga38a6bbf60f0d0aa04fa98ba963d3a4e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2RouteOp</definition>
+        <argsstring>(SLL2RouteMsg) returns(SLL2RouteMsgRsp)</argsstring>
+        <name>SLL2RouteOp</name>
+        <param>
+          <type><ref refid="structSLL2RouteMsg" kindref="compound">SLL2RouteMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>L2 Route Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLL2RouteMsg_1a143513ab9f8f67c58c9d69eb3cef859b" kindref="member">SLL2RouteMsg.Oper</ref> = SL_OBJOP_ADD: Route add. Fails if the route already exists.</para><para><ref refid="structSLL2RouteMsg_1a143513ab9f8f67c58c9d69eb3cef859b" kindref="member">SLL2RouteMsg.Oper</ref> = SL_OBJOP_UPDATE: Route update. Creates or updates the route.</para><para><ref refid="structSLL2RouteMsg_1a143513ab9f8f67c58c9d69eb3cef859b" kindref="member">SLL2RouteMsg.Oper</ref> = SL_OBJOP_DELETE: Route delete. The route path is not necessary to delete the route. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteL2Oper_1ga90c5431c7a86d5d42db7eb2dd4416411" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2RouteOpStream</definition>
+        <argsstring>(stream SLL2RouteMsg) returns(stream SLL2RouteMsgRsp)</argsstring>
+        <name>SLL2RouteOpStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLL2RouteMsg</declname>
+        </param>
+        <briefdescription>
+<para>L2 Stream Route Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stream adds/updates/deletes of L2 Routes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="95" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteL2Oper_1gab25f5158aed7a52952ad112388146ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLL2Oper::SLL2GetNotifStream</definition>
+        <argsstring>(stream SLL2GetNotifMsg) returns(stream SLL2Notif)</argsstring>
+        <name>SLL2GetNotifStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLL2GetNotifMsg</declname>
+        </param>
+        <briefdescription>
+<para>L2 Route Redistribution Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para>This call is used to get a stream of BD state and route notifications. It can be used to get &quot;push&quot; notifications for route adds/updates/deletes. The caller must maintain the GRPC channel as long as there is interest in route notifications.</para><para>The call takes 3 types of notification requests:<orderedlist>
+<listitem><para>Request for BD state notifications only (pass only Oper and Correlator).</para></listitem><listitem><para>Request for BD state and Route notifications in all BDs.</para></listitem><listitem><para>Request for Route notifications per-BD. This should be sent after requesting for BD state notifications and after receiving BD-ready notification.</para></listitem></orderedlist>
+</para><para>The success/failure of the notification request is relayed in the <ref refid="structSLL2NotifStatusMsg" kindref="compound">SLL2NotifStatusMsg</ref> followed by a Start marker, any routes if present, and an End Marker.</para><para>After all requests are sent, client should send GetNotifEof = TRUE. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="119" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="18" column="1"/>
+  </compounddef>
+</doxygen>

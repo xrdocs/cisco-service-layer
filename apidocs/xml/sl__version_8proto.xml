@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="sl__version_8proto" kind="file" language="C++">
+    <compoundname>sl_version.proto</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__SLVersion_1ga5e78c34460253b09455546856b52205e" prot="public" static="no">
+        <name>SLVersion</name>
+        <enumvalue id="group__SLVersion_1gga5e78c34460253b09455546856b52205ea4bc0310e925eced69f0d1d054469cd05" prot="public">
+          <name>allow_alias</name>
+          <initializer>= true</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLVersion_1gga5e78c34460253b09455546856b52205eae7f6de7fb67c6b6ce7dbfee216b4446c" prot="public">
+          <name>SL_VERSION_UNUSED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLVersion_1gga5e78c34460253b09455546856b52205eac957c58ed4ea1f4441d76135b97e6655" prot="public">
+          <name>SL_MAJOR_VERSION</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLVersion_1gga5e78c34460253b09455546856b52205ea2707820ce505982e5b5183ea6a0bb878" prot="public">
+          <name>SL_MINOR_VERSION</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLVersion_1gga5e78c34460253b09455546856b52205ea9234b22668cff0ab1890382daa376979" prot="public">
+          <name>SL_SUB_VERSION</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_version.proto" line="19" column="1" bodyfile="/slapi/grpc/protos/sl_version.proto" bodystart="19" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sl__version_8proto_1adbedb258e13546cc707a6ebb073a3d8a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>syntax</definition>
+        <argsstring></argsstring>
+        <name>syntax</name>
+        <initializer>= &quot;proto3&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_version.proto" line="10" column="1" bodyfile="/slapi/grpc/protos/sl_version.proto" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sl__version_8proto_1a293eb43ea51d8359911f89a0e4c6284e" prot="public" static="no" mutable="no">
+        <type>package</type>
+        <definition>package service_layer</definition>
+        <argsstring></argsstring>
+        <name>service_layer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_version.proto" line="11" column="1" bodyfile="/slapi/grpc/protos/sl_version.proto" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Specifies the API version number. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ Copyright (c) 2016 by cisco Systems, Inc. <heading level="2">All rights reserved. </heading>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>@file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@brief<sp/>Specifies<sp/>the<sp/>API<sp/>version<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(c)<sp/>2016<sp/>by<sp/>cisco<sp/>Systems,<sp/>Inc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">syntax<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;proto3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">service_layer;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@addtogroup<sp/>SLVersion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ingroup<sp/>Common</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>Major.Minor.Subversion<sp/>define<sp/>the<sp/>API&apos;s<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Service<sp/>Layer<sp/>API<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>used<sp/>in<sp/>the<sp/>Global<sp/>init<sp/>message<sp/>exchange<sp/>to<sp/>handshake<sp/>client/server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Version<sp/>numbers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SLVersion<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>option<sp/>allow_alias<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SL_VERSION_UNUSED<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>SL_MAJOR_VERSION<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>SL_MINOR_VERSION<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>SL_SUB_VERSION<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/slapi/grpc/protos/sl_version.proto"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__Interfaces" kind="group">
+    <compoundname>Interfaces</compoundname>
+    <title>Interfaces</title>
+    <innerclass refid="structSLInterfaceGlobalsRegMsg" prot="public">SLInterfaceGlobalsRegMsg</innerclass>
+    <innerclass refid="structSLInterfaceGlobalsRegMsgRsp" prot="public">SLInterfaceGlobalsRegMsgRsp</innerclass>
+    <innerclass refid="structSLInterfaceGlobalsGetMsg" prot="public">SLInterfaceGlobalsGetMsg</innerclass>
+    <innerclass refid="structSLInterfaceGlobalsGetMsgRsp" prot="public">SLInterfaceGlobalsGetMsgRsp</innerclass>
+    <innerclass refid="structSLInterfaceGlobalsGetStatsMsgRsp" prot="public">SLInterfaceGlobalsGetStatsMsgRsp</innerclass>
+    <innerclass refid="structSLInterfaceGetMsg" prot="public">SLInterfaceGetMsg</innerclass>
+    <innerclass refid="structSLInterfaceInfoMsg" prot="public">SLInterfaceInfoMsg</innerclass>
+    <innerclass refid="structSLInterfaceGetMsgRsp" prot="public">SLInterfaceGetMsgRsp</innerclass>
+    <innerclass refid="structSLInterfaceGetNotifMsg" prot="public">SLInterfaceGetNotifMsg</innerclass>
+    <innerclass refid="structSLInterfaceNotif" prot="public">SLInterfaceNotif</innerclass>
+    <innerclass refid="structSLInterfaceNotifMsg" prot="public">SLInterfaceNotifMsg</innerclass>
+    <innerclass refid="structSLInterfaceNotifMsgRes" prot="public">SLInterfaceNotifMsgRes</innerclass>
+    <innerclass refid="structSLInterfaceNotifMsgRsp" prot="public">SLInterfaceNotifMsgRsp</innerclass>
+    <innernamespace refid="namespaceSLInterfaceOper">SLInterfaceOper</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__Interfaces_1ga5d22fc52929e36eec124d3dd06b3d755" prot="public" static="no">
+        <name>SLInterfaceState</name>
+        <enumvalue id="group__Interfaces_1gga5d22fc52929e36eec124d3dd06b3d755ad8f7cd127e34b7ca3c0f2d714873f43e" prot="public">
+          <name>SL_IF_STATE_UNKNOWN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>State unknown. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Interfaces_1gga5d22fc52929e36eec124d3dd06b3d755aeb1e89c2ea8f0e2caa69ea1b1128b12f" prot="public">
+          <name>SL_IF_STATE_DOWN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>State Operationally down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Interfaces_1gga5d22fc52929e36eec124d3dd06b3d755ac70a19d5f2c78b086eba88dbbc56ba01" prot="public">
+          <name>SL_IF_STATE_UP</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>State Operationally up. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The current state of the interface. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="110" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="110" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__Interfaces_1gad644c26cd72b1b17ebfe15b81d0981cb" prot="public" static="no">
+        <name>SLInterfaceNotifType</name>
+        <enumvalue id="group__Interfaces_1ggad644c26cd72b1b17ebfe15b81d0981cbaa12706459d64d565d698df29403b90fd" prot="public">
+          <name>SL_INTERFACE_EVENT_TYPE_RESERVED</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>Reserved. 0x0. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Interfaces_1ggad644c26cd72b1b17ebfe15b81d0981cbaf6fa7f1777021fb296f250e8d6aaee3b" prot="public">
+          <name>SL_INTERFACE_EVENT_TYPE_ERROR</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Error - ErrStatus field elaborates on the error. 0x1. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Interfaces_1ggad644c26cd72b1b17ebfe15b81d0981cbabf2c6c07e6a736908e6b3f7c46687384" prot="public">
+          <name>SL_INTERFACE_EVENT_TYPE_INTERFACE_INFO</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Interface attributes and state event. 0x2. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Interface Event Notification types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="144" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="144" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Interfaces_1gad34a2003ad1125a7541c2a2c06257089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceGlobalsRegOp</definition>
+        <argsstring>(SLInterfaceGlobalsRegMsg) returns(SLInterfaceGlobalsRegMsgRsp)</argsstring>
+        <name>SLInterfaceGlobalsRegOp</name>
+        <param>
+          <type><ref refid="structSLInterfaceGlobalsRegMsg" kindref="compound">SLInterfaceGlobalsRegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Interface Registration Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLInterfaceGlobalsRegMsg_1af3683fd54ba7b5dae106552cf672151a" kindref="member">SLInterfaceGlobalsRegMsg.Oper</ref> = SL_REGOP_REGISTER: Global Interface registration. A client Must Register BEFORE interfaces can be modified/queried.</para><para><ref refid="structSLInterfaceGlobalsRegMsg_1af3683fd54ba7b5dae106552cf672151a" kindref="member">SLInterfaceGlobalsRegMsg.Oper</ref> = SL_REGOP_UNREGISTER: Global Interface un-registration. This call is used to end all interface notifications. This call cleans up all interface notifications previously requested.</para><para><ref refid="structSLInterfaceGlobalsRegMsg_1af3683fd54ba7b5dae106552cf672151a" kindref="member">SLInterfaceGlobalsRegMsg.Oper</ref> = SL_REGOP_EOF: Interface End Of File. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their interfaces. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Interfaces_1ga782da2be6cf70382ee20c6867e1e4257" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceGlobalsGet</definition>
+        <argsstring>(SLInterfaceGlobalsGetMsg) returns(SLInterfaceGlobalsGetMsgRsp)</argsstring>
+        <name>SLInterfaceGlobalsGet</name>
+        <param>
+          <type><ref refid="structSLInterfaceGlobalsGetMsg" kindref="compound">SLInterfaceGlobalsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve global Interface info from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Interfaces_1ga82d981b47465bdf138276212a8f052ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceGlobalsGetStats</definition>
+        <argsstring>(SLInterfaceGlobalsGetMsg) returns(SLInterfaceGlobalsGetStatsMsgRsp)</argsstring>
+        <name>SLInterfaceGlobalsGetStats</name>
+        <param>
+          <type><ref refid="structSLInterfaceGlobalsGetMsg" kindref="compound">SLInterfaceGlobalsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve global Interface stats from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Interfaces_1ga9724a4348281397af50fa8421bdc6b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceGet</definition>
+        <argsstring>(SLInterfaceGetMsg) returns(SLInterfaceGetMsgRsp)</argsstring>
+        <name>SLInterfaceGet</name>
+        <param>
+          <type><ref refid="structSLInterfaceGetMsg" kindref="compound">SLInterfaceGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve interface attributes and state. </para>        </briefdescription>
+        <detaileddescription>
+<para>This call can be used to &quot;poll&quot; the current state of interfaces. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Interfaces_1ga806a8b49713b8c28661e9b1adc540389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceGetNotifStream</definition>
+        <argsstring>(SLInterfaceGetNotifMsg) returns(stream SLInterfaceNotif)</argsstring>
+        <name>SLInterfaceGetNotifStream</name>
+        <param>
+          <type><ref refid="structSLInterfaceGetNotifMsg" kindref="compound">SLInterfaceGetNotifMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>This call is used to get a stream of interface notifications. </para>        </briefdescription>
+        <detaileddescription>
+<para>The caller must maintain the GRPC channel as long as there is interest in interface notifications. This call can be used to get &quot;push&quot; notifications for interface info. It is advised that the caller register for notifications before any interfaces are used to avoid any loss of notifications. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Interfaces_1gaa6bcffaf3beb2d9bcec46c57b4a476e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLInterfaceOper::SLInterfaceNotifOp</definition>
+        <argsstring>(SLInterfaceNotifMsg) returns(SLInterfaceNotifMsgRsp)</argsstring>
+        <name>SLInterfaceNotifOp</name>
+        <param>
+          <type><ref refid="structSLInterfaceNotifMsg" kindref="compound">SLInterfaceNotifMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to enable/disable event notifications for a certain interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>By default, all interface events are disabled. The user must enable notifications for the interested interfaces. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="55" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface service definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para>Defines the RPC for getting interface status(es). </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsIlmKey" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsIlmKey</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsIlmKey_1a26a5ae27a8d94cb2a290e93064794c26" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsIlmKey::LocalLabel</definition>
+        <argsstring></argsstring>
+        <name>LocalLabel</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Incoming local label. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="369" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsIlmKey_1a5aec2f2e684f46f88411fc8bbfa91be8" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLMplsCos" kindref="compound">SLMplsCos</ref></type>
+        <definition>SLMplsCos SLMplsIlmKey::SlMplsCosVal</definition>
+        <argsstring></argsstring>
+        <name>SlMplsCosVal</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Either Exp bits or CoS forwarding class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="371" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS ILM entry&apos;s key. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message defines the Incoming Label Map key attributes. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="315">
+        <label>SLMplsCos</label>
+        <link refid="structSLMplsCos"/>
+      </node>
+      <node id="314">
+        <label>SLMplsIlmKey</label>
+        <link refid="structSLMplsIlmKey"/>
+        <childnode refid="315" relation="usage">
+          <edgelabel>SlMplsCosVal</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="367" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="367" bodyend="372"/>
+    <listofallmembers>
+      <member refid="structSLMplsIlmKey_1a26a5ae27a8d94cb2a290e93064794c26" prot="public" virt="non-virtual"><scope>SLMplsIlmKey</scope><name>LocalLabel</name></member>
+      <member refid="structSLMplsIlmKey_1a5aec2f2e684f46f88411fc8bbfa91be8" prot="public" virt="non-virtual"><scope>SLMplsIlmKey</scope><name>SlMplsCosVal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

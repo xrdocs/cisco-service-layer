@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev4NotifRoute" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev4NotifRoute</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev4NotifRoute_1a3b6cfe78e39acfc57e10397fc027d1c4" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRoutev4NotifRoute::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>VRF name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="199" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4NotifRoute_1adaf74e1eeaa2f7d839b68f4b022b15fe" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLRoutev4" kindref="compound">SLRoutev4</ref></type>
+        <definition>repeated SLRoutev4 SLRoutev4NotifRoute::Entries</definition>
+        <argsstring></argsstring>
+        <name>Entries</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>IPv4 routes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="201" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>IPv4 Route notification. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="436">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="431">
+        <label>SLRoutev4NotifRoute</label>
+        <link refid="structSLRoutev4NotifRoute"/>
+        <childnode refid="432" relation="usage">
+          <edgelabel>Entries</edgelabel>
+        </childnode>
+      </node>
+      <node id="433">
+        <label>SLRouteCommon</label>
+        <link refid="structSLRouteCommon"/>
+      </node>
+      <node id="432">
+        <label>SLRoutev4</label>
+        <link refid="structSLRoutev4"/>
+        <childnode refid="433" relation="usage">
+          <edgelabel>RouteCommon</edgelabel>
+        </childnode>
+        <childnode refid="434" relation="usage">
+          <edgelabel>PathList</edgelabel>
+        </childnode>
+      </node>
+      <node id="434">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="435" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="436" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="435">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="197" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="197" bodyend="202"/>
+    <listofallmembers>
+      <member refid="structSLRoutev4NotifRoute_1adaf74e1eeaa2f7d839b68f4b022b15fe" prot="public" virt="non-virtual"><scope>SLRoutev4NotifRoute</scope><name>Entries</name></member>
+      <member refid="structSLRoutev4NotifRoute_1a3b6cfe78e39acfc57e10397fc027d1c4" prot="public" virt="non-virtual"><scope>SLRoutev4NotifRoute</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

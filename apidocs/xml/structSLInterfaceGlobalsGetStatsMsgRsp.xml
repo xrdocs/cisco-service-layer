@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLInterfaceGlobalsGetStatsMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLInterfaceGlobalsGetStatsMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLInterfaceGlobalsGetStatsMsgRsp_1aca766491c055220cc19a53420bf13f04" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLInterfaceGlobalsGetStatsMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="88" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInterfaceGlobalsGetStatsMsgRsp_1a6a67ef7973da4eba0333902b721cfdf3" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLInterfaceGlobalsGetStatsMsgRsp::SeqNum</definition>
+        <argsstring></argsstring>
+        <name>SeqNum</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Global Interface event sequence number. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sequence number is equivalent to a timestamp </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="91" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInterfaceGlobalsGetStatsMsgRsp_1ad3d8829c02c03645a4d049db2ce44769" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLInterfaceGlobalsGetStatsMsgRsp::InterfaceNotifCount</definition>
+        <argsstring></argsstring>
+        <name>InterfaceNotifCount</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Num Interface notification requests added through the service layer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="93" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global Interface Get stats message. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message is used to convey the response to the interface statistics query. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="160">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="159">
+        <label>SLInterfaceGlobalsGetStatsMsgRsp</label>
+        <link refid="structSLInterfaceGlobalsGetStatsMsgRsp"/>
+        <childnode refid="160" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_interface.proto" line="86" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="86" bodyend="94"/>
+    <listofallmembers>
+      <member refid="structSLInterfaceGlobalsGetStatsMsgRsp_1aca766491c055220cc19a53420bf13f04" prot="public" virt="non-virtual"><scope>SLInterfaceGlobalsGetStatsMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLInterfaceGlobalsGetStatsMsgRsp_1ad3d8829c02c03645a4d049db2ce44769" prot="public" virt="non-virtual"><scope>SLInterfaceGlobalsGetStatsMsgRsp</scope><name>InterfaceNotifCount</name></member>
+      <member refid="structSLInterfaceGlobalsGetStatsMsgRsp_1a6a67ef7973da4eba0333902b721cfdf3" prot="public" virt="non-virtual"><scope>SLInterfaceGlobalsGetStatsMsgRsp</scope><name>SeqNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

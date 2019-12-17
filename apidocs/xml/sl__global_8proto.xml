@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="sl__global_8proto" kind="file" language="C++">
+    <compoundname>sl_global.proto</compoundname>
+    <innerclass refid="structSLInitMsg" prot="public">SLInitMsg</innerclass>
+    <innerclass refid="structSLInitMsgRsp" prot="public">SLInitMsgRsp</innerclass>
+    <innerclass refid="structSLGlobalNotif" prot="public">SLGlobalNotif</innerclass>
+    <innerclass refid="structSLGlobalsGetMsg" prot="public">SLGlobalsGetMsg</innerclass>
+    <innerclass refid="structSLGlobalsGetMsgRsp" prot="public">SLGlobalsGetMsgRsp</innerclass>
+    <innernamespace refid="namespaceSLGlobal">SLGlobal</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__SLGlobal_1ga1d1b4192ce3a6703d905d8babb38e3a6" prot="public" static="no">
+        <name>SLGlobalNotifType</name>
+        <enumvalue id="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6adeee416d268bf8e1b5c4e81e386412db" prot="public">
+          <name>SL_GLOBAL_EVENT_TYPE_RESERVED</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>Reserved. 0x0. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6af4b78197fb2e1348d95eb13fe1bb13c7" prot="public">
+          <name>SL_GLOBAL_EVENT_TYPE_ERROR</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Error. ErrStatus field elaborates on the message. 0x1. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6a49b7cf5866707010e4134b53b3a9a866" prot="public">
+          <name>SL_GLOBAL_EVENT_TYPE_HEARTBEAT</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>HeartBeat. 0x2. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6a8b159c3cebfa80aa40c2a725cfbf257e" prot="public">
+          <name>SL_GLOBAL_EVENT_TYPE_VERSION</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+<para>Version. <ref refid="structSLInitMsgRsp" kindref="compound">SLInitMsgRsp</ref> field elaborates on the server version. 0x3. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Global Event Notification types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="73" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="73" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sl__global_8proto_1adbedb258e13546cc707a6ebb073a3d8a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>syntax</definition>
+        <argsstring></argsstring>
+        <name>syntax</name>
+        <initializer>= &quot;proto3&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="11" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sl__global_8proto_1a293eb43ea51d8359911f89a0e4c6284e" prot="public" static="no" mutable="no">
+        <type>package</type>
+        <definition>package service_layer</definition>
+        <argsstring></argsstring>
+        <name>service_layer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="12" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Server RPC proto file. </para>    </briefdescription>
+    <detaileddescription>
+<para>Client invokes to init the session on server. <hruler/>
+ Copyright (c) 2019 by Cisco Systems, Inc. <heading level="2">All rights reserved. </heading>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>@file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@brief<sp/>Server<sp/>RPC<sp/>proto<sp/>file.<sp/>Client<sp/>invokes<sp/>to<sp/>init<sp/>the<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>on<sp/>server.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(c)<sp/>2019<sp/>by<sp/>Cisco<sp/>Systems,<sp/>Inc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">syntax<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;proto3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">service_layer;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;sl_common_types.proto&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@defgroup<sp/>SLGlobal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ingroup<sp/>Common</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Global<sp/>Initialization<sp/>and<sp/>Notifications.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>RPCs<sp/>are<sp/>used<sp/>in<sp/>global<sp/>initialization<sp/>and<sp/>capability<sp/>queries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">service<sp/><ref refid="namespaceSLGlobal" kindref="compound">SLGlobal</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//@addtogroup<sp/>SLGlobal</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>connection,<sp/>and<sp/>setup<sp/>a<sp/>notification<sp/>channel.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>MUST<sp/>be<sp/>the<sp/>first<sp/>call<sp/>to<sp/>setup<sp/>the<sp/>Service<sp/>Layer<sp/>connection.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>caller<sp/>MUST<sp/>maintain<sp/>the<sp/>notification<sp/>channel<sp/>to<sp/>be<sp/>able<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>communicate<sp/>with<sp/>the<sp/>server.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>this<sp/>channel<sp/>is<sp/>not<sp/>properly<sp/>established<sp/>and<sp/>maintained,<sp/>all<sp/>other</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RPC<sp/>requests<sp/>are<sp/>rejected.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>caller<sp/>must<sp/>send<sp/>its<sp/>version<sp/>information<sp/>as<sp/>part<sp/>of<sp/>the<sp/>SLInitMsg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>message.<sp/>The<sp/>server<sp/>will<sp/>reply<sp/>with<sp/>SL_GLOBAL_EVENT_TYPE_VERSION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>that<sp/>tells<sp/>the<sp/>caller<sp/>whether<sp/>he<sp/>can<sp/>proceed<sp/>or<sp/>not.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Refer<sp/>to<sp/>message<sp/>SLGlobalNotif<sp/>below<sp/>for<sp/>further<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>After<sp/>the<sp/>version<sp/>handshake,<sp/>the<sp/>notification<sp/>channel<sp/>is<sp/>used<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;push&quot;<sp/>event<sp/>notifications,<sp/>such<sp/>as:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>-<sp/>SLGlobalNotif.EventType<sp/>=<sp/>SL_GLOBAL_EVENT_TYPE_HEARTBEAT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>heartbeat<sp/>notification<sp/>messages<sp/>are<sp/>sent<sp/>to<sp/>the<sp/>client<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/>periodic<sp/>basis.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>Refer<sp/>to<sp/>SLGlobalNotif<sp/>definition<sp/>for<sp/>further<sp/>info.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>rpc<sp/><ref refid="group__SLGlobal_1ga2244a7c8c2e9e84f8d05b7261df3f23d" kindref="member">SLGlobalInitNotif</ref>(<ref refid="structSLInitMsg" kindref="compound">SLInitMsg</ref>)<sp/>returns<sp/>(stream<sp/><ref refid="structSLGlobalNotif" kindref="compound">SLGlobalNotif</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>platform<sp/>specific<sp/>globals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>rpc<sp/><ref refid="group__SLGlobal_1gaac42ae6835f19c21d9cd8607529c0321" kindref="member">SLGlobalsGet</ref>(<ref refid="structSLGlobalsGetMsg" kindref="compound">SLGlobalsGetMsg</ref>)<sp/>returns<sp/>(<ref refid="structSLGlobalsGetMsgRsp" kindref="compound">SLGlobalsGetMsgRsp</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialization<sp/>message<sp/>sent<sp/>to<sp/>the<sp/>server.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>client<sp/>and<sp/>server<sp/>are<sp/>running<sp/>compatible<sp/>version<sp/>numbers,<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>connection<sp/>will<sp/>be<sp/>made<sp/>and<sp/>the<sp/>server<sp/>response<sp/>will<sp/>be<sp/>received</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>with<sp/>a<sp/>successful<sp/>status<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">message<sp/><ref refid="structSLInitMsg" kindref="compound">SLInitMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Client&apos;s<sp/>Major<sp/>version<sp/>of<sp/>service-layer<sp/>API<sp/>(refer<sp/>to<sp/>sl_version.proto)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MajorVer<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="structSLInitMsgRsp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minor<sp/>Version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MinorVer<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sub-Version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>SubVer<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Server&apos;s<sp/>response<sp/>to<sp/>the<sp/>SLInitMsg.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>On<sp/>Success<sp/>(ErrStatus),<sp/>the<sp/>session<sp/>with<sp/>the<sp/>server<sp/>is<sp/>established</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>and<sp/>the<sp/>client<sp/>is<sp/>allowed<sp/>to<sp/>proceed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">message<sp/><ref refid="structSLInitMsgRsp" kindref="compound">SLInitMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Server&apos;s<sp/>version<sp/>of<sp/>service-layer<sp/>API<sp/>(refer<sp/>to<sp/>sl_version.proto)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Major-number<sp/>revisions<sp/>are<sp/>NOT<sp/>backwards<sp/>compatible,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unless<sp/>otherwise<sp/>specified.<sp/>The<sp/>Server<sp/>may<sp/>reject<sp/>a<sp/>session<sp/>if<sp/>there</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>version<sp/>number<sp/>mismatch<sp/>or<sp/>non-backwards<sp/>compatibility.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MajorVer<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minor<sp/>Version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MinorVer<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sub-Version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>SubVer<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84" refid="structSLGlobalNotif" refkind="compound"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Global<sp/>Event<sp/>Notification<sp/>types.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__SLGlobal_1ga1d1b4192ce3a6703d905d8babb38e3a6" kindref="member">SLGlobalNotifType</ref><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reserved.<sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6adeee416d268bf8e1b5c4e81e386412db" kindref="member">SL_GLOBAL_EVENT_TYPE_RESERVED</ref><sp/>=<sp/>0x0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error.<sp/>ErrStatus<sp/>field<sp/>elaborates<sp/>on<sp/>the<sp/>message.<sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6af4b78197fb2e1348d95eb13fe1bb13c7" kindref="member">SL_GLOBAL_EVENT_TYPE_ERROR</ref><sp/>=<sp/>0x1;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>HeartBeat.<sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6a49b7cf5866707010e4134b53b3a9a866" kindref="member">SL_GLOBAL_EVENT_TYPE_HEARTBEAT</ref><sp/>=<sp/>0x2;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Version.<sp/>SLInitMsgRsp<sp/>field<sp/>elaborates<sp/>on<sp/>the<sp/>server<sp/>version.<sp/>0x3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLGlobal_1gga1d1b4192ce3a6703d905d8babb38e3a6a8b159c3cebfa80aa40c2a725cfbf257e" kindref="member">SL_GLOBAL_EVENT_TYPE_VERSION</ref><sp/>=<sp/>0x3;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Globals<sp/>query<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">message<sp/><ref refid="structSLGlobalNotif" kindref="compound">SLGlobalNotif</ref><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Event<sp/>Type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__SLGlobal_1ga1d1b4192ce3a6703d905d8babb38e3a6" kindref="member">SLGlobalNotifType</ref><sp/>EventType<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>code,<sp/>interpreted<sp/>based<sp/>on<sp/>the<sp/>Event<sp/>Type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>case<sp/>EventType<sp/>==<sp/>SL_GLOBAL_EVENT_TYPE_ERROR:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_NOTIF_TERM:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Another<sp/>client<sp/>is<sp/>attempting<sp/>to<sp/>take<sp/>over<sp/>the<sp/>session.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>session<sp/>will<sp/>be<sp/>closed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>(some<sp/>error<sp/>from<sp/>SLErrorStatus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>must<sp/>look<sp/>into<sp/>the<sp/>specific<sp/>error<sp/>message<sp/>returned.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>case<sp/>EventType<sp/>==<sp/>SL_GLOBAL_EVENT_TYPE_HEARTBEAT:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_SUCCESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>can<sp/>safely<sp/>ignore<sp/>this<sp/>heartbeat<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>case<sp/>EventType<sp/>==<sp/>SL_GLOBAL_EVENT_TYPE_VERSION:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_SUCCESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>version<sp/>accepted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_INIT_STATE_READY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="structSLGlobalsGetMsg" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>version<sp/>accepted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Any<sp/>previous<sp/>state<sp/>was<sp/>sucessfully<sp/>recovered.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_INIT_STATE_CLEAR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="structSLGlobalsGetMsgRsp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>version<sp/>accepted.<sp/>Any<sp/>previous<sp/>state<sp/>was<sp/>lost.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Client<sp/>must<sp/>replay<sp/>all<sp/>previous<sp/>objects<sp/>to<sp/>server.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>SL_UNSUPPORTED_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>and<sp/>Server<sp/>version<sp/>mismatch.<sp/>The<sp/>client<sp/>is<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allowed<sp/>to<sp/>proceed,<sp/>and<sp/>the<sp/>channel<sp/>will<sp/>be<sp/>closed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>ErrStatus<sp/>==<sp/>(some<sp/>error<sp/>from<sp/>SLErrorStatus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>Client<sp/>must<sp/>either<sp/>try<sp/>again,<sp/>or<sp/>look<sp/>into<sp/>the<sp/>specific</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>message<sp/>returned.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Further<sp/>info<sp/>based<sp/>on<sp/>EventType.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>oneof<sp/>Event<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>case<sp/>EventType<sp/>==<sp/>SL_GLOBAL_EVENT_TYPE_VERSION:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>this<sp/>field<sp/>carries<sp/>the<sp/>Server<sp/>version<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structSLInitMsgRsp" kindref="compound">SLInitMsgRsp</ref><sp/>InitRspMsg<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Globals<sp/>query<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">message<sp/><ref refid="structSLGlobalsGetMsg" kindref="compound">SLGlobalsGetMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Platform<sp/>specific<sp/>globals<sp/>Response.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">message<sp/><ref refid="structSLGlobalsGetMsgRsp" kindref="compound">SLGlobalsGetMsgRsp</ref><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Corresponding<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref><sp/>ErrStatus<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>vrf<sp/>name<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxVrfNameLength<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>interface<sp/>name<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxInterfaceNameLength<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>paths<sp/>per<sp/>Route/ILM<sp/>Entry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxPathsPerEntry<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>primary<sp/>paths<sp/>per<sp/>Route/ILM<sp/>Entry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxPrimaryPathPerEntry<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>backup<sp/>paths<sp/>per<sp/>Route/ILM<sp/>Entry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxBackupPathPerEntry<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>MPLS<sp/>labels<sp/>per<sp/>Route/ILM<sp/>Entry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxMplsLabelsPerPath<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minimum<sp/>Primary<sp/>path<sp/>id<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MinPrimaryPathIdNum<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>Primary<sp/>path<sp/>id<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxPrimaryPathIdNum<sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minimum<sp/>Pure<sp/>Backup<sp/>path<sp/>id<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MinBackupPathIdNum<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>Pure<sp/>Backup<sp/>path<sp/>id<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxBackupPathIdNum<sp/>=<sp/>11;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>number<sp/>of<sp/>remote<sp/>addresses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxRemoteAddressNum<sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>Bridge<sp/>Domain<sp/>name<sp/>length<sp/>-<sp/>used<sp/>for<sp/>L2<sp/>routes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxL2BdNameLength<sp/>=<sp/>13;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>Provider<sp/>Multicast<sp/>Service<sp/>Interface<sp/>(PMSI)<sp/>tunnel<sp/>ID<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>for<sp/>L2<sp/>Inclusive<sp/>Multicast<sp/>Ethernet<sp/>Tag<sp/>(IMET)<sp/>routes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxL2PmsiTunnelIdLength<sp/>=<sp/>14;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>label<sp/>block<sp/>client<sp/>name<sp/>length.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>MaxLabelBlockClientNameLength<sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/slapi/grpc/protos/sl_global.proto"/>
+  </compounddef>
+</doxygen>

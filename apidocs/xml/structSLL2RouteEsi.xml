@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2RouteEsi" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2RouteEsi</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2RouteEsi_1a9c77b70e8ecb675038e713b4b1cc7c54" prot="public" static="no" mutable="no">
+        <type>bytes</type>
+        <definition>bytes SLL2RouteEsi::Esi</definition>
+        <argsstring></argsstring>
+        <name>Esi</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>10-bytes long ESI value </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="198" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Ethernet Segment Identifier (ESI) </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="196" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="196" bodyend="199"/>
+    <listofallmembers>
+      <member refid="structSLL2RouteEsi_1a9c77b70e8ecb675038e713b4b1cc7c54" prot="public" virt="non-virtual"><scope>SLL2RouteEsi</scope><name>Esi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

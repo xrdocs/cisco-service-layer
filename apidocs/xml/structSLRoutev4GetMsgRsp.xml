@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev4GetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev4GetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev4GetMsgRsp_1a0634506e966c7f83f11cfca4f999a62c" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLRoutev4GetMsgRsp::Correlator</definition>
+        <argsstring></argsstring>
+        <name>Correlator</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Correlator. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be used to correlate replies with requests. The Server simply reflects this field back in the reply. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="183" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4GetMsgRsp_1a1cd370f15cf95bc56e11b22bb4aed470" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLRoutev4GetMsgRsp::Eof</definition>
+        <argsstring></argsstring>
+        <name>Eof</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>End Of File. </para>        </briefdescription>
+        <detaileddescription>
+<para>When set to True, it indicates that the server has returned M, where M &lt; N, of the original N requested Entries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="187" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4GetMsgRsp_1af892ede66f69d54e3d7d7ad9ef2894d5" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRoutev4GetMsgRsp::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>VRF name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="189" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4GetMsgRsp_1a3b6223722c7a13679cb3edeb77f2309a" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLRoutev4GetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Status of the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="191" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4GetMsgRsp_1a790bf833b988778a8a2f72beb632aa88" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLRoutev4" kindref="compound">SLRoutev4</ref></type>
+        <definition>repeated SLRoutev4 SLRoutev4GetMsgRsp::Entries</definition>
+        <argsstring></argsstring>
+        <name>Entries</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Returned entries as requested in the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>if ErrStatus is SL_SUCCESS, Entries contains the info requested </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="194" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Gt Route message response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="406">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="405">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="402">
+        <label>SLRouteCommon</label>
+        <link refid="structSLRouteCommon"/>
+      </node>
+      <node id="401">
+        <label>SLRoutev4</label>
+        <link refid="structSLRoutev4"/>
+        <childnode refid="402" relation="usage">
+          <edgelabel>RouteCommon</edgelabel>
+        </childnode>
+        <childnode refid="403" relation="usage">
+          <edgelabel>PathList</edgelabel>
+        </childnode>
+      </node>
+      <node id="403">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="404" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="405" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="400">
+        <label>SLRoutev4GetMsgRsp</label>
+        <link refid="structSLRoutev4GetMsgRsp"/>
+        <childnode refid="401" relation="usage">
+          <edgelabel>Entries</edgelabel>
+        </childnode>
+        <childnode refid="406" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="404">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="180" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="180" bodyend="195"/>
+    <listofallmembers>
+      <member refid="structSLRoutev4GetMsgRsp_1a0634506e966c7f83f11cfca4f999a62c" prot="public" virt="non-virtual"><scope>SLRoutev4GetMsgRsp</scope><name>Correlator</name></member>
+      <member refid="structSLRoutev4GetMsgRsp_1a790bf833b988778a8a2f72beb632aa88" prot="public" virt="non-virtual"><scope>SLRoutev4GetMsgRsp</scope><name>Entries</name></member>
+      <member refid="structSLRoutev4GetMsgRsp_1a1cd370f15cf95bc56e11b22bb4aed470" prot="public" virt="non-virtual"><scope>SLRoutev4GetMsgRsp</scope><name>Eof</name></member>
+      <member refid="structSLRoutev4GetMsgRsp_1a3b6223722c7a13679cb3edeb77f2309a" prot="public" virt="non-virtual"><scope>SLRoutev4GetMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLRoutev4GetMsgRsp_1af892ede66f69d54e3d7d7ad9ef2894d5" prot="public" virt="non-virtual"><scope>SLRoutev4GetMsgRsp</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

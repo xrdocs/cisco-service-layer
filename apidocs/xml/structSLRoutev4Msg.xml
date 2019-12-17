@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev4Msg" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev4Msg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev4Msg_1a183e55cf2ed1f3e6be439b5eb62acbaf" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1ga0b166605b901d6e5ad5f7706ac60baf1" kindref="member">SLObjectOp</ref></type>
+        <definition>SLObjectOp SLRoutev4Msg::Oper</definition>
+        <argsstring></argsstring>
+        <name>Oper</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Route Object Operations. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="119" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4Msg_1a65fc2b2d79b65733d444a4b19fe1c78a" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLRoutev4Msg::Correlator</definition>
+        <argsstring></argsstring>
+        <name>Correlator</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Correlator. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be used to correlate replies with requests. The Server simply reflects this field back in the reply. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="122" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4Msg_1a2559f2173723972ffbc5aa4b32b7618c" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRoutev4Msg::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>VRF name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="124" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4Msg_1aa63b61e64138478beddc75820afe1959" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLRoutev4" kindref="compound">SLRoutev4</ref></type>
+        <definition>repeated SLRoutev4 SLRoutev4Msg::Routes</definition>
+        <argsstring></argsstring>
+        <name>Routes</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>List of routes for the VRF specified above. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="126" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>List of routes for bulk download. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="413">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="410">
+        <label>SLRouteCommon</label>
+        <link refid="structSLRouteCommon"/>
+      </node>
+      <node id="408">
+        <label>SLRoutev4Msg</label>
+        <link refid="structSLRoutev4Msg"/>
+        <childnode refid="409" relation="usage">
+          <edgelabel>Routes</edgelabel>
+        </childnode>
+      </node>
+      <node id="409">
+        <label>SLRoutev4</label>
+        <link refid="structSLRoutev4"/>
+        <childnode refid="410" relation="usage">
+          <edgelabel>RouteCommon</edgelabel>
+        </childnode>
+        <childnode refid="411" relation="usage">
+          <edgelabel>PathList</edgelabel>
+        </childnode>
+      </node>
+      <node id="411">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="412" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="413" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="412">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="117" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="117" bodyend="127"/>
+    <listofallmembers>
+      <member refid="structSLRoutev4Msg_1a65fc2b2d79b65733d444a4b19fe1c78a" prot="public" virt="non-virtual"><scope>SLRoutev4Msg</scope><name>Correlator</name></member>
+      <member refid="structSLRoutev4Msg_1a183e55cf2ed1f3e6be439b5eb62acbaf" prot="public" virt="non-virtual"><scope>SLRoutev4Msg</scope><name>Oper</name></member>
+      <member refid="structSLRoutev4Msg_1aa63b61e64138478beddc75820afe1959" prot="public" virt="non-virtual"><scope>SLRoutev4Msg</scope><name>Routes</name></member>
+      <member refid="structSLRoutev4Msg_1a2559f2173723972ffbc5aa4b32b7618c" prot="public" virt="non-virtual"><scope>SLRoutev4Msg</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

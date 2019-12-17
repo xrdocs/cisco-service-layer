@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2RegMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2RegMsg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2RegMsg_1a2fff103acb65bd4089ed88094f53c0f9" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1gabcd5b7bdb1e75e62f586e079e924f896" kindref="member">SLRegOp</ref></type>
+        <definition>SLRegOp SLL2RegMsg::Oper</definition>
+        <argsstring></argsstring>
+        <name>Oper</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Registration Operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="137" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RegMsg_1a432acc0468b51f4eb144d48bbc8bba3e" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLL2RegMsg::AdminDistance</definition>
+        <argsstring></argsstring>
+        <name>AdminDistance</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Default Admin distance for routes programmed by this application. </para>        </briefdescription>
+        <detaileddescription>
+<para>Range [0-255]. If the client does not need to program routes, set this value to 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="141" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RegMsg_1a2de7c6f564c62ae7ce7cc195d463668d" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLL2RegMsg::PurgeIntervalSeconds</definition>
+        <argsstring></argsstring>
+        <name>PurgeIntervalSeconds</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>In case Service Layer -&gt; L2RIB connection is lost, this specifies the timeout period after which L2RIB will automatically purge the installed routes, unless the service layer: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>Re-registers.</para></listitem><listitem><para>Replay all routes.</para></listitem><listitem><para>And send EOF, before the purge timeout. If the client does not need to program routes, set this value to 0. </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="149" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global L2 Registration Message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="135" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="135" bodyend="150"/>
+    <listofallmembers>
+      <member refid="structSLL2RegMsg_1a432acc0468b51f4eb144d48bbc8bba3e" prot="public" virt="non-virtual"><scope>SLL2RegMsg</scope><name>AdminDistance</name></member>
+      <member refid="structSLL2RegMsg_1a2fff103acb65bd4089ed88094f53c0f9" prot="public" virt="non-virtual"><scope>SLL2RegMsg</scope><name>Oper</name></member>
+      <member refid="structSLL2RegMsg_1a2de7c6f564c62ae7ce7cc195d463668d" prot="public" virt="non-virtual"><scope>SLL2RegMsg</scope><name>PurgeIntervalSeconds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

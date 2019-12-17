@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdCommonState" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdCommonState</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7" prot="public" static="no">
+        <name>SLBfdStateEnum</name>
+        <enumvalue id="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a1e3417d4cefb3026ef03f57a09f1277e" prot="public">
+          <name>SL_BFD_SESSION_STATE_UNKNOWN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Session never established. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a874e749a92e4f4318cb465322b305539" prot="public">
+          <name>SL_BFD_SESSION_UP</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Session state UP. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a4d98638143dc54526b285ef0c0bbe5e6" prot="public">
+          <name>SL_BFD_SESSION_DOWN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Session state is down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a4437f7ab81690e9c96aa8c8000d12789" prot="public">
+          <name>SL_BFD_NEIGHBOR_UNCONFIG</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Neighbor&apos;s config was removed. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>BFD state information. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="94" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="94" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="enum" id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9" prot="public" static="no">
+        <name>SLBfdDiagStateEnum</name>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9ab4561f1c1d42f9cee6a179d8c1c8b9a3" prot="public">
+          <name>SL_BFD_DIAG_NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Diag Value <ndash/> Value Meaning No diagnostic. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a0e24c2491e0c66d5be636e230e036737" prot="public">
+          <name>SL_BFD_DIAG_DETECT_EXPIRED</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Control detection time expired. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a2f7b614ee11cc64b7b7b4a94aeedad90" prot="public">
+          <name>SL_BFD_DIAG_NBR_DOWN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Neighbor signaled session down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a1c2bf6d1e2a49fe13806f0999ee92ef2" prot="public">
+          <name>SL_BFD_DIAG_PATH_DOWN</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Path down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a04567a6091d1727d09b2912c7644eca7" prot="public">
+          <name>SL_BFD_DIAG_FWDING_PLANE_RESET</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Forwarding plane reset. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9ac6246384af9e7ed06cc502f404015874" prot="public">
+          <name>SL_BFD_DIAG_ADMIN_DOWN</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>Administratively down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a011250efb7643873f86849389ed9ce5a" prot="public">
+          <name>SL_BFD_DIAG_REV_CONC_PATH_DOWN</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Reverse Concatenated Path Down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a51882cc6a3c058f2b6b746d18a46e363" prot="public">
+          <name>SL_BFD_DIAG_ECHO_FUNCTION_FAILED</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>Echo Function Failed. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9aeb8e33060930c774e8208a04ebeb4311" prot="public">
+          <name>SL_BFD_DIAG_CONC_PATH_DOWN</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>Concatenated Path Down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>BFD diagnostic indicates the reason for the last transition of the local protocol from up to some other state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="108" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="108" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLBfdCommonState_1a361197a25f86af3e41803eb7b40f843d" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLBfdCommonState::SeqNum</definition>
+        <argsstring></argsstring>
+        <name>SeqNum</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Global BFD event sequence number. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is used to order various events The sequence number is equivalent to a timestamp </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="92" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdCommonState_1a6c35da0e6b566b05f73c0898933ea812" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7" kindref="member">SLBfdStateEnum</ref></type>
+        <definition>SLBfdStateEnum SLBfdCommonState::Status</definition>
+        <argsstring></argsstring>
+        <name>Status</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="105" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdCommonState_1a5cf1d214fd4cf90a898a5ef115205987" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9" kindref="member">SLBfdDiagStateEnum</ref></type>
+        <definition>SLBfdDiagStateEnum SLBfdCommonState::Diag</definition>
+        <argsstring></argsstring>
+        <name>Diag</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="129" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD state information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="89" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="89" bodyend="130"/>
+    <listofallmembers>
+      <member refid="structSLBfdCommonState_1a5cf1d214fd4cf90a898a5ef115205987" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>Diag</name></member>
+      <member refid="structSLBfdCommonState_1a361197a25f86af3e41803eb7b40f843d" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SeqNum</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9ac6246384af9e7ed06cc502f404015874" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_ADMIN_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9aeb8e33060930c774e8208a04ebeb4311" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_CONC_PATH_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a0e24c2491e0c66d5be636e230e036737" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_DETECT_EXPIRED</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a51882cc6a3c058f2b6b746d18a46e363" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_ECHO_FUNCTION_FAILED</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a04567a6091d1727d09b2912c7644eca7" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_FWDING_PLANE_RESET</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a2f7b614ee11cc64b7b7b4a94aeedad90" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_NBR_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9ab4561f1c1d42f9cee6a179d8c1c8b9a3" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_NONE</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a1c2bf6d1e2a49fe13806f0999ee92ef2" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_PATH_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9a011250efb7643873f86849389ed9ce5a" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_DIAG_REV_CONC_PATH_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a4437f7ab81690e9c96aa8c8000d12789" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_NEIGHBOR_UNCONFIG</name></member>
+      <member refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a4d98638143dc54526b285ef0c0bbe5e6" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_SESSION_DOWN</name></member>
+      <member refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a1e3417d4cefb3026ef03f57a09f1277e" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_SESSION_STATE_UNKNOWN</name></member>
+      <member refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7a874e749a92e4f4318cb465322b305539" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SL_BFD_SESSION_UP</name></member>
+      <member refid="structSLBfdCommonState_1a8f2d89a2cb5d1504bdf24c678b3bb5a9" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SLBfdDiagStateEnum</name></member>
+      <member refid="structSLBfdCommonState_1af5f6e48cbf878e29c83de30e13fb4bf7" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>SLBfdStateEnum</name></member>
+      <member refid="structSLBfdCommonState_1a6c35da0e6b566b05f73c0898933ea812" prot="public" virt="non-virtual"><scope>SLBfdCommonState</scope><name>Status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

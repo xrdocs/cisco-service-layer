@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLInitMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLInitMsg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLInitMsg_1a151a844e5cc3d436a0d8a5d74b299bb4" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLInitMsg::MajorVer</definition>
+        <argsstring></argsstring>
+        <name>MajorVer</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Client&apos;s Major version of service-layer API (refer to <ref refid="sl__version_8proto" kindref="compound">sl_version.proto</ref>) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="52" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInitMsg_1a98cf29878c41e3fe660d7e74f97433e9" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLInitMsg::MinorVer</definition>
+        <argsstring></argsstring>
+        <name>MinorVer</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Minor Version. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="54" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLInitMsg_1a4ecfda129f1a038b49d466ac5eccbc02" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLInitMsg::SubVer</definition>
+        <argsstring></argsstring>
+        <name>SubVer</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Sub-Version. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="56" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Initialization message sent to the server. </para>    </briefdescription>
+    <detaileddescription>
+<para>If the client and server are running compatible version numbers, a connection will be made and the server response will be received with a successful status code. </para>    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_global.proto" line="50" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="50" bodyend="57"/>
+    <listofallmembers>
+      <member refid="structSLInitMsg_1a151a844e5cc3d436a0d8a5d74b299bb4" prot="public" virt="non-virtual"><scope>SLInitMsg</scope><name>MajorVer</name></member>
+      <member refid="structSLInitMsg_1a98cf29878c41e3fe660d7e74f97433e9" prot="public" virt="non-virtual"><scope>SLInitMsg</scope><name>MinorVer</name></member>
+      <member refid="structSLInitMsg_1a4ecfda129f1a038b49d466ac5eccbc02" prot="public" virt="non-virtual"><scope>SLInitMsg</scope><name>SubVer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

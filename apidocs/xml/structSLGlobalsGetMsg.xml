@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLGlobalsGetMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLGlobalsGetMsg</compoundname>
+    <briefdescription>
+<para>Globals query message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_global.proto" line="124" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="124" bodyend="125"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLGlobalsGetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLGlobalsGetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a41ff15b2e0166ead9d0b3c17aa9d5e69" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLGlobalsGetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="129" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1ac1c57d83b88a7650f09c5c9b94994d0d" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxVrfNameLength</definition>
+        <argsstring></argsstring>
+        <name>MaxVrfNameLength</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Maximum vrf name length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="131" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a3581c9e179feab8236c8df5236500d94" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxInterfaceNameLength</definition>
+        <argsstring></argsstring>
+        <name>MaxInterfaceNameLength</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Maximum interface name length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="133" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a6621d5727b5777593d784bf65203a481" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxPathsPerEntry</definition>
+        <argsstring></argsstring>
+        <name>MaxPathsPerEntry</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Maximum paths per Route/ILM Entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="135" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a55ac05df2434a8194909db1b33be75bc" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxPrimaryPathPerEntry</definition>
+        <argsstring></argsstring>
+        <name>MaxPrimaryPathPerEntry</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Maximum primary paths per Route/ILM Entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="137" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a7115861048dac4d1c5d25f5b1858fe43" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxBackupPathPerEntry</definition>
+        <argsstring></argsstring>
+        <name>MaxBackupPathPerEntry</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Maximum backup paths per Route/ILM Entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="139" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a2bc6a0c2c61698587e6dd93156d91fc2" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxMplsLabelsPerPath</definition>
+        <argsstring></argsstring>
+        <name>MaxMplsLabelsPerPath</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>Maximum MPLS labels per Route/ILM Entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="141" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a4b8690e6fccaef4de3ee58a347b48980" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MinPrimaryPathIdNum</definition>
+        <argsstring></argsstring>
+        <name>MinPrimaryPathIdNum</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Minimum Primary path id number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="143" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1ab3acd829c5013106ab1642760cf63b6d" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxPrimaryPathIdNum</definition>
+        <argsstring></argsstring>
+        <name>MaxPrimaryPathIdNum</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>Maximum Primary path id number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="145" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a172bef501f534559599d65b4b507466a" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MinBackupPathIdNum</definition>
+        <argsstring></argsstring>
+        <name>MinBackupPathIdNum</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Minimum Pure Backup path id number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="147" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a2d520e499b0c1e5d7d6019bfb30431f9" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxBackupPathIdNum</definition>
+        <argsstring></argsstring>
+        <name>MaxBackupPathIdNum</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+<para>Maximum Pure Backup path id number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="149" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a5ebbcfe1740e44836f4093692a8835b8" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxRemoteAddressNum</definition>
+        <argsstring></argsstring>
+        <name>MaxRemoteAddressNum</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+<para>Maximum number of remote addresses. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="151" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a67fc414ebfd31e62fab5935f6b6072f9" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxL2BdNameLength</definition>
+        <argsstring></argsstring>
+        <name>MaxL2BdNameLength</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+<para>Maximum Bridge Domain name length - used for L2 routes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="153" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a827e8285cf495c10ce574bae86fba1e1" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxL2PmsiTunnelIdLength</definition>
+        <argsstring></argsstring>
+        <name>MaxL2PmsiTunnelIdLength</name>
+        <initializer>= 14</initializer>
+        <briefdescription>
+<para>Maximum Provider Multicast Service Interface (PMSI) tunnel ID length. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used for L2 Inclusive Multicast Ethernet Tag (IMET) routes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="156" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLGlobalsGetMsgRsp_1a0dcc6023543856b7d9653a35bc06d19e" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLGlobalsGetMsgRsp::MaxLabelBlockClientNameLength</definition>
+        <argsstring></argsstring>
+        <name>MaxLabelBlockClientNameLength</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+<para>Maximum label block client name length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_global.proto" line="158" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Platform specific globals Response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="136">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="135">
+        <label>SLGlobalsGetMsgRsp</label>
+        <link refid="structSLGlobalsGetMsgRsp"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_global.proto" line="127" column="1" bodyfile="/slapi/grpc/protos/sl_global.proto" bodystart="127" bodyend="159"/>
+    <listofallmembers>
+      <member refid="structSLGlobalsGetMsgRsp_1a41ff15b2e0166ead9d0b3c17aa9d5e69" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a2d520e499b0c1e5d7d6019bfb30431f9" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxBackupPathIdNum</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a7115861048dac4d1c5d25f5b1858fe43" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxBackupPathPerEntry</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a3581c9e179feab8236c8df5236500d94" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxInterfaceNameLength</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a67fc414ebfd31e62fab5935f6b6072f9" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxL2BdNameLength</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a827e8285cf495c10ce574bae86fba1e1" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxL2PmsiTunnelIdLength</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a0dcc6023543856b7d9653a35bc06d19e" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxLabelBlockClientNameLength</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a2bc6a0c2c61698587e6dd93156d91fc2" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxMplsLabelsPerPath</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a6621d5727b5777593d784bf65203a481" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxPathsPerEntry</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1ab3acd829c5013106ab1642760cf63b6d" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxPrimaryPathIdNum</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a55ac05df2434a8194909db1b33be75bc" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxPrimaryPathPerEntry</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a5ebbcfe1740e44836f4093692a8835b8" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxRemoteAddressNum</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1ac1c57d83b88a7650f09c5c9b94994d0d" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MaxVrfNameLength</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a172bef501f534559599d65b4b507466a" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MinBackupPathIdNum</name></member>
+      <member refid="structSLGlobalsGetMsgRsp_1a4b8690e6fccaef4de3ee58a347b48980" prot="public" virt="non-virtual"><scope>SLGlobalsGetMsgRsp</scope><name>MinPrimaryPathIdNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

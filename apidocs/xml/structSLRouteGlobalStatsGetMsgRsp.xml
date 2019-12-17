@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRouteGlobalStatsGetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLRouteGlobalStatsGetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRouteGlobalStatsGetMsgRsp_1a5f4372403b7168c60caabb57081836c9" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLRouteGlobalStatsGetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="41" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRouteGlobalStatsGetMsgRsp_1aa5ad04924ee92ae5c0a56c80fe912485" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRouteGlobalStatsGetMsgRsp::VrfCount</definition>
+        <argsstring></argsstring>
+        <name>VrfCount</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Num VRFs registered through the service layer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="43" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRouteGlobalStatsGetMsgRsp_1adcbbaec079e2c6d5066acbf300914a24" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRouteGlobalStatsGetMsgRsp::RouteCount</definition>
+        <argsstring></argsstring>
+        <name>RouteCount</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Num Routes added through the service layer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="45" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Route Global Stats Get Message Response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="381">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="380">
+        <label>SLRouteGlobalStatsGetMsgRsp</label>
+        <link refid="structSLRouteGlobalStatsGetMsgRsp"/>
+        <childnode refid="381" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_common.proto" line="39" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="39" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structSLRouteGlobalStatsGetMsgRsp_1a5f4372403b7168c60caabb57081836c9" prot="public" virt="non-virtual"><scope>SLRouteGlobalStatsGetMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLRouteGlobalStatsGetMsgRsp_1adcbbaec079e2c6d5066acbf300914a24" prot="public" virt="non-virtual"><scope>SLRouteGlobalStatsGetMsgRsp</scope><name>RouteCount</name></member>
+      <member refid="structSLRouteGlobalStatsGetMsgRsp_1aa5ad04924ee92ae5c0a56c80fe912485" prot="public" virt="non-virtual"><scope>SLRouteGlobalStatsGetMsgRsp</scope><name>VrfCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

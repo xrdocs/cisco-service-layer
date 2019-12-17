@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev6Res" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev6Res</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev6Res_1ae60f905e957d8945178d47a178b104b6" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLRoutev6Res::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="129" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Res_1af9c9a52744d57750529695938ea397fc" prot="public" static="no" mutable="no">
+        <type>bytes</type>
+        <definition>bytes SLRoutev6Res::Prefix</definition>
+        <argsstring></argsstring>
+        <name>Prefix</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>IPv6 Prefix. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="131" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Res_1a740d965a61296c757d8cd0f3b0e6c924" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutev6Res::PrefixLen</definition>
+        <argsstring></argsstring>
+        <name>PrefixLen</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>IPv6 prefix length, [0-32]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="133" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>IPv6 route result, uniquely identified by the Prefix/PrefixLen pair. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="488">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="487">
+        <label>SLRoutev6Res</label>
+        <link refid="structSLRoutev6Res"/>
+        <childnode refid="488" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="127" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="127" bodyend="134"/>
+    <listofallmembers>
+      <member refid="structSLRoutev6Res_1ae60f905e957d8945178d47a178b104b6" prot="public" virt="non-virtual"><scope>SLRoutev6Res</scope><name>ErrStatus</name></member>
+      <member refid="structSLRoutev6Res_1af9c9a52744d57750529695938ea397fc" prot="public" virt="non-virtual"><scope>SLRoutev6Res</scope><name>Prefix</name></member>
+      <member refid="structSLRoutev6Res_1a740d965a61296c757d8cd0f3b0e6c924" prot="public" virt="non-virtual"><scope>SLRoutev6Res</scope><name>PrefixLen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

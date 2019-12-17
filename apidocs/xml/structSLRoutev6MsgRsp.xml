@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev6MsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev6MsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev6MsgRsp_1a9f1055245064885c60807d740579c008" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLRoutev6MsgRsp::Correlator</definition>
+        <argsstring></argsstring>
+        <name>Correlator</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Correlator. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be used to correlate replies with requests. The Server simply reflects this field back in the reply. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="139" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6MsgRsp_1a0f1d3caabf3a3fa6a5d95c130600f5e4" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRoutev6MsgRsp::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>VRF name (matches the VRF name of the original operation) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="141" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6MsgRsp_1a97f376b5e8d72e5cf0d523ef88328962" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLRoutev6MsgRsp::StatusSummary</definition>
+        <argsstring></argsstring>
+        <name>StatusSummary</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Summary result of the bulk operation (refer to enum <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) In general, the StatusSummary implies one of 3 things: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>SL_SUCCESS: signifies that the entire bulk operation was successful. In this case, the Results list is empty.</para></listitem><listitem><para>SL_SOME_ERR: signifies that the operation failed for one or more entries. In this case, Results holds the result for each individual entry in the bulk.</para></listitem><listitem><para>SL_RPC_XXX: signifies that the entire bulk operation failed. In this case, the Results list is empty. </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="151" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6MsgRsp_1a06bd30d6d8c5abe3010a86d06c03191f" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLRoutev6Res" kindref="compound">SLRoutev6Res</ref></type>
+        <definition>repeated SLRoutev6Res SLRoutev6MsgRsp::Results</definition>
+        <argsstring></argsstring>
+        <name>Results</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>In case of errors, this field indicates which entry in the bulk was erroneous. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="154" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>IPv6 bulk route result status. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="466">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="465">
+        <label>SLRoutev6Res</label>
+        <link refid="structSLRoutev6Res"/>
+        <childnode refid="466" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="464">
+        <label>SLRoutev6MsgRsp</label>
+        <link refid="structSLRoutev6MsgRsp"/>
+        <childnode refid="465" relation="usage">
+          <edgelabel>Results</edgelabel>
+        </childnode>
+        <childnode refid="466" relation="usage">
+          <edgelabel>StatusSummary</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="136" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="136" bodyend="155"/>
+    <listofallmembers>
+      <member refid="structSLRoutev6MsgRsp_1a9f1055245064885c60807d740579c008" prot="public" virt="non-virtual"><scope>SLRoutev6MsgRsp</scope><name>Correlator</name></member>
+      <member refid="structSLRoutev6MsgRsp_1a06bd30d6d8c5abe3010a86d06c03191f" prot="public" virt="non-virtual"><scope>SLRoutev6MsgRsp</scope><name>Results</name></member>
+      <member refid="structSLRoutev6MsgRsp_1a97f376b5e8d72e5cf0d523ef88328962" prot="public" virt="non-virtual"><scope>SLRoutev6MsgRsp</scope><name>StatusSummary</name></member>
+      <member refid="structSLRoutev6MsgRsp_1a0f1d3caabf3a3fa6a5d95c130600f5e4" prot="public" virt="non-virtual"><scope>SLRoutev6MsgRsp</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

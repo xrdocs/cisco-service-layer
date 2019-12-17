@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2RouteMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2RouteMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2RouteMsgRsp_1a0ecdcefb4240df8fe0b579861f374be4" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLL2RouteMsgRsp::Correlator</definition>
+        <argsstring></argsstring>
+        <name>Correlator</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Correlator. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be used to correlate replies with requests. The Server simply reflects this field back in the reply. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="354" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RouteMsgRsp_1a99acc8e421969ca6bb6dfbf66d0ad033" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLL2RouteMsgRsp::StatusSummary</definition>
+        <argsstring></argsstring>
+        <name>StatusSummary</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Summary result of the bulk operation (refer to enum <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) In general, the StatusSummary implies one of 3 things: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>SL_SUCCESS: signifies that the entire bulk operation was successful. In this case, the Results list is empty.</para></listitem><listitem><para>SL_SOME_ERR: signifies that the operation failed for one or more entries. In this case, Results holds the result for each individual entry in the bulk.</para></listitem><listitem><para>SL_RPC_XXX: signifies that the entire bulk operation failed. In this case, the Results list is empty. </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="364" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RouteMsgRsp_1a07b2fb5de0b61306ccc407ecf54e44f8" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLL2RouteRes" kindref="compound">SLL2RouteRes</ref></type>
+        <definition>repeated SLL2RouteRes SLL2RouteMsgRsp::Results</definition>
+        <argsstring></argsstring>
+        <name>Results</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>In case of errors, this field indicates which entry in the bulk was erroneous. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="367" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>L2 bulk download response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="264">
+        <label>SLL2RouteKey</label>
+        <link refid="structSLL2RouteKey"/>
+        <childnode refid="265" relation="usage">
+          <edgelabel>ImetKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="263">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="262">
+        <label>SLL2RouteRes</label>
+        <link refid="structSLL2RouteRes"/>
+        <childnode refid="263" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="264" relation="usage">
+          <edgelabel>RouteKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="265">
+        <label>SLL2ImetRouteKey</label>
+        <link refid="structSLL2ImetRouteKey"/>
+        <childnode refid="266" relation="usage">
+          <edgelabel>IpAddress</edgelabel>
+        </childnode>
+      </node>
+      <node id="261">
+        <label>SLL2RouteMsgRsp</label>
+        <link refid="structSLL2RouteMsgRsp"/>
+        <childnode refid="262" relation="usage">
+          <edgelabel>Results</edgelabel>
+        </childnode>
+        <childnode refid="263" relation="usage">
+          <edgelabel>StatusSummary</edgelabel>
+        </childnode>
+      </node>
+      <node id="266">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="351" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="351" bodyend="368"/>
+    <listofallmembers>
+      <member refid="structSLL2RouteMsgRsp_1a0ecdcefb4240df8fe0b579861f374be4" prot="public" virt="non-virtual"><scope>SLL2RouteMsgRsp</scope><name>Correlator</name></member>
+      <member refid="structSLL2RouteMsgRsp_1a07b2fb5de0b61306ccc407ecf54e44f8" prot="public" virt="non-virtual"><scope>SLL2RouteMsgRsp</scope><name>Results</name></member>
+      <member refid="structSLL2RouteMsgRsp_1a99acc8e421969ca6bb6dfbf66d0ad033" prot="public" virt="non-virtual"><scope>SLL2RouteMsgRsp</scope><name>StatusSummary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

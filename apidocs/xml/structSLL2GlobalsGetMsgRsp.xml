@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2GlobalsGetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2GlobalsGetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2GlobalsGetMsgRsp_1a6b5ab4241fb1a9236654e874cc0eb79d" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLL2GlobalsGetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="128" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2GlobalsGetMsgRsp_1ac49f85ccb6e93b09a93d8c4ca522ec00" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLL2GlobalsGetMsgRsp::MaxBdRegPerBdRegmsg</definition>
+        <argsstring></argsstring>
+        <name>MaxBdRegPerBdRegmsg</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Max BD registration objects within a single BdRegMsg. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="130" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2GlobalsGetMsgRsp_1a948e44366214f47a356a4b8b7efbe531" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLL2GlobalsGetMsgRsp::MaxRoutePerRoutemsg</definition>
+        <argsstring></argsstring>
+        <name>MaxRoutePerRoutemsg</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Max Route objects within a single RouteMsg. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="132" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>L2 Route Globals Get Message Response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="204">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="203">
+        <label>SLL2GlobalsGetMsgRsp</label>
+        <link refid="structSLL2GlobalsGetMsgRsp"/>
+        <childnode refid="204" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="126" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="126" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structSLL2GlobalsGetMsgRsp_1a6b5ab4241fb1a9236654e874cc0eb79d" prot="public" virt="non-virtual"><scope>SLL2GlobalsGetMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLL2GlobalsGetMsgRsp_1ac49f85ccb6e93b09a93d8c4ca522ec00" prot="public" virt="non-virtual"><scope>SLL2GlobalsGetMsgRsp</scope><name>MaxBdRegPerBdRegmsg</name></member>
+      <member refid="structSLL2GlobalsGetMsgRsp_1a948e44366214f47a356a4b8b7efbe531" prot="public" virt="non-virtual"><scope>SLL2GlobalsGetMsgRsp</scope><name>MaxRoutePerRoutemsg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

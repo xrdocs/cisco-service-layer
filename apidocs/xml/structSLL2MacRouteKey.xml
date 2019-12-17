@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2MacRouteKey" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2MacRouteKey</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2MacRouteKey_1a64be560f9fe7224d7200b86846d5e4d4" prot="public" static="no" mutable="no">
+        <type>bytes</type>
+        <definition>bytes SLL2MacRouteKey::MacAddress</definition>
+        <argsstring></argsstring>
+        <name>MacAddress</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Mac address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="242" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2MacRouteKey_1af39a0be21ce6459e8b2d9ff60d92548c" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref></type>
+        <definition>SLIpAddress SLL2MacRouteKey::IpAddress</definition>
+        <argsstring></argsstring>
+        <name>IpAddress</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>IP address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="244" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MAC route key. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="220">
+        <label>SLL2MacRouteKey</label>
+        <link refid="structSLL2MacRouteKey"/>
+        <childnode refid="221" relation="usage">
+          <edgelabel>IpAddress</edgelabel>
+        </childnode>
+      </node>
+      <node id="221">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="240" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="240" bodyend="245"/>
+    <listofallmembers>
+      <member refid="structSLL2MacRouteKey_1af39a0be21ce6459e8b2d9ff60d92548c" prot="public" virt="non-virtual"><scope>SLL2MacRouteKey</scope><name>IpAddress</name></member>
+      <member refid="structSLL2MacRouteKey_1a64be560f9fe7224d7200b86846d5e4d4" prot="public" virt="non-virtual"><scope>SLL2MacRouteKey</scope><name>MacAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

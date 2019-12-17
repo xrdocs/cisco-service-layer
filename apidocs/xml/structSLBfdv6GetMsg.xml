@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv6GetMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv6GetMsg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga8c075ec2234bd537638b5e6a4737414c" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdv6Key" kindref="compound">SLBfdv6Key</ref></type>
+        <definition>SLBfdv6Key SLBfdv6GetMsg::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD key. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the Key is not specified, then request up to the first &apos;EntriesCount&apos; entries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="129" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga9a4fb38763ee7c0ec705693d0f58f035" prot="public" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 SLBfdv6GetMsg::SeqNum</definition>
+        <argsstring></argsstring>
+        <name>SeqNum</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Global BFD event sequence number. </para>        </briefdescription>
+        <detaileddescription>
+<para>Return all BFD sessions with sequence number &gt;= SeqNum. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="132" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga0007b494f72271f2b8810c87cc57b4a2" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdv6GetMsg::EntriesCount</definition>
+        <argsstring></argsstring>
+        <name>EntriesCount</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Number of entries requested. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="134" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1ga431378aed4293564326b117f3e38dda0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLBfdv6GetMsg::GetNext</definition>
+        <argsstring></argsstring>
+        <name>GetNext</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>if GetNext is FALSE: request up to &apos;EntriesCount&apos; entries starting from the key If GetNext is TRUE, or if the key exact match is not found: request up to &apos;EntriesCount&apos; entries starting from the key&apos;s next </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="139" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD Get Message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="74">
+        <label>SLBfdv6GetMsg</label>
+        <link refid="structSLBfdv6GetMsg"/>
+        <childnode refid="75" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>SLBfdv6Key</label>
+        <link refid="structSLBfdv6Key"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="76">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="125" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="125" bodyend="140"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv6Oper_1ga0007b494f72271f2b8810c87cc57b4a2" prot="public" virt="non-virtual"><scope>SLBfdv6GetMsg</scope><name>EntriesCount</name></member>
+      <member refid="group__SLBfdIPv6Oper_1ga431378aed4293564326b117f3e38dda0" prot="public" virt="non-virtual"><scope>SLBfdv6GetMsg</scope><name>GetNext</name></member>
+      <member refid="group__SLBfdIPv6Oper_1ga8c075ec2234bd537638b5e6a4737414c" prot="public" virt="non-virtual"><scope>SLBfdv6GetMsg</scope><name>Key</name></member>
+      <member refid="group__SLBfdIPv6Oper_1ga9a4fb38763ee7c0ec705693d0f58f035" prot="public" virt="non-virtual"><scope>SLBfdv6GetMsg</scope><name>SeqNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__SLRouteIPv6Oper" kind="group">
+    <compoundname>SLRouteIPv6Oper</compoundname>
+    <title>SLRouteIPv6Oper</title>
+    <innerclass refid="structSLRoutev6" prot="public">SLRoutev6</innerclass>
+    <innerclass refid="structSLRoutev6Msg" prot="public">SLRoutev6Msg</innerclass>
+    <innerclass refid="structSLRoutev6Res" prot="public">SLRoutev6Res</innerclass>
+    <innerclass refid="structSLRoutev6MsgRsp" prot="public">SLRoutev6MsgRsp</innerclass>
+    <innerclass refid="structSLRoutev6GetMsg" prot="public">SLRoutev6GetMsg</innerclass>
+    <innerclass refid="structSLRoutev6GetMsgRsp" prot="public">SLRoutev6GetMsgRsp</innerclass>
+    <innerclass refid="structSLRoutev6NotifRoute" prot="public">SLRoutev6NotifRoute</innerclass>
+    <innerclass refid="structSLRoutev6Notif" prot="public">SLRoutev6Notif</innerclass>
+    <innernamespace refid="namespaceSLRoutev6Oper">SLRoutev6Oper</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga9d909f2247bea4d71125d819c1ac1bde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6GlobalsGet</definition>
+        <argsstring>(SLRouteGlobalsGetMsg) returns(SLRouteGlobalsGetMsgRsp)</argsstring>
+        <name>SLRoutev6GlobalsGet</name>
+        <param>
+          <type><ref refid="structSLRouteGlobalsGetMsg" kindref="compound">SLRouteGlobalsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Global Route operations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to retrieve Global Route information </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga52af3ef6adfa47cad958c739a4d3574d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6GlobalStatsGet</definition>
+        <argsstring>(SLRouteGlobalStatsGetMsg) returns(SLRouteGlobalStatsGetMsgRsp)</argsstring>
+        <name>SLRoutev6GlobalStatsGet</name>
+        <param>
+          <type><ref refid="structSLRouteGlobalStatsGetMsg" kindref="compound">SLRouteGlobalStatsGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve Global Route Stats. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga509e6dfb5c3a3f3887755658b3a3bb31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6VrfRegOp</definition>
+        <argsstring>(SLVrfRegMsg) returns(SLVrfRegMsgRsp)</argsstring>
+        <name>SLRoutev6VrfRegOp</name>
+        <param>
+          <type><ref refid="structSLVrfRegMsg" kindref="compound">SLVrfRegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>VRF registration operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLVrfRegMsg_1a177c43ef7fd6f54f9efe2c34f83e2133" kindref="member">SLVrfRegMsg.Oper</ref> = SL_REGOP_REGISTER: VRF registration: Sends a list of VRF registration messages and expects a list of registration responses. A client Must Register a VRF BEFORE routes can be added/modified in the associated VRF.</para><para><ref refid="structSLVrfRegMsg_1a177c43ef7fd6f54f9efe2c34f83e2133" kindref="member">SLVrfRegMsg.Oper</ref> = SL_REGOP_UNREGISTER: VRF Un-registeration: Sends a list of VRF un-registration messages and expects a list of un-registration responses. This can be used to convey that the client is no longer interested in this VRF. All previously installed routes would be lost.</para><para><ref refid="structSLVrfRegMsg_1a177c43ef7fd6f54f9efe2c34f83e2133" kindref="member">SLVrfRegMsg.Oper</ref> = SL_REGOP_EOF: VRF End Of File message. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their Routes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1gadede8f395a7262b115ed5ddf73672361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6VrfRegGet</definition>
+        <argsstring>(SLVrfRegGetMsg) returns(SLVrfRegGetMsgRsp)</argsstring>
+        <name>SLRoutev6VrfRegGet</name>
+        <param>
+          <type><ref refid="structSLVrfRegGetMsg" kindref="compound">SLVrfRegGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>VRF get. Used to retrieve VRF attributes from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1gab1b15df7126c394ae63fea8e6922303b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6VrfGetStats</definition>
+        <argsstring>(SLVrfRegGetMsg) returns(SLVRFGetStatsMsgRsp)</argsstring>
+        <name>SLRoutev6VrfGetStats</name>
+        <param>
+          <type><ref refid="structSLVrfRegGetMsg" kindref="compound">SLVrfRegGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve VRF Stats from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga624a2a2adae552d7be9b636bdd8942c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6Op</definition>
+        <argsstring>(SLRoutev6Msg) returns(SLRoutev6MsgRsp)</argsstring>
+        <name>SLRoutev6Op</name>
+        <param>
+          <type><ref refid="structSLRoutev6Msg" kindref="compound">SLRoutev6Msg</ref></type>
+        </param>
+        <briefdescription>
+<para>Route operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_ADD: Route add. Fails if the route already exists.</para><para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_UPDATE: Route update. Creates or updates the route.</para><para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_DELETE: Route delete. The route path is not necessary to delete the route. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga7ea8a35c16976f68ea54bbab687be698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6Get</definition>
+        <argsstring>(SLRoutev6GetMsg) returns(SLRoutev6GetMsgRsp)</argsstring>
+        <name>SLRoutev6Get</name>
+        <param>
+          <type><ref refid="structSLRoutev6GetMsg" kindref="compound">SLRoutev6GetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieves route attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1gab93235a875dd3f0852c6d6304a42d929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6OpStream</definition>
+        <argsstring>(stream SLRoutev6Msg) returns(stream SLRoutev6MsgRsp)</argsstring>
+        <name>SLRoutev6OpStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLRoutev6Msg</declname>
+        </param>
+        <briefdescription>
+<para>Stream Route operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_ADD: Route add. Fails if the route already exists.</para><para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_UPDATE: Route update. Creates or updates the route.</para><para><ref refid="structSLRoutev6Msg_1a10af36a18712568e80210498cc1ca109" kindref="member">SLRoutev6Msg.Oper</ref> = SL_OBJOP_DELETE: Route delete. The route path is not necessary to delete the route. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga6ca1f2e9087d1fd05788b988d4558501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6GetStream</definition>
+        <argsstring>(stream SLRoutev6GetMsg) returns(stream SLRoutev6GetMsgRsp)</argsstring>
+        <name>SLRoutev6GetStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLRoutev6GetMsg</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves route attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLRouteIPv6Oper_1ga4349a28676c5c3577fdc14f57372be9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLRoutev6Oper::SLRoutev6GetNotifStream</definition>
+        <argsstring>(stream SLRouteGetNotifMsg) returns(stream SLRoutev6Notif)</argsstring>
+        <name>SLRoutev6GetNotifStream</name>
+        <param>
+          <type>stream</type>
+          <declname>SLRouteGetNotifMsg</declname>
+        </param>
+        <briefdescription>
+<para>Route Redistribution Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para>This call is used to get a stream of route notifications. It can be used to get &quot;push&quot; notifications for route adds/updates/deletes. The caller must maintain the GRPC channel as long as there is interest in route notifications.</para><para>The call takes a stream of per-VRF notification requests. The success/failure of the notification request is relayed in the <ref refid="structSLRouteNotifStatus" kindref="compound">SLRouteNotifStatus</ref> followed by a Start marker, any routes if present, and an End Marker. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="97" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines RPC calls for IPv6 route changes and VRF registration. </para>    </briefdescription>
+    <detaileddescription>
+<para>This service declares both the Vrf Registration, as well as adding, deleting and getting IPv6 routes. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

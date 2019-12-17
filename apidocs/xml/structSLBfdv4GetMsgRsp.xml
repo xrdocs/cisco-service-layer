@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv4GetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv4GetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga03b08333dcc81ba2dc7e606b27244b72" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLBfdv4GetMsgRsp::Eof</definition>
+        <argsstring></argsstring>
+        <name>Eof</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>End Of File. </para>        </briefdescription>
+        <detaileddescription>
+<para>When set to True, it indicates that the server has returned M, where M &lt; N, of the original N requested Entries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="155" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga274e66d2c0eb3dd0c4adc4af77749469" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLBfdv4GetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Status of the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="157" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga9ce9ee47a94311067e495ae6ff10225f" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLBfdv4SessionCfgState" kindref="compound">SLBfdv4SessionCfgState</ref></type>
+        <definition>repeated SLBfdv4SessionCfgState SLBfdv4GetMsgRsp::Entries</definition>
+        <argsstring></argsstring>
+        <name>Entries</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Returned entries as requested in the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>if Error is SL_SUCCESS, Entries contains the info requested </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="160" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD Get Message Response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>SLBfdv4Key</label>
+        <link refid="structSLBfdv4Key"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>SLBfdCommonState</label>
+        <link refid="structSLBfdCommonState"/>
+      </node>
+      <node id="25">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="29">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="27">
+        <label>SLBfdConfigCommon</label>
+        <link refid="structSLBfdConfigCommon"/>
+      </node>
+      <node id="26">
+        <label>SLBfdv4SessionCfgState</label>
+        <link refid="structSLBfdv4SessionCfgState"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>Config</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>State</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>SLBfdv4GetMsgRsp</label>
+        <link refid="structSLBfdv4GetMsgRsp"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>Entries</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="151" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="151" bodyend="161"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv4Oper_1ga9ce9ee47a94311067e495ae6ff10225f" prot="public" virt="non-virtual"><scope>SLBfdv4GetMsgRsp</scope><name>Entries</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga03b08333dcc81ba2dc7e606b27244b72" prot="public" virt="non-virtual"><scope>SLBfdv4GetMsgRsp</scope><name>Eof</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga274e66d2c0eb3dd0c4adc4af77749469" prot="public" virt="non-virtual"><scope>SLBfdv4GetMsgRsp</scope><name>ErrStatus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

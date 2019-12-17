@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv4SessionState" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv4SessionState</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga73b965cc4c72be6c7874a17db9d3ac63" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdv4Key" kindref="compound">SLBfdv4Key</ref></type>
+        <definition>SLBfdv4Key SLBfdv4SessionState::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD unique key identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="165" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga469606947fcdf8a63104d0e69b09a605" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdCommonState" kindref="compound">SLBfdCommonState</ref></type>
+        <definition>SLBfdCommonState SLBfdv4SessionState::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>BFD session State. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="167" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD Session and State info. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="70">
+        <label>SLBfdv4Key</label>
+        <link refid="structSLBfdv4Key"/>
+        <childnode refid="71" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>SLBfdCommonState</label>
+        <link refid="structSLBfdCommonState"/>
+      </node>
+      <node id="71">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="69">
+        <label>SLBfdv4SessionState</label>
+        <link refid="structSLBfdv4SessionState"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>State</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="163" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="163" bodyend="168"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv4Oper_1ga73b965cc4c72be6c7874a17db9d3ac63" prot="public" virt="non-virtual"><scope>SLBfdv4SessionState</scope><name>Key</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga469606947fcdf8a63104d0e69b09a605" prot="public" virt="non-virtual"><scope>SLBfdv4SessionState</scope><name>State</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

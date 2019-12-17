@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2RouteKey" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2RouteKey</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2RouteKey_1a269b1b3651247eb9f2f9f54024267cc1" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLL2RouteKey::BdName</definition>
+        <argsstring></argsstring>
+        <name>BdName</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BD name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="303" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RouteKey_1a77d27de75fb26a56195c20370cc78bf5" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLRouteL2Oper_1ga2f0939a4e5f971205f3adf56fac4f121" kindref="member">SLL2RouteType</ref></type>
+        <definition>SLL2RouteType SLL2RouteKey::Type</definition>
+        <argsstring></argsstring>
+        <name>Type</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>L2 Route Type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="305" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RouteKey_1a7612f6df361016f9c1553a87bb4f50c9" prot="public" static="no" mutable="no">
+        <type>oneof</type>
+        <definition>oneof SLL2RouteKey::Event</definition>
+        <argsstring></argsstring>
+        <name>Event</name>
+        <initializer>{
+        
+        <ref refid="structSLL2MacRouteKey" kindref="compound">SLL2MacRouteKey</ref> MacKey = 3</initializer>
+        <briefdescription>
+<para>Further info based on Route Type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="307" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2RouteKey_1adc2c4b30a1b893c59843c71e369ef91b" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLL2ImetRouteKey" kindref="compound">SLL2ImetRouteKey</ref></type>
+        <definition>SLL2ImetRouteKey SLL2RouteKey::ImetKey</definition>
+        <argsstring></argsstring>
+        <name>ImetKey</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>case Type == SL_L2_ROUTE_IMET: =&gt; Carries the IMET Route Key </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="313" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>L2 route key. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="251">
+        <label>SLL2RouteKey</label>
+        <link refid="structSLL2RouteKey"/>
+        <childnode refid="252" relation="usage">
+          <edgelabel>ImetKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="252">
+        <label>SLL2ImetRouteKey</label>
+        <link refid="structSLL2ImetRouteKey"/>
+        <childnode refid="253" relation="usage">
+          <edgelabel>IpAddress</edgelabel>
+        </childnode>
+      </node>
+      <node id="253">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="301" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="301" bodyend="315"/>
+    <listofallmembers>
+      <member refid="structSLL2RouteKey_1a269b1b3651247eb9f2f9f54024267cc1" prot="public" virt="non-virtual"><scope>SLL2RouteKey</scope><name>BdName</name></member>
+      <member refid="structSLL2RouteKey_1a7612f6df361016f9c1553a87bb4f50c9" prot="public" virt="non-virtual"><scope>SLL2RouteKey</scope><name>Event</name></member>
+      <member refid="structSLL2RouteKey_1adc2c4b30a1b893c59843c71e369ef91b" prot="public" virt="non-virtual"><scope>SLL2RouteKey</scope><name>ImetKey</name></member>
+      <member refid="structSLL2RouteKey_1a77d27de75fb26a56195c20370cc78bf5" prot="public" virt="non-virtual"><scope>SLL2RouteKey</scope><name>Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

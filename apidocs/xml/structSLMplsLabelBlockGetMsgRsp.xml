@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsLabelBlockGetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsLabelBlockGetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsgRsp_1a196f6814bf4edbf3b26e4c6138b56426" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SLMplsLabelBlockGetMsgRsp::Eof</definition>
+        <argsstring></argsstring>
+        <name>Eof</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>End Of File. </para>        </briefdescription>
+        <detaileddescription>
+<para>When set to True, it indicates that the server has returned M, where M &lt; N, of the original N requested Entries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="181" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsgRsp_1a91b0c7cb21a801f051452694b63c9e7e" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLMplsLabelBlockGetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Status of the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="183" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockGetMsgRsp_1a23022a0c84609f680ec1e1e093d004ec" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLMplsLabelBlockKey" kindref="compound">SLMplsLabelBlockKey</ref></type>
+        <definition>repeated SLMplsLabelBlockKey SLMplsLabelBlockGetMsgRsp::Entries</definition>
+        <argsstring></argsstring>
+        <name>Entries</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Returned entries as requested in the Get operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>if ErrStatus is SL_SUCCESS, Entries contains the info requested </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="186" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS Label Block get message response This message is the response to the label block query. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="341">
+        <label>SLMplsLabelBlockKey</label>
+        <link refid="structSLMplsLabelBlockKey"/>
+      </node>
+      <node id="340">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="339">
+        <label>SLMplsLabelBlockGetMsgRsp</label>
+        <link refid="structSLMplsLabelBlockGetMsgRsp"/>
+        <childnode refid="340" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="341" relation="usage">
+          <edgelabel>Entries</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="177" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="177" bodyend="187"/>
+    <listofallmembers>
+      <member refid="structSLMplsLabelBlockGetMsgRsp_1a23022a0c84609f680ec1e1e093d004ec" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsgRsp</scope><name>Entries</name></member>
+      <member refid="structSLMplsLabelBlockGetMsgRsp_1a196f6814bf4edbf3b26e4c6138b56426" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsgRsp</scope><name>Eof</name></member>
+      <member refid="structSLMplsLabelBlockGetMsgRsp_1a91b0c7cb21a801f051452694b63c9e7e" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockGetMsgRsp</scope><name>ErrStatus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

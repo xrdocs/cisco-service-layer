@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsPath" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsPath</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsPath_1ace19ca8de95ee3007bb0b28db9effe9e" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref></type>
+        <definition>SLIpAddress SLMplsPath::NexthopAddress</definition>
+        <argsstring></argsstring>
+        <name>NexthopAddress</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>One of IPv4 or IPv6 address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="289" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1ad3df72cd8d43775079aeb2282a595ed7" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLInterface" kindref="compound">SLInterface</ref></type>
+        <definition>SLInterface SLMplsPath::NexthopInterface</definition>
+        <argsstring></argsstring>
+        <name>NexthopInterface</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Next hop interface. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="291" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1a56ba4482cf6ee99425e32b534300f407" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsPath::LoadMetric</definition>
+        <argsstring></argsstring>
+        <name>LoadMetric</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>ECMP load weight metric. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="293" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1af0c7d60a44ece74fdbc4bb0175b60b4b" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLMplsPath::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>VRF name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="295" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1a9180626e9770fe74c960515921ffad26" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLMpls_1gab3280b80569f43dc1008464bbbbdd343" kindref="member">SlLabelAction</ref></type>
+        <definition>SlLabelAction SLMplsPath::Action</definition>
+        <argsstring></argsstring>
+        <name>Action</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Associated MPLS incoming label&apos;s action. </para>        </briefdescription>
+        <detaileddescription>
+<para>The label action dictates what to do with the incoming label. Possible actions are:<itemizedlist>
+<listitem><para>SL_LABEL_ACTION_SWAP: SWAP the incoming label with the specified LabelStack (see below), and forward the packet. Path attributes: NexthopInterface, VrfName, NexthopAddress.</para></listitem><listitem><para>SL_LABEL_ACTION_POP_AND_FORWARD: Pop the label, and forward the packet to the specified nexthop. Path attributes: NexthopInterface, VrfName, NexthopAddress.</para></listitem><listitem><para>SL_LABEL_ACTION_POP_AND_LOOKUP: Pop the label, and lookup the packet&apos;s next header&apos;s address in the specified VrfName. Path attributes: VrfName. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="308" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1a19350bcead0eb0219cfe9d98dc178ad3" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsPath::PathId</definition>
+        <argsstring></argsstring>
+        <name>PathId</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Path identifier. </para>        </briefdescription>
+        <detaileddescription>
+<para>Path-id is used to uniquely identify a path when it comes to protection (Fast Re-Route - FRR). It is not used otherwise.</para><para>In general, for FRR, There are 3 main path attributes:<orderedlist>
+<listitem><para>Primary. The path is the main path to carry traffic.</para></listitem><listitem><para>Protected. A primary path with a configured backup path.</para></listitem><listitem><para>Backup. The path is protecting a primary path.</para></listitem></orderedlist>
+</para><para>NOTE1: a primary path (A) can be simultaneously protected (by B), and acting as a backup for another path (C). In this example, the primary path C is protected by A (which happens to be primary). So the primary path (A) is Primary, Protected, and Backup.</para><para>The following are various path types based on combinations of attributes:<orderedlist>
+<listitem><para>Pure Primary i.e. Not Protected and is not a Backup. =&gt; PathId is optional. ProtectedPathBitmap = 0x0</para></listitem><listitem><para>Primary and Protected. Path is not a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0x0</para></listitem><listitem><para>Primary and Not Protected. Path is also a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem><listitem><para>Primary and Protected. Path is also a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem><listitem><para>Pure Backup. Protection is not allowed for backup paths. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem></orderedlist>
+</para><para>NOTE2: Pure backup path-id uses a different range than primary path-ids. The valid range of primary path IDs, and pure backup path IDS are platform dependent and can be retrieved through the client init message. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="338" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1a445250e9d99cea4935e2b116484cebfe" prot="public" static="no" mutable="no">
+        <type>repeated uint64</type>
+        <definition>repeated uint64 SLMplsPath::ProtectedPathBitmap</definition>
+        <argsstring></argsstring>
+        <name>ProtectedPathBitmap</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>Path protection bitmap. </para>        </briefdescription>
+        <detaileddescription>
+<para>The bitmap of paths this Backup path is protecting. Example: If this path is protecting paths with IDs 4, 5 and 6, then set bitmap to: 0x38 ==&gt; 0011 1000 || |<ndash/> path 4 ||<ndash/> path 5 |<ndash/> path 6 (1 &lt;&lt; (pathId_1 - 1)) | (1 &lt;&lt; (pathId_2 - 1)) | (1 &lt;&lt; (pathId_3 - 1)) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="348" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1a8c00f52f6be2663e8a1b744e78060b92" prot="public" static="no" mutable="no">
+        <type>repeated uint32</type>
+        <definition>repeated uint32 SLMplsPath::LabelStack</definition>
+        <argsstring></argsstring>
+        <name>LabelStack</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>MPLS label stack. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stack of labels that is pushed when the packet is switched out. Label size is LSB 20 bits. Forwarding will set EXP, TTL and BOS. For primary path, typically only 1 label is used. For backup paths, more than 1 label can be used. If more than one label is used, remote backup addresses must be specified. The maximum number of labels pushed for primary and backup are platform dependent. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="357" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsPath_1ac496cfa3108fdaf62295b0cd03038bbc" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref></type>
+        <definition>repeated SLIpAddress SLMplsPath::RemoteAddress</definition>
+        <argsstring></argsstring>
+        <name>RemoteAddress</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>MPLS Remote router backup address. </para>        </briefdescription>
+        <detaileddescription>
+<para>This field is used for backup MPLS path with more than one label, Typically associated with the PQ routers and remote Loop Free Alternatives. For N+1 backup labels, N remote backup addresses must be specified. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="363" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS Path (or NHLFE) information. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message holds the ILM path attributes. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="357">
+        <label>SLMplsPath</label>
+        <link refid="structSLMplsPath"/>
+        <childnode refid="358" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="359" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="359">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="358">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="287" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="287" bodyend="364"/>
+    <listofallmembers>
+      <member refid="structSLMplsPath_1a9180626e9770fe74c960515921ffad26" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>Action</name></member>
+      <member refid="structSLMplsPath_1a8c00f52f6be2663e8a1b744e78060b92" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>LabelStack</name></member>
+      <member refid="structSLMplsPath_1a56ba4482cf6ee99425e32b534300f407" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>LoadMetric</name></member>
+      <member refid="structSLMplsPath_1ace19ca8de95ee3007bb0b28db9effe9e" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>NexthopAddress</name></member>
+      <member refid="structSLMplsPath_1ad3df72cd8d43775079aeb2282a595ed7" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>NexthopInterface</name></member>
+      <member refid="structSLMplsPath_1a19350bcead0eb0219cfe9d98dc178ad3" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>PathId</name></member>
+      <member refid="structSLMplsPath_1a445250e9d99cea4935e2b116484cebfe" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>ProtectedPathBitmap</name></member>
+      <member refid="structSLMplsPath_1ac496cfa3108fdaf62295b0cd03038bbc" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>RemoteAddress</name></member>
+      <member refid="structSLMplsPath_1af0c7d60a44ece74fdbc4bb0175b60b4b" prot="public" virt="non-virtual"><scope>SLMplsPath</scope><name>VrfName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

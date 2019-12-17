@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsLabelBlockKey" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsLabelBlockKey</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsLabelBlockKey_1a499f4b5319088f37a37248ab0ea4ee7e" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsLabelBlockKey::StartLabel</definition>
+        <argsstring></argsstring>
+        <name>StartLabel</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Starting label value of the block. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="111" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockKey_1a6eadca73cc43a8b18c31d0b7198f0b75" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLMplsLabelBlockKey::LabelBlockSize</definition>
+        <argsstring></argsstring>
+        <name>LabelBlockSize</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Label block size. </para>        </briefdescription>
+        <detaileddescription>
+<para>Block size should be &lt;= SLServerResponse.MaxLabelsPerBlock </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="114" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockKey_1af5da58e159268503dd1634b5d3f1765b" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLMpls_1ga82d8e1fede2512fbc7c9b5d27d911d21" kindref="member">SLMplsLabelBlockType</ref></type>
+        <definition>SLMplsLabelBlockType SLMplsLabelBlockKey::BlockType</definition>
+        <argsstring></argsstring>
+        <name>BlockType</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Label block type. </para>        </briefdescription>
+        <detaileddescription>
+<para>See definition of SlMplsLabelBlockType for valid values. If none specified, defaults to SL_MPLS_LABEL_BLOCK_TYPE_SRGB. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="117" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLMplsLabelBlockKey_1a218d3a76c132d253157cc66c65955daf" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLMplsLabelBlockKey::ClientName</definition>
+        <argsstring></argsstring>
+        <name>ClientName</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Label block client name as configured e.g. </para>        </briefdescription>
+        <detaileddescription>
+<para>through CLI. Client name is ignored if BlockType is not SL_MPLS_LABEL_BLOCK_TYPE_CBF. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="120" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS Label block key. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message is used to relay the label block key attributes. </para>    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="109" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="109" bodyend="121"/>
+    <listofallmembers>
+      <member refid="structSLMplsLabelBlockKey_1af5da58e159268503dd1634b5d3f1765b" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockKey</scope><name>BlockType</name></member>
+      <member refid="structSLMplsLabelBlockKey_1a218d3a76c132d253157cc66c65955daf" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockKey</scope><name>ClientName</name></member>
+      <member refid="structSLMplsLabelBlockKey_1a6eadca73cc43a8b18c31d0b7198f0b75" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockKey</scope><name>LabelBlockSize</name></member>
+      <member refid="structSLMplsLabelBlockKey_1a499f4b5319088f37a37248ab0ea4ee7e" prot="public" virt="non-virtual"><scope>SLMplsLabelBlockKey</scope><name>StartLabel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdGetNotifMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdGetNotifMsg</compoundname>
+    <briefdescription>
+<para>BFD Get Notifications message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="63" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="63" bodyend="64"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

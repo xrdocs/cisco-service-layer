@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv6Res" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv6Res</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1gaa8cde0d5503a35a74c3b500310c05b58" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLBfdv6Res::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Corresponding error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="104" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv6Oper_1gaa94686c4feed974fb95777590a01b3d4" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdv6Key" kindref="compound">SLBfdv6Key</ref></type>
+        <definition>SLBfdv6Key SLBfdv6Res::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>BFD unique key. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="106" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD result. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="109">
+        <label>SLBfdv6Key</label>
+        <link refid="structSLBfdv6Key"/>
+        <childnode refid="110" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="110">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="107">
+        <label>SLBfdv6Res</label>
+        <link refid="structSLBfdv6Res"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv6.proto" line="102" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv6.proto" bodystart="102" bodyend="107"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv6Oper_1gaa8cde0d5503a35a74c3b500310c05b58" prot="public" virt="non-virtual"><scope>SLBfdv6Res</scope><name>ErrStatus</name></member>
+      <member refid="group__SLBfdIPv6Oper_1gaa94686c4feed974fb95777590a01b3d4" prot="public" virt="non-virtual"><scope>SLBfdv6Res</scope><name>Key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

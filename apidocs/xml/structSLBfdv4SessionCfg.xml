@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv4SessionCfg" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv4SessionCfg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga01c2b8b8c3dda1691c7346aa17b4303f" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdv4Key" kindref="compound">SLBfdv4Key</ref></type>
+        <definition>SLBfdv4Key SLBfdv4SessionCfg::Key</definition>
+        <argsstring></argsstring>
+        <name>Key</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>BFD unique key identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="90" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga4aae37cd79c71fe8cc759e2762a91434" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLBfdConfigCommon" kindref="compound">SLBfdConfigCommon</ref></type>
+        <definition>SLBfdConfigCommon SLBfdv4SessionCfg::Config</definition>
+        <argsstring></argsstring>
+        <name>Config</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>BFD common features. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="92" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD session information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="60">
+        <label>SLBfdv4Key</label>
+        <link refid="structSLBfdv4Key"/>
+        <childnode refid="61" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="59">
+        <label>SLBfdConfigCommon</label>
+        <link refid="structSLBfdConfigCommon"/>
+      </node>
+      <node id="58">
+        <label>SLBfdv4SessionCfg</label>
+        <link refid="structSLBfdv4SessionCfg"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>Config</edgelabel>
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="88" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="88" bodyend="93"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv4Oper_1ga4aae37cd79c71fe8cc759e2762a91434" prot="public" virt="non-virtual"><scope>SLBfdv4SessionCfg</scope><name>Config</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga01c2b8b8c3dda1691c7346aa17b4303f" prot="public" virt="non-virtual"><scope>SLBfdv4SessionCfg</scope><name>Key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

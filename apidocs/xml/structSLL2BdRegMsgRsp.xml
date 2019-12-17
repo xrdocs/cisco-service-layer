@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLL2BdRegMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLL2BdRegMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLL2BdRegMsgRsp_1ad6c114ba3e9e459938a7310ce8c6fbdf" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLL2BdRegMsgRsp::StatusSummary</definition>
+        <argsstring></argsstring>
+        <name>StatusSummary</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Summary result of the bulk operation (refer to enum <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) In general, the StatusSummary implies one of 3 things: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>SL_SUCCESS: signifies that the entire bulk operation was successful. In this case, the Results list is empty.</para></listitem><listitem><para>SL_SOME_ERR: signifies that the operation failed for one or more entries. In this case, Results holds the result for each individual entry in the bulk.</para></listitem><listitem><para>SL_RPC_XXX: signifies that the entire bulk operation failed. In this case, the Results list is empty. </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="181" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLL2BdRegMsgRsp_1ad255c971a6276b8b9e0e76bdaa43fda6" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLL2BdRegRes" kindref="compound">SLL2BdRegRes</ref></type>
+        <definition>repeated SLL2BdRegRes SLL2BdRegMsgRsp::Results</definition>
+        <argsstring></argsstring>
+        <name>Results</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>In case of errors, this field indicates which entry in the bulk was erroneous. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_l2_route.proto" line="184" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BD Registration message Response. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="192">
+        <label>SLL2BdRegRes</label>
+        <link refid="structSLL2BdRegRes"/>
+        <childnode refid="191" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="190">
+        <label>SLL2BdRegMsgRsp</label>
+        <link refid="structSLL2BdRegMsgRsp"/>
+        <childnode refid="191" relation="usage">
+          <edgelabel>StatusSummary</edgelabel>
+        </childnode>
+        <childnode refid="192" relation="usage">
+          <edgelabel>Results</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_l2_route.proto" line="171" column="1" bodyfile="/slapi/grpc/protos/sl_l2_route.proto" bodystart="171" bodyend="185"/>
+    <listofallmembers>
+      <member refid="structSLL2BdRegMsgRsp_1ad255c971a6276b8b9e0e76bdaa43fda6" prot="public" virt="non-virtual"><scope>SLL2BdRegMsgRsp</scope><name>Results</name></member>
+      <member refid="structSLL2BdRegMsgRsp_1ad6c114ba3e9e459938a7310ce8c6fbdf" prot="public" virt="non-virtual"><scope>SLL2BdRegMsgRsp</scope><name>StatusSummary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

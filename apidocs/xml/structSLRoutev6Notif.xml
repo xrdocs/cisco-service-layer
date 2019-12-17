@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev6Notif" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev6Notif</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev6Notif_1af1e5d2271dea89af497f33dc739a9b8c" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLRouteCommon_1gad630c2e5490e88b889ccd79ace15005b" kindref="member">SLNotifType</ref></type>
+        <definition>SLNotifType SLRoutev6Notif::EventType</definition>
+        <argsstring></argsstring>
+        <name>EventType</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Event Type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="204" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Notif_1af7a77643a0d6e136eb71dfd5b9d6644d" prot="public" static="no" mutable="no">
+        <type>oneof</type>
+        <definition>oneof SLRoutev6Notif::Event</definition>
+        <argsstring></argsstring>
+        <name>Event</name>
+        <initializer>{
+        
+        <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref> ErrStatus = 2</initializer>
+        <briefdescription>
+<para>Further info based on EventType. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="206" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Notif_1a8a30c00498ee791dc14e205b00a43bb8" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLRouteNotifStatus" kindref="compound">SLRouteNotifStatus</ref></type>
+        <definition>SLRouteNotifStatus SLRoutev6Notif::NotifStatus</definition>
+        <argsstring></argsstring>
+        <name>NotifStatus</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>case EventType == SL_EVENT_TYPE_STATUS: =&gt; This field carries the status of the GetNotifMsg request. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="213" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Notif_1a8bcb959c53dceab2dd3cb2fe79638b8c" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLRoutev6NotifRoute" kindref="compound">SLRoutev6NotifRoute</ref></type>
+        <definition>SLRoutev6NotifRoute SLRoutev6Notif::Route</definition>
+        <argsstring></argsstring>
+        <name>Route</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>case EventType == SL_EVENT_TYPE_ROUTE: =&gt; This field carries the v6 route </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="216" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Notif_1ab0314f39bf2b1f0da3fee9b54da74b79" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLRouteNotifMarker" kindref="compound">SLRouteNotifMarker</ref></type>
+        <definition>SLRouteNotifMarker SLRoutev6Notif::Marker</definition>
+        <argsstring></argsstring>
+        <name>Marker</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>case EventType == SL_EVENT_TYPE_START_MARKER: case EventType == SL_EVENT_TYPE_END_MARKER: =&gt; This field carries the start marker and end marker per-VRF. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="220" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev6Notif_1ae28d089a01362e9491a80f053a237759" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLVrfNotif" kindref="compound">SLVrfNotif</ref></type>
+        <definition>SLVrfNotif SLRoutev6Notif::Vrf</definition>
+        <argsstring></argsstring>
+        <name>Vrf</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>case EventType == SL_EVENT_TYPE_VRF: </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="222" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>IPv6 notification message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="478">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="468">
+        <label>SLRoutev6Notif</label>
+        <link refid="structSLRoutev6Notif"/>
+        <childnode refid="469" relation="usage">
+          <edgelabel>Vrf</edgelabel>
+        </childnode>
+        <childnode refid="470" relation="usage">
+          <edgelabel>Marker</edgelabel>
+        </childnode>
+        <childnode refid="471" relation="usage">
+          <edgelabel>Route</edgelabel>
+        </childnode>
+        <childnode refid="477" relation="usage">
+          <edgelabel>NotifStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="471">
+        <label>SLRoutev6NotifRoute</label>
+        <link refid="structSLRoutev6NotifRoute"/>
+        <childnode refid="472" relation="usage">
+          <edgelabel>Entries</edgelabel>
+        </childnode>
+      </node>
+      <node id="476">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="473">
+        <label>SLRouteCommon</label>
+        <link refid="structSLRouteCommon"/>
+      </node>
+      <node id="469">
+        <label>SLVrfNotif</label>
+        <link refid="structSLVrfNotif"/>
+      </node>
+      <node id="477">
+        <label>SLRouteNotifStatus</label>
+        <link refid="structSLRouteNotifStatus"/>
+        <childnode refid="478" relation="usage">
+          <edgelabel>NotifStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="472">
+        <label>SLRoutev6</label>
+        <link refid="structSLRoutev6"/>
+        <childnode refid="473" relation="usage">
+          <edgelabel>RouteCommon</edgelabel>
+        </childnode>
+        <childnode refid="474" relation="usage">
+          <edgelabel>PathList</edgelabel>
+        </childnode>
+      </node>
+      <node id="474">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="475" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="476" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="470">
+        <label>SLRouteNotifMarker</label>
+        <link refid="structSLRouteNotifMarker"/>
+      </node>
+      <node id="475">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv6.proto" line="202" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv6.proto" bodystart="202" bodyend="224"/>
+    <listofallmembers>
+      <member refid="structSLRoutev6Notif_1af7a77643a0d6e136eb71dfd5b9d6644d" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>Event</name></member>
+      <member refid="structSLRoutev6Notif_1af1e5d2271dea89af497f33dc739a9b8c" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>EventType</name></member>
+      <member refid="structSLRoutev6Notif_1ab0314f39bf2b1f0da3fee9b54da74b79" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>Marker</name></member>
+      <member refid="structSLRoutev6Notif_1a8a30c00498ee791dc14e205b00a43bb8" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>NotifStatus</name></member>
+      <member refid="structSLRoutev6Notif_1a8bcb959c53dceab2dd3cb2fe79638b8c" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>Route</name></member>
+      <member refid="structSLRoutev6Notif_1ae28d089a01362e9491a80f053a237759" prot="public" virt="non-virtual"><scope>SLRoutev6Notif</scope><name>Vrf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

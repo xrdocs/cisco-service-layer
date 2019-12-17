@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_3594538a692b3896f2b3ae880e629ca6" kind="dir">
+    <compoundname>/slapi/grpc/protos</compoundname>
+    <innerfile refid="sl__bfd__common_8proto">sl_bfd_common.proto</innerfile>
+    <innerfile refid="sl__bfd__ipv4_8proto">sl_bfd_ipv4.proto</innerfile>
+    <innerfile refid="sl__bfd__ipv6_8proto">sl_bfd_ipv6.proto</innerfile>
+    <innerfile refid="sl__common__types_8proto">sl_common_types.proto</innerfile>
+    <innerfile refid="sl__global_8proto">sl_global.proto</innerfile>
+    <innerfile refid="sl__interface_8proto">sl_interface.proto</innerfile>
+    <innerfile refid="sl__l2__route_8proto">sl_l2_route.proto</innerfile>
+    <innerfile refid="sl__mpls_8proto">sl_mpls.proto</innerfile>
+    <innerfile refid="sl__route__common_8proto">sl_route_common.proto</innerfile>
+    <innerfile refid="sl__route__ipv4_8proto">sl_route_ipv4.proto</innerfile>
+    <innerfile refid="sl__route__ipv6_8proto">sl_route_ipv6.proto</innerfile>
+    <innerfile refid="sl__version_8proto">sl_version.proto</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/"/>
+  </compounddef>
+</doxygen>

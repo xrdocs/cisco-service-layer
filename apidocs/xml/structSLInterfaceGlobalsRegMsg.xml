@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLInterfaceGlobalsRegMsg" kind="struct" language="C++" prot="public">
+    <compoundname>SLInterfaceGlobalsRegMsg</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLInterfaceGlobalsRegMsg_1af3683fd54ba7b5dae106552cf672151a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1gabcd5b7bdb1e75e62f586e079e924f896" kindref="member">SLRegOp</ref></type>
+        <definition>SLRegOp SLInterfaceGlobalsRegMsg::Oper</definition>
+        <argsstring></argsstring>
+        <name>Oper</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Registration Operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_interface.proto" line="63" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global Interface Registration Message. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message is used for interface global registration. Clients must register before using any interface service. </para>    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_interface.proto" line="61" column="1" bodyfile="/slapi/grpc/protos/sl_interface.proto" bodystart="61" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structSLInterfaceGlobalsRegMsg_1af3683fd54ba7b5dae106552cf672151a" prot="public" virt="non-virtual"><scope>SLInterfaceGlobalsRegMsg</scope><name>Oper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

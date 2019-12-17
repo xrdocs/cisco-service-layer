@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLMplsRegMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLMplsRegMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLMplsRegMsgRsp_1a6af3db8d3943048f043736c067da2206" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLMplsRegMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_mpls.proto" line="215" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MPLS Registration response message. </para>    </briefdescription>
+    <detaileddescription>
+<para>This message is used to convey the result of the MPLS registration. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="367">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="366">
+        <label>SLMplsRegMsgRsp</label>
+        <link refid="structSLMplsRegMsgRsp"/>
+        <childnode refid="367" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_mpls.proto" line="213" column="1" bodyfile="/slapi/grpc/protos/sl_mpls.proto" bodystart="213" bodyend="216"/>
+    <listofallmembers>
+      <member refid="structSLMplsRegMsgRsp_1a6af3db8d3943048f043736c067da2206" prot="public" virt="non-virtual"><scope>SLMplsRegMsgRsp</scope><name>ErrStatus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

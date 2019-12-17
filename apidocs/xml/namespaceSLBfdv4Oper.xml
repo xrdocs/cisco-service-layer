@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceSLBfdv4Oper" kind="namespace" language="C++">
+    <compoundname>SLBfdv4Oper</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1ga344b7e7d4b8867338b3c9b78fc45e23d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4RegOp</definition>
+        <argsstring>(SLBfdRegMsg) returns(SLBfdRegMsgRsp)</argsstring>
+        <name>SLBfdv4RegOp</name>
+        <param>
+          <type><ref refid="structSLBfdRegMsg" kindref="compound">SLBfdRegMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>BFD Registration Operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structSLBfdRegMsg_1a6541b81fddd9e1eceb3ee81592fd5609" kindref="member">SLBfdRegMsg.Oper</ref> = SL_REGOP_REGISTER: Global BFD registration. A client Must Register BEFORE BFD sessions can be added/modified.</para><para><ref refid="structSLBfdRegMsg_1a6541b81fddd9e1eceb3ee81592fd5609" kindref="member">SLBfdRegMsg.Oper</ref> = SL_REGOP_UNREGISTER: Global BFD un-registration. This call is used to end all BFD notifications and unregister any interest in BFD session configuration. This call cleans up all BFD sessions previously requested.</para><para><ref refid="structSLBfdRegMsg_1a6541b81fddd9e1eceb3ee81592fd5609" kindref="member">SLBfdRegMsg.Oper</ref> = SL_REGOP_EOF: BFD End Of File. After Registration, the client is expected to send an EOF message to convey the end of replay of the client&apos;s known objects. This is especially useful under certain restart scenarios when the client and the server are trying to synchronize their BFD sessions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1ga1954d31c1d3805652c083d1e1842c4ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4Get</definition>
+        <argsstring>(SLBfdGetMsg) returns(SLBfdGetMsgRsp)</argsstring>
+        <name>SLBfdv4Get</name>
+        <param>
+          <type><ref refid="structSLBfdGetMsg" kindref="compound">SLBfdGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve global BFD info from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1ga8cb7bb01f541b365f5174e54fa336c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4GetStats</definition>
+        <argsstring>(SLBfdGetMsg) returns(SLBfdGetStatsMsgRsp)</argsstring>
+        <name>SLBfdv4GetStats</name>
+        <param>
+          <type><ref refid="structSLBfdGetMsg" kindref="compound">SLBfdGetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Used to retrieve global BFD stats from the server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1ga541afb8fa477e6ba8bc1f4e9e26c8cc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4GetNotifStream</definition>
+        <argsstring>(SLBfdGetNotifMsg) returns(stream SLBfdv4Notif)</argsstring>
+        <name>SLBfdv4GetNotifStream</name>
+        <param>
+          <type><ref refid="structSLBfdGetNotifMsg" kindref="compound">SLBfdGetNotifMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>BFD notifications. </para>        </briefdescription>
+        <detaileddescription>
+<para>This call is used to get a stream of session state notifications. The caller must maintain the GRPC channel as long as there is interest in BFD session notifications. Only sessions that were created through this API will be notified to caller. This call can be used to get &quot;push&quot; notifications for session states. It is advised that the caller register for notifications before any sessions are created to avoid any loss of notifications. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1ga0eaeba8cc0b8a70cf6439d84888a8c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4SessionOp</definition>
+        <argsstring>(SLBfdv4Msg) returns(SLBfdv4MsgRsp)</argsstring>
+        <name>SLBfdv4SessionOp</name>
+        <param>
+          <type><ref refid="structSLBfdv4Msg" kindref="compound">SLBfdv4Msg</ref></type>
+        </param>
+        <briefdescription>
+<para>BFD session operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__SLBfdIPv4Oper_1ga8cc9777530401d0665c00b1deae44e96" kindref="member">SLBfdv4Msg.Oper</ref> = SL_OBJOP_ADD: Add one or multiple BFD sessions.</para><para><ref refid="group__SLBfdIPv4Oper_1ga8cc9777530401d0665c00b1deae44e96" kindref="member">SLBfdv4Msg.Oper</ref> = SL_OBJOP_UPDATE: Update one or multiple BFD sessions.</para><para><ref refid="group__SLBfdIPv4Oper_1ga8cc9777530401d0665c00b1deae44e96" kindref="member">SLBfdv4Msg.Oper</ref> = SL_OBJOP_DELETE: Delete one or multiple BFD sessions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__SLBfdIPv4Oper_1gadaba6d327474f5bd56b0548e53cd223e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>rpc</type>
+        <definition>rpc SLBfdv4Oper::SLBfdv4SessionGet</definition>
+        <argsstring>(SLBfdv4GetMsg) returns(SLBfdv4GetMsgRsp)</argsstring>
+        <name>SLBfdv4SessionGet</name>
+        <param>
+          <type><ref refid="structSLBfdv4GetMsg" kindref="compound">SLBfdv4GetMsg</ref></type>
+        </param>
+        <briefdescription>
+<para>Retrieve BFD session attributes and state. </para>        </briefdescription>
+        <detaileddescription>
+<para>This call can be used to &quot;poll&quot; the current state of a session. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="71" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="19" column="1"/>
+  </compounddef>
+</doxygen>

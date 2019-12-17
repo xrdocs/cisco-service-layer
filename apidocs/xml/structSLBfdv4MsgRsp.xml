@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdv4MsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdv4MsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1ga93f15e61aaeb859a02a7c86f9952b4f1" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLBfdv4MsgRsp::StatusSummary</definition>
+        <argsstring></argsstring>
+        <name>StatusSummary</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Summary result of the bulk operation (refer to enum <ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref>) In general, the StatusSummary implies one of 3 things: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>SL_SUCCESS: signifies that the entire bulk operation was successful. In this case, the Results list is empty.</para></listitem><listitem><para>SL_SOME_ERR: signifies that the operation failed for one or more entries. In this case, Results holds the result for each individual entry in the bulk.</para></listitem><listitem><para>SL_RPC_XXX: signifies that the entire bulk operation failed. In this case, the Results list is empty. </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="119" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__SLBfdIPv4Oper_1gad844de05fe3ed0f93e8833765634a1e4" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLBfdv4Res" kindref="compound">SLBfdv4Res</ref></type>
+        <definition>repeated SLBfdv4Res SLBfdv4MsgRsp::Results</definition>
+        <argsstring></argsstring>
+        <name>Results</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>In case of errors, this field indicates which entry in the bulk was erroneous. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="122" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD bulk result. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="41">
+        <label>SLBfdv4MsgRsp</label>
+        <link refid="structSLBfdv4MsgRsp"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>StatusSummary</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>Results</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>SLBfdv4Key</label>
+        <link refid="structSLBfdv4Key"/>
+        <childnode refid="45" relation="usage">
+          <edgelabel>Interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+      <node id="45">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="43">
+        <label>SLBfdv4Res</label>
+        <link refid="structSLBfdv4Res"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>Key</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_ipv4.proto" line="109" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_ipv4.proto" bodystart="109" bodyend="123"/>
+    <listofallmembers>
+      <member refid="group__SLBfdIPv4Oper_1gad844de05fe3ed0f93e8833765634a1e4" prot="public" virt="non-virtual"><scope>SLBfdv4MsgRsp</scope><name>Results</name></member>
+      <member refid="group__SLBfdIPv4Oper_1ga93f15e61aaeb859a02a7c86f9952b4f1" prot="public" virt="non-virtual"><scope>SLBfdv4MsgRsp</scope><name>StatusSummary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutePath" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutePath</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutePath_1a11ef39a2e430f01e7cbdcaef17a4325d" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref></type>
+        <definition>SLIpAddress SLRoutePath::NexthopAddress</definition>
+        <argsstring></argsstring>
+        <name>NexthopAddress</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>One of IPv4 or IPv6 address For ENCAP_VXLAN, this will specify the tunnel end point IP address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="257" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a6901a13ca011c312bd17684e39b0ef0e" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLInterface" kindref="compound">SLInterface</ref></type>
+        <definition>SLInterface SLRoutePath::NexthopInterface</definition>
+        <argsstring></argsstring>
+        <name>NexthopInterface</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Outgoing interface name for the path. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="259" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a069e2d56da815b511af2f828421fc87e" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutePath::LoadMetric</definition>
+        <argsstring></argsstring>
+        <name>LoadMetric</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Load metric for this path. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used for equal/unequal cost load balancing of traffic distribution. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="262" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a87013a318383e9494388a507d5f3db87" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string SLRoutePath::VrfName</definition>
+        <argsstring></argsstring>
+        <name>VrfName</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Path VRF name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This field is used ONLY if the path is in a different VRF than the route (e.g. VPN cases) For ENCAP_VXLAN, this field can be used to specify the VRF where the tunnel end point IP address resides (&quot;default&quot; will be assumed if not specified). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="268" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a76c962dfc21594eba52d5dc859ba7118" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutePath::Metric</definition>
+        <argsstring></argsstring>
+        <name>Metric</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Route Metric. </para>        </briefdescription>
+        <detaileddescription>
+<para>The metric is typically based on information like load, hop count, MTU, reliability of the path, etc. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="272" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1ac73838f58bd91d528addad23dbb5628c" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutePath::PathId</definition>
+        <argsstring></argsstring>
+        <name>PathId</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Path identifier. </para>        </briefdescription>
+        <detaileddescription>
+<para>Path-id is used to uniquely identify a path when it comes to protection (Fast Re-Route - FRR). It is not used otherwise.</para><para>In general, for FRR, There are 3 main path attributes:<orderedlist>
+<listitem><para>Primary. The path is the main path to carry traffic.</para></listitem><listitem><para>Protected. A primary path with a configured backup path.</para></listitem><listitem><para>Backup. The path is protecting a primary path.</para></listitem></orderedlist>
+</para><para>NOTE1: a primary path (A) can be simultaneously protected (by B), and acting as a backup for another path (C). In this example, the primary path C is protected by A (which happens to be primary). So the primary path (A) is Primary, Protected, and Backup.</para><para>The following are various path types based on combinations of attributes:<orderedlist>
+<listitem><para>Pure Primary i.e. Not Protected and is not a Backup. =&gt; PathId is optional. ProtectedPathBitmap = 0x0</para></listitem><listitem><para>Primary and Protected. Path is not a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0x0</para></listitem><listitem><para>Primary and Not Protected. Path is also a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem><listitem><para>Primary and Protected. Path is also a Backup. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem><listitem><para>Pure Backup. Protection is not allowed for backup paths. =&gt; PathId is mandatory. ProtectedPathBitmap = 0xYYYY</para></listitem></orderedlist>
+</para><para>NOTE2: Pure backup path-id uses a different range than primary path-ids. The valid range of primary path IDs, and pure backup path IDS are platform dependent and can be retrieved through the client init message. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="302" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a9069c08b123f6d570d8b710bd834b95a" prot="public" static="no" mutable="no">
+        <type>repeated uint64</type>
+        <definition>repeated uint64 SLRoutePath::ProtectedPathBitmap</definition>
+        <argsstring></argsstring>
+        <name>ProtectedPathBitmap</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>Path protection bitmap. </para>        </briefdescription>
+        <detaileddescription>
+<para>The bitmap of paths this Backup path is protecting. Example: If this path is protecting paths with IDs 4, 5 and 6, then set bitmap to: 0x38 ==&gt; 0011 1000 || |<ndash/> path 4 ||<ndash/> path 5 |<ndash/> path 6 (1 &lt;&lt; (pathId_1 - 1)) | (1 &lt;&lt; (pathId_2 - 1)) | (1 &lt;&lt; (pathId_3 - 1)) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="312" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1aa9eabed8a482f30572651e7aa8da0472" prot="public" static="no" mutable="no">
+        <type>repeated uint32</type>
+        <definition>repeated uint32 SLRoutePath::LabelStack</definition>
+        <argsstring></argsstring>
+        <name>LabelStack</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>MPLS label stack or VxLAN Virtual Network Identifier. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stack of labels that is pushed when the packet is switched out. Label size is LSB 20 bits. Forwarding will set EXP, TTL and BOS. For primary path, typically only 1 label is used. For backup paths, more than 1 label can be used. If more than one label is used, remote backup addresses must be specified. The maximum number of labels pushed for primary and backup are platform dependent. For ENCAP_VXLAN, this field will specify the Virtual Network Identifier (VNI) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="323" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a440a1ff1c17715d94bc3863319a895b5" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLIpAddress" kindref="compound">SLIpAddress</ref></type>
+        <definition>repeated SLIpAddress SLRoutePath::RemoteAddress</definition>
+        <argsstring></argsstring>
+        <name>RemoteAddress</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>MPLS Remote router backup address. </para>        </briefdescription>
+        <detaileddescription>
+<para>This field is used only for backup MPLS path with more than one label For N+1 backup labels, N remote backup addresses must be specified. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="327" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a50545faa2df19975cff88baaf31b509c" prot="public" static="no" mutable="no">
+        <type><ref refid="group__SLCommonTypes_1gacf9698e39f1da873424b2a44dee2b741" kindref="member">SLEncapType</ref></type>
+        <definition>SLEncapType SLRoutePath::EncapType</definition>
+        <argsstring></argsstring>
+        <name>EncapType</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Encapsulation type (VXLAN or MPLS) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="329" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutePath_1a87850351bc4bd1a1a87df5054d9df46f" prot="public" static="no" mutable="no">
+        <type>bytes</type>
+        <definition>bytes SLRoutePath::VtepRouterMacAddress</definition>
+        <argsstring></argsstring>
+        <name>VtepRouterMacAddress</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+<para>VTEP (VxLAN tunnel end point) router MAC address. </para>        </briefdescription>
+        <detaileddescription>
+<para>A unique system MAC address that other VTEPs can use for inter-VNI routing. The router MAC address is used as the inner destination MAC address for routed VXLAN packet. Used for ENCAP_VXLAN (mandatory) only. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_common.proto" line="335" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Route Path attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>FRR Note: Failover from primary to backup is based on the trigger used (e.g. link down, BFD, etc.). Revertion is mainly timeout based. The timeout value is platform specific and is not configurable. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="390">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="388">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="389" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="390" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="389">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_common.proto" line="253" column="1" bodyfile="/slapi/grpc/protos/sl_route_common.proto" bodystart="253" bodyend="336"/>
+    <listofallmembers>
+      <member refid="structSLRoutePath_1a50545faa2df19975cff88baaf31b509c" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>EncapType</name></member>
+      <member refid="structSLRoutePath_1aa9eabed8a482f30572651e7aa8da0472" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>LabelStack</name></member>
+      <member refid="structSLRoutePath_1a069e2d56da815b511af2f828421fc87e" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>LoadMetric</name></member>
+      <member refid="structSLRoutePath_1a76c962dfc21594eba52d5dc859ba7118" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>Metric</name></member>
+      <member refid="structSLRoutePath_1a11ef39a2e430f01e7cbdcaef17a4325d" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>NexthopAddress</name></member>
+      <member refid="structSLRoutePath_1a6901a13ca011c312bd17684e39b0ef0e" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>NexthopInterface</name></member>
+      <member refid="structSLRoutePath_1ac73838f58bd91d528addad23dbb5628c" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>PathId</name></member>
+      <member refid="structSLRoutePath_1a9069c08b123f6d570d8b710bd834b95a" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>ProtectedPathBitmap</name></member>
+      <member refid="structSLRoutePath_1a440a1ff1c17715d94bc3863319a895b5" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>RemoteAddress</name></member>
+      <member refid="structSLRoutePath_1a87013a318383e9494388a507d5f3db87" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>VrfName</name></member>
+      <member refid="structSLRoutePath_1a87850351bc4bd1a1a87df5054d9df46f" prot="public" virt="non-virtual"><scope>SLRoutePath</scope><name>VtepRouterMacAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

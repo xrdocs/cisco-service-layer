@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLRoutev4" kind="struct" language="C++" prot="public">
+    <compoundname>SLRoutev4</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLRoutev4_1af3be501ca2908eb0330565e5075bf2c9" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutev4::Prefix</definition>
+        <argsstring></argsstring>
+        <name>Prefix</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>IPv4 Prefix Valid addresses: 0.0.0.0 1.0.0.0 - 223.255.255.255. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="107" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4_1a1a1c50dc6ff3f57c210de31f030c51d6" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLRoutev4::PrefixLen</definition>
+        <argsstring></argsstring>
+        <name>PrefixLen</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>IPv4 prefix length, [0-32]. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="109" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4_1addb4f81fb67ca4bdd99cfc5c0fe70155" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLRouteCommon" kindref="compound">SLRouteCommon</ref></type>
+        <definition>SLRouteCommon SLRoutev4::RouteCommon</definition>
+        <argsstring></argsstring>
+        <name>RouteCommon</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Common route attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="111" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLRoutev4_1ac13fd9824382cab85a14a5553ff34c54" prot="public" static="no" mutable="no">
+        <type>repeated <ref refid="structSLRoutePath" kindref="compound">SLRoutePath</ref></type>
+        <definition>repeated SLRoutePath SLRoutev4::PathList</definition>
+        <argsstring></argsstring>
+        <name>PathList</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>List of route paths for a particular route. </para>        </briefdescription>
+        <detaileddescription>
+<para>Specifying more than one path is allowed for ECMP/UCMP cases </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="114" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>IPv4 route. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="396">
+        <label>SLInterface</label>
+        <link refid="structSLInterface"/>
+      </node>
+      <node id="393">
+        <label>SLRouteCommon</label>
+        <link refid="structSLRouteCommon"/>
+      </node>
+      <node id="392">
+        <label>SLRoutev4</label>
+        <link refid="structSLRoutev4"/>
+        <childnode refid="393" relation="usage">
+          <edgelabel>RouteCommon</edgelabel>
+        </childnode>
+        <childnode refid="394" relation="usage">
+          <edgelabel>PathList</edgelabel>
+        </childnode>
+      </node>
+      <node id="394">
+        <label>SLRoutePath</label>
+        <link refid="structSLRoutePath"/>
+        <childnode refid="395" relation="usage">
+          <edgelabel>NexthopAddress</edgelabel>
+          <edgelabel>RemoteAddress</edgelabel>
+        </childnode>
+        <childnode refid="396" relation="usage">
+          <edgelabel>NexthopInterface</edgelabel>
+        </childnode>
+      </node>
+      <node id="395">
+        <label>SLIpAddress</label>
+        <link refid="structSLIpAddress"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_route_ipv4.proto" line="102" column="1" bodyfile="/slapi/grpc/protos/sl_route_ipv4.proto" bodystart="102" bodyend="115"/>
+    <listofallmembers>
+      <member refid="structSLRoutev4_1ac13fd9824382cab85a14a5553ff34c54" prot="public" virt="non-virtual"><scope>SLRoutev4</scope><name>PathList</name></member>
+      <member refid="structSLRoutev4_1af3be501ca2908eb0330565e5075bf2c9" prot="public" virt="non-virtual"><scope>SLRoutev4</scope><name>Prefix</name></member>
+      <member refid="structSLRoutev4_1a1a1c50dc6ff3f57c210de31f030c51d6" prot="public" virt="non-virtual"><scope>SLRoutev4</scope><name>PrefixLen</name></member>
+      <member refid="structSLRoutev4_1addb4f81fb67ca4bdd99cfc5c0fe70155" prot="public" virt="non-virtual"><scope>SLRoutev4</scope><name>RouteCommon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

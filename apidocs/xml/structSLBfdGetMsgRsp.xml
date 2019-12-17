@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structSLBfdGetMsgRsp" kind="struct" language="C++" prot="public">
+    <compoundname>SLBfdGetMsgRsp</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1a0817c31db14b1865a2118f604a0980ff" prot="public" static="no" mutable="no">
+        <type><ref refid="structSLErrorStatus" kindref="compound">SLErrorStatus</ref></type>
+        <definition>SLErrorStatus SLBfdGetMsgRsp::ErrStatus</definition>
+        <argsstring></argsstring>
+        <name>ErrStatus</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="39" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1af1726a7dee59d56eb8bce9c631406fc2" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdGetMsgRsp::MaxBfdSessionCfgPerSLBfdMsg</definition>
+        <argsstring></argsstring>
+        <name>MaxBfdSessionCfgPerSLBfdMsg</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Max BFD objects within a single BfdMsg message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="41" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1a001918b9e90d626c0317c411026f54a1" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdGetMsgRsp::MinBfdTxIntervalSingleHop</definition>
+        <argsstring></argsstring>
+        <name>MinBfdTxIntervalSingleHop</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Min BFD Transmit Interval for single hop sessions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="43" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1aa199ce40bb8d8e15060a3d1a4a841557" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdGetMsgRsp::MinBfdTxIntervalMultiHop</definition>
+        <argsstring></argsstring>
+        <name>MinBfdTxIntervalMultiHop</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Min BFD session Transmit Interval for multi hop sessions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="45" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1afd6176367a88c6df1a7513c8a233bd61" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdGetMsgRsp::MinBfdDetectMultiplierSingleHop</definition>
+        <argsstring></argsstring>
+        <name>MinBfdDetectMultiplierSingleHop</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Min BFD detection multiplier for single hop sessions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="47" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structSLBfdGetMsgRsp_1a663e1433891e7a2f56a6340a5e21708f" prot="public" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 SLBfdGetMsgRsp::MinBfdDetectMultiplierMultiHop</definition>
+        <argsstring></argsstring>
+        <name>MinBfdDetectMultiplierMultiHop</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Min BFD detection multiplier for multi hop sessions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="49" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BFD Get Global info response message. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>SLBfdGetMsgRsp</label>
+        <link refid="structSLBfdGetMsgRsp"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ErrStatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>SLErrorStatus</label>
+        <link refid="structSLErrorStatus"/>
+      </node>
+    </collaborationgraph>
+    <location file="/slapi/grpc/protos/sl_bfd_common.proto" line="37" column="1" bodyfile="/slapi/grpc/protos/sl_bfd_common.proto" bodystart="37" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structSLBfdGetMsgRsp_1a0817c31db14b1865a2118f604a0980ff" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>ErrStatus</name></member>
+      <member refid="structSLBfdGetMsgRsp_1af1726a7dee59d56eb8bce9c631406fc2" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>MaxBfdSessionCfgPerSLBfdMsg</name></member>
+      <member refid="structSLBfdGetMsgRsp_1a663e1433891e7a2f56a6340a5e21708f" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>MinBfdDetectMultiplierMultiHop</name></member>
+      <member refid="structSLBfdGetMsgRsp_1afd6176367a88c6df1a7513c8a233bd61" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>MinBfdDetectMultiplierSingleHop</name></member>
+      <member refid="structSLBfdGetMsgRsp_1aa199ce40bb8d8e15060a3d1a4a841557" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>MinBfdTxIntervalMultiHop</name></member>
+      <member refid="structSLBfdGetMsgRsp_1a001918b9e90d626c0317c411026f54a1" prot="public" virt="non-virtual"><scope>SLBfdGetMsgRsp</scope><name>MinBfdTxIntervalSingleHop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
