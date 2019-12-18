@@ -257,6 +257,9 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLMplsLabelBlockGetMsgRsp"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsLabelBlockGetMsgRsp">SLMplsLabelBlockGetMsgRsp</a></td></tr>
 <tr class="memdesc:structSLMplsLabelBlockGetMsgRsp"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Label Block get message response This message is the response to the label block query.  <a href="group__SLMpls.html#structSLMplsLabelBlockGetMsgRsp">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsLabelBlockGetMsgRsp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSlMplsReg"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSlMplsReg">SlMplsReg</a></td></tr>
+<tr class="memdesc:structSlMplsReg"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Registration message.  <a href="group__SLMpls.html#structSlMplsReg">More...</a><br /></td></tr>
+<tr class="separator:structSlMplsReg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSLMplsRegMsg"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsRegMsg">SLMplsRegMsg</a></td></tr>
 <tr class="memdesc:structSLMplsRegMsg"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Registration message.  <a href="group__SLMpls.html#structSLMplsRegMsg">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsRegMsg"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,6 +281,9 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLMplsIlmKey"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsIlmKey">SLMplsIlmKey</a></td></tr>
 <tr class="memdesc:structSLMplsIlmKey"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry's key.  <a href="group__SLMpls.html#structSLMplsIlmKey">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsIlmKey"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSLMplsCos"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsCos">SLMplsCos</a></td></tr>
+<tr class="memdesc:structSLMplsCos"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry's CoS value This message contains either EXP bits or a forwarding class.  <a href="group__SLMpls.html#structSLMplsCos">More...</a><br /></td></tr>
+<tr class="separator:structSLMplsCos"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSLMplsIlmEntry"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsIlmEntry">SLMplsIlmEntry</a></td></tr>
 <tr class="memdesc:structSLMplsIlmEntry"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry.  <a href="group__SLMpls.html#structSLMplsIlmEntry">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsIlmEntry"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -305,11 +311,18 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343ac7d249972bd073b0ee538bc5b46571ec">SL_LABEL_ACTION_POP_AND_FORWARD</a> = 0x2, 
 <a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343ad6a68f37daca0b8464687f3afdbda849">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV4</a> = 0x3, 
 <br />
-&#160;&#160;<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6</a> = 0x4
+&#160;&#160;<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6</a> = 0x4, 
+<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a20369cd6ad464209624900f14d6606c4">SL_LABEL_ACTION_POP_AND_LOOKUP</a> = 0x5
 <br />
  }<tr class="memdesc:gab3280b80569f43dc1008464bbbbdd343"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS label actions.  <a href="group__SLMpls.html#gab3280b80569f43dc1008464bbbbdd343">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gab3280b80569f43dc1008464bbbbdd343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">SLMplsLabelBlockType</a> { <a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21a395d899add8b3d107cc6137abac0b272">SL_MPLS_LABEL_BLOCK_TYPE_RESERVED</a> = 0x0, 
+<a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21aac55155845c4b1511ccf075b706d0337">SL_MPLS_LABEL_BLOCK_TYPE_SRGB</a> = 0x1, 
+<a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21a71cef0db925042881ba1a8ce050595fd">SL_MPLS_LABEL_BLOCK_TYPE_CBF</a> = 0x2
+ }<tr class="memdesc:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label Block Types.  <a href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Attributes</h2></td></tr>
@@ -322,7 +335,7 @@ package&#160;</td><td class="memItemRight" valign="bottom"><b>service_layer</b><
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><hr/>
-<p> Copyright (c) 2016 by Cisco Systems, Inc. </p><h2>All rights reserved. </h2>
+<p> Copyright (c) 2019 by Cisco Systems, Inc. </p><h2>All rights reserved. </h2>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->

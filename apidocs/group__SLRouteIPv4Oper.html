@@ -223,6 +223,9 @@ rpc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 rpc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#ga5ff6c135e5d22539eb16080e79e8d66b">SLRoutev4Oper::SLRoutev4GetStream</a> (stream <a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4GetMsg">SLRoutev4GetMsg</a>) returns(stream <a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4GetMsgRsp">SLRoutev4GetMsgRsp</a>)</td></tr>
 <tr class="memdesc:ga5ff6c135e5d22539eb16080e79e8d66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves route attributes. <br /></td></tr>
 <tr class="separator:ga5ff6c135e5d22539eb16080e79e8d66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf248fb2c08e64c817bd3ed2509eadd64"><td class="memItemLeft" align="right" valign="top">rpc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#gaf248fb2c08e64c817bd3ed2509eadd64">SLRoutev4Oper::SLRoutev4GetNotifStream</a> (stream <a class="el" href="group__SLRouteCommon.html#structSLRouteGetNotifMsg">SLRouteGetNotifMsg</a>) returns(stream <a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4Notif">SLRoutev4Notif</a>)</td></tr>
+<tr class="memdesc:gaf248fb2c08e64c817bd3ed2509eadd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route Redistribution Operations.  <a href="group__SLRouteIPv4Oper.html#gaf248fb2c08e64c817bd3ed2509eadd64">More...</a><br /></td></tr>
+<tr class="separator:gaf248fb2c08e64c817bd3ed2509eadd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Messages</h2></td></tr>
@@ -244,8 +247,32 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLRoutev4GetMsgRsp"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4GetMsgRsp">SLRoutev4GetMsgRsp</a></td></tr>
 <tr class="memdesc:structSLRoutev4GetMsgRsp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gt Route message response.  <a href="group__SLRouteIPv4Oper.html#structSLRoutev4GetMsgRsp">More...</a><br /></td></tr>
 <tr class="separator:structSLRoutev4GetMsgRsp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSLRoutev4NotifRoute"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4NotifRoute">SLRoutev4NotifRoute</a></td></tr>
+<tr class="memdesc:structSLRoutev4NotifRoute"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 Route notification.  <a href="group__SLRouteIPv4Oper.html#structSLRoutev4NotifRoute">More...</a><br /></td></tr>
+<tr class="separator:structSLRoutev4NotifRoute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSLRoutev4Notif"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4Notif">SLRoutev4Notif</a></td></tr>
+<tr class="memdesc:structSLRoutev4Notif"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 notification message.  <a href="group__SLRouteIPv4Oper.html#structSLRoutev4Notif">More...</a><br /></td></tr>
+<tr class="separator:structSLRoutev4Notif"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">RPC Documentation</h2>
+<a class="anchor" id="gaf248fb2c08e64c817bd3ed2509eadd64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rpc SLRoutev4Oper::SLRoutev4GetNotifStream </td>
+          <td>(</td>
+          <td class="paramtype">stream&#160;</td>
+          <td class="paramname"><em>SLRouteGetNotifMsg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This call is used to get a stream of route notifications. It can be used to get "push" notifications for route adds/updates/deletes. The caller must maintain the GRPC channel as long as there is interest in route notifications.</p>
+<p>The call takes a stream of per-VRF notification requests. The success/failure of the notification request is relayed in the <a class="el" href="group__SLRouteCommon.html#structSLRouteNotifStatus" title="Common Route Notification Status message. ">SLRouteNotifStatus</a> followed by a Start marker, any routes if present, and an End Marker. </p>
+
+</div>
+</div>
 <a class="anchor" id="gab68aec7539b4bbb28a7e284dbc18a46f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -637,6 +664,102 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
       </table>
 </div><div class="memdoc">
 <p>When set to True, it indicates that the server has returned M, where M &lt; N, of the original N requested Entries. </p>
+
+</div>
+</div>
+
+</div>
+</div>
+<a name="structSLRoutev4NotifRoute" id="structSLRoutev4NotifRoute"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">message SLRoutev4NotifRoute</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="memberdecls">
+<tr><td colspan="2"><h3>Attributes</h3></td></tr>
+<tr class="memitem:a3b6cfe78e39acfc57e10397fc027d1c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b6cfe78e39acfc57e10397fc027d1c4"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#a3b6cfe78e39acfc57e10397fc027d1c4">VrfName</a> = 1</td></tr>
+<tr class="memdesc:a3b6cfe78e39acfc57e10397fc027d1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">VRF name. <br /></td></tr>
+<tr class="separator:a3b6cfe78e39acfc57e10397fc027d1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf74e1eeaa2f7d839b68f4b022b15fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adaf74e1eeaa2f7d839b68f4b022b15fe"></a>
+repeated <a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4">SLRoutev4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#adaf74e1eeaa2f7d839b68f4b022b15fe">Entries</a> = 2</td></tr>
+<tr class="memdesc:adaf74e1eeaa2f7d839b68f4b022b15fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 routes. <br /></td></tr>
+<tr class="separator:adaf74e1eeaa2f7d839b68f4b022b15fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structSLRoutev4Notif" id="structSLRoutev4Notif"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">message SLRoutev4Notif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="memberdecls">
+<tr><td colspan="2"><h3>Attributes</h3></td></tr>
+<tr class="memitem:a26af213400459603bcac13d2ad73a718"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26af213400459603bcac13d2ad73a718"></a>
+<a class="el" href="group__SLRouteCommon.html#gad630c2e5490e88b889ccd79ace15005b">SLNotifType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#a26af213400459603bcac13d2ad73a718">EventType</a> = 1</td></tr>
+<tr class="memdesc:a26af213400459603bcac13d2ad73a718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event Type. <br /></td></tr>
+<tr class="separator:a26af213400459603bcac13d2ad73a718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77059a898185d4c30311a9891683b759"><td class="memItemLeft" align="right" valign="top">oneof&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#a77059a898185d4c30311a9891683b759">Event</a></td></tr>
+<tr class="memdesc:a77059a898185d4c30311a9891683b759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Further info based on EventType.  <a href="#a77059a898185d4c30311a9891683b759">More...</a><br /></td></tr>
+<tr class="separator:a77059a898185d4c30311a9891683b759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40690a17d72133ec316f5eebefedff6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__SLRouteCommon.html#structSLRouteNotifStatus">SLRouteNotifStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#a40690a17d72133ec316f5eebefedff6d">NotifStatus</a> = 3</td></tr>
+<tr class="memdesc:a40690a17d72133ec316f5eebefedff6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">case EventType == SL_EVENT_TYPE_STATUS: =&gt; This field carries the status of the GetNotifMsg request.  <a href="#a40690a17d72133ec316f5eebefedff6d">More...</a><br /></td></tr>
+<tr class="separator:a40690a17d72133ec316f5eebefedff6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9251655a6c99ea17c74dde923d4a79a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9251655a6c99ea17c74dde923d4a79a"></a>
+<a class="el" href="group__SLRouteIPv4Oper.html#structSLRoutev4NotifRoute">SLRoutev4NotifRoute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#aa9251655a6c99ea17c74dde923d4a79a">Route</a> = 4</td></tr>
+<tr class="memdesc:aa9251655a6c99ea17c74dde923d4a79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">case EventType == SL_EVENT_TYPE_ROUTE: =&gt; This field carries the v4 route <br /></td></tr>
+<tr class="separator:aa9251655a6c99ea17c74dde923d4a79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76bc66b4f2f51fca7d40d833d6755af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__SLRouteCommon.html#structSLRouteNotifMarker">SLRouteNotifMarker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#ac76bc66b4f2f51fca7d40d833d6755af">Marker</a> = 5</td></tr>
+<tr class="memdesc:ac76bc66b4f2f51fca7d40d833d6755af"><td class="mdescLeft">&#160;</td><td class="mdescRight">case EventType == SL_EVENT_TYPE_START_MARKER: case EventType == SL_EVENT_TYPE_END_MARKER: =&gt; This field carries the start marker and end marker per-VRF.  <a href="#ac76bc66b4f2f51fca7d40d833d6755af">More...</a><br /></td></tr>
+<tr class="separator:ac76bc66b4f2f51fca7d40d833d6755af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0dcd1edbbaeee26a5cae44cf75ebcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd0dcd1edbbaeee26a5cae44cf75ebcf"></a>
+<a class="el" href="group__SLRouteCommon.html#structSLVrfNotif">SLVrfNotif</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteIPv4Oper.html#acd0dcd1edbbaeee26a5cae44cf75ebcf">Vrf</a> = 6</td></tr>
+<tr class="memdesc:acd0dcd1edbbaeee26a5cae44cf75ebcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">case EventType == SL_EVENT_TYPE_VRF: <br /></td></tr>
+<tr class="separator:acd0dcd1edbbaeee26a5cae44cf75ebcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h4 class="groupheader">Member Data Documentation</h4>
+<a class="anchor" id="a77059a898185d4c30311a9891683b759"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oneof SLRoutev4Notif::Event</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">        </div><div class="line">        <a class="code" href="group__SLCommonTypes.html#structSLErrorStatus">SLErrorStatus</a> ErrStatus = 2</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac76bc66b4f2f51fca7d40d833d6755af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__SLRouteCommon.html#structSLRouteNotifMarker">SLRouteNotifMarker</a> SLRoutev4Notif::Marker = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40690a17d72133ec316f5eebefedff6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__SLRouteCommon.html#structSLRouteNotifStatus">SLRouteNotifStatus</a> SLRoutev4Notif::NotifStatus = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

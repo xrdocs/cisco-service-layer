@@ -9,5 +9,6 @@ var searchData=
   ['slroutecommon',['SLRouteCommon',['../group__SLRouteCommon.html',1,'']]],
   ['slrouteipv4oper',['SLRouteIPv4Oper',['../group__SLRouteIPv4Oper.html',1,'']]],
   ['slrouteipv6oper',['SLRouteIPv6Oper',['../group__SLRouteIPv6Oper.html',1,'']]],
+  ['slroutel2oper',['SLRouteL2Oper',['../group__SLRouteL2Oper.html',1,'']]],
   ['slversion',['SLVersion',['../group__SLVersion.html',1,'']]]
 ];

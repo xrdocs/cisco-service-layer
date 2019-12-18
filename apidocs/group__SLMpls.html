@@ -248,6 +248,9 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLMplsLabelBlockGetMsgRsp"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsLabelBlockGetMsgRsp">SLMplsLabelBlockGetMsgRsp</a></td></tr>
 <tr class="memdesc:structSLMplsLabelBlockGetMsgRsp"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Label Block get message response This message is the response to the label block query.  <a href="group__SLMpls.html#structSLMplsLabelBlockGetMsgRsp">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsLabelBlockGetMsgRsp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSlMplsReg"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSlMplsReg">SlMplsReg</a></td></tr>
+<tr class="memdesc:structSlMplsReg"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Registration message.  <a href="group__SLMpls.html#structSlMplsReg">More...</a><br /></td></tr>
+<tr class="separator:structSlMplsReg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSLMplsRegMsg"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsRegMsg">SLMplsRegMsg</a></td></tr>
 <tr class="memdesc:structSLMplsRegMsg"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS Registration message.  <a href="group__SLMpls.html#structSLMplsRegMsg">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsRegMsg"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,6 +272,9 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLMplsIlmKey"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsIlmKey">SLMplsIlmKey</a></td></tr>
 <tr class="memdesc:structSLMplsIlmKey"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry's key.  <a href="group__SLMpls.html#structSLMplsIlmKey">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsIlmKey"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSLMplsCos"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsCos">SLMplsCos</a></td></tr>
+<tr class="memdesc:structSLMplsCos"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry's CoS value This message contains either EXP bits or a forwarding class.  <a href="group__SLMpls.html#structSLMplsCos">More...</a><br /></td></tr>
+<tr class="separator:structSLMplsCos"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSLMplsIlmEntry"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#structSLMplsIlmEntry">SLMplsIlmEntry</a></td></tr>
 <tr class="memdesc:structSLMplsIlmEntry"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS ILM entry.  <a href="group__SLMpls.html#structSLMplsIlmEntry">More...</a><br /></td></tr>
 <tr class="separator:structSLMplsIlmEntry"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,11 +302,18 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343ac7d249972bd073b0ee538bc5b46571ec">SL_LABEL_ACTION_POP_AND_FORWARD</a> = 0x2, 
 <a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343ad6a68f37daca0b8464687f3afdbda849">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV4</a> = 0x3, 
 <br />
-&#160;&#160;<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6</a> = 0x4
+&#160;&#160;<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12">SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6</a> = 0x4, 
+<a class="el" href="group__SLMpls.html#ggab3280b80569f43dc1008464bbbbdd343a20369cd6ad464209624900f14d6606c4">SL_LABEL_ACTION_POP_AND_LOOKUP</a> = 0x5
 <br />
  }<tr class="memdesc:gab3280b80569f43dc1008464bbbbdd343"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPLS label actions.  <a href="group__SLMpls.html#gab3280b80569f43dc1008464bbbbdd343">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gab3280b80569f43dc1008464bbbbdd343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">SLMplsLabelBlockType</a> { <a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21a395d899add8b3d107cc6137abac0b272">SL_MPLS_LABEL_BLOCK_TYPE_RESERVED</a> = 0x0, 
+<a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21aac55155845c4b1511ccf075b706d0337">SL_MPLS_LABEL_BLOCK_TYPE_SRGB</a> = 0x1, 
+<a class="el" href="group__SLMpls.html#gga82d8e1fede2512fbc7c9b5d27d911d21a71cef0db925042881ba1a8ce050595fd">SL_MPLS_LABEL_BLOCK_TYPE_CBF</a> = 0x2
+ }<tr class="memdesc:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label Block Types.  <a href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ga82d8e1fede2512fbc7c9b5d27d911d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">RPC Documentation</h2>
 <a class="anchor" id="ga75707c319101bd10c2845990f517c72b"></a>
@@ -398,8 +411,40 @@ uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:a6eadca73cc43a8b18c31d0b7198f0b75"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a6eadca73cc43a8b18c31d0b7198f0b75">LabelBlockSize</a> = 2</td></tr>
 <tr class="memdesc:a6eadca73cc43a8b18c31d0b7198f0b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label block size.  <a href="#a6eadca73cc43a8b18c31d0b7198f0b75">More...</a><br /></td></tr>
 <tr class="separator:a6eadca73cc43a8b18c31d0b7198f0b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5da58e159268503dd1634b5d3f1765b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">SLMplsLabelBlockType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#af5da58e159268503dd1634b5d3f1765b">BlockType</a> = 3</td></tr>
+<tr class="memdesc:af5da58e159268503dd1634b5d3f1765b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label block type.  <a href="#af5da58e159268503dd1634b5d3f1765b">More...</a><br /></td></tr>
+<tr class="separator:af5da58e159268503dd1634b5d3f1765b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218d3a76c132d253157cc66c65955daf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a218d3a76c132d253157cc66c65955daf">ClientName</a> = 4</td></tr>
+<tr class="memdesc:a218d3a76c132d253157cc66c65955daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label block client name as configured e.g.  <a href="#a218d3a76c132d253157cc66c65955daf">More...</a><br /></td></tr>
+<tr class="separator:a218d3a76c132d253157cc66c65955daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
+<a class="anchor" id="af5da58e159268503dd1634b5d3f1765b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">SLMplsLabelBlockType</a> SLMplsLabelBlockKey::BlockType = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See definition of SlMplsLabelBlockType for valid values. If none specified, defaults to SL_MPLS_LABEL_BLOCK_TYPE_SRGB. </p>
+
+</div>
+</div>
+<a class="anchor" id="a218d3a76c132d253157cc66c65955daf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SLMplsLabelBlockKey::ClientName = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>through CLI. Client name is ignored if BlockType is not SL_MPLS_LABEL_BLOCK_TYPE_CBF. </p>
+
+</div>
+</div>
 <a class="anchor" id="a6eadca73cc43a8b18c31d0b7198f0b75"></a>
 <div class="memitem">
 <div class="memproto">
@@ -621,6 +666,42 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
+<a name="structSlMplsReg" id="structSlMplsReg"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">message SlMplsReg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="memberdecls">
+<tr><td colspan="2"><h3>Attributes</h3></td></tr>
+<tr class="memitem:a96a479b2c396f3d2c76fc0b9435ae57a"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a96a479b2c396f3d2c76fc0b9435ae57a">PurgeIntervalSeconds</a> = 1</td></tr>
+<tr class="memdesc:a96a479b2c396f3d2c76fc0b9435ae57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">In case the Service Layer -&gt; LSD connection is lost, this specifies the timeout period after which LSD will automatically purge the installed ILMs, unless the service layer:  <a href="#a96a479b2c396f3d2c76fc0b9435ae57a">More...</a><br /></td></tr>
+<tr class="separator:a96a479b2c396f3d2c76fc0b9435ae57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h4 class="groupheader">Member Data Documentation</h4>
+<a class="anchor" id="a96a479b2c396f3d2c76fc0b9435ae57a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 SlMplsReg::PurgeIntervalSeconds = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ol type="1">
+<li>Sends MPLS Registration message</li>
+<li>Replays all label blocks and ILMs</li>
+<li>and sends MPLS EOF message Similarly, in the event of an RP Switchover the ILMs must be replayed within the purge interval. Purge timer is ignored for all registration messages except for SL_REGOP_REGISTER </li>
+</ol>
+
+</div>
+</div>
+
+</div>
+</div>
 <a name="structSLMplsRegMsg" id="structSLMplsRegMsg"></a>
 <div class="memitem">
 <div class="memproto">
@@ -637,6 +718,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <a class="el" href="group__SLCommonTypes.html#gabcd5b7bdb1e75e62f586e079e924f896">SLRegOp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a7a974104327161f60db364a7d20b4192">Oper</a> = 1</td></tr>
 <tr class="memdesc:a7a974104327161f60db364a7d20b4192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registration Operation. <br /></td></tr>
 <tr class="separator:a7a974104327161f60db364a7d20b4192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aca4dda85924e3c7b6dc8fbb5338fdb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9aca4dda85924e3c7b6dc8fbb5338fdb"></a>
+<a class="el" href="group__SLMpls.html#structSlMplsReg">SlMplsReg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a9aca4dda85924e3c7b6dc8fbb5338fdb">RegMsg</a> = 2</td></tr>
+<tr class="memdesc:a9aca4dda85924e3c7b6dc8fbb5338fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registration Message. <br /></td></tr>
+<tr class="separator:a9aca4dda85924e3c7b6dc8fbb5338fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 
 </div>
@@ -918,7 +1003,49 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a26a5ae27a8d94cb2a290e93064794c26">LocalLabel</a> = 1</td></tr>
 <tr class="memdesc:a26a5ae27a8d94cb2a290e93064794c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incoming local label. <br /></td></tr>
 <tr class="separator:a26a5ae27a8d94cb2a290e93064794c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aec2f2e684f46f88411fc8bbfa91be8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5aec2f2e684f46f88411fc8bbfa91be8"></a>
+<a class="el" href="group__SLMpls.html#structSLMplsCos">SLMplsCos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#a5aec2f2e684f46f88411fc8bbfa91be8">SlMplsCosVal</a> = 2</td></tr>
+<tr class="memdesc:a5aec2f2e684f46f88411fc8bbfa91be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Either Exp bits or CoS forwarding class. <br /></td></tr>
+<tr class="separator:a5aec2f2e684f46f88411fc8bbfa91be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+
+</div>
+</div>
+<a name="structSLMplsCos" id="structSLMplsCos"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">message SLMplsCos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="memberdecls">
+<tr><td colspan="2"><h3>Attributes</h3></td></tr>
+<tr class="memitem:a50b6bdcea7d3bc6b1e49ed5a4853bb54"><td class="memItemLeft" align="right" valign="top">oneof&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="separator:a50b6bdcea7d3bc6b1e49ed5a4853bb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c0a34ed6590b3b631e142bac0afa62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8c0a34ed6590b3b631e142bac0afa62"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#ac8c0a34ed6590b3b631e142bac0afa62">DefaultElspPath</a> = 2</td></tr>
+<tr class="memdesc:ac8c0a34ed6590b3b631e142bac0afa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to indicate that this is also an E-LSP entry and all paths will be using this default path. <br /></td></tr>
+<tr class="separator:ac8c0a34ed6590b3b631e142bac0afa62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84805151f196d00ef2b71eb92b14ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad84805151f196d00ef2b71eb92b14ca5"></a>
+uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLMpls.html#ad84805151f196d00ef2b71eb92b14ca5">ForwardingClass</a> = 3</td></tr>
+<tr class="memdesc:ad84805151f196d00ef2b71eb92b14ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">forwarding class with valid range &lt;0-7&gt; <br /></td></tr>
+<tr class="separator:ad84805151f196d00ef2b71eb92b14ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h4 class="groupheader">Member Data Documentation</h4>
+<a class="anchor" id="a50b6bdcea7d3bc6b1e49ed5a4853bb54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oneof SLMplsCos::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">        </div><div class="line">        uint32 Exp = 1</div></div><!-- fragment -->
+</div>
+</div>
 
 </div>
 </div>
@@ -1232,6 +1359,33 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr><td class="fieldname"><a class="anchor" id="ggab3280b80569f43dc1008464bbbbdd343a33f1ec6de4cf17be142a0d0435436b12"></a>SL_LABEL_ACTION_POP_AND_LOOKUP_IPV6&#160;</td><td class="fielddoc">
 <p>Pop and lookup IPv6. </p>
 <p>0x4 Pop and lookup the IPv6 next header in the specified Vrf. Used for per vrf labels at egress PE. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggab3280b80569f43dc1008464bbbbdd343a20369cd6ad464209624900f14d6606c4"></a>SL_LABEL_ACTION_POP_AND_LOOKUP&#160;</td><td class="fielddoc">
+<p>Pop and lookup. </p>
+<p>0x5 Pop and lookup the next header in the packet (MPLS, IPv4, IPv6) in the specified Vrf. Used for per vrf labels at egress PE. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ga82d8e1fede2512fbc7c9b5d27d911d21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__SLMpls.html#ga82d8e1fede2512fbc7c9b5d27d911d21">SLMplsLabelBlockType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga82d8e1fede2512fbc7c9b5d27d911d21a395d899add8b3d107cc6137abac0b272"></a>SL_MPLS_LABEL_BLOCK_TYPE_RESERVED&#160;</td><td class="fielddoc">
+<p>Reserved. 0x0. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga82d8e1fede2512fbc7c9b5d27d911d21aac55155845c4b1511ccf075b706d0337"></a>SL_MPLS_LABEL_BLOCK_TYPE_SRGB&#160;</td><td class="fielddoc">
+<p>Segment Routing Global Block (SRGB) Block Type. 0x1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga82d8e1fede2512fbc7c9b5d27d911d21a71cef0db925042881ba1a8ce050595fd"></a>SL_MPLS_LABEL_BLOCK_TYPE_CBF&#160;</td><td class="fielddoc">
+<p>Class Based Forwarding (CBF) Block Type. 0x2. </p>
 </td></tr>
 </table>
 

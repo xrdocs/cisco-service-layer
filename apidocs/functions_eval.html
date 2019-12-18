@@ -180,7 +180,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li class="current"><a href="#index__"><span>_</span></a></li>
+      <li class="current"><a href="functions_eval.html#index__"><span>_</span></a></li>
+      <li><a href="functions_eval_p.html#index_p"><span>p</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -202,6 +203,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>SL_AUTH_FAIL
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579afbaac817e2f51ba3bf53c3e64804aa23">SLErrorStatus</a>
+</li>
 <li>SL_BFD_API_INTERNAL_ERROR
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a545a5bc49e05ad0bc6f485670c262cc3">SLErrorStatus</a>
 </li>
@@ -313,6 +317,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_ILM_ADD_FAILED
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a655b43ec37f5b94a2f3752df53860268">SLErrorStatus</a>
 </li>
+<li>SL_ILM_ADD_NO_PATHS
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3b8081e11b4866cf5be66fff0a49a3da">SLErrorStatus</a>
+</li>
 <li>SL_ILM_DB_NOMEM
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2440492455fb2b27811a78102d9cf649">SLErrorStatus</a>
 </li>
@@ -322,14 +329,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_ILM_EEXIST
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a89ea1d0e87c39db0195c66f3614767ea">SLErrorStatus</a>
 </li>
+<li>SL_ILM_ELSP_EXP_OR_DFLT_ALREADY_SET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a17d8c7b229422a6db1c9b531b99d6f82">SLErrorStatus</a>
+</li>
 <li>SL_ILM_ERR_OFFSET
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0235a69a0b45e63799032a88393bbd58">SLErrorStatus</a>
+</li>
+<li>SL_ILM_INVALID_ELSP_EXP
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8a722dc4ff8467d36cabe3d25b63d3c7">SLErrorStatus</a>
 </li>
 <li>SL_ILM_INVALID_LABEL
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a09403b877b38536a9c149a6c4778ca89">SLErrorStatus</a>
 </li>
 <li>SL_ILM_INVALID_NUM_NHLFE
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0ad84f867d60a07b5c52b63de4637d90">SLErrorStatus</a>
+</li>
+<li>SL_ILM_LABEL_TOOMANY_EXP_CLASSES
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae1d9f71b32bf45663ea08362386e9856">SLErrorStatus</a>
 </li>
 <li>SL_ILM_LSD_ADD_FAILED
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a58d4e89b7891173ed2525157da7d970a">SLErrorStatus</a>
@@ -348,6 +364,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>SL_ILM_TOOMANY_PRIMARY_NHLFES
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aad99a5db11df97c5cdf3b31801748cd3">SLErrorStatus</a>
+</li>
+<li>SL_ILM_UNSUPPORTED_ELSP
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a6b6548f9643196a71dedd80b26b5f71b">SLErrorStatus</a>
+</li>
+<li>SL_ILM_UPDATE_NO_PATHS
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aeef510023ca07f02c7e5e77fd6f4425f">SLErrorStatus</a>
 </li>
 <li>SL_INIT_SERVER_MODE_CHANGE_FAILED
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2a61c5389159f20750ee8642cf9f0737">SLErrorStatus</a>
@@ -394,6 +416,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_INTF_START_OFFSET
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a294b8b2afcca2da8e4190af023990d76">SLErrorStatus</a>
 </li>
+<li>SL_L2_BD_REG_BD_NOT_FOUND
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8cd248163dd172021b8cb2086c2185a6">SLErrorStatus</a>
+</li>
+<li>SL_L2_BD_REG_NAME_TOO_LONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac79351924272d5a4877324a258a9fd4e">SLErrorStatus</a>
+</li>
+<li>SL_L2_BD_REG_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3d716342d892e6a504360f31b0025aa0">SLErrorStatus</a>
+</li>
+<li>SL_L2_BD_REGISTRATION_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a9c32722ce50fcabbce841c1a3cce76c9">SLErrorStatus</a>
+</li>
+<li>SL_L2_BD_STATE_ADDED
+: <a class="el" href="group__SLRouteL2Oper.html#a8408a88ee80e1b2448fb3d8e9fcc3a92ac3494904c8472d7eff3576bd6aab4294">SLL2BdStateInfo</a>
+</li>
+<li>SL_L2_BD_STATE_DELETED
+: <a class="el" href="group__SLRouteL2Oper.html#a8408a88ee80e1b2448fb3d8e9fcc3a92a4d51575cd4d7ca99ed5c6a8cb837d541">SLL2BdStateInfo</a>
+</li>
+<li>SL_L2_BD_STATE_REPLAY_NEEDED
+: <a class="el" href="group__SLRouteL2Oper.html#a8408a88ee80e1b2448fb3d8e9fcc3a92a2620e8a665685b62e7c1e125e1f28046">SLL2BdStateInfo</a>
+</li>
+<li>SL_L2_BD_STATE_RESERVED
+: <a class="el" href="group__SLRouteL2Oper.html#a8408a88ee80e1b2448fb3d8e9fcc3a92acdd4b26ee79cfda45775de53514dc499">SLL2BdStateInfo</a>
+</li>
+<li>SL_L2_BD_UNREGISTRATION_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad17ac11012dbf17db5fe80b44f89efd0">SLErrorStatus</a>
+</li>
+<li>SL_L2_EOF_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7ead4ba6620ec11305b639a8e8015597">SLErrorStatus</a>
+</li>
+<li>SL_L2_NH_INTERFACE
+: <a class="el" href="group__SLRouteL2Oper.html#a190329ef5994fc11444ad9ad28ec57e7a217afe7ef93a7398cb1faf64a46905b8">SLL2RouteNh</a>
+</li>
+<li>SL_L2_NH_OVERLAY
+: <a class="el" href="group__SLRouteL2Oper.html#a190329ef5994fc11444ad9ad28ec57e7a7fa37a8a8a6edf10f5ca3cfd95334304">SLL2RouteNh</a>
+</li>
+<li>SL_L2_NH_RESERVED
+: <a class="el" href="group__SLRouteL2Oper.html#a190329ef5994fc11444ad9ad28ec57e7a96edb877b07e4243ae9ede19b11c69c9">SLL2RouteNh</a>
+</li>
+<li>SL_L2_REG_INVALID_ADMIN_DISTANCE
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579abfda256926091283d8c05a1ef5468d0e">SLErrorStatus</a>
+</li>
+<li>SL_L2_REG_IS_DUPLICATE
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8aea8938c1c56e9c8913248cd310793a">SLErrorStatus</a>
+</li>
+<li>SL_L2_REG_SERVER_NOT_INITIALIZED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a620f6ea9330c904fca75661ede851929">SLErrorStatus</a>
+</li>
+<li>SL_L2_REG_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1f717cce1a2510b2da37e52a2b300721">SLErrorStatus</a>
+</li>
+<li>SL_L2_REGISTRATION_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579af64e6b3cc54a68c3a963347a9becf29b">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_BD_NAME_MISSING
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae9cb835bd007b722a4600a687f0af95b">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_BD_NAME_TOOLONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aeded3e1c0acedc005e20b909f7cf8745">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_BD_NOT_FOUND
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1227ac82054b6a90a94f808712e6b1e2">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_BD_NOT_REGISTERED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a92f8ecad666562805923aaacb1f1cb90">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_INVALID_ARGS
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7f9b40306e496d6e35b01af41791a5e6">SLErrorStatus</a>
+</li>
+<li>SL_L2_ROUTE_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a35337fbbc47aaca919651edf469092d7">SLErrorStatus</a>
+</li>
+<li>SL_L2_UNREGISTRATION_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a78a20d4a04cdab9cb83d670f0bc853f9">SLErrorStatus</a>
+</li>
+<li>SL_LABEL_BLK_CLIENT_NAME_TOOLONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5e9d5c98108cf25f64524e73d89cd661">SLErrorStatus</a>
+</li>
 <li>SL_LABEL_BLK_DB_NOMEM
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5fe84c055f86ec7ab637ea4408f0c198">SLErrorStatus</a>
 </li>
@@ -424,6 +524,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_LABEL_BLK_LSD_LABEL_BLK_NOT_FOUND
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad0419e6c0da5d029c777c345769bac50">SLErrorStatus</a>
 </li>
+<li>SL_LABEL_BLK_TYPE_INVALID
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3f99e39cfb4cd3d44bf8ffaf346c3c21">SLErrorStatus</a>
+</li>
 <li>SL_MPLS_EOF_ERR
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac527267f9595f2446c990cdc5c97be83">SLErrorStatus</a>
 </li>
@@ -445,8 +548,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_NHLFE_BACKUP_PROTECTED_BITMAP_EMPTY
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad274148c4865850cfc7fe6624a7e397f">SLErrorStatus</a>
 </li>
+<li>SL_NHLFE_ELSP_PROTECTION_UNSUPPORTED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7f489dc2f32e1f586a4de0873d594a4f">SLErrorStatus</a>
+</li>
 <li>SL_NHLFE_ERR_OFFSET
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579afba8f9d54658e7dd457287f86c143dc2">SLErrorStatus</a>
+</li>
+<li>SL_NHLFE_EXP_SET_FAILED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0c04994bdf49a409a69449ed787362a1">SLErrorStatus</a>
 </li>
 <li>SL_NHLFE_INVALID_LABEL
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a71f5b1f2c39b7f12a070190c4c4c9f74">SLErrorStatus</a>
@@ -583,6 +692,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_PATH_REMOTE_ADDR_INVALID_SZ
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae5d03a0bca17ebee0377b4567a9c3b3b">SLErrorStatus</a>
 </li>
+<li>SL_PATH_ROUTER_MAC_ADDR_INVALID_SZ
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a02aae6b37b77133d3e0c0cbd728ff013">SLErrorStatus</a>
+</li>
 <li>SL_PATH_START_OFFSET
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a01a065cc7cbecd3e6d70a113e006a618">SLErrorStatus</a>
 </li>
@@ -685,6 +797,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SL_RPC_INTF_TOO_MANY_INTERFACES
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a766c42496025171495d6f49297c387f3">SLErrorStatus</a>
 </li>
+<li>SL_RPC_L2_BD_REG_CLIENT_NOT_REGISTERED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a69233466d5e5b0141ef1647bada2c9e2">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_BD_REG_NAME_MISSING
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5a123e2776d3db1e7ac56dd7bd5bad4d">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_BD_REG_SERVER_NOT_INITIALIZED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a94847370011df6634bf620b310dd33ae">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_BD_REG_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a989f8ed02fd85547f655c219759fdee7">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_BD_REG_TOO_MANY_MSGS
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aba60197122d931e93feb2a872a20bb50">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_BD_NAME_MISSING
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a75ad944258b3c4d0869e4995dbea5123">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_BD_NAME_TOOLONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ab9a35b40b5fcabd207d6755ccca64f38">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_BD_NOT_FOUND
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4ab6947807bbec688f255fa09dff3025">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_CLIENT_NOT_REGISTERED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8f2055bcd436572e1bd6b29f4ff6ed1b">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_DISABLE_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a20afbc959cba8e47ff0607f601296462">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_ENABLE_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579acd456627178eaa5108f64502ac260acd">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_EOF_ERR
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4750561a9f1fc4fbf1ade1a96ec07212">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_SERVER_NOT_INITIALIZED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a75a295dde34ab2b2ea02ccffb01db9bb">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_NOTIF_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac8fae9ecee09a67b0107af4661438ecf">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_ROUTE_CLIENT_NOT_REGISTERED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aec8a60fa10fc4b43a2c57af510a657e2">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_ROUTE_SERVER_NOT_INITIALIZED
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4190e98fa5fe405cbeaf6d9d4d839847">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_ROUTE_START_OFFSET
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4f5fafd268f0a4019c7661fd07f28c71">SLErrorStatus</a>
+</li>
+<li>SL_RPC_L2_ROUTE_TOO_MANY_MSGS
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8c7abe0c4d66fc1f22d215fa150de2a9">SLErrorStatus</a>
+</li>
 <li>SL_RPC_MPLS_ILM_TOO_MANY_ILMS
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a522a57b5ea3e5d178bde5dbf4f914eb2">SLErrorStatus</a>
 </li>
@@ -705,6 +871,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>SL_RPC_ROUTE_INIT_MODE_INCOMPATIBLE
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a56145032626a236b4c90ed40bd6150fd">SLErrorStatus</a>
+</li>
+<li>SL_RPC_ROUTE_NOTIF_SRC_PROTO_TAG_TOOLONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a9aeeaddb56132a0908d3238b80c01149">SLErrorStatus</a>
+</li>
+<li>SL_RPC_ROUTE_NOTIF_SRC_PROTO_TOOLONG
+: <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8f4a2246d401a7e607f195a9c6e6fb8b">SLErrorStatus</a>
 </li>
 <li>SL_RPC_ROUTE_SERVER_NOT_INITIALIZED
 : <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ab69a0ec993c1dfffa1d8d3e55e0b8909">SLErrorStatus</a>
