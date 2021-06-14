@@ -284,6 +284,11 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa9bdad935eda224ba392b1af8293e5ad">SL_VRF_TABLE_EOF_ERR</a> = 0x2008, 
 <br />
 &#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aba5180820d8f50b1f91555f30a3e3e55">SL_VRF_REG_VRF_NAME_MISSING</a> = 0x2009, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8873ac7342d1306b63989fa470999d00">SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR</a> = 0x2010, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7135aeb127f643b4ca237a66b3dde5b1">SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR</a> = 0x2011, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2e3290e8eb88cf919d1de2ce7f52466a">SL_VRF_V4_ROUTE_REPLAY_OK</a> = 0x2012, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4ce40a76e3de3d5bcf1726646f91760b">SL_VRF_V6_ROUTE_REPLAY_OK</a> = 0x2013, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8f17f5c77e8b30b62c72ba85286bc8e4">SL_RPC_ROUTE_START_OFFSET</a> = 0x3000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a6bea2ab1bac328a37992aa6077821449">SL_RPC_ROUTE_TOO_MANY_ROUTES</a> = 0x3001, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac5fc7867528cd4169b33bc8b240fe228">SL_RPC_ROUTE_VRF_NAME_TOOLONG</a> = 0x3002, 
@@ -415,125 +420,127 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a6b6548f9643196a71dedd80b26b5f71b">SL_ILM_UNSUPPORTED_ELSP</a> = 0x9011, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae1d9f71b32bf45663ea08362386e9856">SL_ILM_LABEL_TOOMANY_EXP_CLASSES</a> = 0x9012, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579afba8f9d54658e7dd457287f86c143dc2">SL_NHLFE_ERR_OFFSET</a> = 0xa000, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a945f157c25011986629246de153e30e6">SL_ILM_REPLAY_FATAL_ERROR</a> = 0x9013, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac7a8e627742e90f2cc75b719f981d3bf">SL_ILM_REPLAY_OK</a> = 0x9014, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579afba8f9d54658e7dd457287f86c143dc2">SL_NHLFE_ERR_OFFSET</a> = 0xa000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ade7c9cf8b35f8092a47504fbf4954842">SL_NHLFE_NH_NO_TABLE</a> = 0xa001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a9cadaf7746f419d078d3124b33826a78">SL_NHLFE_NH_INVALID_ADDR_SZ</a> = 0xa002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a9cadaf7746f419d078d3124b33826a78">SL_NHLFE_NH_INVALID_ADDR_SZ</a> = 0xa002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a78abf6e9a4e892673d3675e3390a52dd">SL_NHLFE_INVALID_NEXT_HOP_ADDR</a> = 0xa003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa8406270bcd64924696c5097d451e2cb">SL_NHLFE_VRF_NAME_TOOLONG</a> = 0xa004, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa8406270bcd64924696c5097d451e2cb">SL_NHLFE_VRF_NAME_TOOLONG</a> = 0xa004, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a093a1a0e39d50c9dd23d32d33d526a7f">SL_NHLFE_NH_INF_NAME_MISSING</a> = 0xa005, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2284af379b0f9d80cfbe96f798dc7b8f">SL_NHLFE_NH_INTF_NAME_TOOLONG</a> = 0xa006, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2284af379b0f9d80cfbe96f798dc7b8f">SL_NHLFE_NH_INTF_NAME_TOOLONG</a> = 0xa006, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac44ce5b12a1388299c28e330f35dea17">SL_NHLFE_INVALID_LABEL_COUNT</a> = 0xa007, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a582682da82d5fde44394c83f7e89a94d">SL_NHLFE_INVALID_PATH_ID</a> = 0xa008, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a582682da82d5fde44394c83f7e89a94d">SL_NHLFE_INVALID_PATH_ID</a> = 0xa008, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a71f5b1f2c39b7f12a070190c4c4c9f74">SL_NHLFE_INVALID_LABEL</a> = 0xa009, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5e238c7efccc7529dfe03dfdc7c4da1f">SL_NHLFE_INVALID_PROTECTED_BITMAP</a> = 0xa00a, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5e238c7efccc7529dfe03dfdc7c4da1f">SL_NHLFE_INVALID_PROTECTED_BITMAP</a> = 0xa00a, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac66232ceb04d92b70325bad67500a461">SL_NHLFE_INVALID_REMOTE_ADDR_COUNT</a> = 0xa00b, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0d8bb5ee7cc3da299c0ec9e168418533">SL_NHLFE_REMOTE_ADDR_INVALID_SZ</a> = 0xa00c, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0d8bb5ee7cc3da299c0ec9e168418533">SL_NHLFE_REMOTE_ADDR_INVALID_SZ</a> = 0xa00c, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a856bc58b3502b8def62e67b59bfa8338">SL_NHLFE_PRIMARY_TOOMANY_LABELS</a> = 0xa00d, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a40e9ed23de98e32a03186cb4ef68023f">SL_NHLFE_PRIMARY_TOOMANY_REMOTE_ADDR</a> = 0xa00e, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a40e9ed23de98e32a03186cb4ef68023f">SL_NHLFE_PRIMARY_TOOMANY_REMOTE_ADDR</a> = 0xa00e, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa79c7903e426734e0ceed43528a86dbf">SL_NHLFE_BACKUP_ID_REPEATED</a> = 0xa00f, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a94230d21043610065c271c3673935278">SL_NHLFE_PRIMARY_ID_REPEATED</a> = 0xa010, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a94230d21043610065c271c3673935278">SL_NHLFE_PRIMARY_ID_REPEATED</a> = 0xa010, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad274148c4865850cfc7fe6624a7e397f">SL_NHLFE_BACKUP_PROTECTED_BITMAP_EMPTY</a> = 0xa011, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a868432da43f65d03e8d1f0feb1c9f4dc">SL_NHLFE_PRIMARY_TOOMANY_BACKUP_PATHS</a> = 0xa012, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a868432da43f65d03e8d1f0feb1c9f4dc">SL_NHLFE_PRIMARY_TOOMANY_BACKUP_PATHS</a> = 0xa012, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a458bde7025a4bdac96a240a234c87f4b">SL_NHLFE_REMOTE_ADDR_INVALID</a> = 0xa013, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a54a6752d2adf54ea6d48333df393c92e">SL_NHLFE_BACKUP_MISSING_PRIMARY_PATH</a> = 0xa014, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a54a6752d2adf54ea6d48333df393c92e">SL_NHLFE_BACKUP_MISSING_PRIMARY_PATH</a> = 0xa014, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a801eb5172052de1a3b4e8cb3ce5703aa">SL_NHLFE_NEXT_HOP_MISSING</a> = 0xa015, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4b90569e361124c71678960038de255c">SL_NHLFE_LABEL_ACTION_INVALID</a> = 0xa016, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4b90569e361124c71678960038de255c">SL_NHLFE_LABEL_ACTION_INVALID</a> = 0xa016, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac68871430be534c0fce66236fe8d9d96">SL_NHLFE_NH_INTF_NOT_FOUND</a> = 0xa017, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a32ee45740f78e58bd1263777dea24728">SL_NHLFE_OPER_FAILED</a> = 0xa018, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a32ee45740f78e58bd1263777dea24728">SL_NHLFE_OPER_FAILED</a> = 0xa018, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae4c96dd93dbc810a72264d44255bacaa">SL_NHLFE_LABEL_ACTION_MISSING</a> = 0xa019, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0c04994bdf49a409a69449ed787362a1">SL_NHLFE_EXP_SET_FAILED</a> = 0xa01a, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0c04994bdf49a409a69449ed787362a1">SL_NHLFE_EXP_SET_FAILED</a> = 0xa01a, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7f489dc2f32e1f586a4de0873d594a4f">SL_NHLFE_ELSP_PROTECTION_UNSUPPORTED</a> = 0xa01b, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae92035d89716f34f968a7da67304671b">SL_LABEL_BLK_ERR_OFFSET</a> = 0xb000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae92035d89716f34f968a7da67304671b">SL_LABEL_BLK_ERR_OFFSET</a> = 0xb000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae83d92790055466c7118d610ccedb8f6">SL_LABEL_BLK_LSD_ADD_FAILED</a> = 0xb001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2c07be9aeaa2325f1986fe0659aadb4f">SL_LABEL_BLK_LSD_DELETE_FAILED</a> = 0xb002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2c07be9aeaa2325f1986fe0659aadb4f">SL_LABEL_BLK_LSD_DELETE_FAILED</a> = 0xb002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad0419e6c0da5d029c777c345769bac50">SL_LABEL_BLK_LSD_LABEL_BLK_NOT_FOUND</a> = 0xb003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3e8313878500fe1362497cf1a7e817c4">SL_LABEL_BLK_LSD_LABEL_BLK_IN_USE</a> = 0xb004, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3e8313878500fe1362497cf1a7e817c4">SL_LABEL_BLK_LSD_LABEL_BLK_IN_USE</a> = 0xb004, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a031e39634d4b098c48b7ec9d42a45e46">SL_LABEL_BLK_LSD_INVALID_ATTRIB</a> = 0xb005, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a00667a61d0d5a95bae9a9d57d8a6a696">SL_LABEL_BLK_INVALID_BLOCK_SIZE</a> = 0xb006, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a00667a61d0d5a95bae9a9d57d8a6a696">SL_LABEL_BLK_INVALID_BLOCK_SIZE</a> = 0xb006, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2a6b6f403db0856e4e4457704c8878c9">SL_LABEL_BLK_INVALID_START_LABEL</a> = 0xb007, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0209ebd2d59628ca2450a264a1b8a2c6">SL_LABEL_BLK_EEXIST</a> = 0xb008, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0209ebd2d59628ca2450a264a1b8a2c6">SL_LABEL_BLK_EEXIST</a> = 0xb008, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5fe84c055f86ec7ab637ea4408f0c198">SL_LABEL_BLK_DB_NOMEM</a> = 0xb009, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3f99e39cfb4cd3d44bf8ffaf346c3c21">SL_LABEL_BLK_TYPE_INVALID</a> = 0xb00a, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3f99e39cfb4cd3d44bf8ffaf346c3c21">SL_LABEL_BLK_TYPE_INVALID</a> = 0xb00a, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5e9d5c98108cf25f64524e73d89cd661">SL_LABEL_BLK_CLIENT_NAME_TOOLONG</a> = 0xb00b, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae60e378bfb1db44c64f745fea2f4aa3d">SL_MPLS_REG_ERR_OFFSET</a> = 0xc000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae60e378bfb1db44c64f745fea2f4aa3d">SL_MPLS_REG_ERR_OFFSET</a> = 0xc000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4d8b2aae80ae187456e83657b690dcd5">SL_MPLS_REG_ERR</a> = 0xc001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5590c08adff88c5f2dc3db15f0b0e745">SL_MPLS_UNREG_ERR</a> = 0xc002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5590c08adff88c5f2dc3db15f0b0e745">SL_MPLS_UNREG_ERR</a> = 0xc002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac527267f9595f2446c990cdc5c97be83">SL_MPLS_EOF_ERR</a> = 0xc003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a01e8ad692efc84ada8e8b8da23b3d8ae">SL_RPC_INTF_START_OFFSET</a> = 0xd000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a01e8ad692efc84ada8e8b8da23b3d8ae">SL_RPC_INTF_START_OFFSET</a> = 0xd000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a766c42496025171495d6f49297c387f3">SL_RPC_INTF_TOO_MANY_INTERFACES</a> = 0xd001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a433d57cd00bd8a7c2cd8a476210a268f">SL_RPC_INTF_SERVER_NOT_INITIALIZED</a> = 0xd002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a433d57cd00bd8a7c2cd8a476210a268f">SL_RPC_INTF_SERVER_NOT_INITIALIZED</a> = 0xd002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aec65caa05d50d0962c3d03766fafdb2e">SL_RPC_INTF_API_CLIENT_NOT_REGISTERED</a> = 0xd003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a294b8b2afcca2da8e4190af023990d76">SL_INTF_START_OFFSET</a> = 0xe000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a294b8b2afcca2da8e4190af023990d76">SL_INTF_START_OFFSET</a> = 0xe000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aea60b029b289319da1ba32e1148b4300">SL_INTF_INTERFACE_NAME_MISSING</a> = 0xe001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a06cdce2b37c6b97f5a6c1105dd7d3449">SL_INTF_INTERFACE_NAME_TOOLONG</a> = 0xe002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a06cdce2b37c6b97f5a6c1105dd7d3449">SL_INTF_INTERFACE_NAME_TOOLONG</a> = 0xe002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579acece7a90aada6260718b99da8434d96a">SL_INTF_INTERFACE_REG_ERR</a> = 0xe003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5bb19f8f128bccdff1adc9a5f27c599e">SL_INTF_INTERNAL_DB_ERROR</a> = 0xe004, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5bb19f8f128bccdff1adc9a5f27c599e">SL_INTF_INTERNAL_DB_ERROR</a> = 0xe004, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4c7b1424ae0a0060820df5a34bdf17f3">SL_INTF_RECOVERY_ERROR</a> = 0xe005, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa5d14e4c9d9272767f6c91906b1b47c9">SL_INTF_INTERFACE_EXISTS</a> = 0xe006, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa5d14e4c9d9272767f6c91906b1b47c9">SL_INTF_INTERFACE_EXISTS</a> = 0xe006, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0227b20ab58a342c811dd2958ea39026">SL_INTF_INTERFACE_NOT_FOUND</a> = 0xe007, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1f717cce1a2510b2da37e52a2b300721">SL_L2_REG_START_OFFSET</a> = 0xf000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1f717cce1a2510b2da37e52a2b300721">SL_L2_REG_START_OFFSET</a> = 0xf000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579af64e6b3cc54a68c3a963347a9becf29b">SL_L2_REGISTRATION_ERR</a> = 0xf001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a78a20d4a04cdab9cb83d670f0bc853f9">SL_L2_UNREGISTRATION_ERR</a> = 0xf002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a78a20d4a04cdab9cb83d670f0bc853f9">SL_L2_UNREGISTRATION_ERR</a> = 0xf002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7ead4ba6620ec11305b639a8e8015597">SL_L2_EOF_ERR</a> = 0xf003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579abfda256926091283d8c05a1ef5468d0e">SL_L2_REG_INVALID_ADMIN_DISTANCE</a> = 0xf004, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579abfda256926091283d8c05a1ef5468d0e">SL_L2_REG_INVALID_ADMIN_DISTANCE</a> = 0xf004, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8aea8938c1c56e9c8913248cd310793a">SL_L2_REG_IS_DUPLICATE</a> = 0xf005, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a620f6ea9330c904fca75661ede851929">SL_L2_REG_SERVER_NOT_INITIALIZED</a> = 0xf006, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a620f6ea9330c904fca75661ede851929">SL_L2_REG_SERVER_NOT_INITIALIZED</a> = 0xf006, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a989f8ed02fd85547f655c219759fdee7">SL_RPC_L2_BD_REG_START_OFFSET</a> = 0x10000, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5a123e2776d3db1e7ac56dd7bd5bad4d">SL_RPC_L2_BD_REG_NAME_MISSING</a> = 0x10001, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5a123e2776d3db1e7ac56dd7bd5bad4d">SL_RPC_L2_BD_REG_NAME_MISSING</a> = 0x10001, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aba60197122d931e93feb2a872a20bb50">SL_RPC_L2_BD_REG_TOO_MANY_MSGS</a> = 0x10002, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a94847370011df6634bf620b310dd33ae">SL_RPC_L2_BD_REG_SERVER_NOT_INITIALIZED</a> = 0x10003, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a94847370011df6634bf620b310dd33ae">SL_RPC_L2_BD_REG_SERVER_NOT_INITIALIZED</a> = 0x10003, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a69233466d5e5b0141ef1647bada2c9e2">SL_RPC_L2_BD_REG_CLIENT_NOT_REGISTERED</a> = 0x10004, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3d716342d892e6a504360f31b0025aa0">SL_L2_BD_REG_START_OFFSET</a> = 0x11000, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a3d716342d892e6a504360f31b0025aa0">SL_L2_BD_REG_START_OFFSET</a> = 0x11000, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a9c32722ce50fcabbce841c1a3cce76c9">SL_L2_BD_REGISTRATION_ERR</a> = 0x11001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad17ac11012dbf17db5fe80b44f89efd0">SL_L2_BD_UNREGISTRATION_ERR</a> = 0x11002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ad17ac11012dbf17db5fe80b44f89efd0">SL_L2_BD_UNREGISTRATION_ERR</a> = 0x11002, 
 <b>x11003</b>, 
-<b>SL_L2_BD_EOF_ERR</b> = 0x11003, 
+<br />
+&#160;&#160;<b>SL_L2_BD_EOF_ERR</b> = 0x11003, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac79351924272d5a4877324a258a9fd4e">SL_L2_BD_REG_NAME_TOO_LONG</a> = 0x11004, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8cd248163dd172021b8cb2086c2185a6">SL_L2_BD_REG_BD_NOT_FOUND</a> = 0x11005, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8cd248163dd172021b8cb2086c2185a6">SL_L2_BD_REG_BD_NOT_FOUND</a> = 0x11005, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4f5fafd268f0a4019c7661fd07f28c71">SL_RPC_L2_ROUTE_START_OFFSET</a> = 0x12000, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8c7abe0c4d66fc1f22d215fa150de2a9">SL_RPC_L2_ROUTE_TOO_MANY_MSGS</a> = 0x12001, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8c7abe0c4d66fc1f22d215fa150de2a9">SL_RPC_L2_ROUTE_TOO_MANY_MSGS</a> = 0x12001, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4190e98fa5fe405cbeaf6d9d4d839847">SL_RPC_L2_ROUTE_SERVER_NOT_INITIALIZED</a> = 0x12002, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aec8a60fa10fc4b43a2c57af510a657e2">SL_RPC_L2_ROUTE_CLIENT_NOT_REGISTERED</a> = 0x12003, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aec8a60fa10fc4b43a2c57af510a657e2">SL_RPC_L2_ROUTE_CLIENT_NOT_REGISTERED</a> = 0x12003, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a35337fbbc47aaca919651edf469092d7">SL_L2_ROUTE_START_OFFSET</a> = 0x13000, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae9cb835bd007b722a4600a687f0af95b">SL_L2_ROUTE_BD_NAME_MISSING</a> = 0x13001, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ae9cb835bd007b722a4600a687f0af95b">SL_L2_ROUTE_BD_NAME_MISSING</a> = 0x13001, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aeded3e1c0acedc005e20b909f7cf8745">SL_L2_ROUTE_BD_NAME_TOOLONG</a> = 0x13002, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1227ac82054b6a90a94f808712e6b1e2">SL_L2_ROUTE_BD_NOT_FOUND</a> = 0x13003, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a1227ac82054b6a90a94f808712e6b1e2">SL_L2_ROUTE_BD_NOT_FOUND</a> = 0x13003, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a92f8ecad666562805923aaacb1f1cb90">SL_L2_ROUTE_BD_NOT_REGISTERED</a> = 0x13004, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7f9b40306e496d6e35b01af41791a5e6">SL_L2_ROUTE_INVALID_ARGS</a> = 0x13005, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7f9b40306e496d6e35b01af41791a5e6">SL_L2_ROUTE_INVALID_ARGS</a> = 0x13005, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac8fae9ecee09a67b0107af4661438ecf">SL_RPC_L2_NOTIF_START_OFFSET</a> = 0x14001, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a75a295dde34ab2b2ea02ccffb01db9bb">SL_RPC_L2_NOTIF_SERVER_NOT_INITIALIZED</a> = 0x14002, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a75a295dde34ab2b2ea02ccffb01db9bb">SL_RPC_L2_NOTIF_SERVER_NOT_INITIALIZED</a> = 0x14002, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8f2055bcd436572e1bd6b29f4ff6ed1b">SL_RPC_L2_NOTIF_CLIENT_NOT_REGISTERED</a> = 0x14003, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579acd456627178eaa5108f64502ac260acd">SL_RPC_L2_NOTIF_ENABLE_ERR</a> = 0x14004, 
+<br />
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579acd456627178eaa5108f64502ac260acd">SL_RPC_L2_NOTIF_ENABLE_ERR</a> = 0x14004, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a20afbc959cba8e47ff0607f601296462">SL_RPC_L2_NOTIF_DISABLE_ERR</a> = 0x14005, 
-<br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4750561a9f1fc4fbf1ade1a96ec07212">SL_RPC_L2_NOTIF_EOF_ERR</a> = 0x14006, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4750561a9f1fc4fbf1ade1a96ec07212">SL_RPC_L2_NOTIF_EOF_ERR</a> = 0x14006, 
 <a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a75ad944258b3c4d0869e4995dbea5123">SL_RPC_L2_NOTIF_BD_NAME_MISSING</a> = 0x14007, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ab9a35b40b5fcabd207d6755ccca64f38">SL_RPC_L2_NOTIF_BD_NAME_TOOLONG</a> = 0x14008, 
-<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4ab6947807bbec688f255fa09dff3025">SL_RPC_L2_NOTIF_BD_NOT_FOUND</a> = 0x14009, 
 <br />
-&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0bb764a961407fc4f2685fd4f3174ef9">SL_INTERNAL_START_OFFSET</a> = 0x100000
+&#160;&#160;<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ab9a35b40b5fcabd207d6755ccca64f38">SL_RPC_L2_NOTIF_BD_NAME_TOOLONG</a> = 0x14008, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4ab6947807bbec688f255fa09dff3025">SL_RPC_L2_NOTIF_BD_NOT_FOUND</a> = 0x14009, 
+<a class="el" href="group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a0bb764a961407fc4f2685fd4f3174ef9">SL_INTERNAL_START_OFFSET</a> = 0x100000
 <br />
  }</td></tr>
 <tr class="separator:a004d5ee5e7c7f26018bac9a4e5254579"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -666,6 +673,22 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579aba5180820d8f50b1f91555f30a3e3e55"></a>SL_VRF_REG_VRF_NAME_MISSING&#160;</td><td class="fielddoc">
 <p>VRF registration message does not have a VRF name. 0x2009. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a8873ac7342d1306b63989fa470999d00"></a>SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR&#160;</td><td class="fielddoc">
+<p>IPv4 routes in VRF cannot be played to Routing Information Base on a process restart or connection re-establishment. </p>
+<p>The Forwarding Information Base can can be inconsistent. Agent/Controller should initiate a recovery action by reloading the device. 0x2010 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a7135aeb127f643b4ca237a66b3dde5b1"></a>SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR&#160;</td><td class="fielddoc">
+<p>IPv6 routes in VRF cannot be played to Routing Information Base on a process restart or connection re-establishment. </p>
+<p>The Forwarding Information Base can can be inconsistent. Agent/Controller should initiate a recovery action by reloading the device. 0x2011 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a2e3290e8eb88cf919d1de2ce7f52466a"></a>SL_VRF_V4_ROUTE_REPLAY_OK&#160;</td><td class="fielddoc">
+<p>IPv4 routes in VRF were played to Routing Information Base on a process restart or connection re-establishment. </p>
+<p>0x2012 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a4ce40a76e3de3d5bcf1726646f91760b"></a>SL_VRF_V6_ROUTE_REPLAY_OK&#160;</td><td class="fielddoc">
+<p>IPv6 routes in VRF were played to Routing Information Base on a process restart or connection re-establishment. </p>
+<p>0x2013 </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a8f17f5c77e8b30b62c72ba85286bc8e4"></a>SL_RPC_ROUTE_START_OFFSET&#160;</td><td class="fielddoc">
 <p>!!! Error codes for Route operations. </p>
@@ -1007,6 +1030,14 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579ae1d9f71b32bf45663ea08362386e9856"></a>SL_ILM_LABEL_TOOMANY_EXP_CLASSES&#160;</td><td class="fielddoc">
 <p>Number of EXP classes on the label exceed system capabilities. 0x9012. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579a945f157c25011986629246de153e30e6"></a>SL_ILM_REPLAY_FATAL_ERROR&#160;</td><td class="fielddoc">
+<p>MPLS ILMs cannot be played to Label Switching Database on a process restart or connection re-establishment. </p>
+<p>The Forwarding Information Base can can be inconsistent. Agent/Controller should initiate a recovery action by reloading the device. 0x9013 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579ac7a8e627742e90f2cc75b719f981d3bf"></a>SL_ILM_REPLAY_OK&#160;</td><td class="fielddoc">
+<p>MPLS ILMs were played to Label Switching Database on a process restart or connection re-establishment. </p>
+<p>0x9014 </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a004d5ee5e7c7f26018bac9a4e5254579afba8f9d54658e7dd457287f86c143dc2"></a>SL_NHLFE_ERR_OFFSET&#160;</td><td class="fielddoc">
 <p>!!! MPLS NHLFE Error codes Offset for MPLS NHLFE errors. </p>

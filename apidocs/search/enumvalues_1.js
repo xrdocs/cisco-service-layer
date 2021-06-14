@@ -75,6 +75,8 @@ var searchData=
   ['sl_5film_5flsd_5fadd_5flabel_5falloc_5ffailed',['SL_ILM_LSD_ADD_LABEL_ALLOC_FAILED',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a16d26b4cc21ed1c1f03b47a817e01070',1,'SLErrorStatus']]],
   ['sl_5film_5flsd_5fdelete_5ffailed',['SL_ILM_LSD_DELETE_FAILED',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4d5d49a37c5ddd8738b2f01fd8c42ccd',1,'SLErrorStatus']]],
   ['sl_5film_5flsd_5fnhlfe_5finvalid_5fattrib',['SL_ILM_LSD_NHLFE_INVALID_ATTRIB',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a649c94983fdd274cb14a31c9016a31e1',1,'SLErrorStatus']]],
+  ['sl_5film_5freplay_5ffatal_5ferror',['SL_ILM_REPLAY_FATAL_ERROR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a945f157c25011986629246de153e30e6',1,'SLErrorStatus']]],
+  ['sl_5film_5freplay_5fok',['SL_ILM_REPLAY_OK',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579ac7a8e627742e90f2cc75b719f981d3bf',1,'SLErrorStatus']]],
   ['sl_5film_5ftoomany_5fbackup_5fnhlfes',['SL_ILM_TOOMANY_BACKUP_NHLFES',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a5f37d21a3bd3c944ce0990252a73d6d5',1,'SLErrorStatus']]],
   ['sl_5film_5ftoomany_5fprimary_5fnhlfes',['SL_ILM_TOOMANY_PRIMARY_NHLFES',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aad99a5db11df97c5cdf3b31801748cd3',1,'SLErrorStatus']]],
   ['sl_5film_5funsupported_5felsp',['SL_ILM_UNSUPPORTED_ELSP',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a6b6548f9643196a71dedd80b26b5f71b',1,'SLErrorStatus']]],
@@ -307,5 +309,9 @@ var searchData=
   ['sl_5fvrf_5ftable_5fadd_5ferr',['SL_VRF_TABLE_ADD_ERR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a442825994e09971e90a4f023dd41e240',1,'SLErrorStatus']]],
   ['sl_5fvrf_5ftable_5feof_5ferr',['SL_VRF_TABLE_EOF_ERR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa9bdad935eda224ba392b1af8293e5ad',1,'SLErrorStatus']]],
   ['sl_5fvrf_5ftable_5fregistration_5ferr',['SL_VRF_TABLE_REGISTRATION_ERR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579aa54038004909ee937c7c7801e63f254d',1,'SLErrorStatus']]],
-  ['sl_5fvrf_5ftable_5funregistration_5ferr',['SL_VRF_TABLE_UNREGISTRATION_ERR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a34f9cc5347f4ab96666bf36647cb52d4',1,'SLErrorStatus']]]
+  ['sl_5fvrf_5ftable_5funregistration_5ferr',['SL_VRF_TABLE_UNREGISTRATION_ERR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a34f9cc5347f4ab96666bf36647cb52d4',1,'SLErrorStatus']]],
+  ['sl_5fvrf_5fv4_5froute_5freplay_5ffatal_5ferror',['SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a8873ac7342d1306b63989fa470999d00',1,'SLErrorStatus']]],
+  ['sl_5fvrf_5fv4_5froute_5freplay_5fok',['SL_VRF_V4_ROUTE_REPLAY_OK',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a2e3290e8eb88cf919d1de2ce7f52466a',1,'SLErrorStatus']]],
+  ['sl_5fvrf_5fv6_5froute_5freplay_5ffatal_5ferror',['SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a7135aeb127f643b4ca237a66b3dde5b1',1,'SLErrorStatus']]],
+  ['sl_5fvrf_5fv6_5froute_5freplay_5fok',['SL_VRF_V6_ROUTE_REPLAY_OK',['../group__SLCommonTypes.html#a004d5ee5e7c7f26018bac9a4e5254579a4ce40a76e3de3d5bcf1726646f91760b',1,'SLErrorStatus']]]
 ];
