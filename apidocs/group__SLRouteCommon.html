@@ -841,6 +841,9 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:aa414c362e5f4f9f93cd720dc4d3c8070"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteCommon.html#aa414c362e5f4f9f93cd720dc4d3c8070">SrcProtoTag</a> = 5</td></tr>
 <tr class="memdesc:aa414c362e5f4f9f93cd720dc4d3c8070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source Protocol Tag.  <a href="#aa414c362e5f4f9f93cd720dc4d3c8070">More...</a><br /></td></tr>
 <tr class="separator:aa414c362e5f4f9f93cd720dc4d3c8070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4547e84834d6c0b75eaf41d007df75"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLRouteCommon.html#aca4547e84834d6c0b75eaf41d007df75">Flags</a> = 6</td></tr>
+<tr class="memdesc:aca4547e84834d6c0b75eaf41d007df75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route Flags.  <a href="#aca4547e84834d6c0b75eaf41d007df75">More...</a><br /></td></tr>
+<tr class="separator:aca4547e84834d6c0b75eaf41d007df75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
 <a class="anchor" id="a7a54d735e217ed7c1f865f86bfe2cf7b"></a>
@@ -853,6 +856,19 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
       </table>
 </div><div class="memdoc">
 <p>[0-255]. RIB uses this field to break the tie when multiple sources install the same route. Lower distance is preferred over higher distance. The per route object admin distance overrides the default's admin distance set at VRF registration. see <a class="el" href="group__SLRouteCommon.html#structSLVrfReg" title="VRF Registration message. ">SLVrfReg</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="aca4547e84834d6c0b75eaf41d007df75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 SLRouteCommon::Flags = 6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flags to control programming of the route to Routing Information Base. Each flag is indicated as a bit field. Supported values are: 0x1 - This route takes precedence over a route learnt by LDP. </p>
 
 </div>
 </div>

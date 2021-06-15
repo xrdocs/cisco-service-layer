@@ -127,5 +127,6 @@ var searchData=
   ['slvrfreggetmsgrsp',['SLVrfRegGetMsgRsp',['../group__SLRouteCommon.html#structSLVrfRegGetMsgRsp',1,'']]],
   ['slvrfregmsg',['SLVrfRegMsg',['../group__SLRouteCommon.html#structSLVrfRegMsg',1,'']]],
   ['slvrfregmsgres',['SLVrfRegMsgRes',['../group__SLRouteCommon.html#structSLVrfRegMsgRes',1,'']]],
-  ['slvrfregmsgrsp',['SLVrfRegMsgRsp',['../group__SLRouteCommon.html#structSLVrfRegMsgRsp',1,'']]]
+  ['slvrfregmsgrsp',['SLVrfRegMsgRsp',['../group__SLRouteCommon.html#structSLVrfRegMsgRsp',1,'']]],
+  ['slvrfroutereplayerrornotif',['SLVrfRouteReplayErrorNotif',['../group__SLGlobal.html#structSLVrfRouteReplayErrorNotif',1,'']]]
 ];

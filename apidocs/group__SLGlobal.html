@@ -208,6 +208,9 @@ Messages</h2></td></tr>
 <tr class="memitem:structSLInitMsgRsp"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#structSLInitMsgRsp">SLInitMsgRsp</a></td></tr>
 <tr class="memdesc:structSLInitMsgRsp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server's response to the <a class="el" href="group__SLGlobal.html#structSLInitMsg" title="Initialization message sent to the server. ">SLInitMsg</a>.  <a href="group__SLGlobal.html#structSLInitMsgRsp">More...</a><br /></td></tr>
 <tr class="separator:structSLInitMsgRsp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSLVrfRouteReplayErrorNotif"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#structSLVrfRouteReplayErrorNotif">SLVrfRouteReplayErrorNotif</a></td></tr>
+<tr class="memdesc:structSLVrfRouteReplayErrorNotif"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routes replay error notification.  <a href="group__SLGlobal.html#structSLVrfRouteReplayErrorNotif">More...</a><br /></td></tr>
+<tr class="separator:structSLVrfRouteReplayErrorNotif"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structSLGlobalNotif"><td class="memItemLeft" align="right" valign="top">message &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#structSLGlobalNotif">SLGlobalNotif</a></td></tr>
 <tr class="memdesc:structSLGlobalNotif"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globals query message.  <a href="group__SLGlobal.html#structSLGlobalNotif">More...</a><br /></td></tr>
 <tr class="separator:structSLGlobalNotif"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,6 +324,25 @@ uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 </div>
 </div>
+<a name="structSLVrfRouteReplayErrorNotif" id="structSLVrfRouteReplayErrorNotif"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">message SLVrfRouteReplayErrorNotif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="memberdecls">
+<tr><td colspan="2"><h3>Attributes</h3></td></tr>
+<tr class="memitem:a2a3b46266e986dfca0a272d694df70ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a3b46266e986dfca0a272d694df70ca"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#a2a3b46266e986dfca0a272d694df70ca">VrfName</a> = 1</td></tr>
+<tr class="memdesc:a2a3b46266e986dfca0a272d694df70ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">VRF Name. <br /></td></tr>
+<tr class="separator:a2a3b46266e986dfca0a272d694df70ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+
+</div>
+</div>
 <a name="structSLGlobalNotif" id="structSLGlobalNotif"></a>
 <div class="memitem">
 <div class="memproto">
@@ -342,6 +364,9 @@ uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr class="memitem:abb8a9bd75c0bdcaa72637d92b3a1cfec"><td class="memItemLeft" align="right" valign="top">oneof&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#abb8a9bd75c0bdcaa72637d92b3a1cfec">Event</a></td></tr>
 <tr class="memdesc:abb8a9bd75c0bdcaa72637d92b3a1cfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Further info based on EventType.  <a href="#abb8a9bd75c0bdcaa72637d92b3a1cfec">More...</a><br /></td></tr>
 <tr class="separator:abb8a9bd75c0bdcaa72637d92b3a1cfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502933a2bbe0c21382c718e4778b7024"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__SLGlobal.html#structSLVrfRouteReplayErrorNotif">SLVrfRouteReplayErrorNotif</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLGlobal.html#a502933a2bbe0c21382c718e4778b7024">VrfReplayErrorNotif</a> = 4</td></tr>
+<tr class="memdesc:a502933a2bbe0c21382c718e4778b7024"><td class="mdescLeft">&#160;</td><td class="mdescRight">case EventType == SL_GLOBAL_EVENT_TYPE_ERROR: case ErrStatus == SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR: case ErrStatus == SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR: case ErrStatus == SL_VRF_V4_ROUTE_REPLAY_OK: case ErrStatus == SL_VRF_V6_ROUTE_REPLAY_OK: =&gt; this field carries the failed VRF information.  <a href="#a502933a2bbe0c21382c718e4778b7024">More...</a><br /></td></tr>
+<tr class="separator:a502933a2bbe0c21382c718e4778b7024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
 <a class="anchor" id="a7407d792fdd4dc0253b79b1ee6599e32"></a>
@@ -353,7 +378,7 @@ uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>case EventType == SL_GLOBAL_EVENT_TYPE_ERROR: case ErrStatus == SL_NOTIF_TERM: =&gt; Another client is attempting to take over the session. This session will be closed. case ErrStatus == (some error from <a class="el" href="group__SLCommonTypes.html#structSLErrorStatus">SLErrorStatus</a>) =&gt; Client must look into the specific error message returned.</p>
+<p>case EventType == SL_GLOBAL_EVENT_TYPE_ERROR: case ErrStatus == SL_NOTIF_TERM: =&gt; Another client is attempting to take over the session. This session will be closed. case ErrStatus == SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR: =&gt; IPv4 Routes replay failed for a VRF. See VrfReplayErrorNotif for details. case ErrStatus == SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR: =&gt; IPv6 Routes replay failed for a VRF. See VrfReplayErrorNotif for details. case ErrStatus == SL_ILM_REPLAY_FATAL_ERROR: =&gt; ILM replay failed. case ErrStatus == SL_VRF_V4_ROUTE_REPLAY_OK: =&gt; IPv4 Routes replay succeeded for a VRF. See VrfReplayErrorNotif for details. This notification is sent only if a SL_VRF_V4_ROUTE_REPLAY_FATAL_ERROR was sent earlier on the identified VRF. case ErrStatus == SL_VRF_V6_ROUTE_REPLAY_OK: =&gt; IPv6 Routes replay succeeded for a VRF. See VrfReplayErrorNotif for details. This notification is sent only if a SL_VRF_V6_ROUTE_REPLAY_FATAL_ERROR was sent earlier on the identified VRF. case ErrStatus == SL_ILM_REPLAY_OK: =&gt; ILM replay succeeded. This notification is sent only if a SL_ILM_REPLAY_FATAL_ERROR was sent earlier. case ErrStatus == (some error from <a class="el" href="group__SLCommonTypes.html#structSLErrorStatus">SLErrorStatus</a>) =&gt; Client must look into the specific error message returned.</p>
 <p>case EventType == SL_GLOBAL_EVENT_TYPE_HEARTBEAT: case ErrStatus == SL_SUCCESS =&gt; Client can safely ignore this heartbeat message.</p>
 <p>case EventType == SL_GLOBAL_EVENT_TYPE_VERSION: case ErrStatus == SL_SUCCESS =&gt; Client version accepted. case ErrStatus == SL_INIT_STATE_READY =&gt; Client version accepted. Any previous state was sucessfully recovered. case ErrStatus == SL_INIT_STATE_CLEAR =&gt; Client version accepted. Any previous state was lost. Client must replay all previous objects to server. case ErrStatus == SL_UNSUPPORTED_VER =&gt; Client and Server version mismatch. The client is not allowed to proceed, and the channel will be closed. case ErrStatus == (some error from <a class="el" href="group__SLCommonTypes.html#structSLErrorStatus">SLErrorStatus</a>) =&gt; Client must either try again, or look into the specific error message returned. </p>
 
@@ -369,6 +394,18 @@ uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">        </div><div class="line">        <a class="code" href="group__SLGlobal.html#structSLInitMsgRsp">SLInitMsgRsp</a> InitRspMsg = 3</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a502933a2bbe0c21382c718e4778b7024"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__SLGlobal.html#structSLVrfRouteReplayErrorNotif">SLVrfRouteReplayErrorNotif</a> SLGlobalNotif::VrfReplayErrorNotif = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 
